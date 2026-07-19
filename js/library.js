@@ -64,16 +64,18 @@
     function buildText(){
       if(!sel) return null;
       if(tab==='poem'){
-        const head= includeTitle ? (sel.title+(sel.author?` ${sel.author} `:' ')) : '';
-        return { mode:'多句', text: head + sel.lines.join('') };
+        const head=[];
+        if(includeTitle){ head.push(sel.title); if(sel.author) head.push(sel.author); }
+        return { mode:'多句', layout:'古诗格式', text: head.concat(sel.lines).join('\n') };
       }
       const paras=sel.paragraphs.filter((_,i)=>checked[i]);
       if(paras.length===0) return null;
-      return { mode:'多句', text: paras.join('') };
+      const head= includeTitle ? [sel.title] : [];
+      return { mode:'多句', layout:'文章格式', text: head.concat(paras).join('\n') };
     }
     function insert(append){
       const r=buildText(); if(!r) return;
-      props.onInsert(r.mode, r.text, append);
+      props.onInsert(r.mode, r.text, append, r.layout);
     }
 
     const E=React.createElement;
@@ -116,13 +118,8 @@
         ),
         sel?E('div',{className:'mt-2 p-2 border rounded bg-light'},
           E('div',{className:'fw-semibold mb-1'}, sel.title, E('small',{className:'text-muted ms-2'}, tab==='poem'?sel.author:sel.grade)),
-          tab==='poem'?E('div',null,
-            E('div',{className:'small text-muted mb-1',style:{maxHeight:'90px',overflowY:'auto'}}, sel.lines.map((l,i)=>E('div',{key:i},l))),
-            E('div',{className:'form-check form-check-sm mb-1'},
-              E('input',{className:'form-check-input',type:'checkbox',id:'libIncTitle',checked:includeTitle,onChange:e=>setIncludeTitle(e.target.checked)}),
-              E('label',{className:'form-check-label',htmlFor:'libIncTitle'},'包含标题和作者')
-            )
-          ):E('div',null,
+          tab==='poem'?E('div',{className:'small text-muted mb-1',style:{maxHeight:'90px',overflowY:'auto'}}, sel.lines.map((l,i)=>E('div',{key:i},l)))
+          :E('div',null,
             E('div',{className:'mb-1'},
               E('button',{className:'btn btn-sm btn-link p-0 me-2',type:'button',onClick:()=>setChecked(checked.map(()=>true))},'全选'),
               E('button',{className:'btn btn-sm btn-link p-0',type:'button',onClick:()=>setChecked(checked.map(()=>false))},'清空'),
@@ -134,6 +131,10 @@
                 E('label',{className:'form-check-label small',htmlFor:'libP'+i},snippet(p,50))
               ))
             )
+          ),
+          E('div',{className:'form-check form-check-sm mt-1'},
+            E('input',{className:'form-check-input',type:'checkbox',id:'libIncTitle',checked:includeTitle,onChange:e=>setIncludeTitle(e.target.checked)}),
+            E('label',{className:'form-check-label',htmlFor:'libIncTitle'},tab==='poem'?'包含标题和作者（居中）':'包含标题（居中）')
           ),
           E('div',{className:'mt-2 d-flex gap-2 flex-wrap'},
             E('button',{className:'btn btn-sm btn-success',type:'button',onClick:()=>insert(false)},'覆盖到字帖'),
