@@ -416,8 +416,6 @@
     );
   }
 
-  ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
-
   window.__copybook__ = window.__copybook__ || {};
   window.__copybook__.Section = Section;
   window.__copybook__.PreviewStatus = PreviewStatus;
