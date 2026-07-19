@@ -12,14 +12,16 @@
     if(store.poems||store.loading) return;
     // 优先读取预置数据（<script> 标签加载，file:// 双击打开也可用）
     const emb=w.__copybookData__||{};
-    if(emb.poems&&emb.texts){ store.poems=emb.poems; store.texts=emb.texts; notify(); return; }
+    if(emb.poems&&emb.texts){ store.poems=emb.poems; store.texts=emb.texts; if(emb.englishWords) store.englishWords=emb.englishWords; if(emb.englishSentences) store.englishSentences=emb.englishSentences; notify(); return; }
     // 兜底：fetch 加载（需本地服务器）
     store.loading=true; store.error='';
     Promise.all([
       fetch('./data/poems-tang300.json').then(r=>{ if(!r.ok) throw new Error('poems '+r.status); return r.json(); }),
-      fetch('./data/texts-xiaoxue.json').then(r=>{ if(!r.ok) throw new Error('texts '+r.status); return r.json(); })
-    ]).then(([poems,texts])=>{
-      store.poems=poems||[]; store.texts=texts||[]; store.loading=false; notify();
+      fetch('./data/texts-xiaoxue.json').then(r=>{ if(!r.ok) throw new Error('texts '+r.status); return r.json(); }),
+      fetch('./data/english-words.json').then(r=>{ if(!r.ok) throw new Error('enwords '+r.status); return r.json(); }).catch(()=>null),
+      fetch('./data/english-sentences.json').then(r=>{ if(!r.ok) throw new Error('ensent '+r.status); return r.json(); }).catch(()=>null)
+    ]).then(([poems,texts,enWords,enSent])=>{
+      store.poems=poems||[]; store.texts=texts||[]; store.englishWords=enWords||null; store.englishSentences=enSent||null; store.loading=false; notify();
     }).catch(e=>{
       store.error='数据加载失败'; store.loading=false; notify();
     });
@@ -38,6 +40,10 @@
     const arr=store.texts||[]; const s=(q||'').trim();
     return arr.filter(t=> (grade==='全部'||t.grade===grade) && (!s || t.title.includes(s) || t.paragraphs.some(p=>p.includes(s))) );
   }
+  function searchEnglish(type,q,grade,unit){
+    const arr= type==='word'?(store.englishWords||[]):(store.englishSentences||[]); const s=(q||'').trim();
+    return arr.filter(x=> (grade==='全部'||x.g===grade) && (unit==='全部'||x.u===unit) && (!s || (type==='word'?(x.w.toLowerCase().includes(s.toLowerCase())||(x.t||'').includes(s)):x.en.toLowerCase().includes(s.toLowerCase()))) );
+  }
 
   // ---------- UI 组件 ----------
   function snippet(str,n){ str=(str||'').replace(/\s+/g,''); return str.length>n?str.slice(0,n)+'…':str; }
@@ -52,10 +58,17 @@
     const [sel,setSel]=useState(null);             // 选中的条目
     const [checked,setChecked]=useState([]);       // 课文段落勾选
     const [includeTitle,setIncludeTitle]=useState(true);
-
+    // -- 英语 --
+    const [engType,setEngType]=useState('word');
+    const [engGrade,setEngGrade]=useState('全部');
+    const [engUnit,setEngUnit]=useState('全部');
+    const [engSel,setEngSel]=useState({});
+    const enGradeGrades=[...new Set((st.englishWords||[]).map(x=>x.g))].sort((a,b)=>GRADES.indexOf(a)-GRADES.indexOf(b));
+    const enUnits=[...new Set([].concat(engType==='word'?(st.englishWords||[]):(st.englishSentences||[])).map(x=>x.u))].filter(Boolean).sort();
     const poemResults=useMemo(()=>searchPoems(query).slice(0,100),[query,st.poems]);
     const textResults=useMemo(()=>searchTexts(query,grade).slice(0,100),[query,grade,st.texts]);
-    const results= tab==='poem'?poemResults:textResults;
+    const engResults=useMemo(()=>searchEnglish(engType,query,engGrade,engUnit).slice(0,150),[engType,query,engGrade,engUnit,st.englishWords,st.englishSentences]);
+    const results= tab==='poem'?poemResults:tab==='text'?textResults:[]; // english uses multi-select list separately
 
     function pick(item){
       setSel(item);
@@ -73,8 +86,14 @@
       const head= includeTitle ? [sel.title] : [];
       return { mode:'多句', layout:'文章格式', text: head.concat(paras).join('\n') };
     }
+    function buildEngText(){
+      const arr=engType==='word'?(st.englishWords||[]):(st.englishSentences||[]);
+      const items=arr.filter(x=>engSel[x.id]);
+      if(!items.length) return null;
+      return { mode:'多句', layout:'英文格式', text: items.map(x=>engType==='word'?x.w:x.en).join('\n') };
+    }
     function insert(append){
-      const r=buildText(); if(!r) return;
+      const r= tab==='english'?buildEngText():buildText(); if(!r) return;
       props.onInsert(r.mode, r.text, append, r.layout);
     }
 
@@ -87,7 +106,8 @@
       open?E('div',{className:'p-2 pt-0'},
         E('div',{className:'btn-group btn-group-sm mb-2',role:'group'},
           E('button',{type:'button',className:'btn '+(tab==='poem'?'btn-primary':'btn-outline-primary'),onClick:()=>{setTab('poem');setSel(null);}},`唐诗三百首（${(st.poems||[]).length}）`),
-          E('button',{type:'button',className:'btn '+(tab==='text'?'btn-primary':'btn-outline-primary'),onClick:()=>{setTab('text');setSel(null);}},`小学语文课文（${(st.texts||[]).length}）`)
+          E('button',{type:'button',className:'btn '+(tab==='text'?'btn-primary':'btn-outline-primary'),onClick:()=>{setTab('text');setSel(null);}},`小学语文课文（${(st.texts||[]).length}）`),
+          E('button',{type:'button',className:'btn '+(tab==='english'?'btn-primary':'btn-outline-primary'),onClick:()=>{setTab('english');setSel(null);}},(st.englishWords||[]).length?`小学英语（${(st.englishWords||[]).length}词/${(st.englishSentences||[]).length}句）`:'小学英语')
         ),
         E('div',{className:'row g-2 mb-2'},
           E('div',{className: tab==='text'?'col-8':'col-12'},
@@ -140,10 +160,56 @@
             E('button',{className:'btn btn-sm btn-success',type:'button',onClick:()=>insert(false)},'覆盖到字帖'),
             E('button',{className:'btn btn-sm btn-outline-success',type:'button',onClick:()=>insert(true)},'追加到字帖（新起一页）')
           )
+        ):null,
+        // -- 小学英语多选面板 --
+        tab==='english'?E('div',null,
+          E('div',{className:'row g-2 mb-1'},
+            E('div',{className:'col-4'},
+              E('select',{className:'form-select form-select-sm',value:engType,onChange:e=>{setEngType(e.target.value);setEngSel({});},'aria-label':'单词/句子'},
+                ['word','sentence'].map(v=>E('option',{key:v,value:v},v==='word'?'单词':'句子'))
+              )
+            ),
+            E('div',{className:'col-4'},
+              E('select',{className:'form-select form-select-sm',value:engGrade,onChange:e=>{setEngGrade(e.target.value);setEngSel({});},'aria-label':'年级'},
+                ['全部'].concat(enGradeGrades).map(g=>E('option',{key:g,value:g},g))
+              )
+            ),
+            E('div',{className:'col-4'},
+              E('select',{className:'form-select form-select-sm',value:engUnit,onChange:e=>{setEngUnit(e.target.value);setEngSel({});},'aria-label':'单元'},
+                ['全部'].concat(enUnits).map(u=>E('option',{key:u,value:u},u.replace('Unit ','U')))
+              )
+            )
+          ),
+          E('input',{className:'form-control form-control-sm mb-1',placeholder:engType==='word'?'搜索：英文 / 中文，如「apple」「苹果」':'搜索句子，如「Hello」',value:query,onChange:e=>setQuery(e.target.value),'aria-label':'搜索英语'}),
+          E('div',{className:'d-flex justify-content-between align-items-center mb-1 small'},
+            E('div',null,
+              E('button',{className:'btn btn-sm btn-link p-0 me-2',type:'button',onClick:()=>{setEngSel({});setQuery('');}},'重置'),
+              E('button',{className:'btn btn-sm btn-link p-0 me-2',type:'button',onClick:()=>{const m={};engResults.forEach(x=>{m[x.id]=true;});setEngSel(m);}},'全选结果'),
+              E('button',{className:'btn btn-sm btn-link p-0',type:'button',onClick:()=>setEngSel({})},'清空')
+            ),
+            E('span',{className:'text-muted'},engResults.length+' 条，已选 '+Object.keys(engSel).length)
+          ),
+          E('div',{className:'list-group',style:{maxHeight:'200px',overflowY:'auto'}},
+            engResults.length===0&&st.englishWords?E('div',{className:'list-group-item legend'},'无匹配结果'):null,
+            engResults.map(item=>{
+              const ckd=!!engSel[item.id];
+              return E('div',{key:item.id,className:'list-group-item list-group-item-action py-1 px-2'+(ckd?' active':''),style:{cursor:'pointer'},onClick:()=>setEngSel(s=>({...s,[item.id]:!s[item.id]}))},
+                E('div',{className:'d-flex justify-content-between align-items-center'},
+                  E('span',{className:'fw-semibold'},item.w||item.en),
+                  E('small',null,(engType==='word'?(item.t||''):'')+' '+(item.g||'')+(item.u?' '+item.u.replace('Unit ','U'):''))
+                ),
+                engType==='sentence'?null:E('small',{className:ckd?'':'text-muted'},item.t||'')
+              );
+            })
+          ),
+          E('div',{className:'mt-2 d-flex gap-2 flex-wrap'},
+            E('button',{className:'btn btn-sm btn-success',type:'button',onClick:()=>insert(false),disabled:Object.keys(engSel).length===0},'覆盖到字帖'),
+            E('button',{className:'btn btn-sm btn-outline-success',type:'button',onClick:()=>insert(true),disabled:Object.keys(engSel).length===0},'追加到字帖（新起一页）')
+          )
         ):null
       ):null
     );
   }
 
-  w.__copybook__.library={ load, searchPoems, searchTexts, GRADES, LibraryPanel };
+  w.__copybook__.library={ load, searchPoems, searchTexts, searchEnglish, GRADES, LibraryPanel };
 })();

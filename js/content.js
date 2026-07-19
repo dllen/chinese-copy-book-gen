@@ -32,8 +32,29 @@
     const pad=[]; for(let i=0;i<left;i++) pad.push('');
     return [pad.concat(cs)];
   }
-  // kind: '古诗格式' | '文章格式'；text 按 \n 分行。返回 { pages:[cells] }，cells 已按 cols 对齐补齐
+  // 英文格式：单词间空一格；按词换行（不拆词）；每个输入行另起一行；空输入行=空一行
+  function layoutEnglish(text,cols){
+    const out=[];
+    (text||'').split('\n').forEach(raw=>{
+      const s=raw.trim();
+      if(!s){ out.push([]); return; }
+      let cur=[];
+      s.split(/\s+/).filter(Boolean).forEach(wd=>{
+        const wcs=Array.from(wd);
+        if(cur.length===0) cur=wcs.slice();
+        else if(cur.length+1+wcs.length<=cols){ cur.push(''); cur=cur.concat(wcs); }
+        else { out.push(cur); cur=wcs.slice(); }
+        while(cur.length>cols){ out.push(cur.slice(0,cols)); cur=cur.slice(cols); } // 超长词硬换行
+      });
+      if(cur.length) out.push(cur);
+    });
+    const cells=[];
+    out.forEach(l=>{ cells.push.apply(cells,l); const n=l.length===0?cols:(l.length%cols===0?0:cols-l.length%cols); for(let i=0;i<n;i++) cells.push(''); });
+    return { pages:[cells] };
+  }
+  // kind: '古诗格式' | '文章格式' | '英文格式'；text 按 \n 分行。返回 { pages:[cells] }，cells 已按 cols 对齐补齐
   function layoutDocument(kind,text,cols){
+    if(kind==='英文格式') return layoutEnglish(text,cols);
     const raw=(text||'').split('\n').map(s=>s.trim()).filter(s=>s.length>0);
     let out=[];
     if(kind==='古诗格式'){
@@ -58,5 +79,5 @@
     return { pages:[cells] };
   }
   function sampleRandom(pool,n,noRepeat){ if(pool.length===0) return ''; const cnt=Math.max(1,Math.min(n, noRepeat?pool.length:n)); if(noRepeat){ const shuffled=pool.slice(); for(let i=shuffled.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]]; } return shuffled.slice(0,cnt).join(''); } else { let out=''; for(let i=0;i<cnt;i++){ out+=pool[Math.floor(Math.random()*pool.length)]; } return out; } }
-  w.__copybook__.content={ splitInput, toCells, paginate, sampleRandom, layoutDocument, wrapFlow, centerLine };
+  w.__copybook__.content={ splitInput, toCells, paginate, sampleRandom, layoutDocument, layoutEnglish, wrapFlow, centerLine };
 })();

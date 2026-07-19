@@ -120,7 +120,8 @@
     function exportPDF(){ const cp=window.__copybook__||{}; if(cp.exporting&&cp.exporting.exportPDF){ cp.exporting.exportPDF(paper); } else { const opt={ margin:0, filename:'字帖.pdf', image:{ type:'jpeg', quality:0.98 }, html2canvas:{ scale:4 }, jsPDF:{ unit:'mm', format: paper.indexOf('横版')>-1?'a4':'a4', orientation: paper.indexOf('横版')>-1?'landscape':'portrait' } }; const node=document.querySelectorAll('.page'); const container=document.createElement('div'); node.forEach(n=>container.appendChild(n.cloneNode(true))); html2pdf().from(container).set(opt).save(); } }
     function exportImage(){ const cp=window.__copybook__||{}; if(cp.exporting&&cp.exporting.exportImage){ cp.exporting.exportImage(); } else { const node=document.querySelectorAll('.page'); const container=document.createElement('div'); node.forEach(n=>container.appendChild(n.cloneNode(true))); html2pdf().from(container).toImg().save('字帖.png'); } }
     function fillRandom(overwrite){ const s=window.__copybook__.content.sampleRandom(commonChars,randCount,randNoRepeat); if(!s) return; if(overwrite){ setText(s); } else { setText(prev=> (prev||'')+s); } }
-    function insertFromLibrary(m,t,append,layoutKind){ if(layoutKind) setLayout(layoutKind); setMode(m); setVariant(m); if(append){ setText(prev=>{ const p=(prev||'').trim(); if(!p) return t; const sep= layoutKind? '\n' : (m==='多句'?'|':''); return p+sep+t; }); } else { setText(t); } }
+    function engFont(style){ return style==='手写体' ? "'Comic Sans MS','Chalkboard SE','Segoe Script',cursive" : "'Arial','Helvetica Neue','Helvetica',sans-serif"; }
+    function insertFromLibrary(m,t,append,layoutKind){ if(layoutKind){ setLayout(layoutKind); if(layoutKind==='英文格式'){ setGridType('四线三格'); setCols(c=>Math.max(c,10)); } } setMode(m); setVariant(m); if(append){ setText(prev=>{ const p=(prev||'').trim(); if(!p) return t; const sep= layoutKind? '\n' : (m==='多句'?'|':''); return p+sep+t; }); } else { setText(t); } }
     
 
     return React.createElement('div',{ className:'container py-3' },
@@ -139,10 +140,17 @@
                 feature==='字帖模板'?React.createElement('div',{ className:'mb-2' },
                   React.createElement('label',{ className:'form-label', htmlFor:'layout' },'排版格式'),
                   React.createElement('select',{ id:'layout', className:'form-select', value:layout, onChange:e=>setLayout(e.target.value), 'aria-label':'排版格式' },
-                    ['连续排列','古诗格式','文章格式'].map(v=>React.createElement('option',{ key:v, value:v },v))
+                    ['连续排列','古诗格式','文章格式','英文格式'].map(v=>React.createElement('option',{ key:v, value:v },v))
                   ),
                   layout==='古诗格式'?React.createElement('div',{ className:'form-text' },'无标点的短行（标题、作者）自动居中；诗句按标点分行居中。'):null,
-                  layout==='文章格式'?React.createElement('div',{ className:'form-text' },'首行为标题（居中）；其余每行为一段，段首缩进两格；标点自动避头尾。'):null
+                  layout==='文章格式'?React.createElement('div',{ className:'form-text' },'首行为标题（居中）；其余每行为一段，段首缩进两格；标点自动避头尾。'):null,
+                  layout==='英文格式'?React.createElement('div',{ className:'form-text' },'按词换行（不拆词），词间一格；每个输入行另起一行，空行留空行。自动使用四线三格，建议 10 列以上。'):null
+                ):null,
+                layout==='英文格式'?React.createElement('div',{ className:'mb-2' },
+                  React.createElement('label',{ className:'form-label', htmlFor:'letterStyle' },'英文字体'),
+                  React.createElement('select',{ id:'letterStyle', className:'form-select', value:letterStyle, onChange:e=>setLetterStyle(e.target.value) },
+                    ['印刷体','手写体'].map(v=>React.createElement('option',{ key:v, value:v },v))
+                  )
                 ):null,
                 feature==='字帖模板'&&layout==='连续排列'?React.createElement('div',{ className:'mb-2' },
                   React.createElement('label',{ className:'form-label', htmlFor:'mode' },'文本类型'),
@@ -385,7 +393,7 @@
         pages.map((page,i)=>React.createElement('div',{ key:i, className:'page' },
           header?React.createElement('div',{ className:'header' },header):null,
           React.createElement('div',{ className:'grid', style:{ gridTemplateColumns:`repeat(${cols}, var(--cell-size))` } },
-            page.map((ch,idx)=>React.createElement(Cell,{ key:idx, ch: ch==='\n'?'':ch, bg:bg, textColor:tColor, strokeMode, font: feature==='数字字母'?(letterStyle==='印刷体'?'monospace':'cursive'):font, fontSize, showGuide: feature==='数字字母' && showGuide }))
+            page.map((ch,idx)=>React.createElement(Cell,{ key:idx, ch: ch==='\n'?'':ch, bg:bg, textColor:tColor, strokeMode, font: layout==='英文格式'?engFont(letterStyle):feature==='数字字母'?(letterStyle==='印刷体'?'monospace':'cursive'):font, fontSize, showGuide: feature==='数字字母' && showGuide }))
           )
         ))
       )
