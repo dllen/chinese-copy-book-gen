@@ -1,3 +1,2 @@
-.build/
-/relation.zip
-/word_translation.csv
+relation_book_word.csv
+.superpowers/
