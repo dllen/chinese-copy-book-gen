@@ -1,10 +1,21 @@
 (function(){
   const { useState, useEffect, useMemo } = React;
 
-  function toHex(c){ if(!c) return '#000000'; const m=c.match(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i); if(m) return c; const map={绿色:'#198754',黑色:'#000000',红色:'#dc3545'}; return map[c]||'#000000'; }
+  function toHex(c){ if(!c) return '#000000'; const m=c.match(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i); if(m) return c; const map={绿色:'#198754',黑色:'#000000',红色:'#dc3545',白色:'#ffffff',透明:'transparent',米色:'#f5f5dc',淡蓝:'#e3f2fd',淡绿:'#e8f5e9',浅灰:'#f5f5f5',蓝色:'#007bff',紫色:'#6f42c1'}; return map[c]||'#000000'; }
+
+  function debounce(fn, delay){
+    let timer = null;
+    return function(...args){
+      clearTimeout(timer);
+      timer = setTimeout(() => fn.apply(this, args), delay);
+    };
+  }
+
   function strokeLevel(level,textColor){ const map={'非常深':1,'深':0.9,'较深':0.8,'略浅':0.6,'适中':0.5,'非常浅':0.35,'白色（不可见）':0,'空芯':'outline'}; const v=map[level]??0.5; if(v==='outline') return { color:'transparent', WebkitTextStroke:`1px ${textColor}` }; return { opacity:String(v), color:textColor, WebkitTextStroke:'0' }; }
   function fontByTemplate(t,custom){ if(t==='楷书') return `'STKaiti','KaiTi','Kaiti SC','AR PL KaitiM GB',serif`; if(t==='行书') return `'Hiragino Sans GB','KaiTi','Kaiti SC',serif`; if(t==='草书') return `'CaoShu','KaiTi','Kaiti SC',serif`; if(t==='隶书') return `'LiSu','KaiTi','Kaiti SC',serif`; if(t==='庞中华') return `'PangZhongHuaKaiTi','PangZhongHua',serif`; if(t==='田英章') return `'TianYingZhangKaiTi','TianYingZhang',serif`; if(t==='自定义') return custom||'serif'; return 'serif'; }
-  function svgDataURL(type,size,color){ const s=size,c=color; if(type==='无格') return ''; const w=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--grid-stroke-width')||'1'); if(type==='田字格'){ const svg=`<svg xmlns='http://www.w3.org/2000/svg' width='${s}' height='${s}' shape-rendering='crispEdges'>`+`<rect x='0.5' y='0.5' width='${s-1}' height='${s-1}' fill='none' stroke='${c}' stroke-width='${w}'/>`+`<line x1='${s/2}' y1='1' x2='${s/2}' y2='${s-1}' stroke='${c}' stroke-width='${w}'/>`+`<line x1='1' y1='${s/2}' x2='${s-1}' y2='${s/2}' stroke='${c}' stroke-width='${w}'/>`+`</svg>`; return `url("data:image/svg+xml;utf8,${encodeURIComponent(svg)}")`; } if(type==='米字格'){ const svg=`<svg xmlns='http://www.w3.org/2000/svg' width='${s}' height='${s}' shape-rendering='crispEdges'>`+`<rect x='0.5' y='0.5' width='${s-1}' height='${s-1}' fill='none' stroke='${c}' stroke-width='${w}'/>`+`<line x1='${s/2}' y1='1' x2='${s/2}' y2='${s-1}' stroke='${c}' stroke-width='${w}'/>`+`<line x1='1' y1='${s/2}' x2='${s-1}' y2='${s/2}' stroke='${c}' stroke-width='${w}'/>`+`<line x1='1' y1='1' x2='${s-1}' y2='${s-1}' stroke='${c}' stroke-width='${w}'/>`+`<line x1='${s-1}' y1='1' x2='1' y2='${s-1}' stroke='${c}' stroke-width='${w}'/>`+`</svg>`; return `url("data:image/svg+xml;utf8,${encodeURIComponent(svg)}")`; } if(type==='回宫格'){ const inner=Math.round(s*0.6),offset=(s-inner)/2; const svg=`<svg xmlns='http://www.w3.org/2000/svg' width='${s}' height='${s}' shape-rendering='crispEdges'>`+`<rect x='0.5' y='0.5' width='${s-1}' height='${s-1}' fill='none' stroke='${c}' stroke-width='${w}'/>`+`<rect x='${offset}' y='${offset}' width='${inner}' height='${inner}' fill='none' stroke='${c}' stroke-width='${w}'/>`+`<line x1='${s/2}' y1='1' x2='${s/2}' y2='${s-1}' stroke='${c}' stroke-width='${w}'/>`+`<line x1='1' y1='${s/2}' x2='${s-1}' y2='${s/2}' stroke='${c}' stroke-width='${w}'/>`+`</svg>`; return `url("data:image/svg+xml;utf8,${encodeURIComponent(svg)}")`; } if(type==='四线三格'){ const cs=getComputedStyle(document.documentElement); const y1=Math.round(s*parseFloat(cs.getPropertyValue('--fourline-y1')||'0.25')); const y2=Math.round(s*parseFloat(cs.getPropertyValue('--fourline-y2')||'0.50')); const y3=Math.round(s*parseFloat(cs.getPropertyValue('--fourline-y3')||'0.75')); const y4=Math.round(s*parseFloat(cs.getPropertyValue('--fourline-y4')||'0.92')); const dash=` stroke-dasharray='4,4'`; const svg=`<svg xmlns='http://www.w3.org/2000/svg' width='${s}' height='${s}' shape-rendering='crispEdges'>`+`<line x1='0' y1='${y1}' x2='${s}' y2='${y1}' stroke='${c}' stroke-width='${w}'${dash}/>`+`<line x1='0' y1='${y2}' x2='${s}' y2='${y2}' stroke='${c}' stroke-width='${w}'${dash}/>`+`<line x1='0' y1='${y3}' x2='${s}' y2='${y3}' stroke='${c}' stroke-width='${w}'/>`+`<line x1='0' y1='${y4}' x2='${s}' y2='${y4}' stroke='${c}' stroke-width='${w}'${dash}/>`+`</svg>`; return `url("data:image/svg+xml;utf8,${encodeURIComponent(svg)}")`; } return ''; }
+
+  function svgDataURL(type,size,color){ const s=size,c=color; if(type==='无格') return ''; const w=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--grid-stroke-width')||'1'); const dashMap={'实线':'','虚线':` stroke-dasharray='5,2'`,'点线':` stroke-dasharray='1,4'`,'点划线':` stroke-dasharray='5,2,1,2'`}; if(type==='田字格'){ const dash=dashMap[lineStyle]||''; const svg=`<svg xmlns='http://www.w3.org/2000/svg' width='${s}' height='${s}' shape-rendering='crispEdges'>`+`<rect x='0.5' y='0.5' width='${s-1}' height='${s-1}' fill='none' stroke='${c}' stroke-width='${w}'${dash}/>`+`<line x1='${s/2}' y1='1' x2='${s/2}' y2='${s-1}' stroke='${c}' stroke-width='${w}'${dash}/>`+`<line x1='1' y1='${s/2}' x2='${s-1}' y2='${s/2}' stroke='${c}' stroke-width='${w}'${dash}/>`+`</svg>`; return `url("data:image/svg+xml;utf8,${encodeURIComponent(svg)}")`; } if(type==='米字格'){ const dash=dashMap[lineStyle]||''; const svg=`<svg xmlns='http://www.w3.org/2000/svg' width='${s}' height='${s}' shape-rendering='crispEdges'>`+`<rect x='0.5' y='0.5' width='${s-1}' height='${s-1}' fill='none' stroke='${c}' stroke-width='${w}'${dash}/>`+`<line x1='${s/2}' y1='1' x2='${s/2}' y2='${s-1}' stroke='${c}' stroke-width='${w}'${dash}/>`+`<line x1='1' y1='${s/2}' x2='${s-1}' y2='${s/2}' stroke='${c}' stroke-width='${w}'${dash}/>`+`<line x1='1' y1='1' x2='${s-1}' y2='${s-1}' stroke='${c}' stroke-width='${w}'${dash}/>`+`<line x1='${s-1}' y1='1' x2='1' y2='${s-1}' stroke='${c}' stroke-width='${w}'${dash}/>`+`</svg>`; return `url("data:image/svg+xml;utf8,${encodeURIComponent(svg)}")`; } if(type==='回宫格'){ const inner=Math.round(s*0.6),offset=(s-inner)/2; const dash=dashMap[lineStyle]||''; const svg=`<svg xmlns='http://www.w3.org/2000/svg' width='${s}' height='${s}' shape-rendering='crispEdges'>`+`<rect x='0.5' y='0.5' width='${s-1}' height='${s-1}' fill='none' stroke='${c}' stroke-width='${w}'${dash}/>`+`<rect x='${offset}' y='${offset}' width='${inner}' height='${inner}' fill='none' stroke='${c}' stroke-width='${w}'${dash}/>`+`<line x1='${s/2}' y1='1' x2='${s/2}' y2='${s-1}' stroke='${c}' stroke-width='${w}'${dash}/>`+`<line x1='1' y1='${s/2}' x2='${s-1}' y2='${s/2}' stroke='${c}' stroke-width='${w}'${dash}/>`+`</svg>`; return `url("data:image/svg+xml;utf8,${encodeURIComponent(svg)}")`; } if(type==='四线三格'){ const cs=getComputedStyle(document.documentElement); const y1=Math.round(s*parseFloat(cs.getPropertyValue('--fourline-y1')||'0.25')); const y2=Math.round(s*parseFloat(cs.getPropertyValue('--fourline-y2')||'0.50')); const y3=Math.round(s*parseFloat(cs.getPropertyValue('--fourline-y3')||'0.75')); const y4=Math.round(s*parseFloat(cs.getPropertyValue('--fourline-y4')||'0.92')); const don=cs.getPropertyValue('--fourline-dash-on')||'5'; const doff=cs.getPropertyValue('--fourline-dash-off')||'2'; const dash=` stroke-dasharray='${don.trim()},${doff.trim()}'`; const svg=`<svg xmlns='http://www.w3.org/2000/svg' width='${s}' height='${s}' shape-rendering='crispEdges'>`+`<line x1='0' y1='${y1}' x2='${s}' y2='${y1}' stroke='${c}' stroke-width='${w}'${dash}/>`+`<line x1='0' y1='${y2}' x2='${s}' y2='${y2}' stroke='${c}' stroke-width='${w}'${dash}/>`+`<line x1='0' y1='${y3}' x2='${s}' y2='${y3}' stroke='${c}' stroke-width='${w}'/>`+`<line x1='0' y1='${y4}' x2='${s}' y2='${y4}' stroke='${c}' stroke-width='${w}'${dash}/>`+`</svg>`; return `url("data:image/svg+xml;utf8,${encodeURIComponent(svg)}")`; } return ''; }
+
   function splitInput(mode,text){ const t=(text||'').trim(); if(mode==='多字') return Array.from(t); if(mode==='多词'){ const arr=t.replace(/，/g,',').split(/[\|\s,]+/).filter(Boolean); return arr; } if(mode==='多句'){ const pages=t.split('|').map(s=>s.trim()).filter(Boolean); return pages.map(p=>p.split(/(?<=[。！？!?.])/).filter(Boolean)); } if(mode==='文章'){ return Array.from(t.replace(/\s+/g,'')); } return []; }
   function toCells(mode,text,variant){ if(mode==='多句'){ const pages=splitInput(mode,text); const flat=pages.map(pg=>{ const lineCells=[]; pg.forEach(sentence=>{ Array.from(sentence).forEach(ch=>lineCells.push(ch)); if(variant.includes('+1行')) lineCells.push('\n'); if(variant.includes('+1空行')) lineCells.push(''); }); return lineCells; }); return { pages: flat }; } const base=splitInput(mode,text); const cells=[]; if(mode==='多词'){ base.forEach(w=>{ Array.from(w).forEach(c=>cells.push(c)); if(variant.includes('+1行')) cells.push('\n'); if(variant.includes('+1空行')) cells.push(''); }); } else { base.forEach(c=>cells.push(c)); if(variant.includes('+1空行')) cells.push(''); } return { pages:[cells] }; }
   function paginate(cellsByPage,rows,cols,fillLast){ const pages=[]; cellsByPage.forEach(list=>{ const cap=rows*cols; let chunk=list.slice(); while(chunk.length>0){ const page=chunk.splice(0,cap); if(fillLast && page.length<cap){ while(page.length<cap) page.push(''); } pages.push(page); } }); return pages; }
@@ -39,12 +50,39 @@
     );
   }
 
+
+  function ConfigSummary({gridType, gridColor, stylePreset, rows, cols, cellSize, fontSize}){
+    const summary = [
+      { label: '格子', value: gridType },
+      { label: '颜色', value: gridColor },
+      { label: '预设', value: stylePreset },
+      { label: '尺寸', value: `${cols}×${rows}格` },
+      { label: '格子大小', value: `${cellSize}px` },
+      { label: '字体', value: `${fontSize}px` }
+    ].filter(item => item.value).map(item =>
+      React.createElement('span',{className:'badge bg-secondary me-1 mb-1'},
+        `${item.label}: ${item.value}`
+      )
+    );
+    return React.createElement('div',{className:'config-summary mt-2 p-2 bg-light rounded'},
+      React.createElement('small',{className:'text-muted'},'当前配置：'),
+      React.createElement('div',{className:'mt-1'},...summary)
+    );
+  }
+
   function App(){
     const [commonChars,setCommonChars]=useState([]);
     const [previewScale,setPreviewScale]=useState(1);
     const [stylePreset,setStylePreset]=useState('四线三格标准');
     const [autoLayout,setAutoLayout]=useState(true);
     const [gridStrokeWidth,setGridStrokeWidth]=useState(1);
+    const [lineStyle,setLineStyle]=useState('实线'); // 实线/虚线/点线/点划线
+    const [cellRadius,setCellRadius]=useState(0); // 格子圆角
+    const [pageBg,setPageBg]=useState('白色'); // 页面背景
+    const [cellBg,setCellBg]=useState('透明'); // 格子填充
+    const [cellBorder,setCellBorder]=useState(false); // 格子边框
+    const [textShadow,setTextShadow]=useState(false); // 文字阴影
+    const [textStroke,setTextStroke]=useState('无'); // 文字描边
     const [feature,setFeature]=useState('字帖模板');
     const [difficulty,setDifficulty]=useState('初级');
     const [showGuide,setShowGuide]=useState(false);
@@ -64,6 +102,8 @@
     const [text,setText]=useState('');
     const [gridType,setGridType]=useState('田字格');
     const [gridColor,setGridColor]=useState('绿色');
+    const [customGridColor,setCustomGridColor]=useState('');
+    const [customTextColor,setCustomTextColor]=useState('');
     const [textColorOpt,setTextColorOpt]=useState('黑色');
     const [strokeMode,setStrokeMode]=useState('适中');
     const [tailFill,setTailFill]=useState(true);
@@ -83,8 +123,8 @@
     const [randCount,setRandCount]=useState(50);
     const [randNoRepeat,setRandNoRepeat]=useState(true);
 
-    useEffect(()=>{ const saved=localStorage.getItem('copybook.settings'); if(saved){ try{ const s=JSON.parse(saved); Object.entries(s).forEach(([k,v])=>{ if(v!==undefined) switch(k){ case 'mode':setMode(v);break; case 'variant':setVariant(v);break; case 'layout':setLayout(v);break; case 'gridType':setGridType(v);break; case 'gridColor':setGridColor(v);break; case 'textColorOpt':setTextColorOpt(v);break; case 'strokeMode':setStrokeMode(v);break; case 'tailFill':setTailFill(v);break; case 'template':setTemplate(v);break; case 'customFont':setCustomFont(v);break; case 'rows':setRows(v);break; case 'cols':setCols(v);break; case 'cellSize':setCellSize(v);break; case 'gridGap':setGridGap(v);break; case 'fontSize':setFontSize(v);break; case 'marginTop':setMarginTop(v);break; case 'marginRight':setMarginRight(v);break; case 'marginBottom':setMarginBottom(v);break; case 'marginLeft':setMarginLeft(v);break; case 'paper':setPaper(v);break; case 'header':setHeader(v);break; case 'text':setText(v);break; case 'feature':setFeature(v);break; case 'difficulty':setDifficulty(v);break; case 'showGuide':setShowGuide(v);break; case 'letterStyle':setLetterStyle(v);break; case 'enBlankRows':setEnBlankRows(v);break; case 'enRepeat':setEnRepeat(v);break; case 'engShowZh':setEngShowZh(v);break; case 'previewScale':setPreviewScale(v);break; case 'stylePreset':setStylePreset(v);break; case 'autoLayout':setAutoLayout(v);break; case 'gridStrokeWidth':setGridStrokeWidth(v);break; case 'alnumIncludeDigits':setAlnumIncludeDigits(v);break; case 'alnumIncludeUpper':setAlnumIncludeUpper(v);break; case 'alnumIncludeLower':setAlnumIncludeLower(v);break; case 'alnumCount':setAlnumCount(v);break; case 'alnumNoRepeat':setAlnumNoRepeat(v);break; case 'alnumSeq':setAlnumSeq(v);break; } }); }catch(e){} } },[]);
-    useEffect(()=>{ const s={ mode,variant,layout,gridType,gridColor,textColorOpt,strokeMode,tailFill,template,customFont,rows,cols,cellSize,gridGap,fontSize,marginTop,marginRight,marginBottom,marginLeft,paper,header,text,randCount,randNoRepeat,previewScale,feature,difficulty,showGuide,letterStyle,enBlankRows,enRepeat,engShowZh,stylePreset,autoLayout,gridStrokeWidth,alnumIncludeDigits,alnumIncludeUpper,alnumIncludeLower,alnumCount,alnumNoRepeat,alnumSeq }; localStorage.setItem('copybook.settings', JSON.stringify(s)); },[mode,variant,layout,gridType,gridColor,textColorOpt,strokeMode,tailFill,template,customFont,rows,cols,cellSize,gridGap,fontSize,marginTop,marginRight,marginBottom,marginLeft,paper,header,text,randCount,randNoRepeat,previewScale,feature,difficulty,showGuide,letterStyle,enBlankRows,enRepeat,engShowZh,stylePreset,autoLayout,gridStrokeWidth,alnumIncludeDigits,alnumIncludeUpper,alnumIncludeLower,alnumCount,alnumNoRepeat,alnumSeq]);
+    useEffect(()=>{ const saved=localStorage.getItem('copybook.settings'); if(saved){ try{ const s=JSON.parse(saved); Object.entries(s).forEach(([k,v])=>{ if(v!==undefined) switch(k){ case 'mode':setMode(v);break; case 'variant':setVariant(v);break; case 'layout':setLayout(v);break; case 'gridType':setGridType(v);break; case 'gridColor':setGridColor(v);break; case 'customGridColor':setCustomGridColor(v);break; case 'customTextColor':setCustomTextColor(v);break; case 'textColorOpt':setTextColorOpt(v);break; case 'strokeMode':setStrokeMode(v);break; case 'tailFill':setTailFill(v);break; case 'template':setTemplate(v);break; case 'customFont':setCustomFont(v);break; case 'rows':setRows(v);break; case 'cols':setCols(v);break; case 'cellSize':setCellSize(v);break; case 'gridGap':setGridGap(v);break; case 'fontSize':setFontSize(v);break; case 'marginTop':setMarginTop(v);break; case 'marginRight':setMarginRight(v);break; case 'marginBottom':setMarginBottom(v);break; case 'marginLeft':setMarginLeft(v);break; case 'paper':setPaper(v);break; case 'header':setHeader(v);break; case 'text':setText(v);break; case 'feature':setFeature(v);break; case 'difficulty':setDifficulty(v);break; case 'showGuide':setShowGuide(v);break; case 'letterStyle':setLetterStyle(v);break; case 'enBlankRows':setEnBlankRows(v);break; case 'enRepeat':setEnRepeat(v);break; case 'engShowZh':setEngShowZh(v);break; case 'previewScale':setPreviewScale(v);break; case 'stylePreset':setStylePreset(v);break; case 'autoLayout':setAutoLayout(v);break; case 'gridStrokeWidth':setGridStrokeWidth(v);break; case 'lineStyle':setLineStyle(v);break; case 'cellRadius':setCellRadius(v);break; case 'pageBg':setPageBg(v);break; case 'cellBg':setCellBg(v);break; case 'cellBorder':setCellBorder(v);break; case 'textShadow':setTextShadow(v);break; case 'textStroke':setTextStroke(v);break; case 'alnumIncludeDigits':setAlnumIncludeDigits(v);break; case 'alnumIncludeUpper':setAlnumIncludeUpper(v);break; case 'alnumIncludeLower':setAlnumIncludeLower(v);break; case 'alnumCount':setAlnumCount(v);break; case 'alnumNoRepeat':setAlnumNoRepeat(v);break; case 'alnumSeq':setAlnumSeq(v);break; } }); }catch(e){} } },[]);
+    useEffect(()=>{ const s={ mode,variant,layout,gridType,gridColor,customGridColor,customTextColor,textColorOpt,strokeMode,tailFill,template,customFont,rows,cols,cellSize,gridGap,fontSize,marginTop,marginRight,marginBottom,marginLeft,paper,header,text,randCount,randNoRepeat,previewScale,feature,difficulty,showGuide,letterStyle,enBlankRows,enRepeat,engShowZh,stylePreset,autoLayout,gridStrokeWidth,lineStyle,cellRadius,pageBg,cellBg,cellBorder,textShadow,textStroke,alnumIncludeDigits,alnumIncludeUpper,alnumIncludeLower,alnumCount,alnumNoRepeat,alnumSeq }; localStorage.setItem('copybook.settings', JSON.stringify(s)); },[mode,variant,layout,gridType,gridColor,customGridColor,customTextColor,textColorOpt,strokeMode,tailFill,template,customFont,rows,cols,cellSize,gridGap,fontSize,marginTop,marginRight,marginBottom,marginLeft,paper,header,text,randCount,randNoRepeat,previewScale,feature,difficulty,showGuide,letterStyle,enBlankRows,enRepeat,engShowZh,stylePreset,autoLayout,gridStrokeWidth,lineStyle,cellRadius,pageBg,cellBg,cellBorder,textShadow,textStroke,alnumIncludeDigits,alnumIncludeUpper,alnumIncludeLower,alnumCount,alnumNoRepeat,alnumSeq]);
 
     useEffect(()=>{
       const emb=(window.__copybookData__||{}).commonChars;
@@ -105,24 +145,245 @@
     useEffect(()=>{ if(window.matchMedia && window.matchMedia('(max-width: 576px)').matches){ setPreviewScale(0.6); } },[]);
     useEffect(()=>{ if(feature==='数字字母'){ setGridType('四线三格'); if(!alnumSeq) genAlnum(); } },[feature]);
     useEffect(()=>{ document.documentElement.style.setProperty('--preview-scale', String(previewScale)); },[previewScale]);
-    const gColor=toHex(gridColor); const tColor=toHex(textColorOpt);
+    const gColor=useMemo(()=>{ const custom = customGridColor && /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(customGridColor) ? customGridColor : null; return custom || toHex(gridColor); },[gridColor,customGridColor]);
+    const tColor=useMemo(()=>{ const custom = customTextColor && /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(customTextColor) ? customTextColor : null; return custom || toHex(textColorOpt); },[textColorOpt,customTextColor]);
     const parsed=useMemo(()=>{ const cp=window.__copybook__||{}; if(feature==='控笔字帖'){ if(cp.features&&cp.features.buildControlPages) return cp.features.buildControlPages(difficulty); const basic=['一','丨','丿','丶','亅']; const mids=['氵','亻','讠','艹','月','女','口','木','火','土','日','目','田']; const adv=['永','德','善','爱','勇','强']; let pool=[]; if(difficulty==='初级') pool=basic; else if(difficulty==='中级') pool=mids; else pool=adv; const seq=[]; pool.forEach(c=>{ seq.push(c); seq.push(''); }); return { pages:[seq] }; } if(feature==='数字字母'){ const s=alnumSeq||''; return { pages:[Array.from(s)] }; } if(feature==='字帖模板'&&layout!=='连续排列'&&cp.content&&cp.content.layoutDocument) return cp.content.layoutDocument(layout,text,cols,{ blankRows:enBlankRows, repeat:enRepeat }); return (cp.content&&cp.content.toCells?cp.content.toCells(mode,text,variant):toCells(mode,text,variant)); },[feature,mode,text,variant,difficulty,alnumSeq,layout,cols,enBlankRows,enRepeat]);
     const pages=useMemo(()=>paginate(parsed.pages,rows,cols,tailFill),[parsed,rows,cols,tailFill]);
     const usage=useMemo(()=>{ const capacity=rows*cols*pages.length; let used=0; pages.forEach(pg=>pg.forEach(ch=>{ if(ch&&ch!=='\n') used++; })); const warn=pages.length>50; return { capacity, used, warn }; },[pages,rows,cols]);
     const bg=useMemo(()=>{ const cp=window.__copybook__||{}; return (cp.grid?cp.grid.svgDataURL(gridType,cellSize,gColor):svgDataURL(gridType,cellSize,gColor)); },[gridType,cellSize,gColor]);
-    useEffect(()=>{ const sz=pageSize(paper); document.documentElement.style.setProperty('--page-width', sz.w); document.documentElement.style.setProperty('--page-height', sz.h); document.documentElement.style.setProperty('--cell-size', `${cellSize}px`); document.documentElement.style.setProperty('--grid-gap', `${gridGap}px`); document.documentElement.style.setProperty('--grid-color', gColor); document.documentElement.style.setProperty('--text-color', tColor); document.documentElement.style.setProperty('--font-size', `${fontSize}px`); document.documentElement.style.setProperty('--page-margin-top', `${marginTop}mm`); document.documentElement.style.setProperty('--page-margin-right', `${marginRight}mm`); document.documentElement.style.setProperty('--page-margin-bottom', `${marginBottom}mm`); document.documentElement.style.setProperty('--page-margin-left', `${marginLeft}mm`); document.documentElement.style.setProperty('--guide-color', gColor); },[paper,cellSize,gridGap,gColor,tColor,fontSize,marginTop,marginRight,marginBottom,marginLeft]);
-    useEffect(()=>{ document.documentElement.style.setProperty('--grid-stroke-width', String(gridStrokeWidth)); },[gridStrokeWidth]);
+    useEffect(()=>{ const sz=pageSize(paper); document.documentElement.style.setProperty('--page-width', sz.w); document.documentElement.style.setProperty('--page-height', sz.h); document.documentElement.style.setProperty('--cell-size', `${cellSize}px`); document.documentElement.style.setProperty('--grid-gap', `${gridGap}px`); document.documentElement.style.setProperty('--grid-color', gColor); document.documentElement.style.setProperty('--text-color', tColor); document.documentElement.style.setProperty('--font-size', `${fontSize}px`); document.documentElement.style.setProperty('--page-margin-top', `${marginTop}mm`); document.documentElement.style.setProperty('--page-margin-right', `${marginRight}mm`); document.documentElement.style.setProperty('--page-margin-bottom', `${marginBottom}mm`); document.documentElement.style.setProperty('--page-margin-left', `${marginLeft}mm`); document.documentElement.style.setProperty('--guide-color', gColor); document.documentElement.style.setProperty('--page-bg', toHex(pageBg)||'#fff'); document.documentElement.style.setProperty('--cell-bg', toHex(cellBg)||'transparent'); document.documentElement.style.setProperty('--cell-border-width', cellBorder?'2px':'0px'); document.documentElement.style.setProperty('--cell-shadow', cellBorder?'0 2px 4px rgba(0,0,0,0.1)':'none'); document.documentElement.style.setProperty('--text-stroke-width', textStroke==='无'?'0px':textStroke==='细'?'0.5px':textStroke==='中'?'1px':'2px'); document.documentElement.style.setProperty('--text-shadow', textShadow?'2px 2px 4px rgba(0,0,0,0.3)':'none'); },[paper,cellSize,gridGap,gColor,tColor,fontSize,marginTop,marginRight,marginBottom,marginLeft,pageBg,cellBg,cellBorder,textShadow,textStroke]);
+    useEffect(()=>{ document.documentElement.style.setProperty('--grid-stroke-width', String(gridStrokeWidth)); document.documentElement.style.setProperty('--cell-radius', `${cellRadius}px`); },[gridStrokeWidth,cellRadius]);
     useEffect(()=>{ document.documentElement.style.setProperty('--en-descent', letterStyle==='手写体'?'0.286em':'0.238em'); },[letterStyle]);
-    useEffect(()=>{ if(stylePreset==='四线三格标准'){ document.documentElement.style.setProperty('--fourline-y1','0.25'); document.documentElement.style.setProperty('--fourline-y2','0.50'); document.documentElement.style.setProperty('--fourline-y3','0.75'); document.documentElement.style.setProperty('--fourline-y4','0.92'); setGridType('四线三格'); } else if(stylePreset==='四线三格宽间'){ document.documentElement.style.setProperty('--fourline-y1','0.20'); document.documentElement.style.setProperty('--fourline-y2','0.50'); document.documentElement.style.setProperty('--fourline-y3','0.80'); document.documentElement.style.setProperty('--fourline-y4','0.95'); setGridType('四线三格'); } else if(stylePreset==='田字格标准'){ setGridType('田字格'); } },[stylePreset]);
+    useEffect(()=>{ if(stylePreset==='四线三格标准'){ document.documentElement.style.setProperty('--fourline-y1','0.25'); document.documentElement.style.setProperty('--fourline-y2','0.50'); document.documentElement.style.setProperty('--fourline-y3','0.75'); document.documentElement.style.setProperty('--fourline-y4','0.92'); setGridType('四线三格'); } else if(stylePreset==='四线三格宽间'){ document.documentElement.style.setProperty('--fourline-y1','0.20'); document.documentElement.style.setProperty('--fourline-y2','0.50'); document.documentElement.style.setProperty('--fourline-y3','0.80'); document.documentElement.style.setProperty('--fourline-y4','0.95'); setGridType('四线三格'); } else if(stylePreset==='田字格标准'){ setGridType('田字格'); } else if(stylePreset==='米字格标准'){ setGridType('米字格'); } else if(stylePreset==='米字格宽间'){ setGridType('米字格'); } else if(stylePreset==='回宫格标准'){ setGridType('回宫格'); } else if(stylePreset==='回宫格宽间'){ setGridType('回宫格'); } else if(stylePreset==='现代简约'){ setGridType('田字格'); document.documentElement.style.setProperty('--cell-radius','4px'); document.documentElement.style.setProperty('--grid-stroke-width','0.5'); } else if(stylePreset==='儿童卡通'){ setGridType('田字格'); document.documentElement.style.setProperty('--cell-radius','8px'); document.documentElement.style.setProperty('--grid-stroke-width','2'); } },[stylePreset]);
     useEffect(()=>{ if(autoLayout && gridType==='四线三格'){ const s=(text||''); const upp=(s.match(/[A-Z]/g)||[]).length; const low=(s.match(/[a-z]/g)||[]).length; const dig=(s.match(/[0-9]/g)||[]).length; const total=Math.max(1, upp+low+dig); const ru=upp/total, rl=low/total, rd=dig/total; let y1='0.23', y2='0.50', y3='0.77', y4='0.94'; if(ru>0.5){ y1='0.20'; y3='0.80'; y4='0.96'; } else if(rl>0.5){ y1='0.25'; y3='0.75'; y4='0.92'; } else if(rd>0.5){ y1='0.22'; y3='0.78'; y4='0.95'; } document.documentElement.style.setProperty('--fourline-y1', y1); document.documentElement.style.setProperty('--fourline-y2','0.50'); document.documentElement.style.setProperty('--fourline-y3', y3); document.documentElement.style.setProperty('--fourline-y4', y4); } },[autoLayout,gridType,text]);
     const font=fontByTemplate(template,customFont);
     const v= layout!=='连续排列' ? ((text&&text.trim())?{ok:true,msg:''}:{ok:false,msg:'请输入内容'}) : validate(mode,text);
+
+
+
+    function resetConfig(){
+      if(!confirm('确定要重置所有设置到默认值吗？')) return;
+      localStorage.removeItem('copybook.settings');
+      window.location.reload();
+    }
+
+
+    function saveTemplate(){
+      const template = {
+        name: prompt('请输入模板名称：', '我的模板'),
+        createdAt: new Date().toISOString(),
+        config: {
+          gridType, gridColor, customGridColor, customTextColor, textColorOpt,
+          strokeMode, stylePreset, autoLayout, gridStrokeWidth, lineStyle,
+          cellRadius, pageBg, cellBg, cellBorder, textStroke, textShadow,
+          template, customFont, rows, cols, cellSize, gridGap, fontSize,
+          marginTop, marginRight, marginBottom, marginLeft, paper
+        },
+        content: {
+          mode, variant, layout, text
+        }
+      };
+      
+      if(!template.name) return;
+      
+      const blob = new Blob([JSON.stringify(template, null, 2)], {type: 'application/json'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${template.name}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function loadTemplate(e){
+      const file = e.target.files[0];
+      if(!file) return;
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        try {
+          const template = JSON.parse(event.target.result);
+          const config = template.config || {};
+          const content = template.content || {};
+          
+          // 应用配置
+          Object.entries(config).forEach(([k,v]) => {
+            if(v!==undefined) {
+              switch(k){
+                case 'gridType': setGridType(v); break;
+                case 'gridColor': setGridColor(v); break;
+                case 'customGridColor': setCustomGridColor(v); break;
+                case 'customTextColor': setCustomTextColor(v); break;
+                case 'textColorOpt': setTextColorOpt(v); break;
+                case 'strokeMode': setStrokeMode(v); break;
+                case 'stylePreset': setStylePreset(v); break;
+                case 'autoLayout': setAutoLayout(v); break;
+                case 'gridStrokeWidth': setGridStrokeWidth(v); break;
+                case 'lineStyle': setLineStyle(v); break;
+                case 'cellRadius': setCellRadius(v); break;
+                case 'pageBg': setPageBg(v); break;
+                case 'cellBg': setCellBg(v); break;
+                case 'cellBorder': setCellBorder(v); break;
+                case 'textStroke': setTextStroke(v); break;
+                case 'textShadow': setTextShadow(v); break;
+                case 'template': setTemplate(v); break;
+                case 'customFont': setCustomFont(v); break;
+                case 'rows': setRows(v); break;
+                case 'cols': setCols(v); break;
+                case 'cellSize': setCellSize(v); break;
+                case 'gridGap': setGridGap(v); break;
+                case 'fontSize': setFontSize(v); break;
+                case 'marginTop': setMarginTop(v); break;
+                case 'marginRight': setMarginRight(v); break;
+                case 'marginBottom': setMarginBottom(v); break;
+                case 'marginLeft': setMarginLeft(v); break;
+                case 'paper': setPaper(v); break;
+              }
+            }
+          });
+          
+          // 应用内容
+          if(content.mode) setMode(content.mode);
+          if(content.variant) setVariant(content.variant);
+          if(content.layout) setLayout(content.layout);
+          if(content.text) setText(content.text);
+          
+          alert(`模板"${template.name || '未命名'}"加载成功！`);
+        } catch(err) {
+          alert('模板加载失败：' + err.message);
+        }
+      };
+      reader.readAsText(file);
+    }
+
+
+      const config = {
+        gridType, gridColor, customGridColor, customTextColor, textColorOpt,
+        strokeMode, stylePreset, autoLayout, gridStrokeWidth, lineStyle,
+        cellRadius, pageBg, cellBg, cellBorder, textStroke, textShadow,
+        template, customFont, rows, cols, cellSize, gridGap, fontSize,
+        marginTop, marginRight, marginBottom, marginLeft, paper
+      };
+      const blob = new Blob([JSON.stringify(config, null, 2)], {type:'application/json'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = '字帖配置.json';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function importConfig(e){
+      const file = e.target.files[0];
+      if(!file) return;
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        try {
+          const config = JSON.parse(event.target.result);
+          Object.entries(config).forEach(([k,v]) => {
+            if(v!==undefined) {
+              switch(k){
+                case 'gridType': setGridType(v); break;
+                case 'gridColor': setGridColor(v); break;
+                case 'customGridColor': setCustomGridColor(v); break;
+                case 'customTextColor': setCustomTextColor(v); break;
+                case 'textColorOpt': setTextColorOpt(v); break;
+                case 'strokeMode': setStrokeMode(v); break;
+                case 'stylePreset': setStylePreset(v); break;
+                case 'autoLayout': setAutoLayout(v); break;
+                case 'gridStrokeWidth': setGridStrokeWidth(v); break;
+                case 'lineStyle': setLineStyle(v); break;
+                case 'cellRadius': setCellRadius(v); break;
+                case 'pageBg': setPageBg(v); break;
+                case 'cellBg': setCellBg(v); break;
+                case 'cellBorder': setCellBorder(v); break;
+                case 'textStroke': setTextStroke(v); break;
+                case 'textShadow': setTextShadow(v); break;
+                case 'template': setTemplate(v); break;
+                case 'customFont': setCustomFont(v); break;
+                case 'rows': setRows(v); break;
+                case 'cols': setCols(v); break;
+                case 'cellSize': setCellSize(v); break;
+                case 'gridGap': setGridGap(v); break;
+                case 'fontSize': setFontSize(v); break;
+                case 'marginTop': setMarginTop(v); break;
+                case 'marginRight': setMarginRight(v); break;
+                case 'marginBottom': setMarginBottom(v); break;
+                case 'marginLeft': setMarginLeft(v); break;
+                case 'paper': setPaper(v); break;
+              }
+            }
+          });
+          alert('配置导入成功！');
+        } catch(err) {
+          alert('配置导入失败：' + err.message);
+        }
+      };
+      reader.readAsText(file);
+    }
 
     function genAlnum(){ let pool=''; if(alnumIncludeUpper) pool+='ABCDEFGHIJKLMNOPQRSTUVWXYZ'; if(alnumIncludeLower) pool+='abcdefghijklmnopqrstuvwxyz'; if(alnumIncludeDigits) pool+='0123456789'; const arr=Array.from(pool); if(arr.length===0){ setAlnumSeq(''); return; } const n=Math.max(1,Math.min(alnumCount, alnumNoRepeat?arr.length:alnumCount)); const out=[]; if(alnumNoRepeat){ const used=new Set(); for(let i=0;i<n;i++){ let idx; do{ const u=new Uint32Array(1); crypto.getRandomValues(u); idx=u[0]%arr.length; } while(used.has(idx)); used.add(idx); out.push(arr[idx]); } } else { for(let i=0;i<n;i++){ const u=new Uint32Array(1); crypto.getRandomValues(u); const idx=u[0]%arr.length; out.push(arr[idx]); } } setAlnumSeq(out.join('')); }
     const alnumStats=useMemo(()=>{ const s=alnumSeq||''; const up=(s.match(/[A-Z]/g)||[]).length; const low=(s.match(/[a-z]/g)||[]).length; const dig=(s.match(/[0-9]/g)||[]).length; const total=Math.max(1,s.length); return { up, low, dig, upPct:Math.round(up*100/total), lowPct:Math.round(low*100/total), digPct:Math.round(dig*100/total), total }; },[alnumSeq]);
 
     function exportPDF(){ const cp=window.__copybook__||{}; if(cp.exporting&&cp.exporting.exportPDF){ cp.exporting.exportPDF(paper); } else { const opt={ margin:0, filename:'字帖.pdf', image:{ type:'jpeg', quality:0.98 }, html2canvas:{ scale:4 }, jsPDF:{ unit:'mm', format: paper.indexOf('横版')>-1?'a4':'a4', orientation: paper.indexOf('横版')>-1?'landscape':'portrait' } }; const node=document.querySelectorAll('.page'); const container=document.createElement('div'); node.forEach(n=>container.appendChild(n.cloneNode(true))); html2pdf().from(container).set(opt).save(); } }
     function exportImage(){ const cp=window.__copybook__||{}; if(cp.exporting&&cp.exporting.exportImage){ cp.exporting.exportImage(); } else { const node=document.querySelectorAll('.page'); const container=document.createElement('div'); node.forEach(n=>container.appendChild(n.cloneNode(true))); html2pdf().from(container).toImg().save('字帖.png'); } }
+
+    function exportSVG(){
+      const node = document.querySelectorAll('.page');
+      if(!node.length) return;
+      
+      // 创建SVG页面列表
+      const svgPages = [];
+      node.forEach((page, pageIndex) => {
+        const grid = page.querySelector('.grid');
+        if(!grid) return;
+        
+        const cells = grid.querySelectorAll('.cell');
+        const rect = page.getBoundingClientRect();
+        
+        // 创建单页SVG
+        let svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${rect.width}" height="${rect.height}" viewBox="0 0 ${rect.width} ${rect.height}">`;
+        svg += `<style>text { font-family: inherit; }</style>`;
+        svg += `<rect width="100%" height="100%" fill="${getComputedStyle(page).backgroundColor || '#fff'}"/>`;
+        
+        cells.forEach((cell, i) => {
+          const cellRect = cell.getBoundingClientRect();
+          const x = cellRect.left - rect.left;
+          const y = cellRect.top - rect.top;
+          const w = cellRect.width;
+          const h = cellRect.height;
+          const text = cell.textContent || '';
+          const bg = cell.style.backgroundImage || '';
+          
+          // 格子背景
+          if(bg) {
+            svg += `<image x="${x}" y="${y}" width="${w}" height="${h}" href="${bg}" />`;
+          }
+          
+          // 文字
+          if(text.trim()) {
+            const style = cell.style;
+            const fontSize = style.fontSize || '42px';
+            const color = style.color || '#000';
+            svg += `<text x="${x + w/2}" y="${y + h/2 + parseFloat(fontSize)/3}" text-anchor="middle" font-size="${fontSize}" fill="${color}">${text}</text>`;
+          }
+        });
+        
+        svg += '</svg>';
+        svgPages.push(svg);
+      });
+      
+      // 下载第一个页面
+      if(svgPages.length > 0) {
+        const blob = new Blob([svgPages[0]], {type: 'image/svg+xml'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = '字帖.svg';
+        a.click();
+        URL.revokeObjectURL(url);
+      }
+    }
+
     function fillRandom(overwrite){ const s=window.__copybook__.content.sampleRandom(commonChars,randCount,randNoRepeat); if(!s) return; if(overwrite){ setText(s); } else { setText(prev=> (prev||'')+s); } }
     function engFont(style){ return style==='手写体' ? "'Comic Sans MS','Chalkboard SE','Segoe Script',cursive" : "'Arial','Helvetica Neue','Helvetica',sans-serif"; }
     function insertFromLibrary(m,t,append,layoutKind){ if(layoutKind){ setLayout(layoutKind); if(layoutKind==='英文格式'){ setGridType('四线三格'); setCols(c=>Math.max(c,10)); } } setMode(m); setVariant(m); if(append){ setText(prev=>{ const p=(prev||'').trim(); if(!p) return t; const sep= layoutKind? '\n' : (m==='多句'?'|':''); return p+sep+t; }); } else { setText(t); } }
@@ -245,16 +506,38 @@
                   React.createElement('div',{ className:'mt-2 p-2 border rounded font-monospace' }, alnumSeq||'')
                 ):null,
                 React.createElement('div',{ className:'row g-2' },
-                  React.createElement('div',{ className:'col-6' },
+                  React.createElement('div',{ className:'col-5' },
                     React.createElement('label',{ className:'form-label', htmlFor:'gridType' },'格子类型'),
                     React.createElement('select',{ id:'gridType', className:'form-select', value:gridType, onChange:e=>setGridType(e.target.value) },
                       ['田字格','米字格','回宫格','四线三格','无格'].map(v=>React.createElement('option',{ key:v, value:v },v))
                     )
                   ),
-                  React.createElement('div',{ className:'col-6' },
+                  React.createElement('div',{ className:'col-4' },
                     React.createElement('label',{ className:'form-label', htmlFor:'gridColor' },'格子颜色'),
                     React.createElement('select',{ id:'gridColor', className:'form-select', value:gridColor, onChange:e=>setGridColor(e.target.value) },
-                      ['绿色','黑色','红色'].map(v=>React.createElement('option',{ key:v, value:v },v))
+                      ['绿色','黑色','红色','蓝色','紫色'].map(v=>React.createElement('option',{ key:v, value:v },v))
+                    )
+                  ),
+                  React.createElement('div',{ className:'col-3' },
+                    React.createElement('label',{ className:'form-label', htmlFor:'customGridColor' },'自定义'),
+                    React.createElement('input',{ id:'customGridColor', className:'form-control form-control-sm', type:'color', value:customGridColor||toHex(gridColor), onChange:e=>setCustomGridColor(e.target.value) })
+                  )
+                ),
+                React.createElement('div',{ className:'row g-2 mt-1' },
+                  React.createElement('div',{ className:'col-4' },
+                    React.createElement('label',{ className:'form-label', htmlFor:'lineStyle' },'线条样式'),
+                    React.createElement('select',{ id:'lineStyle', className:'form-select form-select-sm', value:lineStyle, onChange:e=>setLineStyle(e.target.value) },
+                      ['实线','虚线','点线','点划线'].map(v=>React.createElement('option',{ key:v, value:v },v))
+                    )
+                  ),
+                  React.createElement('div',{ className:'col-4' },
+                    React.createElement('label',{ className:'form-label', htmlFor:'cellRadius' },'格子圆角'),
+                    React.createElement('input',{ id:'cellRadius', className:'form-range form-range-sm', type:'range', min:'0', max:'10', step:'1', value:cellRadius, onChange:e=>setCellRadius(parseInt(e.target.value||'0')) })
+                  ),
+                  React.createElement('div',{ className:'col-4 d-flex align-items-end' },
+                    React.createElement('div',{ className:'form-check' },
+                      React.createElement('input',{ className:'form-check-input', type:'checkbox', id:'cellBorder', checked:cellBorder, onChange:e=>setCellBorder(e.target.checked) }),
+                      React.createElement('label',{ className:'form-check-label', htmlFor:'cellBorder' },'加边框')
                     )
                   )
                 ),
@@ -262,7 +545,7 @@
                   React.createElement('div',{ className:'col-6' },
                     React.createElement('label',{ className:'form-label', htmlFor:'stylePreset' },'打印样式'),
                     React.createElement('select',{ id:'stylePreset', className:'form-select', value:stylePreset, onChange:e=>setStylePreset(e.target.value) },
-                      ['四线三格标准','四线三格宽间','田字格标准'].map(v=>React.createElement('option',{ key:v, value:v },v))
+                      ['四线三格标准','四线三格宽间','田字格标准','米字格标准','米字格宽间','回宫格标准','回宫格宽间','现代简约','儿童卡通'].map(v=>React.createElement('option',{ key:v, value:v },v))
                     )
                   ),
                   React.createElement('div',{ className:'col-6' },
@@ -275,16 +558,41 @@
                   React.createElement('label',{ className:'form-check-label', htmlFor:'autoLayout' },'智能排版（四线三格）')
                 ),
                 React.createElement('div',{ className:'row g-2 mt-1' },
-                  React.createElement('div',{ className:'col-6' },
+                  React.createElement('div',{ className:'col-4' },
                     React.createElement('label',{ className:'form-label', htmlFor:'textColor' },'文字颜色'),
                     React.createElement('select',{ id:'textColor', className:'form-select', value:textColorOpt, onChange:e=>setTextColorOpt(e.target.value) },
-                      ['绿色','黑色','红色'].map(v=>React.createElement('option',{ key:v, value:v },v))
+                      ['绿色','黑色','红色','蓝色','紫色'].map(v=>React.createElement('option',{ key:v, value:v },v))
                     )
                   ),
-                  React.createElement('div',{ className:'col-6' },
+                  React.createElement('div',{ className:'col-4' },
+                    React.createElement('label',{ className:'form-label', htmlFor:'customTextColor' },'自定义'),
+                    React.createElement('input',{ id:'customTextColor', className:'form-control form-control-sm', type:'color', value:customTextColor||toHex(textColorOpt), onChange:e=>setCustomTextColor(e.target.value) })
+                  ),
+                  React.createElement('div',{ className:'col-4' },
                     React.createElement('label',{ className:'form-label', htmlFor:'stroke' },'描红背景'),
                     React.createElement('select',{ id:'stroke', className:'form-select', value:strokeMode, onChange:e=>setStrokeMode(e.target.value) },
                       ['非常深','深','较深','略浅','适中','非常浅','白色（不可见）','空芯'].map(v=>React.createElement('option',{ key:v, value:v },v))
+                    )
+                  )
+                ),
+                React.createElement('div',{ className:'row g-2 mt-1' },
+                  React.createElement('div',{ className:'col-4' },
+                    React.createElement('label',{ className:'form-label', htmlFor:'textStroke' },'文字描边'),
+                    React.createElement('select',{ id:'textStroke', className:'form-select form-select-sm', value:textStroke, onChange:e=>setTextStroke(e.target.value) },
+                      ['无','细','中','粗'].map(v=>React.createElement('option',{ key:v, value:v },v))
+                    )
+                  ),
+                  React.createElement('div',{ className:'col-4' },
+                    React.createElement('label',{ className:'form-label', htmlFor:'textShadow' },'文字阴影'),
+                    React.createElement('div',{ className:'form-check form-switch' },
+                      React.createElement('input',{ className:'form-check-input', type:'checkbox', id:'textShadow', checked:textShadow, onChange:e=>setTextShadow(e.target.checked) }),
+                      React.createElement('label',{ className:'form-check-label', htmlFor:'textShadow' }, textShadow?'开启':'关闭')
+                    )
+                  ),
+                  React.createElement('div',{ className:'col-4 d-flex align-items-end' },
+                    React.createElement('div',{ className:'form-check' },
+                      React.createElement('input',{ className:'form-check-input', type:'checkbox', id:'cellShadow', checked:cellShadow||false, onChange:e=>{ setCellShadow(e.target.checked); if(e.target.checked) setCellBorder(true); } }),
+                      React.createElement('label',{ className:'form-check-label', htmlFor:'cellShadow' },'立体效果')
                     )
                   )
                 ),
@@ -360,10 +668,27 @@
                     )
                   )
                 ),
-                React.createElement('div',{ className:'mt-3 d-flex gap-2' },
-                  React.createElement('button',{ className:'btn btn-success', onClick:()=>window.print(), disabled:pages.length===0 },'打印/另存为PDF'),
-                  React.createElement('button',{ className:'btn btn-primary', onClick:exportPDF, disabled:pages.length===0 },'生成高清PDF'),
-                  React.createElement('button',{ className:'btn btn-outline-primary', onClick:exportImage, disabled:pages.length===0 },'导出PNG'),
+                React.createElement('div',{ className:'mt-3 d-flex flex-wrap gap-2' },
+                  React.createElement('div',{ className:'btn-group' },
+                    React.createElement('button',{ className:'btn btn-success', onClick:()=>window.print(), disabled:pages.length===0 },'打印/另存为PDF'),
+                    React.createElement('button',{ className:'btn btn-primary', onClick:exportPDF, disabled:pages.length===0 },'生成高清PDF'),
+                    React.createElement('button',{ className:'btn btn-outline-primary', onClick:exportImage, disabled:pages.length===0 },'导出PNG')
+                  ),
+                  React.createElement('div',{ className:'btn-group' },
+                    React.createElement('button',{ className:'btn btn-outline-secondary', onClick:exportConfig },'导出配置'),
+                    React.createElement('button',{ className:'btn btn-outline-secondary' },
+                      React.createElement('input',{ type:'file', accept:'.json', style:{position:'absolute',opacity:0,width:'100%',height:'100%',cursor:'pointer'}, onChange:importConfig }, undefined, { hidden: true }),
+                      '导入配置'
+                    ),
+                    React.createElement('button',{ className:'btn btn-outline-danger', onClick:resetConfig },'重置')
+                  ),
+                  React.createElement('div',{ className:'btn-group' },
+                    React.createElement('button',{ className:'btn btn-info', onClick:saveTemplate },'保存模板'),
+                    React.createElement('button',{ className:'btn btn-info' },
+                      React.createElement('input',{ type:'file', accept:'.json', style:{position:'absolute',opacity:0,width:'100%',height:'100%',cursor:'pointer'}, onChange:loadTemplate }, undefined, { hidden: true }),
+                      '加载模板'
+                    )
+                  ),
                   React.createElement('span',{ className:'legend' },'建议使用现代浏览器。')
                 )
               )
@@ -376,6 +701,7 @@
                   React.createElement('label',{ className:'form-label', htmlFor:'previewScale' },'预览缩放'),
                   React.createElement('input',{ id:'previewScale', className:'form-range', type:'range', min:'0.4', max:'1.2', step:'0.05', value:previewScale, onChange:e=>setPreviewScale(parseFloat(e.target.value||'1')) })
                 ),
+                React.createElement(ConfigSummary,{ gridType, gridColor, stylePreset, rows, cols, cellSize, fontSize }),
                 
                 React.createElement('div',null,
                   React.createElement('div',{ className:'fw-bold mb-2' },'常用汉字随机'),
