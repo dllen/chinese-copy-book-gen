@@ -12,6 +12,33 @@
   function validate(mode,text){ if(!text||!text.trim()) return { ok:false, msg:'请输入内容' }; if(mode==='多字' && /[\s,;，；\n]/.test(text)) return { ok:false, msg:'多字模式不允许空格或标点' }; if(mode==='文章' && /\n/.test(text)) return { ok:false, msg:'文章模式不允许换行' }; return { ok:true, msg:'' }; }
   function Cell({ ch,bg,textColor,strokeMode,font,fontSize,showGuide }){ const style=strokeLevel(strokeMode,textColor); return React.createElement('div',{ className:'cell', style:{ backgroundImage:bg, color:style.color, WebkitTextStroke:style.WebkitTextStroke, opacity:style.opacity, fontFamily:font, fontSize:fontSize } }, ch||'', showGuide?React.createElement('div',{ className:'guide' }, React.createElement('div',{ className:'guide-arrow' })):null); }
 
+  function Section({title, children, defaultOpen}){
+    const [open, setOpen] = React.useState(defaultOpen !== false);
+    return React.createElement('div', {className:'mb-3 border rounded'},
+      React.createElement('div',{className:'p-2 d-flex justify-content-between align-items-center'},
+        React.createElement('div',{className:'fw-semibold'}, title),
+        React.createElement('button',{
+          className:'btn btn-sm btn-outline-secondary',
+          type:'button',
+          'aria-expanded': String(open),
+          onClick:()=>setOpen(v=>!v)
+        }, open ? '收起' : '展开')
+      ),
+      open ? React.createElement('div',{className:'p-2 pt-0'}, children) : null
+    );
+  }
+
+  function PreviewStatus({pages, rows, cols}){
+    const capacity = (rows||0)*(cols||0);
+    const used = pages.reduce((sum,pg)=>sum+pg.filter(ch=>ch&&ch!=='\n').length,0);
+    const warn = pages.length > 50;
+    return React.createElement('div',{className:'d-flex flex-wrap gap-2 align-items-center legend'},
+      React.createElement('span',null,`页数：${pages.length}`),
+      React.createElement('span',null,`容量：${capacity}，已用：${used}`),
+      warn ? React.createElement('span',{className:'error'},'页面过多，建议分批打印') : null
+    );
+  }
+
   function App(){
     const [commonChars,setCommonChars]=useState([]);
     const [previewScale,setPreviewScale]=useState(1);
@@ -352,5 +379,10 @@
     );
   }
 
+  ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
+
+  window.__copybook__ = window.__copybook__ || {};
+  window.__copybook__.Section = Section;
+  window.__copybook__.PreviewStatus = PreviewStatus;
   ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
 })();

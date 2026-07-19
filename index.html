@@ -59,12 +59,12 @@
       align-items: center;
       justify-content: center;
       font-size: var(--font-size);
-      line-height: 1;
+      line-height: var(--cell-size);
       position: relative;
-      background-size: cover;
+      background-size: 100% 100%;
       background-repeat: no-repeat;
       background-position: center;
-      border: 1px solid #dee2e6;
+      overflow: hidden;
     }
     .guide { position: absolute; inset: 0; pointer-events: none; }
     .guide-arrow { position: absolute; left: 10%; top: 12%; width: 70%; height: 2px; background: var(--guide-color); transform: rotate(10deg); }
