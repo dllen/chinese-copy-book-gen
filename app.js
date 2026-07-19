@@ -10,7 +10,7 @@
   function paginate(cellsByPage,rows,cols,fillLast){ const pages=[]; cellsByPage.forEach(list=>{ const cap=rows*cols; let chunk=list.slice(); while(chunk.length>0){ const page=chunk.splice(0,cap); if(fillLast && page.length<cap){ while(page.length<cap) page.push(''); } pages.push(page); } }); return pages; }
   function pageSize(format){ if(format==='A4竖版') return { w:'210mm', h:'297mm' }; if(format==='A4横版') return { w:'297mm', h:'210mm' }; if(format==='A5竖版') return { w:'148mm', h:'210mm' }; if(format==='A5横版') return { w:'210mm', h:'148mm' }; if(format==='作文纸A4') return { w:'210mm', h:'297mm' }; return { w:'210mm', h:'297mm' }; }
   function validate(mode,text){ if(!text||!text.trim()) return { ok:false, msg:'请输入内容' }; if(mode==='多字' && /[\s,;，；\n]/.test(text)) return { ok:false, msg:'多字模式不允许空格或标点' }; if(mode==='文章' && /\n/.test(text)) return { ok:false, msg:'文章模式不允许换行' }; return { ok:true, msg:'' }; }
-  function Cell({ ch,bg,textColor,strokeMode,font,fontSize,showGuide }){ const style=strokeLevel(strokeMode,textColor); return React.createElement('div',{ className:'cell', style:{ backgroundImage:bg, color:style.color, WebkitTextStroke:style.WebkitTextStroke, opacity:style.opacity, fontFamily:font, fontSize:fontSize } }, ch||'', showGuide?React.createElement('div',{ className:'guide' }, React.createElement('div',{ className:'guide-arrow' })):null); }
+  function Cell({ ch,bg,textColor,strokeMode,font,fontSize,showGuide,cls }){ const style=strokeLevel(strokeMode,textColor); return React.createElement('div',{ className:'cell'+(cls?' '+cls:''), style:{ backgroundImage:bg, color:style.color, WebkitTextStroke:style.WebkitTextStroke, opacity:style.opacity, fontFamily:font, fontSize:fontSize } }, ch||'', showGuide?React.createElement('div',{ className:'guide' }, React.createElement('div',{ className:'guide-arrow' })):null); }
 
   function Section({title, children, defaultOpen}){
     const [open, setOpen] = React.useState(defaultOpen !== false);
@@ -49,6 +49,9 @@
     const [difficulty,setDifficulty]=useState('初级');
     const [showGuide,setShowGuide]=useState(false);
     const [letterStyle,setLetterStyle]=useState('印刷体');
+    const [enBlankRows,setEnBlankRows]=useState(0);
+    const [enRepeat,setEnRepeat]=useState(1);
+    const [engShowZh,setEngShowZh]=useState(false);
     const [alnumIncludeDigits,setAlnumIncludeDigits]=useState(true);
     const [alnumIncludeUpper,setAlnumIncludeUpper]=useState(true);
     const [alnumIncludeLower,setAlnumIncludeLower]=useState(true);
@@ -80,8 +83,8 @@
     const [randCount,setRandCount]=useState(50);
     const [randNoRepeat,setRandNoRepeat]=useState(true);
 
-    useEffect(()=>{ const saved=localStorage.getItem('copybook.settings'); if(saved){ try{ const s=JSON.parse(saved); Object.entries(s).forEach(([k,v])=>{ if(v!==undefined) switch(k){ case 'mode':setMode(v);break; case 'variant':setVariant(v);break; case 'layout':setLayout(v);break; case 'gridType':setGridType(v);break; case 'gridColor':setGridColor(v);break; case 'textColorOpt':setTextColorOpt(v);break; case 'strokeMode':setStrokeMode(v);break; case 'tailFill':setTailFill(v);break; case 'template':setTemplate(v);break; case 'customFont':setCustomFont(v);break; case 'rows':setRows(v);break; case 'cols':setCols(v);break; case 'cellSize':setCellSize(v);break; case 'gridGap':setGridGap(v);break; case 'fontSize':setFontSize(v);break; case 'marginTop':setMarginTop(v);break; case 'marginRight':setMarginRight(v);break; case 'marginBottom':setMarginBottom(v);break; case 'marginLeft':setMarginLeft(v);break; case 'paper':setPaper(v);break; case 'header':setHeader(v);break; case 'text':setText(v);break; case 'feature':setFeature(v);break; case 'difficulty':setDifficulty(v);break; case 'showGuide':setShowGuide(v);break; case 'letterStyle':setLetterStyle(v);break; case 'previewScale':setPreviewScale(v);break; case 'stylePreset':setStylePreset(v);break; case 'autoLayout':setAutoLayout(v);break; case 'gridStrokeWidth':setGridStrokeWidth(v);break; case 'alnumIncludeDigits':setAlnumIncludeDigits(v);break; case 'alnumIncludeUpper':setAlnumIncludeUpper(v);break; case 'alnumIncludeLower':setAlnumIncludeLower(v);break; case 'alnumCount':setAlnumCount(v);break; case 'alnumNoRepeat':setAlnumNoRepeat(v);break; case 'alnumSeq':setAlnumSeq(v);break; } }); }catch(e){} } },[]);
-    useEffect(()=>{ const s={ mode,variant,layout,gridType,gridColor,textColorOpt,strokeMode,tailFill,template,customFont,rows,cols,cellSize,gridGap,fontSize,marginTop,marginRight,marginBottom,marginLeft,paper,header,text,randCount,randNoRepeat,previewScale,feature,difficulty,showGuide,letterStyle,stylePreset,autoLayout,gridStrokeWidth,alnumIncludeDigits,alnumIncludeUpper,alnumIncludeLower,alnumCount,alnumNoRepeat,alnumSeq }; localStorage.setItem('copybook.settings', JSON.stringify(s)); },[mode,variant,layout,gridType,gridColor,textColorOpt,strokeMode,tailFill,template,customFont,rows,cols,cellSize,gridGap,fontSize,marginTop,marginRight,marginBottom,marginLeft,paper,header,text,randCount,randNoRepeat,previewScale,feature,difficulty,showGuide,letterStyle,stylePreset,autoLayout,gridStrokeWidth,alnumIncludeDigits,alnumIncludeUpper,alnumIncludeLower,alnumCount,alnumNoRepeat,alnumSeq]);
+    useEffect(()=>{ const saved=localStorage.getItem('copybook.settings'); if(saved){ try{ const s=JSON.parse(saved); Object.entries(s).forEach(([k,v])=>{ if(v!==undefined) switch(k){ case 'mode':setMode(v);break; case 'variant':setVariant(v);break; case 'layout':setLayout(v);break; case 'gridType':setGridType(v);break; case 'gridColor':setGridColor(v);break; case 'textColorOpt':setTextColorOpt(v);break; case 'strokeMode':setStrokeMode(v);break; case 'tailFill':setTailFill(v);break; case 'template':setTemplate(v);break; case 'customFont':setCustomFont(v);break; case 'rows':setRows(v);break; case 'cols':setCols(v);break; case 'cellSize':setCellSize(v);break; case 'gridGap':setGridGap(v);break; case 'fontSize':setFontSize(v);break; case 'marginTop':setMarginTop(v);break; case 'marginRight':setMarginRight(v);break; case 'marginBottom':setMarginBottom(v);break; case 'marginLeft':setMarginLeft(v);break; case 'paper':setPaper(v);break; case 'header':setHeader(v);break; case 'text':setText(v);break; case 'feature':setFeature(v);break; case 'difficulty':setDifficulty(v);break; case 'showGuide':setShowGuide(v);break; case 'letterStyle':setLetterStyle(v);break; case 'enBlankRows':setEnBlankRows(v);break; case 'enRepeat':setEnRepeat(v);break; case 'engShowZh':setEngShowZh(v);break; case 'previewScale':setPreviewScale(v);break; case 'stylePreset':setStylePreset(v);break; case 'autoLayout':setAutoLayout(v);break; case 'gridStrokeWidth':setGridStrokeWidth(v);break; case 'alnumIncludeDigits':setAlnumIncludeDigits(v);break; case 'alnumIncludeUpper':setAlnumIncludeUpper(v);break; case 'alnumIncludeLower':setAlnumIncludeLower(v);break; case 'alnumCount':setAlnumCount(v);break; case 'alnumNoRepeat':setAlnumNoRepeat(v);break; case 'alnumSeq':setAlnumSeq(v);break; } }); }catch(e){} } },[]);
+    useEffect(()=>{ const s={ mode,variant,layout,gridType,gridColor,textColorOpt,strokeMode,tailFill,template,customFont,rows,cols,cellSize,gridGap,fontSize,marginTop,marginRight,marginBottom,marginLeft,paper,header,text,randCount,randNoRepeat,previewScale,feature,difficulty,showGuide,letterStyle,enBlankRows,enRepeat,engShowZh,stylePreset,autoLayout,gridStrokeWidth,alnumIncludeDigits,alnumIncludeUpper,alnumIncludeLower,alnumCount,alnumNoRepeat,alnumSeq }; localStorage.setItem('copybook.settings', JSON.stringify(s)); },[mode,variant,layout,gridType,gridColor,textColorOpt,strokeMode,tailFill,template,customFont,rows,cols,cellSize,gridGap,fontSize,marginTop,marginRight,marginBottom,marginLeft,paper,header,text,randCount,randNoRepeat,previewScale,feature,difficulty,showGuide,letterStyle,enBlankRows,enRepeat,engShowZh,stylePreset,autoLayout,gridStrokeWidth,alnumIncludeDigits,alnumIncludeUpper,alnumIncludeLower,alnumCount,alnumNoRepeat,alnumSeq]);
 
     useEffect(()=>{
       const emb=(window.__copybookData__||{}).commonChars;
@@ -103,12 +106,13 @@
     useEffect(()=>{ if(feature==='数字字母'){ setGridType('四线三格'); if(!alnumSeq) genAlnum(); } },[feature]);
     useEffect(()=>{ document.documentElement.style.setProperty('--preview-scale', String(previewScale)); },[previewScale]);
     const gColor=toHex(gridColor); const tColor=toHex(textColorOpt);
-    const parsed=useMemo(()=>{ const cp=window.__copybook__||{}; if(feature==='控笔字帖'){ if(cp.features&&cp.features.buildControlPages) return cp.features.buildControlPages(difficulty); const basic=['一','丨','丿','丶','亅']; const mids=['氵','亻','讠','艹','月','女','口','木','火','土','日','目','田']; const adv=['永','德','善','爱','勇','强']; let pool=[]; if(difficulty==='初级') pool=basic; else if(difficulty==='中级') pool=mids; else pool=adv; const seq=[]; pool.forEach(c=>{ seq.push(c); seq.push(''); }); return { pages:[seq] }; } if(feature==='数字字母'){ const s=alnumSeq||''; return { pages:[Array.from(s)] }; } if(feature==='字帖模板'&&layout!=='连续排列'&&cp.content&&cp.content.layoutDocument) return cp.content.layoutDocument(layout,text,cols); return (cp.content&&cp.content.toCells?cp.content.toCells(mode,text,variant):toCells(mode,text,variant)); },[feature,mode,text,variant,difficulty,alnumSeq,layout,cols]);
+    const parsed=useMemo(()=>{ const cp=window.__copybook__||{}; if(feature==='控笔字帖'){ if(cp.features&&cp.features.buildControlPages) return cp.features.buildControlPages(difficulty); const basic=['一','丨','丿','丶','亅']; const mids=['氵','亻','讠','艹','月','女','口','木','火','土','日','目','田']; const adv=['永','德','善','爱','勇','强']; let pool=[]; if(difficulty==='初级') pool=basic; else if(difficulty==='中级') pool=mids; else pool=adv; const seq=[]; pool.forEach(c=>{ seq.push(c); seq.push(''); }); return { pages:[seq] }; } if(feature==='数字字母'){ const s=alnumSeq||''; return { pages:[Array.from(s)] }; } if(feature==='字帖模板'&&layout!=='连续排列'&&cp.content&&cp.content.layoutDocument) return cp.content.layoutDocument(layout,text,cols,{ blankRows:enBlankRows, repeat:enRepeat }); return (cp.content&&cp.content.toCells?cp.content.toCells(mode,text,variant):toCells(mode,text,variant)); },[feature,mode,text,variant,difficulty,alnumSeq,layout,cols,enBlankRows,enRepeat]);
     const pages=useMemo(()=>paginate(parsed.pages,rows,cols,tailFill),[parsed,rows,cols,tailFill]);
     const usage=useMemo(()=>{ const capacity=rows*cols*pages.length; let used=0; pages.forEach(pg=>pg.forEach(ch=>{ if(ch&&ch!=='\n') used++; })); const warn=pages.length>50; return { capacity, used, warn }; },[pages,rows,cols]);
     const bg=useMemo(()=>{ const cp=window.__copybook__||{}; return (cp.grid?cp.grid.svgDataURL(gridType,cellSize,gColor):svgDataURL(gridType,cellSize,gColor)); },[gridType,cellSize,gColor]);
     useEffect(()=>{ const sz=pageSize(paper); document.documentElement.style.setProperty('--page-width', sz.w); document.documentElement.style.setProperty('--page-height', sz.h); document.documentElement.style.setProperty('--cell-size', `${cellSize}px`); document.documentElement.style.setProperty('--grid-gap', `${gridGap}px`); document.documentElement.style.setProperty('--grid-color', gColor); document.documentElement.style.setProperty('--text-color', tColor); document.documentElement.style.setProperty('--font-size', `${fontSize}px`); document.documentElement.style.setProperty('--page-margin-top', `${marginTop}mm`); document.documentElement.style.setProperty('--page-margin-right', `${marginRight}mm`); document.documentElement.style.setProperty('--page-margin-bottom', `${marginBottom}mm`); document.documentElement.style.setProperty('--page-margin-left', `${marginLeft}mm`); document.documentElement.style.setProperty('--guide-color', gColor); },[paper,cellSize,gridGap,gColor,tColor,fontSize,marginTop,marginRight,marginBottom,marginLeft]);
     useEffect(()=>{ document.documentElement.style.setProperty('--grid-stroke-width', String(gridStrokeWidth)); },[gridStrokeWidth]);
+    useEffect(()=>{ document.documentElement.style.setProperty('--en-descent', letterStyle==='手写体'?'0.28em':'0.212em'); },[letterStyle]);
     useEffect(()=>{ if(stylePreset==='四线三格标准'){ document.documentElement.style.setProperty('--fourline-y1','0.25'); document.documentElement.style.setProperty('--fourline-y2','0.50'); document.documentElement.style.setProperty('--fourline-y3','0.75'); document.documentElement.style.setProperty('--fourline-y4','0.92'); setGridType('四线三格'); } else if(stylePreset==='四线三格宽间'){ document.documentElement.style.setProperty('--fourline-y1','0.20'); document.documentElement.style.setProperty('--fourline-y2','0.50'); document.documentElement.style.setProperty('--fourline-y3','0.80'); document.documentElement.style.setProperty('--fourline-y4','0.95'); setGridType('四线三格'); } else if(stylePreset==='田字格标准'){ setGridType('田字格'); } },[stylePreset]);
     useEffect(()=>{ if(autoLayout && gridType==='四线三格'){ const s=(text||''); const upp=(s.match(/[A-Z]/g)||[]).length; const low=(s.match(/[a-z]/g)||[]).length; const dig=(s.match(/[0-9]/g)||[]).length; const total=Math.max(1, upp+low+dig); const ru=upp/total, rl=low/total, rd=dig/total; let y1='0.23', y2='0.50', y3='0.77', y4='0.94'; if(ru>0.5){ y1='0.20'; y3='0.80'; y4='0.96'; } else if(rl>0.5){ y1='0.25'; y3='0.75'; y4='0.92'; } else if(rd>0.5){ y1='0.22'; y3='0.78'; y4='0.95'; } document.documentElement.style.setProperty('--fourline-y1', y1); document.documentElement.style.setProperty('--fourline-y2','0.50'); document.documentElement.style.setProperty('--fourline-y3', y3); document.documentElement.style.setProperty('--fourline-y4', y4); } },[autoLayout,gridType,text]);
     const font=fontByTemplate(template,customFont);
@@ -146,10 +150,22 @@
                   layout==='文章格式'?React.createElement('div',{ className:'form-text' },'首行为标题（居中）；其余每行为一段，段首缩进两格；标点自动避头尾。'):null,
                   layout==='英文格式'?React.createElement('div',{ className:'form-text' },'按词换行（不拆词），词间一格；每个输入行另起一行，空行留空行。自动使用四线三格，建议 10 列以上。'):null
                 ):null,
-                layout==='英文格式'?React.createElement('div',{ className:'mb-2' },
-                  React.createElement('label',{ className:'form-label', htmlFor:'letterStyle' },'英文字体'),
-                  React.createElement('select',{ id:'letterStyle', className:'form-select', value:letterStyle, onChange:e=>setLetterStyle(e.target.value) },
-                    ['印刷体','手写体'].map(v=>React.createElement('option',{ key:v, value:v },v))
+                layout==='英文格式'?React.createElement('div',{ className:'row g-2 mb-2' },
+                  React.createElement('div',{ className:'col-4' },
+                    React.createElement('label',{ className:'form-label', htmlFor:'letterStyle' },'英文字体'),
+                    React.createElement('select',{ id:'letterStyle', className:'form-select', value:letterStyle, onChange:e=>setLetterStyle(e.target.value) },
+                      ['印刷体','手写体'].map(v=>React.createElement('option',{ key:v, value:v },v))
+                    )
+                  ),
+                  React.createElement('div',{ className:'col-4' },
+                    React.createElement('label',{ className:'form-label', htmlFor:'enBlankRows' },'临摹空行'),
+                    React.createElement('select',{ id:'enBlankRows', className:'form-select', value:enBlankRows, onChange:e=>setEnBlankRows(parseInt(e.target.value||'0')) },
+                      [[0,'无'],[1,'1 行'],[2,'2 行']].map(([v,l])=>React.createElement('option',{ key:v, value:v },l))
+                    )
+                  ),
+                  React.createElement('div',{ className:'col-4' },
+                    React.createElement('label',{ className:'form-label', htmlFor:'enRepeat' },'单词重复'),
+                    React.createElement('input',{ id:'enRepeat', className:'form-control', type:'number', min:1, max:5, value:enRepeat, onChange:e=>setEnRepeat(Math.max(1,Math.min(5,parseInt(e.target.value||'1')))) })
                   )
                 ):null,
                 feature==='字帖模板'&&layout==='连续排列'?React.createElement('div',{ className:'mb-2' },
@@ -164,7 +180,7 @@
                     [ `${mode}`, `${mode}+1行`, `${mode}+1空行`, `${mode}+1行+1空行` ].map(v=>React.createElement('option',{ key:v, value:v },v))
                   )
                 ):null,
-                feature==='字帖模板'&&window.__copybook__.library?React.createElement(window.__copybook__.library.LibraryPanel,{ onInsert:insertFromLibrary }):null,
+                feature==='字帖模板'&&window.__copybook__.library?React.createElement(window.__copybook__.library.LibraryPanel,{ onInsert:insertFromLibrary, engShowZh:engShowZh, onEngShowZhChange:v=>setEngShowZh(v) }):null,
                 feature==='字帖模板'?React.createElement('div',{ className:'mb-2' },
                   React.createElement('label',{ className:'form-label', htmlFor:'text' },'输入'),
                   React.createElement('textarea',{ id:'text', className:`form-control ${v.ok?'':'is-invalid'}`, rows:4, placeholder:'在此输入内容。多词用 | 或逗号/空格分隔；多句用 | 分隔页面。', value:text, onChange:e=>setText(e.target.value), 'aria-describedby':'textHelp' }),
@@ -392,8 +408,8 @@
       React.createElement('div',{ className:'page-wrapper' },
         pages.map((page,i)=>React.createElement('div',{ key:i, className:'page' },
           header?React.createElement('div',{ className:'header' },header):null,
-          React.createElement('div',{ className:'grid', style:{ gridTemplateColumns:`repeat(${cols}, var(--cell-size))` } },
-            page.map((ch,idx)=>React.createElement(Cell,{ key:idx, ch: ch==='\n'?'':ch, bg:bg, textColor:tColor, strokeMode, font: layout==='英文格式'?engFont(letterStyle):feature==='数字字母'?(letterStyle==='印刷体'?'monospace':'cursive'):font, fontSize, showGuide: feature==='数字字母' && showGuide }))
+          React.createElement('div',{ className:'grid', style:{ gridTemplateColumns:`repeat(${cols}, var(--cell-size))`, columnGap: layout==='英文格式'?0:undefined } },
+            page.map((ch,idx)=>React.createElement(Cell,{ key:idx, ch: ch==='\n'?'':ch, bg:bg, textColor:tColor, strokeMode, cls: (layout==='英文格式'||feature==='数字字母')?'cell-en':undefined, font: layout==='英文格式'?engFont(letterStyle):feature==='数字字母'?(letterStyle==='印刷体'?'monospace':'cursive'):font, fontSize, showGuide: feature==='数字字母' && showGuide }))
           )
         ))
       )

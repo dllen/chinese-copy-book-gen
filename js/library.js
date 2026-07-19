@@ -90,7 +90,8 @@
       const arr=engType==='word'?(st.englishWords||[]):(st.englishSentences||[]);
       const items=arr.filter(x=>engSel[x.id]);
       if(!items.length) return null;
-      return { mode:'多句', layout:'英文格式', text: items.map(x=>engType==='word'?x.w:x.en).join('\n') };
+      const showZh=engType==='word'&&!!props.engShowZh;
+      return { mode:'多句', layout:'英文格式', text: items.map(x=>engType==='word'?(showZh&&x.t?x.w+' '+x.t:x.w):x.en).join('\n') };
     }
     function insert(append){
       const r= tab==='english'?buildEngText():buildText(); if(!r) return;
@@ -202,6 +203,10 @@
               );
             })
           ),
+          engType==='word'?E('div',{className:'form-check form-check-sm mt-1'},
+            E('input',{className:'form-check-input',type:'checkbox',id:'engShowZh',checked:!!props.engShowZh,onChange:e=>props.onEngShowZhChange&&props.onEngShowZhChange(e.target.checked)}),
+            E('label',{className:'form-check-label',htmlFor:'engShowZh'},'附中文释义')
+          ):null,
           E('div',{className:'mt-2 d-flex gap-2 flex-wrap'},
             E('button',{className:'btn btn-sm btn-success',type:'button',onClick:()=>insert(false),disabled:Object.keys(engSel).length===0},'覆盖到字帖'),
             E('button',{className:'btn btn-sm btn-outline-success',type:'button',onClick:()=>insert(true),disabled:Object.keys(engSel).length===0},'追加到字帖（新起一页）')
