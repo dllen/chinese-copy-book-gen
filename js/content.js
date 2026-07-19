@@ -33,28 +33,35 @@
     return [pad.concat(cs)];
   }
   // 英文格式：单词间空一格；按词换行（不拆词）；每个输入行另起一行；空输入行=空一行
-  function layoutEnglish(text,cols){
+  // opts.blankRows: 每条内容行后补 N 行空行（0/1/2）；opts.repeat: 单词输入行重复 N 次（1~5）
+  function layoutEnglish(text,cols,opts){
+    opts=opts||{};
+    const blankRows=Math.max(0,Math.min(2,opts.blankRows|0));
+    const repeat=Math.max(1,Math.min(5,opts.repeat|0));
     const out=[];
     (text||'').split('\n').forEach(raw=>{
       const s=raw.trim();
       if(!s){ out.push([]); return; }
-      let cur=[];
-      s.split(/\s+/).filter(Boolean).forEach(wd=>{
+      let words=s.split(/\s+/).filter(Boolean);
+      if(repeat>1&&words.length===1){ const one=words[0]; words=[]; for(let i=0;i<repeat;i++) words.push(one); }
+      const rs=[]; let cur=[];
+      words.forEach(wd=>{
         const wcs=Array.from(wd);
         if(cur.length===0) cur=wcs.slice();
         else if(cur.length+1+wcs.length<=cols){ cur.push(''); cur=cur.concat(wcs); }
-        else { out.push(cur); cur=wcs.slice(); }
-        while(cur.length>cols){ out.push(cur.slice(0,cols)); cur=cur.slice(cols); } // 超长词硬换行
+        else { rs.push(cur); cur=wcs.slice(); }
+        while(cur.length>cols){ rs.push(cur.slice(0,cols)); cur=cur.slice(cols); } // 超长词硬换行
       });
-      if(cur.length) out.push(cur);
+      if(cur.length) rs.push(cur);
+      rs.forEach(r=>{ out.push(r); for(let i=0;i<blankRows;i++) out.push([]); });
     });
     const cells=[];
     out.forEach(l=>{ cells.push.apply(cells,l); const n=l.length===0?cols:(l.length%cols===0?0:cols-l.length%cols); for(let i=0;i<n;i++) cells.push(''); });
     return { pages:[cells] };
   }
   // kind: '古诗格式' | '文章格式' | '英文格式'；text 按 \n 分行。返回 { pages:[cells] }，cells 已按 cols 对齐补齐
-  function layoutDocument(kind,text,cols){
-    if(kind==='英文格式') return layoutEnglish(text,cols);
+  function layoutDocument(kind,text,cols,opts){
+    if(kind==='英文格式') return layoutEnglish(text,cols,opts);
     const raw=(text||'').split('\n').map(s=>s.trim()).filter(s=>s.length>0);
     let out=[];
     if(kind==='古诗格式'){
