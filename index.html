@@ -25,8 +25,6 @@
       --fourline-y2: 0.47;
       --fourline-y3: 0.74;
       --fourline-y4: 0.94;
-      --fourline-top-color: #000000;
-      --fourline-mid-color: #666666;
       --fourline-dash-on: 5;
       --fourline-dash-off: 2;
     }
@@ -65,6 +63,12 @@
       background-repeat: no-repeat;
       background-position: center;
       overflow: hidden;
+    }
+    /* 英文格式：字母 baseline 对齐四线三格第三条线（基线）。--en-descent 由 app.js 按字体设置 */
+    .cell-en {
+      line-height: normal;
+      align-items: flex-end;
+      padding-bottom: max(0px, calc((1 - var(--fourline-y3)) * var(--cell-size) - var(--en-descent, 0.212em)));
     }
     .guide { position: absolute; inset: 0; pointer-events: none; }
     .guide-arrow { position: absolute; left: 10%; top: 12%; width: 70%; height: 2px; background: var(--guide-color); transform: rotate(10deg); }
