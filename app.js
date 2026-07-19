@@ -83,6 +83,8 @@
     useEffect(()=>{ const s={ mode,variant,gridType,gridColor,textColorOpt,strokeMode,tailFill,template,customFont,rows,cols,cellSize,gridGap,fontSize,marginTop,marginRight,marginBottom,marginLeft,paper,header,text,randCount,randNoRepeat,previewScale,feature,difficulty,showGuide,letterStyle,stylePreset,autoLayout,gridStrokeWidth,alnumIncludeDigits,alnumIncludeUpper,alnumIncludeLower,alnumCount,alnumNoRepeat,alnumSeq }; localStorage.setItem('copybook.settings', JSON.stringify(s)); },[mode,variant,gridType,gridColor,textColorOpt,strokeMode,tailFill,template,customFont,rows,cols,cellSize,gridGap,fontSize,marginTop,marginRight,marginBottom,marginLeft,paper,header,text,randCount,randNoRepeat,previewScale,feature,difficulty,showGuide,letterStyle,stylePreset,autoLayout,gridStrokeWidth,alnumIncludeDigits,alnumIncludeUpper,alnumIncludeLower,alnumCount,alnumNoRepeat,alnumSeq]);
 
     useEffect(()=>{
+      const emb=(window.__copybookData__||{}).commonChars;
+      if(emb){ setCommonChars([...new Set(emb.filter(ch=>/[\u4e00-\u9fff]/.test(ch)))]); return; }
       fetch('./common-chars.json').then(r=>r.json()).then(arr=>{
         const uniq=[...new Set((arr||[]).filter(ch=>/[\u4e00-\u9fff]/.test(ch)))];
         setCommonChars(uniq);
@@ -117,6 +119,7 @@
     function exportPDF(){ const cp=window.__copybook__||{}; if(cp.exporting&&cp.exporting.exportPDF){ cp.exporting.exportPDF(paper); } else { const opt={ margin:0, filename:'字帖.pdf', image:{ type:'jpeg', quality:0.98 }, html2canvas:{ scale:4 }, jsPDF:{ unit:'mm', format: paper.indexOf('横版')>-1?'a4':'a4', orientation: paper.indexOf('横版')>-1?'landscape':'portrait' } }; const node=document.querySelectorAll('.page'); const container=document.createElement('div'); node.forEach(n=>container.appendChild(n.cloneNode(true))); html2pdf().from(container).set(opt).save(); } }
     function exportImage(){ const cp=window.__copybook__||{}; if(cp.exporting&&cp.exporting.exportImage){ cp.exporting.exportImage(); } else { const node=document.querySelectorAll('.page'); const container=document.createElement('div'); node.forEach(n=>container.appendChild(n.cloneNode(true))); html2pdf().from(container).toImg().save('字帖.png'); } }
     function fillRandom(overwrite){ const s=window.__copybook__.content.sampleRandom(commonChars,randCount,randNoRepeat); if(!s) return; if(overwrite){ setText(s); } else { setText(prev=> (prev||'')+s); } }
+    function insertFromLibrary(m,t,append){ setMode(m); setVariant(m); if(append){ setText(prev=>{ const p=(prev||'').trim(); if(!p) return t; return p+(m==='多句'?'|':'')+t; }); } else { setText(t); } }
     
 
     return React.createElement('div',{ className:'container py-3' },
@@ -144,6 +147,7 @@
                     [ `${mode}`, `${mode}+1行`, `${mode}+1空行`, `${mode}+1行+1空行` ].map(v=>React.createElement('option',{ key:v, value:v },v))
                   )
                 ):null,
+                feature==='字帖模板'&&window.__copybook__.library?React.createElement(window.__copybook__.library.LibraryPanel,{ onInsert:insertFromLibrary }):null,
                 feature==='字帖模板'?React.createElement('div',{ className:'mb-2' },
                   React.createElement('label',{ className:'form-label', htmlFor:'text' },'输入'),
                   React.createElement('textarea',{ id:'text', className:`form-control ${v.ok?'':'is-invalid'}`, rows:4, placeholder:'在此输入内容。多词用 | 或逗号/空格分隔；多句用 | 分隔页面。', value:text, onChange:e=>setText(e.target.value), 'aria-describedby':'textHelp' }),
