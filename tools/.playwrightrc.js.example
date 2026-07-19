@@ -1,0 +1,5 @@
+// 本地 playwright 路径配置
+// 复制此文件为 .playwrightrc.js 并填入本机 playwright 路径
+module.exports = {
+  localPlaywright: '/Users/shichaopeng/.local/lib/node_modules/@ks-tool/ks-cli/node_modules/playwright'
+};

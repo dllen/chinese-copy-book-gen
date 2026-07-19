@@ -1,9 +1,25 @@
 // 英文格式截图验证。用法：node tools/shot_english.js [out-prefix]
-// 需要本机可用的 playwright（全局 ks-cli 附带）。
+// 需要本机可用的 playwright。
+// playwright 路径从 tools/.playwrightrc.js 读取，需自行创建并配置 localPlaywright 路径。
 const path = require('path');
+const fs = require('fs');
+
 let playwright;
 try { playwright = require('playwright'); }
-catch (e) { playwright = require('/Users/shichaopeng/.local/lib/node_modules/@ks-tool/ks-cli/node_modules/playwright'); }
+catch (e) {
+  // 从本地配置文件读取 playwright 路径
+  const rcPath = path.resolve(__dirname, '.playwrightrc.js');
+  let localPlaywright = null;
+  if (fs.existsSync(rcPath)) {
+    const rc = require(rcPath);
+    localPlaywright = rc.localPlaywright;
+  }
+  if (!localPlaywright) {
+    // 回退到常见路径
+    localPlaywright = '/Users/shichaopeng/.local/lib/node_modules/@ks-tool/ks-cli/node_modules/playwright';
+  }
+  playwright = require(localPlaywright);
+}
 const { chromium } = playwright;
 
 (async () => {
