@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>字帖生成器</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --page-width: 210mm;
+      --page-height: 297mm;
+      --page-margin-top: 16mm;
+      --page-margin-right: 12mm;
+      --page-margin-bottom: 16mm;
+      --page-margin-left: 12mm;
+      --cell-size: 60px;
+      --grid-gap: 8px;
+      --grid-color: #198754;
+      --text-color: #000000;
+      --font-size: 42px;
+      --preview-scale: 1;
+      --guide-color: #6c757d;
+      --grid-stroke-width: 1;
+      --fourline-y1: 0.20;
+      --fourline-y2: 0.47;
+      --fourline-y3: 0.74;
+      --fourline-y4: 0.94;
+      --fourline-dash-on: 5;
+      --fourline-dash-off: 2;
+      --cell-radius: 0px;
+      --cell-bg: transparent;
+      --page-bg: #fff;
+      --text-stroke-width: 0px;
+      --text-shadow: none;
+      --cell-border-width: 0px;
+      --cell-shadow: none;
+    }
+    body { background: #f6f7f9; }
+    .page-wrapper { overflow-x: auto; }
+    .page {
+      width: var(--page-width);
+      min-height: var(--page-height);
+      padding: var(--page-margin-top) var(--page-margin-right) var(--page-margin-bottom) var(--page-margin-left);
+      margin: 12px auto;
+      background: var(--page-bg);
+      box-shadow: 0 0 6px rgba(0,0,0,.12);
+      color: var(--text-color);
+      transform: scale(var(--preview-scale));
+      transform-origin: top center;
+    }
+    @media print {
+      body { background: #fff; }
+      .no-print { display: none !important; }
+      .page { box-shadow: none; margin: 0; page-break-after: always; transform: none; }
+    }
+    .grid {
+      display: flex;
+      flex-direction: column;
+      gap: var(--grid-gap);
+      align-items: flex-start;
+    }
+    .grid-row {
+      display: grid;
+      gap: var(--grid-gap);
+    }
+    .cell {
+      width: var(--cell-size);
+      height: var(--cell-size);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--font-size);
+      line-height: var(--cell-size);
+      position: relative;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: var(--cell-bg);
+      border-radius: var(--cell-radius);
+      border: var(--cell-border-width) solid var(--grid-color);
+      box-shadow: var(--cell-shadow);
+      -webkit-text-stroke: var(--text-stroke-width) var(--text-color);
+      text-shadow: var(--text-shadow);
+      overflow: hidden;
+    }
+    /* 英文格式：字母 baseline 对齐四线三格第三条线（基线）。--en-descent 由 app.js 按字体设置 */
+    .cell-en {
+      line-height: normal;
+      align-items: flex-end;
+      padding-bottom: max(0px, calc((1 - var(--fourline-y3)) * var(--cell-size) - var(--en-descent, 0.238em)));
+    }
+    .guide { position: absolute; inset: 0; pointer-events: none; }
+    .guide-arrow { position: absolute; left: 10%; top: 12%; width: 70%; height: 2px; background: var(--guide-color); transform: rotate(10deg); }
+    .guide-arrow::after { content: ''; position: absolute; right: -2px; top: -4px; border-left: 8px solid var(--guide-color); border-top: 5px solid transparent; border-bottom: 5px solid transparent; }
+    .header { font-size: 18px; margin-bottom: 12px; }
+    .legend { font-size: 12px; color: #6c757d; }
+    .error { color: #dc3545; }
+    .config-summary {
+      font-size: 12px;
+      border: 1px solid #dee2e6;
+    }
+    .config-summary .badge {
+      font-size: 11px;
+      font-weight: 500;
+    }
+    .btn-group {
+      position: relative;
+    }
+    @media (max-width: 768px) {
+      .container { padding-left: 0.5rem; padding-right: 0.5rem; }
+      .page { transform: scale(0.6); }
+      .form-select, .form-control { font-size: 14px; }
+      .btn-group { display: flex; flex-wrap: wrap; gap: 0.25rem; }
+      .btn-group .btn { flex: 1; min-width: 60px; }
+    }
+    @media (max-width: 576px) {
+      .legend { display: block; margin-top: 6px; }
+      .config-summary .badge {
+        font-size: 10px;
+      }
+      .page { transform: scale(0.45); }
+      .container { padding-left: 0.25rem; padding-right: 0.25rem; }
+      .row { --bs-gutter-x: 0.5rem; }
+      .btn-group { flex-direction: column; }
+      .btn-group .btn { width: 100%; }
+      .col-4, .col-5, .col-6 { flex: 0 0 100%; max-width: 100%; }
+    }
+  </style>
+  <script type="module" crossorigin src="./assets/index-5bZ3m52Z.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"></script>
+  <script type="text/javascript" src="./js/utils.js"></script>
+  <script type="text/javascript" src="./js/grid.js"></script>
+  <script type="text/javascript" src="./js/content.js"></script>
+  <script type="text/javascript" src="./js/features.js"></script>
+  <script type="text/javascript" src="./js/export.js"></script>
+  <script type="text/javascript" src="./data/poems-tang300.js"></script>
+  <script type="text/javascript" src="./data/texts-xiaoxue.js"></script>
+  <script type="text/javascript" src="./data/common-chars.js"></script>
+  <script type="text/javascript" src="./data/english-words.js"></script>
+  <script type="text/javascript" src="./data/english-sentences.js"></script>
+  <script type="text/javascript" src="./js/library.js"></script>
+</body>
+</html>

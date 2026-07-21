@@ -14,7 +14,7 @@ export function HelpTooltip({ content, children }) {
         <div style={{
           position: 'absolute', bottom: '100%', left: '50%', transform: 'translateX(-50%)',
           background: '#333', color: '#fff', padding: '8px 12px', borderRadius: 6, fontSize: 13,
-          whiteSpace: 'nowrap', zIndex: 100, maxWidth: 280, whiteSpace: 'normal',
+          whiteSpace: 'normal', zIndex: 100, maxWidth: 280,
           boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
         }}>
           {content}
