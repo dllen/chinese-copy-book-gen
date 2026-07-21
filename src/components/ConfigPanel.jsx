@@ -1,4 +1,5 @@
 import React from 'react';
+import { HelpTooltip } from './HelpTooltip';
 
 const { toHex } = window.__copybook__.utils || {};
 
@@ -196,7 +197,9 @@ export default function ConfigPanel({
       // Grid type + color row
       React.createElement('div', { className: 'row g-2' },
         React.createElement('div', { className: 'col-5' },
-          React.createElement('label', { className: 'form-label', htmlFor: 'gridType' }, '格子类型'),
+          React.createElement(HelpTooltip, { content: '田字格适合初学者，米字格增加对角线辅助' },
+            React.createElement('label', { className: 'form-label', htmlFor: 'gridType' }, '格子类型')
+          ),
           React.createElement('select', { id: 'gridType', className: 'form-select', value: gridType, onChange: e => updateSetting('gridType', e.target.value) },
             ['田字格', '米字格', '回宫格', '四线三格', '无格'].map(v => React.createElement('option', { key: v, value: v }, v))
           )
@@ -266,7 +269,9 @@ export default function ConfigPanel({
           React.createElement('input', { id: 'customTextColor', className: 'form-control form-control-sm', type: 'color', value: customTextColor || toHex(textColorOpt), onChange: e => updateSetting('customTextColor', e.target.value) })
         ),
         React.createElement('div', { className: 'col-4' },
-          React.createElement('label', { className: 'form-label', htmlFor: 'stroke' }, '描红背景'),
+          React.createElement(HelpTooltip, { content: '描红背景的深浅影响练习难度' },
+            React.createElement('label', { className: 'form-label', htmlFor: 'stroke' }, '描红背景')
+          ),
           React.createElement('select', { id: 'stroke', className: 'form-select', value: strokeMode, onChange: e => updateSetting('strokeMode', e.target.value) },
             ['非常深', '深', '较深', '略浅', '适中', '非常浅', '白色（不可见）', '空芯'].map(v => React.createElement('option', { key: v, value: v }, v))
           )
@@ -323,7 +328,9 @@ export default function ConfigPanel({
           React.createElement('input', { id: 'fsize', className: 'form-control', type: 'number', min: 12, value: fontSize, onChange: e => handleSetFontSize(e.target.value) })
         ),
         React.createElement('div', { className: 'col-4' },
-          React.createElement('label', { className: 'form-label', htmlFor: 'paper' }, '纸张格式'),
+          React.createElement(HelpTooltip, { content: 'A4竖版适合家用打印机' },
+            React.createElement('label', { className: 'form-label', htmlFor: 'paper' }, '纸张格式')
+          ),
           React.createElement('select', { id: 'paper', className: 'form-select', value: paper, onChange: e => updateSetting('paper', e.target.value) },
             ['A4竖版', 'A4横版', 'A5竖版', 'A5横版', '作文纸A4'].map(v => React.createElement('option', { key: v, value: v }, v))
           )
