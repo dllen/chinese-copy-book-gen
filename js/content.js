@@ -1,8 +1,19 @@
 (function(){
   var w=window; w.__copybook__=w.__copybook__||{};
   function splitInput(mode,text){ const t=(text||'').trim(); if(mode==='多字') return Array.from(t); if(mode==='多词'){ const arr=t.replace(/，/g,',').split(/[\|\s,]+/).filter(Boolean); return arr; } if(mode==='多句'){ const pages=t.split('|').map(s=>s.trim()).filter(Boolean); return pages.map(p=>p.split(/(?<=[。！？!?.])/).filter(Boolean)); } if(mode==='文章'){ return Array.from(t.replace(/\s+/g,'')); } return []; }
-  function toCells(mode,text,variant){ if(mode==='多句'){ const pages=splitInput(mode,text); const flat=pages.map(pg=>{ const lineCells=[]; pg.forEach(sentence=>{ Array.from(sentence).forEach(ch=>lineCells.push(ch)); if(variant.includes('+1行')) lineCells.push('\n'); if(variant.includes('+1空行')) lineCells.push(''); }); return lineCells; }); return { pages: flat }; } const base=splitInput(mode,text); const cells=[]; if(mode==='多词'){ base.forEach(w=>{ Array.from(w).forEach(c=>cells.push(c)); if(variant.includes('+1行')) cells.push('\n'); if(variant.includes('+1空行')) cells.push(''); }); } else { base.forEach(c=>cells.push(c)); if(variant.includes('+1空行')) cells.push(''); } return { pages:[cells] }; }
+  function toCells(mode,text,variant){ const v=variant||''; if(mode==='多句'){ const pages=splitInput(mode,text); const flat=pages.map(pg=>{ const lineCells=[]; pg.forEach(sentence=>{ Array.from(sentence).forEach(ch=>lineCells.push(ch)); if(v.includes('+1行')) lineCells.push('\n'); if(v.includes('+1空行')) lineCells.push(''); }); return lineCells; }); return { pages: flat }; } const base=splitInput(mode,text); const cells=[]; if(mode==='多词'){ base.forEach(w=>{ Array.from(w).forEach(c=>cells.push(c)); if(v.includes('+1行')) cells.push('\n'); if(v.includes('+1空行')) cells.push(''); }); } else { base.forEach(c=>cells.push(c)); if(v.includes('+1行')) cells.push('\n'); if(v.includes('+1空行')) cells.push(''); } return { pages:[cells] }; }
   function paginate(cellsByPage,rows,cols,fillLast){ const pages=[]; cellsByPage.forEach(list=>{ const cap=rows*cols; let chunk=list.slice(); while(chunk.length>0){ const page=chunk.splice(0,cap); if(fillLast && page.length<cap){ while(page.length<cap) page.push(''); } pages.push(page); } }); return pages; }
+  function splitRows(cells,cols){
+    const rows=[[]];
+    (cells||[]).forEach(ch=>{
+      if(ch==='\n') rows.push([]);
+      else {
+        rows[rows.length-1].push(ch);
+        if(cols && rows[rows.length-1].length>=cols) rows.push([]);
+      }
+    });
+    return rows.filter(r=>r.length>0);
+  }
   // ---------- 排版格式（考试标准） ----------
   // 不可出现于行首的标点（避头），不可落于行尾的标点（避尾）
   var HEAD_PUNCT='，。！？；：、”’）】》…—·,.!?;:)]}%';
@@ -86,5 +97,5 @@
     return { pages:[cells] };
   }
   function sampleRandom(pool,n,noRepeat){ if(pool.length===0) return ''; const cnt=Math.max(1,Math.min(n, noRepeat?pool.length:n)); if(noRepeat){ const shuffled=pool.slice(); for(let i=shuffled.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]]; } return shuffled.slice(0,cnt).join(''); } else { let out=''; for(let i=0;i<cnt;i++){ out+=pool[Math.floor(Math.random()*pool.length)]; } return out; } }
-  w.__copybook__.content={ splitInput, toCells, paginate, sampleRandom, layoutDocument, layoutEnglish, wrapFlow, centerLine };
+  w.__copybook__.content={ splitInput, toCells, paginate, splitRows, sampleRandom, layoutDocument, layoutEnglish, wrapFlow, centerLine };
 })();

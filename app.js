@@ -1,26 +1,13 @@
 (function(){
   const { useState, useEffect, useMemo } = React;
 
-  function toHex(c){ if(!c) return '#000000'; const m=c.match(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i); if(m) return c; const map={绿色:'#198754',黑色:'#000000',红色:'#dc3545',白色:'#ffffff',透明:'transparent',米色:'#f5f5dc',淡蓝:'#e3f2fd',淡绿:'#e8f5e9',浅灰:'#f5f5f5',蓝色:'#007bff',紫色:'#6f42c1'}; return map[c]||'#000000'; }
+  // --- utils from module (duplicates removed) ---
+  const { toHex, strokeLevel, fontByTemplate, pageSize, validate } = window.__copybook__.utils || {};
+  const { splitInput, toCells, paginate, splitRows } = window.__copybook__.content || {};
 
-  function debounce(fn, delay){
-    let timer = null;
-    return function(...args){
-      clearTimeout(timer);
-      timer = setTimeout(() => fn.apply(this, args), delay);
-    };
-  }
+  // Shared config field list (used by saveTemplate/exportConfig/importConfig/loadTemplate)
+  const CONFIG_FIELDS = ['gridType','gridColor','customGridColor','customTextColor','textColorOpt','strokeMode','stylePreset','autoLayout','gridStrokeWidth','lineStyle','cellRadius','pageBg','cellBg','cellBorder','textStroke','textShadow','template','customFont','rows','cols','cellSize','gridGap','fontSize','marginTop','marginRight','marginBottom','marginLeft','paper'];
 
-  function strokeLevel(level,textColor){ const map={'非常深':1,'深':0.9,'较深':0.8,'略浅':0.6,'适中':0.5,'非常浅':0.35,'白色（不可见）':0,'空芯':'outline'}; const v=map[level]??0.5; if(v==='outline') return { color:'transparent', WebkitTextStroke:`1px ${textColor}` }; return { opacity:String(v), color:textColor, WebkitTextStroke:'0' }; }
-  function fontByTemplate(t,custom){ if(t==='楷书') return `'STKaiti','KaiTi','Kaiti SC','AR PL KaitiM GB',serif`; if(t==='行书') return `'Hiragino Sans GB','KaiTi','Kaiti SC',serif`; if(t==='草书') return `'CaoShu','KaiTi','Kaiti SC',serif`; if(t==='隶书') return `'LiSu','KaiTi','Kaiti SC',serif`; if(t==='庞中华') return `'PangZhongHuaKaiTi','PangZhongHua',serif`; if(t==='田英章') return `'TianYingZhangKaiTi','TianYingZhang',serif`; if(t==='自定义') return custom||'serif'; return 'serif'; }
-
-  function svgDataURL(type,size,color){ const s=size,c=color; if(type==='无格') return ''; const w=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--grid-stroke-width')||'1'); const dashMap={'实线':'','虚线':` stroke-dasharray='5,2'`,'点线':` stroke-dasharray='1,4'`,'点划线':` stroke-dasharray='5,2,1,2'`}; if(type==='田字格'){ const dash=dashMap[lineStyle]||''; const svg=`<svg xmlns='http://www.w3.org/2000/svg' width='${s}' height='${s}' shape-rendering='crispEdges'>`+`<rect x='0.5' y='0.5' width='${s-1}' height='${s-1}' fill='none' stroke='${c}' stroke-width='${w}'${dash}/>`+`<line x1='${s/2}' y1='1' x2='${s/2}' y2='${s-1}' stroke='${c}' stroke-width='${w}'${dash}/>`+`<line x1='1' y1='${s/2}' x2='${s-1}' y2='${s/2}' stroke='${c}' stroke-width='${w}'${dash}/>`+`</svg>`; return `url("data:image/svg+xml;utf8,${encodeURIComponent(svg)}")`; } if(type==='米字格'){ const dash=dashMap[lineStyle]||''; const svg=`<svg xmlns='http://www.w3.org/2000/svg' width='${s}' height='${s}' shape-rendering='crispEdges'>`+`<rect x='0.5' y='0.5' width='${s-1}' height='${s-1}' fill='none' stroke='${c}' stroke-width='${w}'${dash}/>`+`<line x1='${s/2}' y1='1' x2='${s/2}' y2='${s-1}' stroke='${c}' stroke-width='${w}'${dash}/>`+`<line x1='1' y1='${s/2}' x2='${s-1}' y2='${s/2}' stroke='${c}' stroke-width='${w}'${dash}/>`+`<line x1='1' y1='1' x2='${s-1}' y2='${s-1}' stroke='${c}' stroke-width='${w}'${dash}/>`+`<line x1='${s-1}' y1='1' x2='1' y2='${s-1}' stroke='${c}' stroke-width='${w}'${dash}/>`+`</svg>`; return `url("data:image/svg+xml;utf8,${encodeURIComponent(svg)}")`; } if(type==='回宫格'){ const inner=Math.round(s*0.6),offset=(s-inner)/2; const dash=dashMap[lineStyle]||''; const svg=`<svg xmlns='http://www.w3.org/2000/svg' width='${s}' height='${s}' shape-rendering='crispEdges'>`+`<rect x='0.5' y='0.5' width='${s-1}' height='${s-1}' fill='none' stroke='${c}' stroke-width='${w}'${dash}/>`+`<rect x='${offset}' y='${offset}' width='${inner}' height='${inner}' fill='none' stroke='${c}' stroke-width='${w}'${dash}/>`+`<line x1='${s/2}' y1='1' x2='${s/2}' y2='${s-1}' stroke='${c}' stroke-width='${w}'${dash}/>`+`<line x1='1' y1='${s/2}' x2='${s-1}' y2='${s/2}' stroke='${c}' stroke-width='${w}'${dash}/>`+`</svg>`; return `url("data:image/svg+xml;utf8,${encodeURIComponent(svg)}")`; } if(type==='四线三格'){ const cs=getComputedStyle(document.documentElement); const y1=Math.round(s*parseFloat(cs.getPropertyValue('--fourline-y1')||'0.25')); const y2=Math.round(s*parseFloat(cs.getPropertyValue('--fourline-y2')||'0.50')); const y3=Math.round(s*parseFloat(cs.getPropertyValue('--fourline-y3')||'0.75')); const y4=Math.round(s*parseFloat(cs.getPropertyValue('--fourline-y4')||'0.92')); const don=cs.getPropertyValue('--fourline-dash-on')||'5'; const doff=cs.getPropertyValue('--fourline-dash-off')||'2'; const dash=` stroke-dasharray='${don.trim()},${doff.trim()}'`; const svg=`<svg xmlns='http://www.w3.org/2000/svg' width='${s}' height='${s}' shape-rendering='crispEdges'>`+`<line x1='0' y1='${y1}' x2='${s}' y2='${y1}' stroke='${c}' stroke-width='${w}'${dash}/>`+`<line x1='0' y1='${y2}' x2='${s}' y2='${y2}' stroke='${c}' stroke-width='${w}'${dash}/>`+`<line x1='0' y1='${y3}' x2='${s}' y2='${y3}' stroke='${c}' stroke-width='${w}'/>`+`<line x1='0' y1='${y4}' x2='${s}' y2='${y4}' stroke='${c}' stroke-width='${w}'${dash}/>`+`</svg>`; return `url("data:image/svg+xml;utf8,${encodeURIComponent(svg)}")`; } return ''; }
-
-  function splitInput(mode,text){ const t=(text||'').trim(); if(mode==='多字') return Array.from(t); if(mode==='多词'){ const arr=t.replace(/，/g,',').split(/[\|\s,]+/).filter(Boolean); return arr; } if(mode==='多句'){ const pages=t.split('|').map(s=>s.trim()).filter(Boolean); return pages.map(p=>p.split(/(?<=[。！？!?.])/).filter(Boolean)); } if(mode==='文章'){ return Array.from(t.replace(/\s+/g,'')); } return []; }
-  function toCells(mode,text,variant){ if(mode==='多句'){ const pages=splitInput(mode,text); const flat=pages.map(pg=>{ const lineCells=[]; pg.forEach(sentence=>{ Array.from(sentence).forEach(ch=>lineCells.push(ch)); if(variant.includes('+1行')) lineCells.push('\n'); if(variant.includes('+1空行')) lineCells.push(''); }); return lineCells; }); return { pages: flat }; } const base=splitInput(mode,text); const cells=[]; if(mode==='多词'){ base.forEach(w=>{ Array.from(w).forEach(c=>cells.push(c)); if(variant.includes('+1行')) cells.push('\n'); if(variant.includes('+1空行')) cells.push(''); }); } else { base.forEach(c=>cells.push(c)); if(variant.includes('+1空行')) cells.push(''); } return { pages:[cells] }; }
-  function paginate(cellsByPage,rows,cols,fillLast){ const pages=[]; cellsByPage.forEach(list=>{ const cap=rows*cols; let chunk=list.slice(); while(chunk.length>0){ const page=chunk.splice(0,cap); if(fillLast && page.length<cap){ while(page.length<cap) page.push(''); } pages.push(page); } }); return pages; }
-  function pageSize(format){ if(format==='A4竖版') return { w:'210mm', h:'297mm' }; if(format==='A4横版') return { w:'297mm', h:'210mm' }; if(format==='A5竖版') return { w:'148mm', h:'210mm' }; if(format==='A5横版') return { w:'210mm', h:'148mm' }; if(format==='作文纸A4') return { w:'210mm', h:'297mm' }; return { w:'210mm', h:'297mm' }; }
-  function validate(mode,text){ if(!text||!text.trim()) return { ok:false, msg:'请输入内容' }; if(mode==='多字' && /[\s,;，；\n]/.test(text)) return { ok:false, msg:'多字模式不允许空格或标点' }; if(mode==='文章' && /\n/.test(text)) return { ok:false, msg:'文章模式不允许换行' }; return { ok:true, msg:'' }; }
   function Cell({ ch,bg,textColor,strokeMode,font,fontSize,showGuide,cls }){ const style=strokeLevel(strokeMode,textColor); return React.createElement('div',{ className:'cell'+(cls?' '+cls:''), style:{ backgroundImage:bg, color:style.color, WebkitTextStroke:style.WebkitTextStroke, opacity:style.opacity, fontFamily:font, fontSize:fontSize } }, ch||'', showGuide?React.createElement('div',{ className:'guide' }, React.createElement('div',{ className:'guide-arrow' })):null); }
 
   function Section({title, children, defaultOpen}){
@@ -82,6 +69,7 @@
     const [cellBg,setCellBg]=useState('透明'); // 格子填充
     const [cellBorder,setCellBorder]=useState(false); // 格子边框
     const [textShadow,setTextShadow]=useState(false); // 文字阴影
+    const [cellShadow,setCellShadow]=useState(false); // 立体效果（格子阴影）
     const [textStroke,setTextStroke]=useState('无'); // 文字描边
     const [feature,setFeature]=useState('字帖模板');
     const [difficulty,setDifficulty]=useState('初级');
@@ -123,8 +111,21 @@
     const [randCount,setRandCount]=useState(50);
     const [randNoRepeat,setRandNoRepeat]=useState(true);
 
-    useEffect(()=>{ const saved=localStorage.getItem('copybook.settings'); if(saved){ try{ const s=JSON.parse(saved); Object.entries(s).forEach(([k,v])=>{ if(v!==undefined) switch(k){ case 'mode':setMode(v);break; case 'variant':setVariant(v);break; case 'layout':setLayout(v);break; case 'gridType':setGridType(v);break; case 'gridColor':setGridColor(v);break; case 'customGridColor':setCustomGridColor(v);break; case 'customTextColor':setCustomTextColor(v);break; case 'textColorOpt':setTextColorOpt(v);break; case 'strokeMode':setStrokeMode(v);break; case 'tailFill':setTailFill(v);break; case 'template':setTemplate(v);break; case 'customFont':setCustomFont(v);break; case 'rows':setRows(v);break; case 'cols':setCols(v);break; case 'cellSize':setCellSize(v);break; case 'gridGap':setGridGap(v);break; case 'fontSize':setFontSize(v);break; case 'marginTop':setMarginTop(v);break; case 'marginRight':setMarginRight(v);break; case 'marginBottom':setMarginBottom(v);break; case 'marginLeft':setMarginLeft(v);break; case 'paper':setPaper(v);break; case 'header':setHeader(v);break; case 'text':setText(v);break; case 'feature':setFeature(v);break; case 'difficulty':setDifficulty(v);break; case 'showGuide':setShowGuide(v);break; case 'letterStyle':setLetterStyle(v);break; case 'enBlankRows':setEnBlankRows(v);break; case 'enRepeat':setEnRepeat(v);break; case 'engShowZh':setEngShowZh(v);break; case 'previewScale':setPreviewScale(v);break; case 'stylePreset':setStylePreset(v);break; case 'autoLayout':setAutoLayout(v);break; case 'gridStrokeWidth':setGridStrokeWidth(v);break; case 'lineStyle':setLineStyle(v);break; case 'cellRadius':setCellRadius(v);break; case 'pageBg':setPageBg(v);break; case 'cellBg':setCellBg(v);break; case 'cellBorder':setCellBorder(v);break; case 'textShadow':setTextShadow(v);break; case 'textStroke':setTextStroke(v);break; case 'alnumIncludeDigits':setAlnumIncludeDigits(v);break; case 'alnumIncludeUpper':setAlnumIncludeUpper(v);break; case 'alnumIncludeLower':setAlnumIncludeLower(v);break; case 'alnumCount':setAlnumCount(v);break; case 'alnumNoRepeat':setAlnumNoRepeat(v);break; case 'alnumSeq':setAlnumSeq(v);break; } }); }catch(e){} } },[]);
-    useEffect(()=>{ const s={ mode,variant,layout,gridType,gridColor,customGridColor,customTextColor,textColorOpt,strokeMode,tailFill,template,customFont,rows,cols,cellSize,gridGap,fontSize,marginTop,marginRight,marginBottom,marginLeft,paper,header,text,randCount,randNoRepeat,previewScale,feature,difficulty,showGuide,letterStyle,enBlankRows,enRepeat,engShowZh,stylePreset,autoLayout,gridStrokeWidth,lineStyle,cellRadius,pageBg,cellBg,cellBorder,textShadow,textStroke,alnumIncludeDigits,alnumIncludeUpper,alnumIncludeLower,alnumCount,alnumNoRepeat,alnumSeq }; localStorage.setItem('copybook.settings', JSON.stringify(s)); },[mode,variant,layout,gridType,gridColor,customGridColor,customTextColor,textColorOpt,strokeMode,tailFill,template,customFont,rows,cols,cellSize,gridGap,fontSize,marginTop,marginRight,marginBottom,marginLeft,paper,header,text,randCount,randNoRepeat,previewScale,feature,difficulty,showGuide,letterStyle,enBlankRows,enRepeat,engShowZh,stylePreset,autoLayout,gridStrokeWidth,lineStyle,cellRadius,pageBg,cellBg,cellBorder,textShadow,textStroke,alnumIncludeDigits,alnumIncludeUpper,alnumIncludeLower,alnumCount,alnumNoRepeat,alnumSeq]);
+    // Map config field → setter (used by loadTemplate / importConfig)
+    const CONFIG_SETTERS = {
+      gridType:setGridType, gridColor:setGridColor, customGridColor:setCustomGridColor,
+      customTextColor:setCustomTextColor, textColorOpt:setTextColorOpt, strokeMode:setStrokeMode,
+      stylePreset:setStylePreset, autoLayout:setAutoLayout, gridStrokeWidth:setGridStrokeWidth,
+      lineStyle:setLineStyle, cellRadius:setCellRadius, pageBg:setPageBg, cellBg:setCellBg,
+      cellBorder:setCellBorder, textStroke:setTextStroke, textShadow:setTextShadow,
+      template:setTemplate, customFont:setCustomFont, rows:setRows, cols:setCols,
+      cellSize:setCellSize, gridGap:setGridGap, fontSize:setFontSize,
+      marginTop:setMarginTop, marginRight:setMarginRight, marginBottom:setMarginBottom,
+      marginLeft:setMarginLeft, paper:setPaper
+    };
+
+    useEffect(()=>{ const saved=localStorage.getItem('copybook.settings'); if(saved){ try{ const s=JSON.parse(saved); Object.entries(s).forEach(([k,v])=>{ if(v!==undefined) switch(k){ case 'mode':setMode(v);break; case 'variant':setVariant(v);break; case 'layout':setLayout(v);break; case 'gridType':setGridType(v);break; case 'gridColor':setGridColor(v);break; case 'customGridColor':setCustomGridColor(v);break; case 'customTextColor':setCustomTextColor(v);break; case 'textColorOpt':setTextColorOpt(v);break; case 'strokeMode':setStrokeMode(v);break; case 'tailFill':setTailFill(v);break; case 'template':setTemplate(v);break; case 'customFont':setCustomFont(v);break; case 'rows':setRows(v);break; case 'cols':setCols(v);break; case 'cellSize':setCellSize(v);break; case 'gridGap':setGridGap(v);break; case 'fontSize':setFontSize(v);break; case 'marginTop':setMarginTop(v);break; case 'marginRight':setMarginRight(v);break; case 'marginBottom':setMarginBottom(v);break; case 'marginLeft':setMarginLeft(v);break; case 'paper':setPaper(v);break; case 'header':setHeader(v);break; case 'text':setText(v);break; case 'feature':setFeature(v);break; case 'difficulty':setDifficulty(v);break; case 'showGuide':setShowGuide(v);break; case 'letterStyle':setLetterStyle(v);break; case 'enBlankRows':setEnBlankRows(v);break; case 'enRepeat':setEnRepeat(v);break; case 'engShowZh':setEngShowZh(v);break; case 'previewScale':setPreviewScale(v);break; case 'stylePreset':setStylePreset(v);break; case 'autoLayout':setAutoLayout(v);break; case 'gridStrokeWidth':setGridStrokeWidth(v);break; case 'lineStyle':setLineStyle(v);break; case 'cellRadius':setCellRadius(v);break; case 'pageBg':setPageBg(v);break; case 'cellBg':setCellBg(v);break; case 'cellBorder':setCellBorder(v);break; case 'cellShadow':setCellShadow(v);break; case 'textShadow':setTextShadow(v);break; case 'textStroke':setTextStroke(v);break; case 'alnumIncludeDigits':setAlnumIncludeDigits(v);break; case 'alnumIncludeUpper':setAlnumIncludeUpper(v);break; case 'alnumIncludeLower':setAlnumIncludeLower(v);break; case 'alnumCount':setAlnumCount(v);break; case 'alnumNoRepeat':setAlnumNoRepeat(v);break; case 'alnumSeq':setAlnumSeq(v);break; } }); }catch(e){} } },[]);
+    useEffect(()=>{ const s={ mode,variant,layout,gridType,gridColor,customGridColor,customTextColor,textColorOpt,strokeMode,tailFill,template,customFont,rows,cols,cellSize,gridGap,fontSize,marginTop,marginRight,marginBottom,marginLeft,paper,header,text,randCount,randNoRepeat,previewScale,feature,difficulty,showGuide,letterStyle,enBlankRows,enRepeat,engShowZh,stylePreset,autoLayout,gridStrokeWidth,lineStyle,cellRadius,pageBg,cellBg,cellBorder,cellShadow,textShadow,textStroke,alnumIncludeDigits,alnumIncludeUpper,alnumIncludeLower,alnumCount,alnumNoRepeat,alnumSeq }; localStorage.setItem('copybook.settings', JSON.stringify(s)); },[mode,variant,layout,gridType,gridColor,customGridColor,customTextColor,textColorOpt,strokeMode,tailFill,template,customFont,rows,cols,cellSize,gridGap,fontSize,marginTop,marginRight,marginBottom,marginLeft,paper,header,text,randCount,randNoRepeat,previewScale,feature,difficulty,showGuide,letterStyle,enBlankRows,enRepeat,engShowZh,stylePreset,autoLayout,gridStrokeWidth,lineStyle,cellRadius,pageBg,cellBg,cellBorder,cellShadow,textShadow,textStroke,alnumIncludeDigits,alnumIncludeUpper,alnumIncludeLower,alnumCount,alnumNoRepeat,alnumSeq]);
 
     useEffect(()=>{
       const emb=(window.__copybookData__||{}).commonChars;
@@ -147,11 +148,11 @@
     useEffect(()=>{ document.documentElement.style.setProperty('--preview-scale', String(previewScale)); },[previewScale]);
     const gColor=useMemo(()=>{ const custom = customGridColor && /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(customGridColor) ? customGridColor : null; return custom || toHex(gridColor); },[gridColor,customGridColor]);
     const tColor=useMemo(()=>{ const custom = customTextColor && /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(customTextColor) ? customTextColor : null; return custom || toHex(textColorOpt); },[textColorOpt,customTextColor]);
-    const parsed=useMemo(()=>{ const cp=window.__copybook__||{}; if(feature==='控笔字帖'){ if(cp.features&&cp.features.buildControlPages) return cp.features.buildControlPages(difficulty); const basic=['一','丨','丿','丶','亅']; const mids=['氵','亻','讠','艹','月','女','口','木','火','土','日','目','田']; const adv=['永','德','善','爱','勇','强']; let pool=[]; if(difficulty==='初级') pool=basic; else if(difficulty==='中级') pool=mids; else pool=adv; const seq=[]; pool.forEach(c=>{ seq.push(c); seq.push(''); }); return { pages:[seq] }; } if(feature==='数字字母'){ const s=alnumSeq||''; return { pages:[Array.from(s)] }; } if(feature==='字帖模板'&&layout!=='连续排列'&&cp.content&&cp.content.layoutDocument) return cp.content.layoutDocument(layout,text,cols,{ blankRows:enBlankRows, repeat:enRepeat }); return (cp.content&&cp.content.toCells?cp.content.toCells(mode,text,variant):toCells(mode,text,variant)); },[feature,mode,text,variant,difficulty,alnumSeq,layout,cols,enBlankRows,enRepeat]);
-    const pages=useMemo(()=>paginate(parsed.pages,rows,cols,tailFill),[parsed,rows,cols,tailFill]);
+    const parsed=useMemo(()=>{ const cp=window.__copybook__||{}; if(feature==='控笔字帖'){ if(cp.features&&cp.features.buildControlPages) return cp.features.buildControlPages(difficulty); const basic=['一','丨','丿','丶','亅']; const mids=['氵','亻','讠','艹','月','女','口','木','火','土','日','目','田']; const adv=['永','德','善','爱','勇','强']; let pool=[]; if(difficulty==='初级') pool=basic; else if(difficulty==='中级') pool=mids; else pool=adv; const seq=[]; pool.forEach(c=>{ seq.push(c); seq.push(''); }); return { pages:[seq] }; } if(feature==='数字字母'){ const s=alnumSeq||''; return { pages:[Array.from(s)] }; } if(feature==='字帖模板'&&layout!=='连续排列'&&cp.content&&cp.content.layoutDocument) return cp.content.layoutDocument(layout,text,cols,{ blankRows:enBlankRows, repeat:enRepeat }); return (cp.content&&cp.content.toCells?cp.content.toCells(mode,text,variant):{}); },[feature,mode,text,variant,difficulty,alnumSeq,layout,cols,enBlankRows,enRepeat]);
+    const pages=useMemo(()=>{ const cp=window.__copybook__||{}; const paginateFn=cp.content&&cp.content.paginate||paginate; return paginateFn(parsed.pages,rows,cols,tailFill); },[parsed,rows,cols,tailFill]);
     const usage=useMemo(()=>{ const capacity=rows*cols*pages.length; let used=0; pages.forEach(pg=>pg.forEach(ch=>{ if(ch&&ch!=='\n') used++; })); const warn=pages.length>50; return { capacity, used, warn }; },[pages,rows,cols]);
-    const bg=useMemo(()=>{ const cp=window.__copybook__||{}; return (cp.grid?cp.grid.svgDataURL(gridType,cellSize,gColor):svgDataURL(gridType,cellSize,gColor)); },[gridType,cellSize,gColor]);
-    useEffect(()=>{ const sz=pageSize(paper); document.documentElement.style.setProperty('--page-width', sz.w); document.documentElement.style.setProperty('--page-height', sz.h); document.documentElement.style.setProperty('--cell-size', `${cellSize}px`); document.documentElement.style.setProperty('--grid-gap', `${gridGap}px`); document.documentElement.style.setProperty('--grid-color', gColor); document.documentElement.style.setProperty('--text-color', tColor); document.documentElement.style.setProperty('--font-size', `${fontSize}px`); document.documentElement.style.setProperty('--page-margin-top', `${marginTop}mm`); document.documentElement.style.setProperty('--page-margin-right', `${marginRight}mm`); document.documentElement.style.setProperty('--page-margin-bottom', `${marginBottom}mm`); document.documentElement.style.setProperty('--page-margin-left', `${marginLeft}mm`); document.documentElement.style.setProperty('--guide-color', gColor); document.documentElement.style.setProperty('--page-bg', toHex(pageBg)||'#fff'); document.documentElement.style.setProperty('--cell-bg', toHex(cellBg)||'transparent'); document.documentElement.style.setProperty('--cell-border-width', cellBorder?'2px':'0px'); document.documentElement.style.setProperty('--cell-shadow', cellBorder?'0 2px 4px rgba(0,0,0,0.1)':'none'); document.documentElement.style.setProperty('--text-stroke-width', textStroke==='无'?'0px':textStroke==='细'?'0.5px':textStroke==='中'?'1px':'2px'); document.documentElement.style.setProperty('--text-shadow', textShadow?'2px 2px 4px rgba(0,0,0,0.3)':'none'); },[paper,cellSize,gridGap,gColor,tColor,fontSize,marginTop,marginRight,marginBottom,marginLeft,pageBg,cellBg,cellBorder,textShadow,textStroke]);
+    const bg=useMemo(()=>{ const cp=window.__copybook__||{}; return cp.grid?cp.grid.svgDataURL(gridType,cellSize,gColor,lineStyle):''; },[gridType,cellSize,gColor,lineStyle]);
+    useEffect(()=>{ const sz=pageSize(paper); document.documentElement.style.setProperty('--page-width', sz.w); document.documentElement.style.setProperty('--page-height', sz.h); document.documentElement.style.setProperty('--cell-size', `${cellSize}px`); document.documentElement.style.setProperty('--grid-gap', `${gridGap}px`); document.documentElement.style.setProperty('--grid-color', gColor); document.documentElement.style.setProperty('--text-color', tColor); document.documentElement.style.setProperty('--font-size', `${fontSize}px`); document.documentElement.style.setProperty('--page-margin-top', `${marginTop}mm`); document.documentElement.style.setProperty('--page-margin-right', `${marginRight}mm`); document.documentElement.style.setProperty('--page-margin-bottom', `${marginBottom}mm`); document.documentElement.style.setProperty('--page-margin-left', `${marginLeft}mm`); document.documentElement.style.setProperty('--guide-color', gColor); document.documentElement.style.setProperty('--page-bg', toHex(pageBg)||'#fff'); document.documentElement.style.setProperty('--cell-bg', toHex(cellBg)||'transparent'); document.documentElement.style.setProperty('--cell-border-width', cellBorder?'2px':'0px'); document.documentElement.style.setProperty('--cell-shadow', cellShadow?'0 2px 4px rgba(0,0,0,0.1)':'none'); document.documentElement.style.setProperty('--text-stroke-width', textStroke==='无'?'0px':textStroke==='细'?'0.5px':textStroke==='中'?'1px':'2px'); document.documentElement.style.setProperty('--text-shadow', textShadow?'2px 2px 4px rgba(0,0,0,0.3)':'none'); },[paper,cellSize,gridGap,gColor,tColor,fontSize,marginTop,marginRight,marginBottom,marginLeft,pageBg,cellBg,cellBorder,cellShadow,textShadow,textStroke]);
     useEffect(()=>{ document.documentElement.style.setProperty('--grid-stroke-width', String(gridStrokeWidth)); document.documentElement.style.setProperty('--cell-radius', `${cellRadius}px`); },[gridStrokeWidth,cellRadius]);
     useEffect(()=>{ document.documentElement.style.setProperty('--en-descent', letterStyle==='手写体'?'0.286em':'0.238em'); },[letterStyle]);
     useEffect(()=>{ if(stylePreset==='四线三格标准'){ document.documentElement.style.setProperty('--fourline-y1','0.25'); document.documentElement.style.setProperty('--fourline-y2','0.50'); document.documentElement.style.setProperty('--fourline-y3','0.75'); document.documentElement.style.setProperty('--fourline-y4','0.92'); setGridType('四线三格'); } else if(stylePreset==='四线三格宽间'){ document.documentElement.style.setProperty('--fourline-y1','0.20'); document.documentElement.style.setProperty('--fourline-y2','0.50'); document.documentElement.style.setProperty('--fourline-y3','0.80'); document.documentElement.style.setProperty('--fourline-y4','0.95'); setGridType('四线三格'); } else if(stylePreset==='田字格标准'){ setGridType('田字格'); } else if(stylePreset==='米字格标准'){ setGridType('米字格'); } else if(stylePreset==='米字格宽间'){ setGridType('米字格'); } else if(stylePreset==='回宫格标准'){ setGridType('回宫格'); } else if(stylePreset==='回宫格宽间'){ setGridType('回宫格'); } else if(stylePreset==='现代简约'){ setGridType('田字格'); document.documentElement.style.setProperty('--cell-radius','4px'); document.documentElement.style.setProperty('--grid-stroke-width','0.5'); } else if(stylePreset==='儿童卡通'){ setGridType('田字格'); document.documentElement.style.setProperty('--cell-radius','8px'); document.documentElement.style.setProperty('--grid-stroke-width','2'); } },[stylePreset]);
@@ -169,28 +170,23 @@
 
 
     function saveTemplate(){
-      const template = {
-        name: prompt('请输入模板名称：', '我的模板'),
+      const name = prompt('请输入模板名称：', '我的模板');
+      if(!name) return;
+      const config = { gridType, gridColor, customGridColor, customTextColor, textColorOpt, strokeMode, stylePreset, autoLayout, gridStrokeWidth, lineStyle, cellRadius, pageBg, cellBg, cellBorder, textStroke, textShadow, template, customFont, rows, cols, cellSize, gridGap, fontSize, marginTop, marginRight, marginBottom, marginLeft, paper };
+      const payload = {
+        name,
         createdAt: new Date().toISOString(),
-        config: {
-          gridType, gridColor, customGridColor, customTextColor, textColorOpt,
-          strokeMode, stylePreset, autoLayout, gridStrokeWidth, lineStyle,
-          cellRadius, pageBg, cellBg, cellBorder, textStroke, textShadow,
-          template, customFont, rows, cols, cellSize, gridGap, fontSize,
-          marginTop, marginRight, marginBottom, marginLeft, paper
-        },
+        config,
         content: {
           mode, variant, layout, text
         }
       };
-      
-      if(!template.name) return;
-      
-      const blob = new Blob([JSON.stringify(template, null, 2)], {type: 'application/json'});
+
+      const blob = new Blob([JSON.stringify(payload, null, 2)], {type: 'application/json'});
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `${template.name}.json`;
+      a.download = `${payload.name}.json`;
       a.click();
       URL.revokeObjectURL(url);
     }
@@ -206,40 +202,7 @@
           const content = template.content || {};
           
           // 应用配置
-          Object.entries(config).forEach(([k,v]) => {
-            if(v!==undefined) {
-              switch(k){
-                case 'gridType': setGridType(v); break;
-                case 'gridColor': setGridColor(v); break;
-                case 'customGridColor': setCustomGridColor(v); break;
-                case 'customTextColor': setCustomTextColor(v); break;
-                case 'textColorOpt': setTextColorOpt(v); break;
-                case 'strokeMode': setStrokeMode(v); break;
-                case 'stylePreset': setStylePreset(v); break;
-                case 'autoLayout': setAutoLayout(v); break;
-                case 'gridStrokeWidth': setGridStrokeWidth(v); break;
-                case 'lineStyle': setLineStyle(v); break;
-                case 'cellRadius': setCellRadius(v); break;
-                case 'pageBg': setPageBg(v); break;
-                case 'cellBg': setCellBg(v); break;
-                case 'cellBorder': setCellBorder(v); break;
-                case 'textStroke': setTextStroke(v); break;
-                case 'textShadow': setTextShadow(v); break;
-                case 'template': setTemplate(v); break;
-                case 'customFont': setCustomFont(v); break;
-                case 'rows': setRows(v); break;
-                case 'cols': setCols(v); break;
-                case 'cellSize': setCellSize(v); break;
-                case 'gridGap': setGridGap(v); break;
-                case 'fontSize': setFontSize(v); break;
-                case 'marginTop': setMarginTop(v); break;
-                case 'marginRight': setMarginRight(v); break;
-                case 'marginBottom': setMarginBottom(v); break;
-                case 'marginLeft': setMarginLeft(v); break;
-                case 'paper': setPaper(v); break;
-              }
-            }
-          });
+          Object.entries(config).forEach(([k,v]) => { if(v!==undefined&&CONFIG_SETTERS[k]) CONFIG_SETTERS[k](v); });
           
           // 应用内容
           if(content.mode) setMode(content.mode);
@@ -256,6 +219,7 @@
     }
 
 
+    function exportConfig(){
       const config = {
         gridType, gridColor, customGridColor, customTextColor, textColorOpt,
         strokeMode, stylePreset, autoLayout, gridStrokeWidth, lineStyle,
@@ -279,40 +243,7 @@
       reader.onload = (event) => {
         try {
           const config = JSON.parse(event.target.result);
-          Object.entries(config).forEach(([k,v]) => {
-            if(v!==undefined) {
-              switch(k){
-                case 'gridType': setGridType(v); break;
-                case 'gridColor': setGridColor(v); break;
-                case 'customGridColor': setCustomGridColor(v); break;
-                case 'customTextColor': setCustomTextColor(v); break;
-                case 'textColorOpt': setTextColorOpt(v); break;
-                case 'strokeMode': setStrokeMode(v); break;
-                case 'stylePreset': setStylePreset(v); break;
-                case 'autoLayout': setAutoLayout(v); break;
-                case 'gridStrokeWidth': setGridStrokeWidth(v); break;
-                case 'lineStyle': setLineStyle(v); break;
-                case 'cellRadius': setCellRadius(v); break;
-                case 'pageBg': setPageBg(v); break;
-                case 'cellBg': setCellBg(v); break;
-                case 'cellBorder': setCellBorder(v); break;
-                case 'textStroke': setTextStroke(v); break;
-                case 'textShadow': setTextShadow(v); break;
-                case 'template': setTemplate(v); break;
-                case 'customFont': setCustomFont(v); break;
-                case 'rows': setRows(v); break;
-                case 'cols': setCols(v); break;
-                case 'cellSize': setCellSize(v); break;
-                case 'gridGap': setGridGap(v); break;
-                case 'fontSize': setFontSize(v); break;
-                case 'marginTop': setMarginTop(v); break;
-                case 'marginRight': setMarginRight(v); break;
-                case 'marginBottom': setMarginBottom(v); break;
-                case 'marginLeft': setMarginLeft(v); break;
-                case 'paper': setPaper(v); break;
-              }
-            }
-          });
+          Object.entries(config).forEach(([k,v]) => { if(v!==undefined&&CONFIG_SETTERS[k]) CONFIG_SETTERS[k](v); });
           alert('配置导入成功！');
         } catch(err) {
           alert('配置导入失败：' + err.message);
@@ -321,7 +252,34 @@
       reader.readAsText(file);
     }
 
-    function genAlnum(){ let pool=''; if(alnumIncludeUpper) pool+='ABCDEFGHIJKLMNOPQRSTUVWXYZ'; if(alnumIncludeLower) pool+='abcdefghijklmnopqrstuvwxyz'; if(alnumIncludeDigits) pool+='0123456789'; const arr=Array.from(pool); if(arr.length===0){ setAlnumSeq(''); return; } const n=Math.max(1,Math.min(alnumCount, alnumNoRepeat?arr.length:alnumCount)); const out=[]; if(alnumNoRepeat){ const used=new Set(); for(let i=0;i<n;i++){ let idx; do{ const u=new Uint32Array(1); crypto.getRandomValues(u); idx=u[0]%arr.length; } while(used.has(idx)); used.add(idx); out.push(arr[idx]); } } else { for(let i=0;i<n;i++){ const u=new Uint32Array(1); crypto.getRandomValues(u); const idx=u[0]%arr.length; out.push(arr[idx]); } } setAlnumSeq(out.join('')); }
+    function genAlnum(opts={}){
+      const includeUpper = opts.includeUpper !== undefined ? opts.includeUpper : alnumIncludeUpper;
+      const includeLower = opts.includeLower !== undefined ? opts.includeLower : alnumIncludeLower;
+      const includeDigits = opts.includeDigits !== undefined ? opts.includeDigits : alnumIncludeDigits;
+      const count = opts.count !== undefined ? opts.count : alnumCount;
+      const noRepeat = opts.noRepeat !== undefined ? opts.noRepeat : alnumNoRepeat;
+      let pool='';
+      if(includeUpper) pool+='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      if(includeLower) pool+='abcdefghijklmnopqrstuvwxyz';
+      if(includeDigits) pool+='0123456789';
+      const arr=Array.from(pool);
+      if(arr.length===0){ setAlnumSeq(''); return; }
+      const n=Math.max(1,Math.min(count, noRepeat?arr.length:count));
+      const out=[];
+      if(noRepeat){
+        const used=new Set();
+        for(let i=0;i<n;i++){
+          let idx;
+          do{ const u=new Uint32Array(1); crypto.getRandomValues(u); idx=u[0]%arr.length; } while(used.has(idx));
+          used.add(idx); out.push(arr[idx]);
+        }
+      } else {
+        for(let i=0;i<n;i++){
+          const u=new Uint32Array(1); crypto.getRandomValues(u); const idx=u[0]%arr.length; out.push(arr[idx]);
+        }
+      }
+      setAlnumSeq(out.join(''));
+    }
     const alnumStats=useMemo(()=>{ const s=alnumSeq||''; const up=(s.match(/[A-Z]/g)||[]).length; const low=(s.match(/[a-z]/g)||[]).length; const dig=(s.match(/[0-9]/g)||[]).length; const total=Math.max(1,s.length); return { up, low, dig, upPct:Math.round(up*100/total), lowPct:Math.round(low*100/total), digPct:Math.round(dig*100/total), total }; },[alnumSeq]);
 
     function exportPDF(){ const cp=window.__copybook__||{}; if(cp.exporting&&cp.exporting.exportPDF){ cp.exporting.exportPDF(paper); } else { const opt={ margin:0, filename:'字帖.pdf', image:{ type:'jpeg', quality:0.98 }, html2canvas:{ scale:4 }, jsPDF:{ unit:'mm', format: paper.indexOf('横版')>-1?'a4':'a4', orientation: paper.indexOf('横版')>-1?'landscape':'portrait' } }; const node=document.querySelectorAll('.page'); const container=document.createElement('div'); node.forEach(n=>container.appendChild(n.cloneNode(true))); html2pdf().from(container).set(opt).save(); } }
@@ -387,7 +345,8 @@
     function fillRandom(overwrite){ const s=window.__copybook__.content.sampleRandom(commonChars,randCount,randNoRepeat); if(!s) return; if(overwrite){ setText(s); } else { setText(prev=> (prev||'')+s); } }
     function engFont(style){ return style==='手写体' ? "'Comic Sans MS','Chalkboard SE','Segoe Script',cursive" : "'Arial','Helvetica Neue','Helvetica',sans-serif"; }
     function insertFromLibrary(m,t,append,layoutKind){ if(layoutKind){ setLayout(layoutKind); if(layoutKind==='英文格式'){ setGridType('四线三格'); setCols(c=>Math.max(c,10)); } } setMode(m); setVariant(m); if(append){ setText(prev=>{ const p=(prev||'').trim(); if(!p) return t; const sep= layoutKind? '\n' : (m==='多句'?'|':''); return p+sep+t; }); } else { setText(t); } }
-    
+
+    const cp = window.__copybook__ || {};
 
     return React.createElement('div',{ className:'container py-3' },
       React.createElement('div',{ className:'no-print mb-3' },
@@ -469,11 +428,11 @@
                   React.createElement('div',{ className:'row g-2' },
                     React.createElement('div',{ className:'col-6' },
                       React.createElement('label',{ className:'form-label', htmlFor:'alnumCount' },'数量'),
-                      React.createElement('input',{ id:'alnumCount', className:'form-control', type:'number', min:1, value:alnumCount, onChange:e=>{ setAlnumCount(parseInt(e.target.value||'20')); genAlnum(); } })
+                      React.createElement('input',{ id:'alnumCount', className:'form-control', type:'number', min:1, value:alnumCount, onChange:e=>{ const n=parseInt(e.target.value||'20'); setAlnumCount(n); genAlnum({count:n}); } })
                     ),
                     React.createElement('div',{ className:'col-6 d-flex align-items-end' },
                       React.createElement('div',{ className:'form-check form-switch' },
-                        React.createElement('input',{ className:'form-check-input', type:'checkbox', id:'alnumNoRepeat', checked:alnumNoRepeat, onChange:e=>{ setAlnumNoRepeat(e.target.checked); genAlnum(); } }),
+                        React.createElement('input',{ className:'form-check-input', type:'checkbox', id:'alnumNoRepeat', checked:alnumNoRepeat, onChange:e=>{ const v=e.target.checked; setAlnumNoRepeat(v); genAlnum({noRepeat:v}); } }),
                         React.createElement('label',{ className:'form-check-label', htmlFor:'alnumNoRepeat' },'不重复')
                       )
                     )
@@ -481,19 +440,19 @@
                   React.createElement('div',{ className:'row g-2 mt-1' },
                     React.createElement('div',{ className:'col-4' },
                       React.createElement('div',{ className:'form-check form-switch' },
-                        React.createElement('input',{ className:'form-check-input', type:'checkbox', id:'alnumDigits', checked:alnumIncludeDigits, onChange:e=>{ setAlnumIncludeDigits(e.target.checked); genAlnum(); } }),
+                        React.createElement('input',{ className:'form-check-input', type:'checkbox', id:'alnumDigits', checked:alnumIncludeDigits, onChange:e=>{ const v=e.target.checked; setAlnumIncludeDigits(v); genAlnum({includeDigits:v}); } }),
                         React.createElement('label',{ className:'form-check-label', htmlFor:'alnumDigits' },'包含数字')
                       )
                     ),
                     React.createElement('div',{ className:'col-4' },
                       React.createElement('div',{ className:'form-check form-switch' },
-                        React.createElement('input',{ className:'form-check-input', type:'checkbox', id:'alnumUpper', checked:alnumIncludeUpper, onChange:e=>{ setAlnumIncludeUpper(e.target.checked); genAlnum(); } }),
+                        React.createElement('input',{ className:'form-check-input', type:'checkbox', id:'alnumUpper', checked:alnumIncludeUpper, onChange:e=>{ const v=e.target.checked; setAlnumIncludeUpper(v); genAlnum({includeUpper:v}); } }),
                         React.createElement('label',{ className:'form-check-label', htmlFor:'alnumUpper' },'包含大写')
                       )
                     ),
                     React.createElement('div',{ className:'col-4' },
                       React.createElement('div',{ className:'form-check form-switch' },
-                        React.createElement('input',{ className:'form-check-input', type:'checkbox', id:'alnumLower', checked:alnumIncludeLower, onChange:e=>{ setAlnumIncludeLower(e.target.checked); genAlnum(); } }),
+                        React.createElement('input',{ className:'form-check-input', type:'checkbox', id:'alnumLower', checked:alnumIncludeLower, onChange:e=>{ const v=e.target.checked; setAlnumIncludeLower(v); genAlnum({includeLower:v}); } }),
                         React.createElement('label',{ className:'form-check-label', htmlFor:'alnumLower' },'包含小写')
                       )
                     )
@@ -677,7 +636,7 @@
                   React.createElement('div',{ className:'btn-group' },
                     React.createElement('button',{ className:'btn btn-outline-secondary', onClick:exportConfig },'导出配置'),
                     React.createElement('button',{ className:'btn btn-outline-secondary' },
-                      React.createElement('input',{ type:'file', accept:'.json', style:{position:'absolute',opacity:0,width:'100%',height:'100%',cursor:'pointer'}, onChange:importConfig }, undefined, { hidden: true }),
+                      React.createElement('input',{ type:'file', accept:'.json', style:{position:'absolute',opacity:0,width:'100%',height:'100%',cursor:'pointer'}, onChange:importConfig }),
                       '导入配置'
                     ),
                     React.createElement('button',{ className:'btn btn-outline-danger', onClick:resetConfig },'重置')
@@ -685,7 +644,7 @@
                   React.createElement('div',{ className:'btn-group' },
                     React.createElement('button',{ className:'btn btn-info', onClick:saveTemplate },'保存模板'),
                     React.createElement('button',{ className:'btn btn-info' },
-                      React.createElement('input',{ type:'file', accept:'.json', style:{position:'absolute',opacity:0,width:'100%',height:'100%',cursor:'pointer'}, onChange:loadTemplate }, undefined, { hidden: true }),
+                      React.createElement('input',{ type:'file', accept:'.json', style:{position:'absolute',opacity:0,width:'100%',height:'100%',cursor:'pointer'}, onChange:loadTemplate }),
                       '加载模板'
                     )
                   ),
@@ -734,8 +693,14 @@
       React.createElement('div',{ className:'page-wrapper' },
         pages.map((page,i)=>React.createElement('div',{ key:i, className:'page' },
           header?React.createElement('div',{ className:'header' },header):null,
-          React.createElement('div',{ className:'grid', style:{ gridTemplateColumns:`repeat(${cols}, var(--cell-size))`, columnGap: layout==='英文格式'?0:undefined } },
-            page.map((ch,idx)=>React.createElement(Cell,{ key:idx, ch: ch==='\n'?'':ch, bg:bg, textColor:tColor, strokeMode, cls: (layout==='英文格式'||feature==='数字字母')?'cell-en':undefined, font: layout==='英文格式'?engFont(letterStyle):feature==='数字字母'?(letterStyle==='印刷体'?'monospace':'cursive'):font, fontSize, showGuide: feature==='数字字母' && showGuide }))
+          React.createElement('div',{ className:'grid' },
+            (cp.content&&cp.content.splitRows?cp.content.splitRows(page,cols):(splitRows?splitRows(page,cols):[page])).map((row,ri)=>React.createElement('div',{
+                key:ri,
+                className:'grid-row',
+                style:{ display:'grid', gridTemplateColumns:`repeat(${cols}, var(--cell-size))`, gap: layout==='英文格式'?0:`var(--grid-gap)` }
+              },
+              row.map((ch,ci)=>React.createElement(Cell,{ key:ci, ch:ch||'', bg:bg, textColor:tColor, strokeMode, cls: (layout==='英文格式'||feature==='数字字母')?'cell-en':undefined, font: layout==='英文格式'?engFont(letterStyle):feature==='数字字母'?(letterStyle==='印刷体'?'monospace':'cursive'):font, fontSize, showGuide: feature==='数字字母' && showGuide }))
+            ))
           )
         ))
       )
