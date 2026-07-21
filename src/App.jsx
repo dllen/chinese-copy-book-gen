@@ -98,27 +98,46 @@ export default function App() {
   useEffect(() => {
     const emb = (window.__copybookData__ || {}).commonChars;
     if (emb) { setCommonChars([...new Set(emb.filter(ch => /[一-鿿]/.test(ch)))]); return; }
-    fetch('./common-chars.json').then(r => r.json()).then(arr => {
-      const uniq = [...new Set((arr || []).filter(ch => /[一-鿿]/.test(ch)))];
-      setCommonChars(uniq);
-    }).catch(() => {
-      fetch('./常用1000汉子.md').then(r => r.text()).then(t => {
-        const lines = t.split('\n'); let buckets = []; let curName = ''; let curChars = [];
-        for (const line of lines) {
-          const isTitle = line.startsWith('##');
-          if (isTitle) {
+
+    // Load common-chars.json with 5s timeout
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 5000);
+    fetch('./common-chars.json', { signal: controller.signal })
+      .then(r => { clearTimeout(timeout); return r.json(); })
+      .then(arr => {
+        const uniq = [...new Set((arr || []).filter(ch => /[一-鿿]/.test(ch)))];
+        setCommonChars(uniq);
+      })
+      .catch(e => {
+        clearTimeout(timeout);
+        if (e.name === 'AbortError') { toast.warn('词库加载超时，请检查网络后重试'); return; }
+        // Fallback: try markdown file
+        const controller2 = new AbortController();
+        const timeout2 = setTimeout(() => controller2.abort(), 5000);
+        fetch('./常用1000汉子.md', { signal: controller2.signal })
+          .then(r => { clearTimeout(timeout2); return r.text(); })
+          .then(t => {
+            const lines = t.split('\n'); let buckets = []; let curName = ''; let curChars = [];
+            for (const line of lines) {
+              const isTitle = line.startsWith('##');
+              if (isTitle) {
+                if (curName) { buckets.push({ name: curName.trim(), chars: [...new Set(curChars)] }); }
+                curName = line.replace(/^#+\s*/, '').trim(); curChars = [];
+              } else {
+                const arr = Array.from(line).filter(ch => /[一-鿿]/.test(ch));
+                if (arr.length) curChars.push(...arr);
+              }
+            }
             if (curName) { buckets.push({ name: curName.trim(), chars: [...new Set(curChars)] }); }
-            curName = line.replace(/^#+\s*/, '').trim(); curChars = [];
-          } else {
-            const arr = Array.from(line).filter(ch => /[一-鿿]/.test(ch));
-            if (arr.length) curChars.push(...arr);
-          }
-        }
-        if (curName) { buckets.push({ name: curName.trim(), chars: [...new Set(curChars)] }); }
-        const all = [...new Set(buckets.flatMap(b => b.chars))];
-        setCommonChars(all);
-      }).catch(() => { setCommonChars([]); });
-    });
+            const all = [...new Set(buckets.flatMap(b => b.chars))];
+            setCommonChars(all);
+          })
+          .catch(e2 => {
+            clearTimeout(timeout2);
+            if (e2.name === 'AbortError') toast.warn('词库加载超时，请检查网络后重试');
+            else { toast.error('词库加载失败', { action: () => window.location.reload() }); setCommonChars([]); }
+          });
+      });
   }, []);
 
   // Mobile preview scale
