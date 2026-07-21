@@ -1,7 +1,7 @@
 (function(){
   var w=window; w.__copybook__=w.__copybook__||{};
   function splitInput(mode,text){ const t=(text||'').trim(); if(mode==='多字') return Array.from(t); if(mode==='多词'){ const arr=t.replace(/，/g,',').split(/[\|\s,]+/).filter(Boolean); return arr; } if(mode==='多句'){ const pages=t.split('|').map(s=>s.trim()).filter(Boolean); return pages.map(p=>p.split(/(?<=[。！？!?.])/).filter(Boolean)); } if(mode==='文章'){ return Array.from(t.replace(/\s+/g,'')); } return []; }
-  function toCells(mode,text,variant){ const v=variant||''; if(mode==='多句'){ const pages=splitInput(mode,text); const flat=pages.map(pg=>{ const lineCells=[]; pg.forEach(sentence=>{ Array.from(sentence).forEach(ch=>lineCells.push(ch)); if(v.includes('+1行')) lineCells.push('\n'); if(v.includes('+1空行')) lineCells.push(''); }); return lineCells; }); return { pages: flat }; } const base=splitInput(mode,text); const cells=[]; if(mode==='多词'){ base.forEach(w=>{ Array.from(w).forEach(c=>cells.push(c)); if(v.includes('+1行')) cells.push('\n'); if(v.includes('+1空行')) cells.push(''); }); } else { base.forEach(c=>cells.push(c)); if(v.includes('+1行')) cells.push('\n'); if(v.includes('+1空行')) cells.push(''); } return { pages:[cells] }; }
+  function toCells(mode,text,variant){ const v=variant||''; if(mode==='多句'){ const pages=splitInput(mode,text); const flat=pages.map(pg=>{ const lineCells=[]; pg.forEach(sentence=>{ Array.from(sentence).forEach(ch=>lineCells.push(ch)); if(v.includes('+1行')) lineCells.push('\n'); if(v.includes('+1空行')) lineCells.push(''); }); return lineCells; }); return { pages: flat }; } const base=splitInput(mode,text); const cells=[]; if(mode==='多词'){ base.forEach(w=>{ Array.from(w).forEach(c=>cells.push(c)); if(v.includes('+1行')) cells.push('\n'); if(v.includes('+1空行')) cells.push(''); }); } else if(mode==='文章'){ base.forEach(c=>{ cells.push(c); if(v.includes('+1行')) cells.push('\n'); if(v.includes('+1空行')) cells.push(''); }); } else { base.forEach(c=>{ cells.push(c); if(v.includes('+1行')) cells.push('\n'); if(v.includes('+1空行')) cells.push(''); }); } return { pages:[cells] }; }
   function paginate(cellsByPage,rows,cols,fillLast){ const pages=[]; cellsByPage.forEach(list=>{ const cap=rows*cols; let chunk=list.slice(); while(chunk.length>0){ const page=chunk.splice(0,cap); if(fillLast && page.length<cap){ while(page.length<cap) page.push(''); } pages.push(page); } }); return pages; }
   function splitRows(cells,cols){
     const rows=[[]];
@@ -39,7 +39,7 @@
   function centerLine(chars,cols){
     const cs=Array.from(chars);
     if(cs.length>=cols) return wrapFlow(cs,cols,0);
-    const left=Math.floor((cols-cs.length)/2);
+    const left=Math.round((cols-cs.length)/2);
     const pad=[]; for(let i=0;i<left;i++) pad.push('');
     return [pad.concat(cs)];
   }
@@ -64,7 +64,7 @@
         while(cur.length>cols){ rs.push(cur.slice(0,cols)); cur=cur.slice(cols); } // 超长词硬换行
       });
       if(cur.length) rs.push(cur);
-      rs.forEach(r=>{ out.push(r); for(let i=0;i<blankRows;i++) out.push([]); });
+      rs.forEach((r,ri)=>{ out.push(r); if(ri<rs.length-1) for(let i=0;i<blankRows;i++) out.push([]); });
     });
     const cells=[];
     out.forEach(l=>{ cells.push.apply(cells,l); const n=l.length===0?cols:(l.length%cols===0?0:cols-l.length%cols); for(let i=0;i<n;i++) cells.push(''); });
@@ -73,23 +73,27 @@
   // kind: '古诗格式' | '文章格式' | '英文格式'；text 按 \n 分行。返回 { pages:[cells] }，cells 已按 cols 对齐补齐
   function layoutDocument(kind,text,cols,opts){
     if(kind==='英文格式') return layoutEnglish(text,cols,opts);
-    const raw=(text||'').split('\n').map(s=>s.trim()).filter(s=>s.length>0);
+    const lines=(text||'').split('\n');
     let out=[];
     if(kind==='古诗格式'){
-      // 无标点且较短的行视为标题/作者（居中）；其余按标点分句，每句一行居中
-      raw.forEach(s=>{
+      lines.forEach(rawLine=>{
+        const s=rawLine.trim();
+        if(!s){ out.push([]); return; } // 空白行→空行，保留段落间隔
         const chars=Array.from(s);
-        const isHeading=!/[，。！？；：,.!?;:]/.test(s) && chars.length<=Math.max(12,Math.floor(cols*1.5));
+        const isHeading=!/[，。！？；：、""《》「」.!?;:]/.test(s) && chars.length<=Math.max(12,Math.floor(cols*1.5));
         if(isHeading){ out=out.concat(centerLine(chars,cols)); return; }
-        s.split(/(?<=[，。！？；!?;.])/).filter(Boolean).forEach(seg=>{
+        s.split(/(?<=[，。！？；、""「」!?;.])/).filter(Boolean).forEach(seg=>{
           const cs=Array.from(seg);
           out=out.concat(cs.length<=cols?centerLine(cs,cols):wrapFlow(cs,cols,0));
         });
       });
-    } else { // 文章格式：首行标题居中；其余每行为一个自然段，段首缩进两格
-      raw.forEach((s,i)=>{
+    } else { // 文章格式：首行标题居中；其余每行为一个自然段，段首缩进两格；空行保留段落间隔
+      lines.forEach((rawLine,i)=>{
+        const s=rawLine.trim();
+        if(!s){ out.push([]); return; } // 空白行→空行
         const chars=Array.from(s);
-        out=out.concat(i===0?centerLine(chars,cols):wrapFlow(chars,cols,2));
+        if(i===0){ out=out.concat(centerLine(chars,cols)); }
+        else { out=out.concat(wrapFlow(chars,cols,2)); }
       });
     }
     const cells=[];
