@@ -8,6 +8,7 @@ import Toolbar from './components/Toolbar';
 import ConfigPanel from './components/ConfigPanel';
 import PreviewPanel from './components/PreviewPanel';
 import PageGrid from './components/PageGrid';
+import { EmptyState } from './components/EmptyState';
 
 const { toHex, fontByTemplate, pageSize, validate } = window.__copybook__.utils || {};
 
@@ -600,7 +601,10 @@ export default function App() {
 
           // Right panel - PreviewPanel
           React.createElement('div', { className: 'col-lg-5' },
-            React.createElement(PreviewPanel, {
+            !text ? React.createElement(EmptyState, {
+              onTryExample: () => updateSetting('text', '静夜思'),
+              onOpenLibrary: () => updateSetting('feature', '字帖模板')
+            }) : React.createElement(PreviewPanel, {
               settings,
               onFillRandom: fillRandom,
               commonChars,
