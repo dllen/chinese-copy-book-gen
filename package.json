@@ -22,5 +22,8 @@
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "*",
     "sass-embedded-linux-x64": "^1.85.1"
+  },
+  "resolutions": {
+    "rollup": "npm:@rollup/wasm-node"
   }
 }
