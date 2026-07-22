@@ -8,11 +8,12 @@ export default defineConfig({
     headless: true,
     viewport: { width: 1280, height: 720 },
     ignoreHTTPSErrors: true,
+    baseURL: 'http://localhost:5173',  // Vite dev server
   },
   webServer: {
-    command: 'npm run build && npm run preview -- --port 4173',
-    port: 4173,
-    reuseExistingServer: false,
+    command: 'npm run dev',
+    port: 5173,
+    reuseExistingServer: true,
     timeout: 60000,
   },
   projects: [

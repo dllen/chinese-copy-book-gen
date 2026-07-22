@@ -22,6 +22,15 @@ Call log:
 
 ```
 
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - heading "应用出错" [level=2] [ref=e4]
+  - paragraph [ref=e5]: 抱歉，遇到了一些问题，请尝试刷新页面
+  - button "刷新页面" [ref=e6] [cursor=pointer]
+```
+
 # Test source
 
 ```ts
