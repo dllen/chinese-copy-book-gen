@@ -5,9 +5,9 @@ function ConfigSummary({ gridType, gridColor, stylePreset, rows, cols, cellSize,
     { label: '格子', value: gridType },
     { label: '颜色', value: gridColor },
     { label: '预设', value: stylePreset },
-    { label: '尺寸', value: `${cols}×${rows}格` },
-    { label: '格子大小', value: `${cellSize}px` },
-    { label: '字体', value: `${fontSize}px` }
+    { label: '尺寸', value: (rows && cols) ? `${cols}×${rows}格` : undefined },
+    { label: '格子大小', value: cellSize ? `${cellSize}px` : undefined },
+    { label: '字体', value: fontSize ? `${fontSize}px` : undefined }
   ].filter(item => item.value).map(item =>
     React.createElement('span', { key: item.label, className: 'badge bg-secondary me-1 mb-1' },
       `${item.label}: ${item.value}`
