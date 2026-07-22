@@ -27,14 +27,10 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Copy dist to docs
-        run: cp -r dist/. docs/
-
-      - name: Copy legacy js folder
-        run: cp -r js docs/js
-
-      - name: Copy data folder
-        run: cp -r data docs/data
+      - name: Deploy dist to docs
+        run: |
+          rm -rf docs/
+          cp -r dist/ docs/
 
       - name: Commit and push to docs
         run: |
