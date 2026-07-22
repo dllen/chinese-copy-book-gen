@@ -1,6 +1,7 @@
 import React from 'react';
 
-const { strokeLevel, content } = window.__copybook__ || {};
+const { strokeLevel } = window.__copybook__?.utils || {};
+const { content } = window.__copybook__ || {};
 const { splitRows } = content || {};
 
 function Cell({ ch, bg, textColor, strokeMode, font, fontSize, showGuide, cls }) {
