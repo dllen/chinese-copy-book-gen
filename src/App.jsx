@@ -143,6 +143,25 @@ export default function App() {
     a.click();
     URL.revokeObjectURL(url);
     toast.success('配置已导出');
+  const saveTemplate = (e) => {
+    e.stopPropagation();
+    const name = templateName.trim() || '字帖模板';
+    const tmpl = {
+      config: { ...settings },
+      content: settings.text,
+    };
+    const blob = new Blob([JSON.stringify(tmpl, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${name}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+    setTemplateModalOpen(false);
+    setTemplateName('');
+    toast.success('模板已保存');
+  };
+
   };
 
 
