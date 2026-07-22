@@ -30,6 +30,12 @@ jobs:
       - name: Copy dist to docs
         run: cp -r dist/. docs/
 
+      - name: Copy legacy js folder
+        run: cp -r js docs/js
+
+      - name: Copy data folder
+        run: cp -r data docs/data
+
       - name: Commit and push to docs
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
