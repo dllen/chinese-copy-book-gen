@@ -143,6 +143,8 @@ export default function App() {
     a.click();
     URL.revokeObjectURL(url);
     toast.success('配置已导出');
+  };
+
   const saveTemplate = (e) => {
     e.stopPropagation();
     const name = templateName.trim() || '字帖模板';
@@ -162,7 +164,6 @@ export default function App() {
     toast.success('模板已保存');
   };
 
-  };
 
 
   const loadTemplate = (e) => {
