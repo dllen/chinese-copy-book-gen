@@ -1,9 +1,13 @@
 (function(){
   var w=window; w.__copybook__=w.__copybook__||{};
-
-  // Guard: React 18 dispatcher may be null when loaded as plain script tag
-  // Check BEFORE destructuring - React production bundle does NOT expose hooks directly
-  if (typeof React === 'undefined' || typeof React.useState === 'undefined') {
+  // Guard: React 18 production bundle exposes hooks but they fail when dispatcher is null
+  // Must try-catch since typeof React.useState is 'function' even when broken
+  var _hasHooks = false;
+  try {
+    React.useState(0);
+    _hasHooks = true;
+  } catch(e) { _hasHooks = false; }
+  if (!_hasHooks) {
     w.__copybook__.library = {
       load: function() {},
       searchPoems: function() { return []; },
