@@ -1,15 +1,15 @@
 name: Build and Deploy
 
-permissions: write-all
-
 on:
   push:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
-  build:
-    name: Build
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,33 +27,13 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Copy dist to docs for GitHub Pages
+      - name: Copy dist to docs
         run: cp -r dist/. docs/
 
-      - name: Upload production-ready build files
-        uses: actions/upload-artifact@v7
-        with:
-          name: production-files
-          path: ./dist
-
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v8
-        with:
-          name: production-files
-          path: ./dist
-
-      - name: Copy dist to docs for GitHub Pages
-        run: cp -r dist/. docs/
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
+      - name: Commit and push to docs
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add docs/
+          git diff --staged --quiet || git commit -m "ci: deploy built assets to docs"
+          git push
