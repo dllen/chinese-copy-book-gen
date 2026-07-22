@@ -2,7 +2,6 @@ name: Build and Deploy
 
 permissions: write-all
 
-
 on:
   push:
     branches:
@@ -28,6 +27,9 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Copy dist to docs for GitHub Pages
+        run: cp -r dist/. docs/
+
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v7
         with:
@@ -47,9 +49,11 @@ jobs:
           name: production-files
           path: ./dist
 
+      - name: Copy dist to docs for GitHub Pages
+        run: cp -r dist/. docs/
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-
+          publish_dir: ./docs
