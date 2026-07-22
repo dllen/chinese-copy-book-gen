@@ -176,8 +176,8 @@ export default function useCopybook(settings, updateSetting, deps = {}) {
           html2canvas: { scale: 4 },
           jsPDF: {
             unit: 'mm',
-            format: paper?.indexOf('横版') > -1 ? 'a4' : 'a4',
-            orientation: paper?.indexOf('横版') > -1 ? 'landscape' : 'portrait'
+            format: String(paper||'').indexOf('横版') > -1 ? 'a4' : 'a4',
+            orientation: String(paper||'').indexOf('横版') > -1 ? 'landscape' : 'portrait'
           }
         };
         const node = document.querySelectorAll('.page');

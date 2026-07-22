@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { cpSync, writeFileSync } from 'node:fs';
+import { cpSync, writeFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 export default defineConfig({
@@ -18,6 +18,11 @@ export default defineConfig({
         cpSync(resolve(__dirname, 'data'), resolve(dist, 'data'), { recursive: true });
         // Copy common-chars.json (fetched by App at runtime)
         cpSync(resolve(__dirname, 'common-chars.json'), resolve(dist, 'common-chars.json'));
+        // Copy favicon
+        const faviconSrc = resolve(__dirname, 'public', 'favicon.ico');
+        if (existsSync(faviconSrc)) {
+          cpSync(faviconSrc, resolve(dist, 'favicon.ico'));
+        }
       },
     },
   ],
@@ -27,6 +32,6 @@ export default defineConfig({
     assetsDir: 'assets',
   },
   server: {
-    port: 5173,
+    port: 5174,
   },
 });

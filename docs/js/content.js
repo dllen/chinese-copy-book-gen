@@ -100,6 +100,6 @@
     out.forEach(l=>{ cells.push.apply(cells,l); const rem=l.length%cols; if(rem!==0){ for(let i=0;i<cols-rem;i++) cells.push(''); } });
     return { pages:[cells] };
   }
-  function sampleRandom(pool,n,noRepeat){ if(pool.length===0) return ''; const cnt=Math.max(1,Math.min(n, noRepeat?pool.length:n)); if(noRepeat){ const shuffled=pool.slice(); for(let i=shuffled.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]]; } return shuffled.slice(0,cnt).join(''); } else { let out=''; for(let i=0;i<cnt;i++){ out+=pool[Math.floor(Math.random()*pool.length)]; } return out; } }
+  function sampleRandom(pool,n,noRepeat){ if(!pool||pool.length===0) return ''; const cnt=Math.max(1,Math.min(n, noRepeat?pool.length:n)); if(noRepeat){ const shuffled=pool.slice(); for(let i=shuffled.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]]; } return shuffled.slice(0,cnt).join(''); } else { let out=''; for(let i=0;i<cnt;i++){ out+=pool[Math.floor(Math.random()*pool.length)]; } return out; } }
   w.__copybook__.content={ splitInput, toCells, paginate, splitRows, sampleRandom, layoutDocument, layoutEnglish, wrapFlow, centerLine };
 })();
