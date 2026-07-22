@@ -3,7 +3,7 @@
   const { useState, useEffect, useMemo } = React;
 
   // Guard: React 18 dispatcher may be null when loaded as plain script tag
-  if (typeof React === 'undefined' || !React.useState) {
+  if (typeof React === 'undefined' || typeof React.useState === 'undefined') {
     w.__copybook__.library = {
       load: function() {},
       searchPoems: function() { return []; },
