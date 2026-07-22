@@ -217,6 +217,8 @@ export function useToast() {
 
 - [ ] **Step 2: 创建 Toast 组件 src/components/Toast.jsx**
 
+{% raw %}
+{% raw %}
 ```jsx
 import React from 'react';
 
@@ -253,6 +255,8 @@ export function ToastContainer({ toasts, onRemove }) {
   );
 }
 ```
+{% endraw %}
+{% endraw %}
 
 - [ ] **Step 3: 提交**
 
@@ -382,6 +386,8 @@ Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
 
 - [ ] **Step 1: 创建 ErrorBoundary 组件**
 
+{% raw %}
+{% raw %}
 ```jsx
 import React from 'react';
 
@@ -414,6 +420,8 @@ export class ErrorBoundary extends React.Component {
   }
 }
 ```
+{% endraw %}
+{% endraw %}
 
 - [ ] **Step 2: 修改 src/main.jsx**
 
@@ -587,6 +595,8 @@ export function Toolbar({ pages, onPrint, onExportPDF, onExportImage, onSaveTemp
 
 将 `.page-wrapper` 的 JSX 渲染提取为独立组件。
 
+{% raw %}
+{% raw %}
 ```jsx
 export function PageGrid({ pages, cols, layout, feature, header, bg, tColor, strokeMode, font, fontSize, letterStyle, showGuide, engFont }) {
   const cp = window.__copybook__ || {};
@@ -612,6 +622,8 @@ export function PageGrid({ pages, cols, layout, feature, header, bg, tColor, str
   );
 }
 ```
+{% endraw %}
+{% endraw %}
 
 - [ ] **Step 5: 提交**
 
@@ -637,6 +649,8 @@ Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
 
 - [ ] **Step 1: 创建 EmptyState 组件**
 
+{% raw %}
+{% raw %}
 ```jsx
 export function EmptyState({ onTryExample, onOpenLibrary }) {
   return (
@@ -652,6 +666,8 @@ export function EmptyState({ onTryExample, onOpenLibrary }) {
   );
 }
 ```
+{% endraw %}
+{% endraw %}
 
 - [ ] **Step 2: 在 App.jsx 中添加空状态判断**
 
@@ -680,6 +696,8 @@ Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
 
 - [ ] **Step 1: 创建 HelpTooltip 组件**
 
+{% raw %}
+{% raw %}
 ```jsx
 import React, { useState } from 'react';
 
@@ -707,6 +725,8 @@ export function HelpTooltip({ content, children }) {
   );
 }
 ```
+{% endraw %}
+{% endraw %}
 
 - [ ] **Step 2: 在 ConfigPanel 中关键项旁添加 tooltip**
 
