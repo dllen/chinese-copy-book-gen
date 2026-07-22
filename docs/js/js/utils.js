@@ -1,9 +1,0 @@
-(function(){
-  var w=window; w.__copybook__=w.__copybook__||{};
-  function toHex(c){ if(!c) return '#000000'; const m=c.match(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i); if(m) return c; const map={绿色:'#198754',黑色:'#000000',红色:'#dc3545',白色:'#ffffff',透明:'transparent',米色:'#f5f5dc',淡蓝:'#e3f2fd',淡绿:'#e8f5e9',浅灰:'#f5f5f5',蓝色:'#007bff',紫色:'#6f42c1'}; return map[c]||'#000000'; }
-  function strokeLevel(level,textColor){ const map={'非常深':1,'深':0.9,'较深':0.8,'略浅':0.6,'适中':0.5,'非常浅':0.35,'白色（不可见）':0,'空芯':'outline'}; const v=map[level]??0.5; if(v==='outline') return { color:'transparent', WebkitTextStroke:`1px ${textColor}` }; return { opacity:String(v), color:textColor, WebkitTextStroke:'0' }; }
-  function fontByTemplate(t,custom){ if(t==='楷书') return `'STKaiti','KaiTi','Kaiti SC','AR PL KaitiM GB',serif`; if(t==='行书') return `'Hiragino Sans GB','KaiTi','Kaiti SC',serif`; if(t==='草书') return `'CaoShu','KaiTi','Kaiti SC',serif`; if(t==='隶书') return `'LiSu','KaiTi','Kaiti SC',serif`; if(t==='庞中华') return `'PangZhongHuaKaiTi','PangZhongHua',serif`; if(t==='田英章') return `'TianYingZhangKaiTi','TianYingZhang',serif`; if(t==='自定义') return custom||'serif'; return 'serif'; }
-  function pageSize(format){ if(format==='A4竖版') return { w:'210mm', h:'297mm' }; if(format==='A4横版') return { w:'297mm', h:'210mm' }; if(format==='A5竖版') return { w:'148mm', h:'210mm' }; if(format==='A5横版') return { w:'210mm', h:'148mm' }; if(format==='作文纸A4') return { w:'210mm', h:'297mm' }; return { w:'210mm', h:'297mm' }; }
-  function validate(mode,text){ if(!text||!text.trim()) return { ok:false, msg:'请输入内容' }; if(mode==='多字' && /[\s,;，；\n]/.test(text)) return { ok:false, msg:'多字模式不允许空格或标点' }; if(mode==='文章' && /\n/.test(text)) return { ok:false, msg:'文章模式不允许换行' }; return { ok:true, msg:'' }; }
-  w.__copybook__.utils={ toHex, strokeLevel, fontByTemplate, pageSize, validate };
-})();
