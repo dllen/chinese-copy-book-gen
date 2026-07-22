@@ -10,13 +10,13 @@ export default function PaperSettings({
   marginRight,
   marginBottom,
   marginLeft,
+  updateSetting,
   handleSetMarginTop,
   handleSetMarginRight,
   handleSetMarginBottom,
   handleSetMarginLeft
 }) {
   return React.createElement(React.Fragment, null,
-    // Paper + margins
     React.createElement('div', { className: 'row g-2 mt-1' },
       React.createElement('div', { className: 'col-4' },
         React.createElement(HelpTooltip, { content: 'A4竖版适合家用打印机' },

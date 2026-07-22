@@ -4,9 +4,13 @@ import { useToast } from './useToast'
 /**
  * 字帖生成核心逻辑 Hook
  * 包含文本解析、分页、导出、随机填充等核心业务逻辑
+ * 支持外部传入 toast 实例，避免重复创建
  */
-export default function useCopybook(settings, updateSetting) {
-  const { toast, removeToast } = useToast();
+export default function useCopybook(settings, updateSetting, deps = {}) {
+  const { toast: toastDep, removeToast: removeToastDep } = deps;
+  const selfToast = useToast();
+  const toast = toastDep || selfToast.toast;
+  const removeToast = removeToastDep || selfToast.removeToast;
 
   // 本地状态（不在 useSettings 中的）
   const [letterStyle, setLetterStyle] = useState('印刷体');

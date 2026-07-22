@@ -126,6 +126,19 @@
       .col-4, .col-5, .col-6 { flex: 0 0 100%; max-width: 100%; }
     }
   </style>
+  <style>
+    .section-card { border: 1px solid #dee2e6; border-radius: 0.5rem; background: #fff; overflow: hidden; }
+    .section-header { width: 100%; padding: 0.75rem 1rem; background: #f8f9fa; border: none; border-bottom: 1px solid #dee2e6; display: flex; justify-content: space-between; align-items: center; font-weight: 600; cursor: pointer; }
+    .section-header:hover { background: #e9ecef; }
+    .section-title { font-size: 0.95rem; }
+    .section-chevron { font-size: 1.1rem; color: #6c757d; }
+    .section-body { padding: 1rem; }
+    .quick-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+    .quick-actions-label { font-size: 0.9rem; color: #6c757d; font-weight: 500; }
+    .quick-actions-buttons { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .preview-col { position: sticky; top: 1rem; align-self: flex-start; }
+    @media (max-width: 991px) { .preview-col { position: static; } }
+  </style>
 </head>
 <body>
   <div id="root"></div>

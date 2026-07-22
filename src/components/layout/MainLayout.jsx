@@ -50,11 +50,12 @@ export default function MainLayout({
   validationResult,
   // Alphanumeric stats
   alnumStats,
-  // Preview panel props
-  pages,
-  onFillRandom,
-  commonChars,
-  // Export handlers
+ // Preview panel props
+ pages,
+ onFillRandom,
+ commonChars,
+  usage,
+ // Export handlers
   onPrint,
   onExportPDF,
   onExportImage,

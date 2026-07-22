@@ -6,8 +6,16 @@ import { ToastContainer } from './components/Toast';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import MainLayout from './components/layout/MainLayout';
 import PageGrid from './components/PageGrid';
+import useCopybook from './hooks/useCopybook';
 
 const { toHex, pageSize } = window.__copybook__.utils || {};
+const CONFIG_FIELDS = [
+  'gridType', 'gridColor', 'customGridColor', 'customTextColor', 'textColorOpt',
+  'strokeMode', 'stylePreset', 'autoLayout', 'gridStrokeWidth', 'lineStyle',
+  'cellRadius', 'pageBg', 'cellBg', 'cellBorder', 'textStroke', 'textShadow',
+  'template', 'customFont', 'rows', 'cols', 'cellSize', 'gridGap', 'fontSize',
+  'marginTop', 'marginRight', 'marginBottom', 'marginLeft', 'paper'
+];
 
 /**
  * 主应用组件
@@ -17,31 +25,33 @@ export default function App() {
   const { toasts, toast, removeToast } = useToast();
   const { settings, updateSetting, setSettings } = useSettings(toast);
 
-  // 本地状态管理
-  const [commonChars, setCommonChars] = React.useState([]);
+ // 本地状态管理
+ const [commonChars, setCommonChars] = React.useState([]);
+  const [letterStyle, setLetterStyle] = React.useState(settings.letterStyle || '印刷体');
+  const [cellShadowLocal, setCellShadowLocal] = React.useState(settings.cellShadow || false);
+  const [templateModalOpen, setTemplateModalOpen] = React.useState(false);
+  const [templateName, setTemplateName] = React.useState('');
 
-  // 使用 useCopybook Hook 管理核心业务逻辑
-  const copybook = React.useMemo(() => {
-    // @ts-ignore
-    return window.__copybook__.hooks?.useCopybook?.(settings, updateSetting, { toast, removeToast, commonChars }) || {};
-  }, [settings, updateSetting, toast, removeToast, commonChars]);
+ // 使用 useCopybook Hook 管理核心业务逻辑
+  const copybook = useCopybook(settings, updateSetting, { toast, removeToast, commonChars });
+  const gColor = React.useMemo(() => {
+    const custom = settings.customGridColor && /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(settings.customGridColor) ? settings.customGridColor : null;
+    return custom || toHex(settings.gridColor) || '#000';
+  }, [settings.gridColor, settings.customGridColor]);
 
-  const {
-    letterStyle,
-    cellShadowLocal,
-    alnumSeqLocal,
-    pages,
-    usage,
-    bg,
-    tColor,
-    font,
-    genAlnum,
-    exportPDF,
-    exportImage,
-    exportSVG,
-    fillRandom,
-    insertFromLibrary,
-  } = copybook;
+ const {
+   pages,
+   usage,
+   bg,
+   tColor,
+   font,
+   genAlnum,
+   exportPDF,
+   exportImage,
+   exportSVG,
+   fillRandom,
+   insertFromLibrary,
+ } = copybook;
 
   // 数字字母序列本地状态
   const [alnumSeqState, setAlnumSeqState] = React.useState('');
@@ -135,19 +145,6 @@ export default function App() {
     toast.success('配置已导出');
   };
 
-  const saveTemplate = (name) => {
-    if (!name) return;
-    const config = CONFIG_FIELDS.reduce((obj, key) => ({ ...obj, [key]: settings[key] }), {});
-    const tmpl = { name, time: new Date().toISOString(), config, content: settings.text };
-    const blob = new Blob([JSON.stringify(tmpl, null, 2)], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `字帖模板-${name}.json`;
-    a.click();
-    URL.revokeObjectURL(url);
-    toast.success('模板已保存');
-  };
 
   const loadTemplate = (e) => {
     const file = e.target.files?.[0];
@@ -191,7 +188,14 @@ export default function App() {
 
   // 验证
   const validationResult = React.useMemo(() => {
-    return validate?.(settings) || { valid: true };
+    if (!settings.text || !settings.text.trim()) {
+      return { valid: false, msg: '请输入文本内容' };
+    }
+    if (settings.feature === '字帖模板' && settings.layout === '连续排列') {
+      const res = window.__copybook__.utils?.validate?.(settings.mode, settings.text) || { ok: true };
+      return { valid: res.ok, msg: res.msg };
+    }
+    return { valid: true };
   }, [settings]);
 
   // 数字字母统计
@@ -237,18 +241,74 @@ export default function App() {
     );
     document.documentElement.style.setProperty('--text-shadow', settings.textShadow ? '2px 2px 4px rgba(0,0,0,0.3)' : 'none');
   }, [
-    settings.paper, settings.cellSize, settings.gridGap, gColor, tColor, settings.fontSize,
-    settings.marginTop, settings.marginRight, settings.marginBottom, settings.marginLeft,
-    settings.pageBg, settings.cellBg, settings.cellBorder, cellShadowLocal, settings.textShadow, settings.textStroke
-  ]);
+   settings.paper, settings.cellSize, settings.gridGap, gColor, tColor, settings.fontSize,
+   settings.marginTop, settings.marginRight, settings.marginBottom, settings.marginLeft,
+   settings.pageBg, settings.cellBg, settings.cellBorder, cellShadowLocal, settings.textShadow, settings.textStroke
+ ]);
+  // 样式预设联动
+  useEffect(() => {
+    if (!settings.stylePreset) return;
+    const map = {
+      '四线三格标准': { gridType: '四线三格', y1: '0.25', y2: '0.50', y3: '0.75', y4: '0.92' },
+      '四线三格宽间': { gridType: '四线三格', y1: '0.20', y2: '0.50', y3: '0.80', y4: '0.95' },
+      '田字格标准': { gridType: '田字格' },
+      '米字格标准': { gridType: '米字格' },
+      '米字格宽间': { gridType: '米字格' },
+      '回宫格标准': { gridType: '回宫格' },
+      '回宫格宽间': { gridType: '回宫格' },
+      '现代简约': { gridType: '田字格', radius: '4px', stroke: '0.5' },
+      '儿童卡通': { gridType: '田字格', radius: '8px', stroke: '2' },
+    };
+    const cfg = map[settings.stylePreset];
+    if (!cfg) return;
+    if (cfg.gridType) updateSetting('gridType', cfg.gridType);
+    if (cfg.y1) {
+      document.documentElement.style.setProperty('--fourline-y1', cfg.y1);
+      document.documentElement.style.setProperty('--fourline-y2', cfg.y2);
+      document.documentElement.style.setProperty('--fourline-y3', cfg.y3);
+      document.documentElement.style.setProperty('--fourline-y4', cfg.y4);
+    }
+    if (cfg.radius) document.documentElement.style.setProperty('--cell-radius', cfg.radius);
+    if (cfg.stroke) document.documentElement.style.setProperty('--grid-stroke-width', cfg.stroke);
+  }, [settings.stylePreset, updateSetting]);
+
+  // 动态网格属性
+  useEffect(() => {
+    document.documentElement.style.setProperty('--grid-stroke-width', String(settings.gridStrokeWidth));
+    document.documentElement.style.setProperty('--cell-radius', `${settings.cellRadius}px`);
+  }, [settings.gridStrokeWidth, settings.cellRadius]);
+
+  // 英文基线
+  useEffect(() => {
+    document.documentElement.style.setProperty('--en-descent', letterStyle === '手写体' ? '0.286em' : '0.238em');
+  }, [letterStyle]);
+
+  // 四线三格自适应
+  useEffect(() => {
+    if (!settings.autoLayout || settings.gridType !== '四线三格') return;
+    const s = settings.text || '';
+    const up = (s.match(/[A-Z]/g) || []).length;
+    const low = (s.match(/[a-z]/g) || []).length;
+    const dig = (s.match(/[0-9]/g) || []).length;
+    const total = Math.max(1, up + low + dig);
+    let y1 = '0.23', y3 = '0.77', y4 = '0.94';
+    if (up / total > 0.5) { y1 = '0.20'; y3 = '0.80'; y4 = '0.96'; }
+    else if (low / total > 0.5) { y1 = '0.25'; y3 = '0.75'; y4 = '0.92'; }
+    else if (dig / total > 0.5) { y1 = '0.22'; y3 = '0.78'; y4 = '0.95'; }
+    document.documentElement.style.setProperty('--fourline-y1', y1);
+    document.documentElement.style.setProperty('--fourline-y2', '0.50');
+    document.documentElement.style.setProperty('--fourline-y3', y3);
+    document.documentElement.style.setProperty('--fourline-y4', y4);
+  }, [settings.autoLayout, settings.gridType, settings.text]);
 
   // 渲染
   return (
     <ErrorBoundary>
       <ToastContainer toasts={toasts} onRemove={removeToast} />
-      <MainLayout
-        mode={settings.mode}
-        variant={settings.variant}
+     <MainLayout
+       mode={settings.mode}
+        usage={usage}
+       variant={settings.variant}
         layout={settings.layout}
         gridType={settings.gridType}
         gridColor={settings.gridColor}
@@ -334,10 +394,11 @@ export default function App() {
         onPrint={() => window.print()}
         onExportPDF={exportPDF}
         onExportImage={exportImage}
-        onSaveTemplate={saveTemplate}
-        onLoadTemplate={loadTemplate}
-        onImportConfig={importConfig}
-        onReset={resetConfig}
+       onSaveTemplate={saveTemplate}
+       onLoadTemplate={loadTemplate}
+       onImportConfig={importConfig}
+        onExportConfig={exportConfig}
+       onReset={resetConfig}
       />
       <PageGrid
         pages={pages}
@@ -350,10 +411,35 @@ export default function App() {
         strokeMode={settings.strokeMode}
         font={font}
         fontSize={settings.fontSize}
-        letterStyle={letterStyle}
-        showGuide={settings.showGuide}
-        engFont={engFont}
-      />
-    </ErrorBoundary>
+       letterStyle={letterStyle}
+       showGuide={settings.showGuide}
+       engFont={engFont}
+     />
+      {templateModalOpen && (
+        <div className="modal show d-block" tabIndex={-1} style={{ background: 'rgba(0,0,0,0.5)' }}>
+          <div className="modal-dialog modal-sm">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title">保存模板</h5>
+                <button type="button" className="btn-close" onClick={() => setTemplateModalOpen(false)} />
+              </div>
+              <div className="modal-body">
+                <input
+                  className="form-control"
+                  placeholder="模板名称"
+                  value={templateName}
+                  onChange={(e) => setTemplateName(e.target.value)}
+                  onKeyDown={(e) => { if (e.key === 'Enter') confirmSaveTemplate(); }}
+                />
+              </div>
+              <div className="modal-footer">
+                <button className="btn btn-secondary" onClick={() => setTemplateModalOpen(false)}>取消</button>
+                <button className="btn btn-primary" onClick={confirmSaveTemplate}>保存</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+   </ErrorBoundary>
   );
 }

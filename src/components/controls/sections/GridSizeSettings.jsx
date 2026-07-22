@@ -8,13 +8,14 @@ export default function GridSizeSettings({
   cols,
   cellSize,
   gridGap,
+  fontSize,
   handleSetRows,
   handleSetCols,
   handleSetCellSize,
-  handleSetGridGap
+  handleSetGridGap,
+  handleSetFontSize
 }) {
   return React.createElement(React.Fragment, null,
-    // Rows + cols + cell size
     React.createElement('div', { className: 'row g-2 mt-1' },
       React.createElement('div', { className: 'col-4' },
         React.createElement('label', { className: 'form-label', htmlFor: 'rows' }, '行数/页'),
@@ -50,8 +51,6 @@ export default function GridSizeSettings({
         })
       )
     ),
-
-    // Gap + font size
     React.createElement('div', { className: 'row g-2 mt-1' },
       React.createElement('div', { className: 'col-6' },
         React.createElement('label', { className: 'form-label', htmlFor: 'gridGap' }, '行距'),
@@ -62,6 +61,17 @@ export default function GridSizeSettings({
           min: 0,
           value: gridGap,
           onChange: e => handleSetGridGap(e.target.value)
+        })
+      ),
+      React.createElement('div', { className: 'col-6' },
+        React.createElement('label', { className: 'form-label', htmlFor: 'fontSize' }, '字体大小'),
+        React.createElement('input', {
+          id: 'fontSize',
+          className: 'form-control',
+          type: 'number',
+          min: 12,
+          value: fontSize,
+          onChange: e => handleSetFontSize(e.target.value)
         })
       )
     )

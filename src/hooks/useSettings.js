@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const STORAGE_KEY = 'copybook.settings';
+const STORAGE_KEY = 'copybook-settings';
 
 const DEFAULTS = {
   mode: '多字', variant: '多字', layout: '连续排列', gridType: '田字格',

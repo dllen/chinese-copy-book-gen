@@ -20,15 +20,11 @@ function ConfigSummary({ gridType, gridColor, stylePreset, rows, cols, cellSize,
 }
 
 export default function PreviewPanel({
-  settings,
-  onFillRandom,
-  commonChars,
-  handleSetPreviewScale,
-  handleSetRandCount,
-  updateSetting,
-  usage: usageProp
+  previewScale, randCount, randNoRepeat, gridType, gridColor, stylePreset,
+  rows, cols, cellSize, fontSize,
+  onFillRandom, commonChars, onSetRandCount: handleSetRandCount, onSetPreviewScale: handleSetPreviewScale,
+  updateSetting, usage: usageProp
 }) {
-  const { previewScale, randCount, randNoRepeat, gridType, gridColor, stylePreset, rows, cols, cellSize, fontSize } = settings;
   const usage = usageProp || { capacity: 0, used: 0, warn: false };
 
   return React.createElement('div', { className: 'card' },
