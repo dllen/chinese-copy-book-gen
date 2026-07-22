@@ -161,7 +161,7 @@ export default function useCopybook(settings, updateSetting, deps = {}) {
   }, [settings, updateSetting]);
 
   // 导出 PDF
-  const exportPDF = useCallback((paper) => {
+  const exportPDF = useCallback((paper = settings.paper) => {
     const id = toast.progress('正在生成 PDF...');
     try {
       const cp = window.__copybook__ || {};
