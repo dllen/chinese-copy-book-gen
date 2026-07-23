@@ -136,7 +136,18 @@ export default function MainLayout({
             onSetRandCount: handleSetRandCount,
             onSetPreviewScale: handleSetPreviewScale,
             updateSetting,
-            text
+            text,
+            gridType,
+            gridColor,
+            stylePreset,
+            rows,
+            cols,
+            cellSize,
+            fontSize,
+            usage,
+            randCount,
+            randNoRepeat,
+            previewScale
           })
         )
       )
