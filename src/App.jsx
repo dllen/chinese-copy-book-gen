@@ -408,6 +408,7 @@ export default function App() {
         onEngShowZhChange={(v) => updateSetting('engShowZh', v)}
         onGenAlnum={copybook.genAlnum}
         onGenChineseChars={copybook.genChineseChars}
+        settings={settings}
         validationResult={validationResult}
         alnumStats={alnumStats}
         pages={pages}
