@@ -164,7 +164,7 @@ export default function SpecialFeatureSettings({
         count > 0 ? `已生成 ${count} 个汉字` : '从常用字表中随机选取'
       ),
       count > 0 ? React.createElement('div', { className: 'mt-2 small text-muted' },
-        '预览：' + chars.slice(0, 50) + (chars.length > 50 ? '…' : '')
+        '预览：' + chars.slice(0, 50) + (chars.length > 50 ? '…' : chars.length === 50 ? '' : '')
       ) : null,
       React.createElement('div', { className: 'form-text' },
         '从常用汉字表（约 700 字）中随机抽取，支持设置数量和不重复'

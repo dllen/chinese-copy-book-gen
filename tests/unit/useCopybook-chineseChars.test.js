@@ -61,7 +61,7 @@ describe('汉字练习功能', () => {
   })
 
   describe('genChineseChars', () => {
-    it('应该生成随机汉字', () => {
+    it('应该生成随机汉字并更新 text 设置', () => {
       const { result } = renderHook(() => useCopybook(defaultSettings, mockUpdateSetting))
       
       act(() => {
@@ -69,10 +69,15 @@ describe('汉字练习功能', () => {
       })
 
       expect(mockUpdateSetting).toHaveBeenCalled()
-      const call = mockUpdateSetting.mock.calls.find(c => c[0] === 'chineseCharSeq')
-      expect(call).toBeDefined()
-      expect(typeof call[1]).toBe('string')
-      expect(call[1].length).toBeLessThanOrEqual(3)
+      // 验证 chineseCharSeq 被更新
+      const seqCall = mockUpdateSetting.mock.calls.find(c => c[0] === 'chineseCharSeq')
+      expect(seqCall).toBeDefined()
+      expect(typeof seqCall[1]).toBe('string')
+      expect(seqCall[1].length).toBeLessThanOrEqual(3)
+      // 验证 text 被更新（用于显示）
+      const textCall = mockUpdateSetting.mock.calls.find(c => c[0] === 'text')
+      expect(textCall).toBeDefined()
+      expect(textCall[1]).toBe(seqCall[1])
     })
 
     it('应该生成不重复的汉字', () => {

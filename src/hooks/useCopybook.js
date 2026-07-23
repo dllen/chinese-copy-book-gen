@@ -181,6 +181,7 @@ export default function useCopybook(settings, updateSetting, deps = {}) {
     if (pool.length === 0) {
       setChineseCharSeqLocal('');
       updateSetting('chineseCharSeq', '');
+      toast?.warn('汉字数据加载中，请稍后重试');
       return;
     }
 
@@ -211,6 +212,8 @@ export default function useCopybook(settings, updateSetting, deps = {}) {
     const seq = out.join('');
     setChineseCharSeqLocal(seq);
     updateSetting('chineseCharSeq', seq);
+    updateSetting('text', seq);
+    updateSetting('layout', '连续排列');
   }, [settings, updateSetting]);
 
   // 导出 PDF

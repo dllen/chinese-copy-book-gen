@@ -19,6 +19,9 @@ export default function QuickActions({ updateSetting, onOpenLibrary }) {
     if (scenario.feature === '数字字母') {
       updateSetting('alnumSeq', '');
     }
+    if (scenario.feature === '汉字练习') {
+      updateSetting('chineseCharSeq', '');
+    }
     // 打开词库面板并切换到对应标签
     if (scenario.key === 'poem' && onOpenLibrary) {
       onOpenLibrary({ open: true, tab: 'poem' });
