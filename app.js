@@ -87,6 +87,7 @@
     const [mode,setMode]=useState('多字');
     const [variant,setVariant]=useState('多字');
     const [layout,setLayout]=useState('连续排列');
+    const [verticalLayout,setVerticalLayout]=useState(false);
     const [text,setText]=useState('');
     const [gridType,setGridType]=useState('田字格');
     const [gridColor,setGridColor]=useState('绿色');
@@ -148,14 +149,14 @@
     useEffect(()=>{ document.documentElement.style.setProperty('--preview-scale', String(previewScale)); },[previewScale]);
     const gColor=useMemo(()=>{ const custom = customGridColor && /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(customGridColor) ? customGridColor : null; return custom || toHex(gridColor); },[gridColor,customGridColor]);
     const tColor=useMemo(()=>{ const custom = customTextColor && /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(customTextColor) ? customTextColor : null; return custom || toHex(textColorOpt); },[textColorOpt,customTextColor]);
-    const parsed=useMemo(()=>{ const cp=window.__copybook__||{}; if(feature==='控笔字帖'){ if(cp.features&&cp.features.buildControlPages) return cp.features.buildControlPages(difficulty); const basic=['一','丨','丿','丶','亅']; const mids=['氵','亻','讠','艹','月','女','口','木','火','土','日','目','田']; const adv=['永','德','善','爱','勇','强']; let pool=[]; if(difficulty==='初级') pool=basic; else if(difficulty==='中级') pool=mids; else pool=adv; const seq=[]; pool.forEach(c=>{ seq.push(c); seq.push(''); }); return { pages:[seq] }; } if(feature==='数字字母'){ const s=alnumSeq||''; return { pages:[Array.from(s)] }; } if(feature==='字帖模板'&&layout!=='连续排列'&&cp.content&&cp.content.layoutDocument) return cp.content.layoutDocument(layout,text,cols,{ blankRows:enBlankRows, repeat:enRepeat }); return (cp.content&&cp.content.toCells?cp.content.toCells(mode,text,variant):{}); },[feature,mode,text,variant,difficulty,alnumSeq,layout,cols,enBlankRows,enRepeat]);
+    const parsed=useMemo(()=>{ const cp=window.__copybook__||{}; if(feature==='控笔字帖'){ if(cp.features&&cp.features.buildControlPages) return cp.features.buildControlPages(difficulty); const basic=['一','丨','丿','丶','亅']; const mids=['氵','亻','讠','艹','月','女','口','木','火','土','日','目','田']; const adv=['永','德','善','爱','勇','强']; let pool=[]; if(difficulty==='初级') pool=basic; else if(difficulty==='中级') pool=mids; else pool=adv; const seq=[]; pool.forEach(c=>{ seq.push(c); seq.push(''); }); return { pages:[seq] }; } if(feature==='数字字母'){ const s=alnumSeq||''; return { pages:[Array.from(s)] }; } if(feature==='字帖模板'&&layout!=='连续排列'&&layout!=='竖排连续'&&cp.content&&cp.content.layoutDocument) return cp.content.layoutDocument(layout,text,cols,{ blankRows:enBlankRows, repeat:enRepeat }); if(layout==='竖排连续'||layout==='竖排古诗'||layout==='竖排文章'){ const isVertical=true; const effectiveRows=cols; const effectiveCols=rows; if(cp.content&&cp.content.layoutDocumentVertical) return cp.content.layoutDocumentVertical(layout,text,effectiveRows,{ blankRows:enBlankRows, repeat:enRepeat }); return (cp.content&&cp.content.toCells?cp.content.toCells(mode,text,variant):{}); } return (cp.content&&cp.content.toCells?cp.content.toCells(mode,text,variant):{}); },[feature,mode,text,variant,difficulty,alnumSeq,layout,cols,rows,enBlankRows,enRepeat]);
     const pages=useMemo(()=>{ const cp=window.__copybook__||{}; const paginateFn=cp.content&&cp.content.paginate||paginate; return paginateFn(parsed.pages,rows,cols,tailFill); },[parsed,rows,cols,tailFill]);
     const usage=useMemo(()=>{ const capacity=rows*cols*pages.length; let used=0; pages.forEach(pg=>pg.forEach(ch=>{ if(ch&&ch!=='\n') used++; })); const warn=pages.length>50; return { capacity, used, warn }; },[pages,rows,cols]);
     const bg=useMemo(()=>{ const cp=window.__copybook__||{}; return cp.grid?cp.grid.svgDataURL(gridType,cellSize,gColor,lineStyle):''; },[gridType,cellSize,gColor,lineStyle]);
     useEffect(()=>{ const sz=pageSize(paper); document.documentElement.style.setProperty('--page-width', sz.w); document.documentElement.style.setProperty('--page-height', sz.h); document.documentElement.style.setProperty('--cell-size', `${cellSize}px`); document.documentElement.style.setProperty('--grid-gap', `${gridGap}px`); document.documentElement.style.setProperty('--grid-color', gColor); document.documentElement.style.setProperty('--text-color', tColor); document.documentElement.style.setProperty('--font-size', `${fontSize}px`); document.documentElement.style.setProperty('--page-margin-top', `${marginTop}mm`); document.documentElement.style.setProperty('--page-margin-right', `${marginRight}mm`); document.documentElement.style.setProperty('--page-margin-bottom', `${marginBottom}mm`); document.documentElement.style.setProperty('--page-margin-left', `${marginLeft}mm`); document.documentElement.style.setProperty('--guide-color', gColor); document.documentElement.style.setProperty('--page-bg', toHex(pageBg)||'#fff'); document.documentElement.style.setProperty('--cell-bg', toHex(cellBg)||'transparent'); document.documentElement.style.setProperty('--cell-border-width', cellBorder?'2px':'0px'); document.documentElement.style.setProperty('--cell-shadow', cellShadow?'0 2px 4px rgba(0,0,0,0.1)':'none'); document.documentElement.style.setProperty('--text-stroke-width', textStroke==='无'?'0px':textStroke==='细'?'0.5px':textStroke==='中'?'1px':'2px'); document.documentElement.style.setProperty('--text-shadow', textShadow?'2px 2px 4px rgba(0,0,0,0.3)':'none'); },[paper,cellSize,gridGap,gColor,tColor,fontSize,marginTop,marginRight,marginBottom,marginLeft,pageBg,cellBg,cellBorder,cellShadow,textShadow,textStroke]);
     useEffect(()=>{ document.documentElement.style.setProperty('--grid-stroke-width', String(gridStrokeWidth)); document.documentElement.style.setProperty('--cell-radius', `${cellRadius}px`); },[gridStrokeWidth,cellRadius]);
     useEffect(()=>{ document.documentElement.style.setProperty('--en-descent', letterStyle==='手写体'?'0.286em':'0.238em'); },[letterStyle]);
-    useEffect(()=>{ if(stylePreset==='四线三格标准'){ document.documentElement.style.setProperty('--fourline-y1','0.25'); document.documentElement.style.setProperty('--fourline-y2','0.50'); document.documentElement.style.setProperty('--fourline-y3','0.75'); document.documentElement.style.setProperty('--fourline-y4','0.92'); setGridType('四线三格'); } else if(stylePreset==='四线三格宽间'){ document.documentElement.style.setProperty('--fourline-y1','0.20'); document.documentElement.style.setProperty('--fourline-y2','0.50'); document.documentElement.style.setProperty('--fourline-y3','0.80'); document.documentElement.style.setProperty('--fourline-y4','0.95'); setGridType('四线三格'); } else if(stylePreset==='田字格标准'){ setGridType('田字格'); } else if(stylePreset==='米字格标准'){ setGridType('米字格'); } else if(stylePreset==='米字格宽间'){ setGridType('米字格'); } else if(stylePreset==='回宫格标准'){ setGridType('回宫格'); } else if(stylePreset==='回宫格宽间'){ setGridType('回宫格'); } else if(stylePreset==='现代简约'){ setGridType('田字格'); document.documentElement.style.setProperty('--cell-radius','4px'); document.documentElement.style.setProperty('--grid-stroke-width','0.5'); } else if(stylePreset==='儿童卡通'){ setGridType('田字格'); document.documentElement.style.setProperty('--cell-radius','8px'); document.documentElement.style.setProperty('--grid-stroke-width','2'); } },[stylePreset]);
+    useEffect(()=>{ if(stylePreset==='四线三格标准'){ document.documentElement.style.setProperty('--fourline-y1','0.25'); document.documentElement.style.setProperty('--fourline-y2','0.50'); document.documentElement.style.setProperty('--fourline-y3','0.75'); document.documentElement.style.setProperty('--fourline-y4','0.92'); setGridType('四线三格'); } else if(stylePreset==='四线三格宽间'){ document.documentElement.style.setProperty('--fourline-y1','0.20'); document.documentElement.style.setProperty('--fourline-y2','0.50'); document.documentElement.style.setProperty('--fourline-y3','0.80'); document.documentElement.style.setProperty('--fourline-y4','0.95'); setGridType('四线三格'); } else if(stylePreset==='回宫格黄金'){ setGridType('回宫格黄金'); } else if(stylePreset==='拼音格标准'){ setGridType('拼音格'); } else if(stylePreset==='数字格标准'){ setGridType('数字格'); } else if(stylePreset==='竖排书法'){ setGridType('竖排米字格'); } else if(stylePreset==='田字格标准'){ setGridType('田字格'); } else if(stylePreset==='米字格标准'){ setGridType('米字格'); } else if(stylePreset==='米字格宽间'){ setGridType('米字格'); } else if(stylePreset==='回宫格标准'){ setGridType('回宫格'); } else if(stylePreset==='回宫格宽间'){ setGridType('回宫格'); } else if(stylePreset==='现代简约'){ setGridType('田字格'); document.documentElement.style.setProperty('--cell-radius','4px'); document.documentElement.style.setProperty('--grid-stroke-width','0.5'); } else if(stylePreset==='儿童卡通'){ setGridType('田字格'); document.documentElement.style.setProperty('--cell-radius','8px'); document.documentElement.style.setProperty('--grid-stroke-width','2'); } },[stylePreset]);
     useEffect(()=>{ if(autoLayout && gridType==='四线三格'){ const s=(text||''); const upp=(s.match(/[A-Z]/g)||[]).length; const low=(s.match(/[a-z]/g)||[]).length; const dig=(s.match(/[0-9]/g)||[]).length; const total=Math.max(1, upp+low+dig); const ru=upp/total, rl=low/total, rd=dig/total; let y1='0.23', y2='0.50', y3='0.77', y4='0.94'; if(ru>0.5){ y1='0.20'; y3='0.80'; y4='0.96'; } else if(rl>0.5){ y1='0.25'; y3='0.75'; y4='0.92'; } else if(rd>0.5){ y1='0.22'; y3='0.78'; y4='0.95'; } document.documentElement.style.setProperty('--fourline-y1', y1); document.documentElement.style.setProperty('--fourline-y2','0.50'); document.documentElement.style.setProperty('--fourline-y3', y3); document.documentElement.style.setProperty('--fourline-y4', y4); } },[autoLayout,gridType,text]);
     const font=fontByTemplate(template,customFont);
     const v= layout!=='连续排列' ? ((text&&text.trim())?{ok:true,msg:''}:{ok:false,msg:'请输入内容'}) : validate(mode,text);
@@ -364,7 +365,7 @@
                 feature==='字帖模板'?React.createElement('div',{ className:'mb-2' },
                   React.createElement('label',{ className:'form-label', htmlFor:'layout' },'排版格式'),
                   React.createElement('select',{ id:'layout', className:'form-select', value:layout, onChange:e=>setLayout(e.target.value), 'aria-label':'排版格式' },
-                    ['连续排列','古诗格式','文章格式','英文格式'].map(v=>React.createElement('option',{ key:v, value:v },v))
+                    ['连续排列','竖排连续','古诗格式','竖排古诗','文章格式','竖排文章','英文格式'].map(v=>React.createElement('option',{ key:v, value:v },v))
                   ),
                   layout==='古诗格式'?React.createElement('div',{ className:'form-text' },'无标点的短行（标题、作者）自动居中；诗句按标点分行居中。'):null,
                   layout==='文章格式'?React.createElement('div',{ className:'form-text' },'首行为标题（居中）；其余每行为一段，段首缩进两格；标点自动避头尾。'):null,
@@ -468,7 +469,7 @@
                   React.createElement('div',{ className:'col-5' },
                     React.createElement('label',{ className:'form-label', htmlFor:'gridType' },'格子类型'),
                     React.createElement('select',{ id:'gridType', className:'form-select', value:gridType, onChange:e=>setGridType(e.target.value) },
-                      ['田字格','米字格','回宫格','四线三格','无格'].map(v=>React.createElement('option',{ key:v, value:v },v))
+                      ['田字格','米字格','回宫格','回宫格黄金','四线三格','拼音格','九宫格','十六宫格','作文格','椭圆米字格','圆形格','口字格','横线格','横线','田字格+斜','双田字格','竖线格','竖排田字格','竖排米字格','数字格','田格','方格','无格'].map(v=>React.createElement('option',{ key:v, value:v },v))
                     )
                   ),
                   React.createElement('div',{ className:'col-4' },
@@ -504,7 +505,7 @@
                   React.createElement('div',{ className:'col-6' },
                     React.createElement('label',{ className:'form-label', htmlFor:'stylePreset' },'打印样式'),
                     React.createElement('select',{ id:'stylePreset', className:'form-select', value:stylePreset, onChange:e=>setStylePreset(e.target.value) },
-                      ['四线三格标准','四线三格宽间','田字格标准','米字格标准','米字格宽间','回宫格标准','回宫格宽间','现代简约','儿童卡通'].map(v=>React.createElement('option',{ key:v, value:v },v))
+                      ['四线三格标准','四线三格宽间','回宫格黄金','拼音格标准','数字格标准','竖排书法','田字格标准','米字格标准','米字格宽间','回宫格标准','回宫格宽间','现代简约','儿童卡通'].map(v=>React.createElement('option',{ key:v, value:v },v))
                     )
                   ),
                   React.createElement('div',{ className:'col-6' },
@@ -514,7 +515,10 @@
                 ),
                 React.createElement('div',{ className:'form-check mt-1' },
                   React.createElement('input',{ className:'form-check-input', type:'checkbox', id:'autoLayout', checked:autoLayout, onChange:e=>setAutoLayout(e.target.checked) }),
-                  React.createElement('label',{ className:'form-check-label', htmlFor:'autoLayout' },'智能排版（四线三格）')
+                  React.createElement('label',{ className:'form-check-label', htmlFor:'autoLayout' },'智能排版（四线三格）'),
+                  React.createElement('div',{ className:'form-check mt-1' },
+                    React.createElement('input',{ className:'form-check-input', type:'checkbox', id:'verticalLayout', checked:verticalLayout, onChange:e=>setVerticalLayout(e.target.checked) }),
+                    React.createElement('label',{ className:'form-check-label', htmlFor:'verticalLayout' },'竖排模式（从上到下，从右到左）')
                 ),
                 React.createElement('div',{ className:'row g-2 mt-1' },
                   React.createElement('div',{ className:'col-4' },
@@ -694,10 +698,10 @@
         pages.map((page,i)=>React.createElement('div',{ key:i, className:'page' },
           header?React.createElement('div',{ className:'header' },header):null,
           React.createElement('div',{ className:'grid' },
-            (cp.content&&cp.content.splitRows?cp.content.splitRows(page,cols):(splitRows?splitRows(page,cols):[page])).map((row,ri)=>React.createElement('div',{
+            (layout.startsWith('竖排')?((cp.content&&cp.content.splitRowsVertical)?cp.content.splitRowsVertical(page,cols):splitRows?splitRows(page,cols):[page]):(cp.content&&cp.content.splitRows?cp.content.splitRows(page,cols):(splitRows?splitRows(page,cols):[page]))).map((row,ri)=>React.createElement('div',{
                 key:ri,
-                className:'grid-row',
-                style:{ display:'grid', gridTemplateColumns:`repeat(${cols}, var(--cell-size))`, gap: layout==='英文格式'?0:`var(--grid-gap)` }
+                className:'grid-row'+(layout.startsWith('竖排')?' vertical-row':''),
+                style:{ display:'grid', gridTemplateColumns:`repeat(${cols}, var(--cell-size))`, gap: (layout==='英文格式'||layout.startsWith('竖排'))?0:`var(--grid-gap)`, writingMode: layout.startsWith('竖排')?'vertical-rl':'horizontal-tb', textOrientation: layout.startsWith('竖排')?'upright':'mixed' }
               },
               row.map((ch,ci)=>React.createElement(Cell,{ key:ci, ch:ch||'', bg:bg, textColor:tColor, strokeMode, cls: (layout==='英文格式'||feature==='数字字母')?'cell-en':undefined, font: layout==='英文格式'?engFont(letterStyle):feature==='数字字母'?(letterStyle==='印刷体'?'monospace':'cursive'):font, fontSize, showGuide: feature==='数字字母' && showGuide }))
             ))
