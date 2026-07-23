@@ -397,17 +397,17 @@ export default function App() {
         handleSetAlnumCount={(v) => {
           const n = Math.max(1, parseInt(v) || 20);
           updateSetting('alnumCount', n);
-          genAlnum({ count: n });
+          if (genAlnum) genAlnum({ count: n });
         }}
         handleSetCellRadius={(v) => updateSetting('cellRadius', parseInt(v) || 0)}
         handleSetGridStrokeWidth={(v) => updateSetting('gridStrokeWidth', parseFloat(v) || 1)}
         handleSetPreviewScale={(v) => updateSetting('previewScale', parseFloat(v) || 1)}
-        handleAlnumSeq={(v) => { setAlnumSeqState(v); updateSetting('alnumSeq', v); }}
+        handleAlnumSeq={(v) => { copybook.setAlnumSeqLocal?.(v); updateSetting('alnumSeq', v); }}
         handleSetCellShadow={(v) => { setCellShadowLocal(v); updateSetting('cellShadow', v); }}
         onInsert={insertFromLibrary}
         onEngShowZhChange={(v) => updateSetting('engShowZh', v)}
-        onGenAlnum={genAlnum}
-        onGenChineseChars={genChineseChars}
+        onGenAlnum={copybook.genAlnum}
+        onGenChineseChars={copybook.genChineseChars}
         validationResult={validationResult}
         alnumStats={alnumStats}
         pages={pages}

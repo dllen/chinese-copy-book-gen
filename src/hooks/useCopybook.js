@@ -355,7 +355,9 @@ export default function useCopybook(settings, updateSetting, deps = {}) {
     letterStyle,
     cellShadowLocal,
     alnumSeqLocal,
+    setAlnumSeqLocal,
     chineseCharSeqLocal,
+    setChineseCharSeqLocal,
     genChineseChars,
     // 派生数据
     parsed,
