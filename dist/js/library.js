@@ -1,20 +1,22 @@
 (function(){
   var w=window; w.__copybook__=w.__copybook__||{};
-  // Guard: React 18 production bundle exposes hooks but they fail when dispatcher is null
-  // Must try-catch since typeof React.useState is 'function' even when broken
-  var _hasHooks = false;
+  // Guard: use React.createElement to check if React is available and functional.
+  // The hooks detection via React.useState fails in some React 18 production environments.
+  var _hasReact = false;
   try {
-    React.useState(0);
-    _hasHooks = true;
-  } catch(e) { _hasHooks = false; }
-  if (!_hasHooks) {
+    if (typeof React !== "undefined" && React && typeof React.createElement === "function") {
+      React.createElement("div");
+      _hasReact = true;
+    }
+  } catch(e) { _hasReact = false; }
+  if (!_hasReact) {
     w.__copybook__.library = {
       load: function() {},
       searchPoems: function() { return []; },
       searchTexts: function() { return []; },
       searchEnglish: function() { return []; },
       GRADES: [],
-      LibraryPanel: function() { return React.createElement('div', {style: {padding: '20px', color: '#666'}}, '词库功能暂不可用'); }
+      LibraryPanel: function() { return React.createElement("div", {style: {padding: "20px", color: "#666"}}, "词库功能暂不可用"); }
     };
     return;
   }
