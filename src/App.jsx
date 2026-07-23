@@ -407,6 +407,7 @@ export default function App() {
         onInsert={insertFromLibrary}
         onEngShowZhChange={(v) => updateSetting('engShowZh', v)}
         onGenAlnum={genAlnum}
+        onGenChineseChars={genChineseChars}
         validationResult={validationResult}
         alnumStats={alnumStats}
         pages={pages}

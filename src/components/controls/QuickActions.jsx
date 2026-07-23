@@ -6,6 +6,7 @@ const scenarios = [
   { key: 'english', label: '英语单词', icon: '🔤', feature: '字帖模板', layout: '英文格式', gridType: '四线三格', cols: 10, text: 'apple\nbanana\ncat' },
   { key: 'ctrl', label: '控笔训练', icon: '✍️', feature: '控笔字帖', layout: '连续排列', gridType: '田字格', text: '' },
   { key: 'alnum', label: '数字字母', icon: '🔢', feature: '数字字母', layout: '连续排列', gridType: '四线三格', text: '' },
+  { key: 'chinese', label: '汉字练习', icon: '✏️', feature: '汉字练习', layout: '连续排列', gridType: '田字格', text: '' },
 ];
 
 export default function QuickActions({ updateSetting, onOpenLibrary }) {

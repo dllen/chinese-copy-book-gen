@@ -16,6 +16,8 @@ const DEFAULTS = {
   cellBorder: false, cellShadow: false, textShadow: false, textStroke: '无',
   alnumIncludeDigits: true, alnumIncludeUpper: true, alnumIncludeLower: true,
   alnumCount: 20, alnumNoRepeat: true, alnumSeq: '',
+  chineseCharCount: 30, chineseCharNoRepeat: true, chineseCharSeq: '',
+  chineseCharCount: 30, chineseCharNoRepeat: true, chineseCharSeq: '',
 };
 
 export function useSettings(toast) {

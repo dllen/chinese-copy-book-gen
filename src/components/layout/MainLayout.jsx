@@ -21,6 +21,7 @@ export default function MainLayout({
   cellRadius, pageBg, cellBg, cellBorder, cellShadow, textShadow, textStroke,
   alnumIncludeDigits, alnumIncludeUpper, alnumIncludeLower,
   alnumCount, alnumNoRepeat, alnumSeqLocal,
+  chineseCharCount, chineseCharNoRepeat, chineseCharSeqLocal,
   letterStyle, cellShadowLocal,
   // Setters & handlers
   updateSetting,
@@ -46,6 +47,7 @@ export default function MainLayout({
   onInsert,
   onEngShowZhChange,
   onGenAlnum,
+  onGenChineseChars,
   // Validation
   validationResult,
   // Alphanumeric stats
@@ -87,6 +89,7 @@ export default function MainLayout({
             cellRadius, pageBg, cellBg, cellBorder, cellShadow, textShadow, textStroke,
             alnumIncludeDigits, alnumIncludeUpper, alnumIncludeLower,
             alnumCount, alnumNoRepeat, alnumSeqLocal,
+  chineseCharCount, chineseCharNoRepeat, chineseCharSeqLocal,
             letterStyle, cellShadowLocal,
             updateSetting,
             handleLetterStyle,
@@ -111,6 +114,7 @@ export default function MainLayout({
             onInsert,
             onEngShowZhChange,
             onGenAlnum,
+  onGenChineseChars,
             validationResult,
             alnumStats,
             libraryState,

@@ -37,6 +37,7 @@ export default function ConfigPanel({ mode, variant,
   cellRadius, pageBg, cellBg, cellBorder, cellShadow, textShadow, textStroke,
   alnumIncludeDigits, alnumIncludeUpper, alnumIncludeLower,
   alnumCount, alnumNoRepeat, alnumSeqLocal,
+  chineseCharCount, chineseCharNoRepeat,
   letterStyle, cellShadowLocal,
   updateSetting,
   handleLetterStyle,
@@ -61,6 +62,7 @@ export default function ConfigPanel({ mode, variant,
   onInsert,
   onEngShowZhChange,
   onGenAlnum,
+  onGenChineseChars,
   validationResult,
   alnumStats,
   libraryState,
@@ -78,7 +80,7 @@ export default function ConfigPanel({ mode, variant,
           <div className="mb-2">
             <label className="form-label" htmlFor="feature">功能模块</label>
             <select id="feature" className="form-select" value={feature} onChange={e => updateSetting('feature', e.target.value)}>
-              {['字帖模板', '控笔字帖', '数字字母'].map(v => <option key={v} value={v}>{v}</option>)}
+              {['字帖模板', '控笔字帖', '数字字母', '汉字练习'].map(v => <option key={v} value={v}>{v}</option>)}
             </select>
           </div>
 
@@ -132,6 +134,10 @@ export default function ConfigPanel({ mode, variant,
             updateSetting={updateSetting}
             handleSetAlnumCount={handleSetAlnumCount}
             onGenAlnum={onGenAlnum}
+            chineseCharCount={settings.chineseCharCount}
+            chineseCharNoRepeat={settings.chineseCharNoRepeat}
+            chineseCharSeqLocal={chineseCharSeqLocal}
+            onGenChineseChars={onGenChineseChars}
           />
         </Section>
 

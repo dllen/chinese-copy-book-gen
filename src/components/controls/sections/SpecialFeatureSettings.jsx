@@ -16,7 +16,11 @@ export default function SpecialFeatureSettings({
   alnumStats,
   updateSetting,
   handleSetAlnumCount,
-  onGenAlnum
+  onGenAlnum,
+  chineseCharCount,
+  chineseCharNoRepeat,
+  chineseCharSeqLocal,
+  onGenChineseChars
 }) {
   if (feature === '控笔字帖') {
     return React.createElement('div', { className: 'mb-2' },
@@ -118,6 +122,52 @@ export default function SpecialFeatureSettings({
       ),
       React.createElement('div', { className: 'form-text' },
         '可手动输入序列，或点击"随机生成"'
+      )
+    );
+  }
+
+  if (feature === '汉字练习') {
+    const chars = chineseCharSeqLocal || '';
+    const count = chars.length;
+    return React.createElement('div', { className: 'mb-2' },
+      React.createElement('div', { className: 'row g-2 mb-2' },
+        React.createElement('div', { className: 'col-6' },
+          React.createElement('label', { className: 'form-label', htmlFor: 'chineseCharCount' }, '数量'),
+          React.createElement('input', {
+            id: 'chineseCharCount',
+            className: 'form-control',
+            type: 'number',
+            min: 1,
+            max: 500,
+            value: chineseCharCount,
+            onChange: e => updateSetting('chineseCharCount', Math.max(1, Math.min(500, parseInt(e.target.value) || 30)))
+          })
+        ),
+        React.createElement('div', { className: 'col-6 d-flex align-items-end' },
+          React.createElement('div', { className: 'form-check' },
+            React.createElement('input', {
+              className: 'form-check-input',
+              type: 'checkbox',
+              id: 'chineseCharNoRepeat',
+              checked: chineseCharNoRepeat,
+              onChange: e => updateSetting('chineseCharNoRepeat', e.target.checked)
+            }),
+            React.createElement('label', { className: 'form-check-label', htmlFor: 'chineseCharNoRepeat' }, '不重复')
+          )
+        )
+      ),
+      React.createElement('button', {
+        className: 'btn btn-outline-primary btn-sm',
+        onClick: () => onGenChineseChars?.({ count: chineseCharCount })
+      }, '随机生成汉字'),
+      React.createElement('span', { className: 'ms-2 text-muted small' },
+        count > 0 ? `已生成 ${count} 个汉字` : '从常用字表中随机选取'
+      ),
+      count > 0 ? React.createElement('div', { className: 'mt-2 small text-muted' },
+        '预览：' + chars.slice(0, 50) + (chars.length > 50 ? '…' : '')
+      ) : null,
+      React.createElement('div', { className: 'form-text' },
+        '从常用汉字表（约 700 字）中随机抽取，支持设置数量和不重复'
       )
     );
   }

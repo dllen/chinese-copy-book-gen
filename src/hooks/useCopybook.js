@@ -16,6 +16,7 @@ export default function useCopybook(settings, updateSetting, deps = {}) {
   const [letterStyle, setLetterStyle] = useState('印刷体');
   const [cellShadowLocal, setCellShadowLocal] = useState(false);
   const [alnumSeqLocal, setAlnumSeqLocal] = useState('');
+  const [chineseCharSeqLocal, setChineseCharSeqLocal] = useState('');
 
   // 同步本地状态到 settings
   useEffect(() => {
@@ -29,6 +30,10 @@ export default function useCopybook(settings, updateSetting, deps = {}) {
   useEffect(() => {
     if (settings.alnumSeq !== undefined) setAlnumSeqLocal(settings.alnumSeq);
   }, [settings.alnumSeq]);
+
+  useEffect(() => {
+    if (settings.chineseCharSeq !== undefined) setChineseCharSeqLocal(settings.chineseCharSeq);
+  }, [settings.chineseCharSeq]);
 
   // 文本解析（带防抖）
   const parsed = useMemo(() => {
@@ -51,6 +56,11 @@ export default function useCopybook(settings, updateSetting, deps = {}) {
 
     if (feature === '数字字母') {
       const s = alnumSeqLocal || '';
+      return { pages: [Array.from(s)] };
+    }
+
+    if (feature === '汉字练习') {
+      const s = chineseCharSeqLocal || '';
       return { pages: [Array.from(s)] };
     }
 
@@ -158,6 +168,49 @@ export default function useCopybook(settings, updateSetting, deps = {}) {
     const seq = out.join('');
     setAlnumSeqLocal(seq);
     updateSetting('alnumSeq', seq);
+  }, [settings, updateSetting]);
+
+  // 生成随机汉字
+  const genChineseChars = useCallback((opts = {}) => {
+    const {
+      count = settings.chineseCharCount,
+      noRepeat = settings.chineseCharNoRepeat
+    } = opts;
+
+    const pool = window.__copybookData__?.commonChars || [];
+    if (pool.length === 0) {
+      setChineseCharSeqLocal('');
+      updateSetting('chineseCharSeq', '');
+      return;
+    }
+
+    const n = Math.max(1, Math.min(count, noRepeat ? pool.length : count));
+    const out = [];
+
+    if (noRepeat) {
+      const used = new Set();
+      for (let i = 0; i < n; i++) {
+        let idx;
+        do {
+          const u = new Uint32Array(1);
+          crypto.getRandomValues(u);
+          idx = u[0] % pool.length;
+        } while (used.has(idx));
+        used.add(idx);
+        out.push(pool[idx]);
+      }
+    } else {
+      for (let i = 0; i < n; i++) {
+        const u = new Uint32Array(1);
+        crypto.getRandomValues(u);
+        const idx = u[0] % pool.length;
+        out.push(pool[idx]);
+      }
+    }
+
+    const seq = out.join('');
+    setChineseCharSeqLocal(seq);
+    updateSetting('chineseCharSeq', seq);
   }, [settings, updateSetting]);
 
   // 导出 PDF
@@ -302,6 +355,8 @@ export default function useCopybook(settings, updateSetting, deps = {}) {
     letterStyle,
     cellShadowLocal,
     alnumSeqLocal,
+    chineseCharSeqLocal,
+    genChineseChars,
     // 派生数据
     parsed,
     pages,
