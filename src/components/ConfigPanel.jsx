@@ -25,7 +25,8 @@ class LibraryPanelErrorBoundary extends React.Component {
   }
 }
 
-export default function ConfigPanel({ mode, variant,
+export default function ConfigPanel({ settings,
+  mode, variant,
   feature, layout, gridType, gridColor, customGridColor, customTextColor,
   textColorOpt, strokeMode, tailFill, template, customFont,
   rows, cols, cellSize, gridGap, fontSize,
@@ -37,7 +38,7 @@ export default function ConfigPanel({ mode, variant,
   cellRadius, pageBg, cellBg, cellBorder, cellShadow, textShadow, textStroke,
   alnumIncludeDigits, alnumIncludeUpper, alnumIncludeLower,
   alnumCount, alnumNoRepeat, alnumSeqLocal,
-  chineseCharCount, chineseCharNoRepeat,
+  chineseCharCount, chineseCharNoRepeat, chineseCharSeqLocal,
   letterStyle, cellShadowLocal,
   updateSetting,
   handleLetterStyle,
