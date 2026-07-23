@@ -95,6 +95,13 @@
     const st=useStore();
     const [open,setOpen]=useState(false);
     const [tab,setTab]=useState('poem');           // poem | text
+    // 响应外部 props 控制展开/切换标签
+    useEffect(()=>{
+      if(props.defaultOpen===true) setOpen(true);
+    },[props.defaultOpen]);
+    useEffect(()=>{
+      if(props.defaultTab) { setTab(props.defaultTab); setSel(null); }
+    },[props.defaultTab]);
     const [query,setQuery]=useState('');
     const [grade,setGrade]=useState('全部');
     const [sel,setSel]=useState(null);             // 选中的条目

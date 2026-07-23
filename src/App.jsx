@@ -28,6 +28,7 @@ export default function App() {
  // 本地状态管理
  const [commonChars, setCommonChars] = React.useState([]);
   const [letterStyle, setLetterStyle] = React.useState(settings.letterStyle || '印刷体');
+  const [libraryState, setLibraryState] = React.useState({ open: false, tab: 'poem' });
   const [cellShadowLocal, setCellShadowLocal] = React.useState(settings.cellShadow || false);
   const [templateModalOpen, setTemplateModalOpen] = React.useState(false);
   const [templateName, setTemplateName] = React.useState('');
@@ -419,6 +420,8 @@ export default function App() {
        onImportConfig={importConfig}
         onExportConfig={exportConfig}
        onReset={resetConfig}
+        libraryState={libraryState}
+        onLibraryStateChange={(state) => setLibraryState(prev => ({ ...prev, ...state }))}
       />
       <PageGrid
         pages={pages}

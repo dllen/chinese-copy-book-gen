@@ -64,6 +64,8 @@ export default function MainLayout({
   onExportConfig,
   onImportConfig,
   onReset,
+  libraryState,
+  onLibraryStateChange,
 }) {
   return React.createElement(
     'div',
@@ -110,7 +112,9 @@ export default function MainLayout({
             onEngShowZhChange,
             onGenAlnum,
             validationResult,
-            alnumStats
+            alnumStats,
+            libraryState,
+            onLibraryStateChange
           }),
           React.createElement(Toolbar, {
             pages,

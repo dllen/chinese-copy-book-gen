@@ -62,12 +62,17 @@ export default function ConfigPanel({ mode, variant,
   onEngShowZhChange,
   onGenAlnum,
   validationResult,
-  alnumStats
+  alnumStats,
+  libraryState,
+  onLibraryStateChange
 }) {
   return (
     <div className="card">
       <div className="card-body">
-        <QuickActions updateSetting={updateSetting} />
+        <QuickActions 
+          updateSetting={updateSetting}
+          onOpenLibrary={onLibraryStateChange}
+        />
 
         <Section title="1. 内容与排版" defaultOpen>
           <div className="mb-2">
@@ -96,6 +101,8 @@ export default function ConfigPanel({ mode, variant,
                 onInsert={onInsert}
                 engShowZh={engShowZh}
                 onEngShowZhChange={onEngShowZhChange}
+                defaultOpen={libraryState?.open}
+                defaultTab={libraryState?.tab}
               />
             </LibraryPanelErrorBoundary>
           )}

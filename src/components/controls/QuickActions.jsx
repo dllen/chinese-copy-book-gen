@@ -8,7 +8,7 @@ const scenarios = [
   { key: 'alnum', label: '数字字母', icon: '🔢', feature: '数字字母', layout: '连续排列', gridType: '四线三格', text: '' },
 ];
 
-export default function QuickActions({ updateSetting }) {
+export default function QuickActions({ updateSetting, onOpenLibrary }) {
   const apply = (scenario) => {
     updateSetting('feature', scenario.feature);
     if (scenario.layout) updateSetting('layout', scenario.layout);
@@ -17,6 +17,12 @@ export default function QuickActions({ updateSetting }) {
     updateSetting('text', scenario.text);
     if (scenario.feature === '数字字母') {
       updateSetting('alnumSeq', '');
+    }
+    // 打开词库面板并切换到对应标签
+    if (scenario.key === 'poem' && onOpenLibrary) {
+      onOpenLibrary({ open: true, tab: 'poem' });
+    } else if (scenario.key === 'text' && onOpenLibrary) {
+      onOpenLibrary({ open: true, tab: 'text' });
     }
   };
 
