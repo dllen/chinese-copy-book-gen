@@ -22,6 +22,7 @@ export default function MainLayout({
   alnumIncludeDigits, alnumIncludeUpper, alnumIncludeLower,
   alnumCount, alnumNoRepeat, alnumSeqLocal,
   chineseCharCount, chineseCharNoRepeat, chineseCharSeqLocal,
+  copybookType, copybookStyle, pinyinText, hanziText,
   letterStyle, cellShadowLocal,
   // Setters & handlers
   updateSetting,
@@ -52,12 +53,12 @@ export default function MainLayout({
   validationResult,
   // Alphanumeric stats
   alnumStats,
- // Preview panel props
- pages,
- onFillRandom,
- commonChars,
+  // Preview panel props
+  pages,
+  onFillRandom,
+  commonChars,
   usage,
- // Export handlers
+  // Export handlers
   onPrint,
   onExportPDF,
   onExportImage,
@@ -89,7 +90,8 @@ export default function MainLayout({
             cellRadius, pageBg, cellBg, cellBorder, cellShadow, textShadow, textStroke,
             alnumIncludeDigits, alnumIncludeUpper, alnumIncludeLower,
             alnumCount, alnumNoRepeat, alnumSeqLocal,
-  chineseCharCount, chineseCharNoRepeat, chineseCharSeqLocal,
+            chineseCharCount, chineseCharNoRepeat, chineseCharSeqLocal,
+            copybookType, copybookStyle, pinyinText, hanziText,
             letterStyle, cellShadowLocal,
             updateSetting,
             handleLetterStyle,
@@ -114,7 +116,7 @@ export default function MainLayout({
             onInsert,
             onEngShowZhChange,
             onGenAlnum,
-  onGenChineseChars,
+            onGenChineseChars,
             validationResult,
             alnumStats,
             libraryState,

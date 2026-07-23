@@ -17,13 +17,18 @@ const DEFAULTS = {
   alnumIncludeDigits: true, alnumIncludeUpper: true, alnumIncludeLower: true,
   alnumCount: 20, alnumNoRepeat: true, alnumSeq: '',
   chineseCharCount: 30, chineseCharNoRepeat: true, chineseCharSeq: '',
+  copybookType: '普通', copybookStyle: '常规', pinyinText: '', hanziText: ''
 };
 
 export function useSettings(toast) {
   const [settings, setSettings] = useState(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) return { ...DEFAULTS, ...JSON.parse(saved) };
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        // 确保所有字段都有默认值，避免 undefined 导致的问题
+        return { ...DEFAULTS, ...parsed };
+      }
     } catch (e) { /* ignore */ }
     return DEFAULTS;
   });

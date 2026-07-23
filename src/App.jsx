@@ -1,5 +1,6 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 import { useToast } from './hooks/useToast';
+import { useCommonChars } from './hooks/useCommonChars';
 import { useSettings } from './hooks/useSettings';
 import { useDebounce } from './hooks/useDebounce';
 import { ToastContainer } from './components/Toast';
@@ -23,107 +24,48 @@ const CONFIG_FIELDS = [
  */
 export default function App() {
   const { toasts, toast, removeToast } = useToast();
+  const commonChars = useCommonChars(toast);
   const { settings, updateSetting, setSettings } = useSettings(toast);
+  
+  // 使用 ref 跟踪是否已初始化，避免重复设置
+  const initRef = useRef(false);
 
- // 本地状态管理
- const [commonChars, setCommonChars] = React.useState([]);
-  const [letterStyle, setLetterStyle] = React.useState(settings.letterStyle || '印刷体');
+  // 本地状态管理
   const [libraryState, setLibraryState] = React.useState({ open: false, tab: 'poem' });
-  const [cellShadowLocal, setCellShadowLocal] = React.useState(settings.cellShadow || false);
   const [templateModalOpen, setTemplateModalOpen] = React.useState(false);
   const [templateName, setTemplateName] = React.useState('');
 
- // 使用 useCopybook Hook 管理核心业务逻辑
+  // 使用 useCopybook Hook 管理核心业务逻辑
   const copybook = useCopybook(settings, updateSetting, { toast, removeToast, commonChars });
   const gColor = React.useMemo(() => {
     const custom = settings.customGridColor && /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(settings.customGridColor) ? settings.customGridColor : null;
     return custom || toHex(settings.gridColor) || '#000';
   }, [settings.gridColor, settings.customGridColor]);
 
- const {
-   pages,
-   usage,
-   bg,
-   tColor,
-   font,
-   genAlnum,
-   exportPDF,
-   exportImage,
-   exportSVG,
-   fillRandom,
-   insertFromLibrary,
- } = copybook;
+  const {
+    pages,
+    usage,
+    bg,
+    tColor,
+    font,
+    genAlnum,
+    exportPDF,
+    exportImage,
+    exportSVG,
+    fillRandom,
+    insertFromLibrary,
+    alnumSeqLocal,
+    setAlnumSeqLocal,
+  } = copybook;
 
-  // 数字字母序列本地状态
-  const [alnumSeqState, setAlnumSeqState] = React.useState('');
+  // 移动端预览缩放（仅在首次加载时执行一次）
   useEffect(() => {
-    if (settings.alnumSeq !== undefined) setAlnumSeqState(settings.alnumSeq);
-  }, [settings.alnumSeq]);
-
-  // 加载常用汉字
-  useEffect(() => {
-    const emb = (window.__copybookData__ || {}).commonChars;
-    if (emb) {
-      setCommonChars([...new Set(emb.filter(ch => /[一-鿿]/.test(ch)))]);
-      return;
-    }
-
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 5000);
-
-    fetch('./common-chars.json', { signal: controller.signal })
-      .then(r => { clearTimeout(timeout); return r.json(); })
-      .then(arr => {
-        const uniq = [...new Set((arr || []).filter(ch => /[一-鿿]/.test(ch)))];
-        setCommonChars(uniq);
-      })
-      .catch(e => {
-        clearTimeout(timeout);
-        if (e.name === 'AbortError') {
-          toast.warn('词库加载超时，请检查网络后重试');
-          return;
-        }
-        // Fallback: try markdown
-        const controller2 = new AbortController();
-        const timeout2 = setTimeout(() => controller2.abort(), 5000);
-        fetch('./常用1000汉子.md', { signal: controller2.signal })
-          .then(r => { clearTimeout(timeout2); return r.text(); })
-          .then(t => {
-            const lines = t.split('\n');
-            let buckets = [];
-            let curName = '';
-            let curChars = [];
-            for (const line of lines) {
-              const isTitle = line.startsWith('##');
-              if (isTitle) {
-                if (curName) buckets.push({ name: curName.trim(), chars: [...new Set(curChars)] });
-                curName = line.replace(/^#+\s*/, '').trim();
-                curChars = [];
-              } else {
-                const arr = Array.from(line).filter(ch => /[一-鿿]/.test(ch));
-                if (arr.length) curChars.push(...arr);
-              }
-            }
-            if (curName) buckets.push({ name: curName.trim(), chars: [...new Set(curChars)] });
-            const all = [...new Set(buckets.flatMap(b => b.chars))];
-            setCommonChars(all);
-          })
-          .catch(e2 => {
-            clearTimeout(timeout2);
-            if (e2.name === 'AbortError') toast.warn('词库加载超时');
-            else { toast.error('词库加载失败', { action: () => window.location.reload() }); setCommonChars([]); }
-          });
-      });
-
-    return () => clearTimeout(timeout);
-  }, []);
-
-  // 移动端预览缩放
-  useEffect(() => {
+    if (initRef.current) return;
+    initRef.current = true;
     if (window.matchMedia?.(`(max-width: 576px)`).matches) {
       updateSetting('previewScale', 0.6);
     }
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // CSS 变量：预览缩放
   useEffect(() => {
@@ -146,8 +88,7 @@ export default function App() {
     toast.success('配置已导出');
   };
 
-  const saveTemplate = (e) => {
-    e.stopPropagation();
+  const confirmSaveTemplate = () => {
     const name = templateName.trim() || '字帖模板';
     const tmpl = {
       config: { ...settings },
@@ -164,8 +105,6 @@ export default function App() {
     setTemplateName('');
     toast.success('模板已保存');
   };
-
-
 
   const loadTemplate = (e) => {
     const file = e.target.files?.[0];
@@ -221,13 +160,13 @@ export default function App() {
 
   // 数字字母统计
   const alnumStats = React.useMemo(() => {
-    const s = alnumSeqState || '';
+    const s = alnumSeqLocal || '';
     const up = (s.match(/[A-Z]/g) || []).length;
     const low = (s.match(/[a-z]/g) || []).length;
     const dig = (s.match(/[0-9]/g) || []).length;
     const total = Math.max(1, s.length);
     return { up, low, dig, upPct: Math.round(up * 100 / total), lowPct: Math.round(low * 100 / total), digPct: Math.round(dig * 100 / total), total };
-  }, [alnumSeqState]);
+  }, [alnumSeqLocal]);
 
   // 英文四线三格字体
   const engFont = (style) => {
@@ -254,7 +193,7 @@ export default function App() {
     document.documentElement.style.setProperty('--page-bg', toHex(settings.pageBg) || '#fff');
     document.documentElement.style.setProperty('--cell-bg', toHex(settings.cellBg) || 'transparent');
     document.documentElement.style.setProperty('--cell-border-width', settings.cellBorder ? '2px' : '0px');
-    document.documentElement.style.setProperty('--cell-shadow', cellShadowLocal ? '0 2px 4px rgba(0,0,0,0.1)' : 'none');
+    document.documentElement.style.setProperty('--cell-shadow', settings.cellShadow ? '0 2px 4px rgba(0,0,0,0.1)' : 'none');
     document.documentElement.style.setProperty('--text-stroke-width',
       settings.textStroke === '无' ? '0px' :
       settings.textStroke === '细' ? '0.5px' :
@@ -262,16 +201,21 @@ export default function App() {
     );
     document.documentElement.style.setProperty('--text-shadow', settings.textShadow ? '2px 2px 4px rgba(0,0,0,0.3)' : 'none');
   }, [
-   settings.paper, settings.cellSize, settings.gridGap, gColor, tColor, settings.fontSize,
-   settings.marginTop, settings.marginRight, settings.marginBottom, settings.marginLeft,
-   settings.pageBg, settings.cellBg, settings.cellBorder, cellShadowLocal, settings.textShadow, settings.textStroke
- ]);
-  // 样式预设联动
+    settings.paper, settings.cellSize, settings.gridGap, gColor, tColor, settings.fontSize,
+    settings.marginTop, settings.marginRight, settings.marginBottom, settings.marginLeft,
+    settings.pageBg, settings.cellBg, settings.cellBorder, settings.cellShadow, settings.textShadow, settings.textStroke
+  ]);
+
+  // 样式预设联动（仅在 stylePreset 改变时执行）
   useEffect(() => {
     if (!settings.stylePreset) return;
     const map = {
       '四线三格标准': { gridType: '四线三格', y1: '0.25', y2: '0.50', y3: '0.75', y4: '0.92' },
       '四线三格宽间': { gridType: '四线三格', y1: '0.20', y2: '0.50', y3: '0.80', y4: '0.95' },
+      '回宫格黄金': { gridType: '回宫格黄金' },
+      '拼音格标准': { gridType: '拼音格' },
+      '数字格标准': { gridType: '数字格' },
+      '竖排书法': { gridType: '竖排米字格' },
       '田字格标准': { gridType: '田字格' },
       '米字格标准': { gridType: '米字格' },
       '米字格宽间': { gridType: '米字格' },
@@ -282,7 +226,10 @@ export default function App() {
     };
     const cfg = map[settings.stylePreset];
     if (!cfg) return;
-    if (cfg.gridType) updateSetting('gridType', cfg.gridType);
+    // 仅在值不同时更新，避免无限循环
+    if (cfg.gridType && settings.gridType !== cfg.gridType) {
+      updateSetting('gridType', cfg.gridType);
+    }
     if (cfg.y1) {
       document.documentElement.style.setProperty('--fourline-y1', cfg.y1);
       document.documentElement.style.setProperty('--fourline-y2', cfg.y2);
@@ -291,7 +238,7 @@ export default function App() {
     }
     if (cfg.radius) document.documentElement.style.setProperty('--cell-radius', cfg.radius);
     if (cfg.stroke) document.documentElement.style.setProperty('--grid-stroke-width', cfg.stroke);
-  }, [settings.stylePreset, updateSetting]);
+  }, [settings.stylePreset]); // 只依赖 stylePreset，避免 updateSetting 在依赖数组中
 
   // 动态网格属性
   useEffect(() => {
@@ -301,8 +248,8 @@ export default function App() {
 
   // 英文基线
   useEffect(() => {
-    document.documentElement.style.setProperty('--en-descent', letterStyle === '手写体' ? '0.286em' : '0.238em');
-  }, [letterStyle]);
+    document.documentElement.style.setProperty('--en-descent', settings.letterStyle === '手写体' ? '0.286em' : '0.238em');
+  }, [settings.letterStyle]);
 
   // 四线三格自适应
   useEffect(() => {
@@ -326,10 +273,10 @@ export default function App() {
   return (
     <ErrorBoundary>
       <ToastContainer toasts={toasts} onRemove={removeToast} />
-     <MainLayout
-       mode={settings.mode}
+      <MainLayout
+        mode={settings.mode}
         usage={usage}
-       variant={settings.variant}
+        variant={settings.variant}
         layout={settings.layout}
         gridType={settings.gridType}
         gridColor={settings.gridColor}
@@ -377,12 +324,19 @@ export default function App() {
         alnumIncludeLower={settings.alnumIncludeLower}
         alnumCount={settings.alnumCount}
         alnumNoRepeat={settings.alnumNoRepeat}
-        alnumSeqLocal={alnumSeqState}
-        letterStyle={letterStyle}
-        cellShadowLocal={cellShadowLocal}
+        alnumSeqLocal={alnumSeqLocal}
+        chineseCharCount={settings.chineseCharCount}
+        chineseCharNoRepeat={settings.chineseCharNoRepeat}
+        chineseCharSeqLocal={copybook.chineseCharSeqLocal}
+        letterStyle={settings.letterStyle}
+        cellShadowLocal={settings.cellShadow}
+        copybookType={settings.copybookType}
+        copybookStyle={settings.copybookStyle}
+        pinyinText={settings.pinyinText}
+        hanziText={settings.hanziText}
         updateSetting={updateSetting}
-        handleLetterStyle={(v) => { setLetterStyle(v); updateSetting('letterStyle', v); }}
-        handleCellShadow={(v) => { setCellShadowLocal(v); updateSetting('cellShadow', v); }}
+        handleLetterStyle={(v) => updateSetting('letterStyle', v)}
+        handleCellShadow={(v) => updateSetting('cellShadow', v)}
         handleSetRows={(v) => updateSetting('rows', Math.max(1, Math.min(20, parseInt(v) || 1)))}
         handleSetCols={(v) => updateSetting('cols', Math.max(1, Math.min(20, parseInt(v) || 1)))}
         handleSetCellSize={(v) => updateSetting('cellSize', Math.max(30, Math.min(100, parseInt(v) || 60)))}
@@ -397,16 +351,15 @@ export default function App() {
         handleSetAlnumCount={(v) => {
           const n = Math.max(1, parseInt(v) || 20);
           updateSetting('alnumCount', n);
-          if (genAlnum) genAlnum({ count: n });
         }}
         handleSetCellRadius={(v) => updateSetting('cellRadius', parseInt(v) || 0)}
         handleSetGridStrokeWidth={(v) => updateSetting('gridStrokeWidth', parseFloat(v) || 1)}
         handleSetPreviewScale={(v) => updateSetting('previewScale', parseFloat(v) || 1)}
-        handleAlnumSeq={(v) => { copybook.setAlnumSeqLocal?.(v); updateSetting('alnumSeq', v); }}
-        handleSetCellShadow={(v) => { setCellShadowLocal(v); updateSetting('cellShadow', v); }}
+        handleAlnumSeq={(v) => { setAlnumSeqLocal?.(v); updateSetting('alnumSeq', v); }}
+        handleSetCellShadow={(v) => updateSetting('cellShadow', v)}
         onInsert={insertFromLibrary}
         onEngShowZhChange={(v) => updateSetting('engShowZh', v)}
-        onGenAlnum={copybook.genAlnum}
+        onGenAlnum={genAlnum}
         onGenChineseChars={copybook.genChineseChars}
         settings={settings}
         validationResult={validationResult}
@@ -417,11 +370,11 @@ export default function App() {
         onPrint={() => window.print()}
         onExportPDF={exportPDF}
         onExportImage={exportImage}
-       onSaveTemplate={saveTemplate}
-       onLoadTemplate={loadTemplate}
-       onImportConfig={importConfig}
+        onSaveTemplate={confirmSaveTemplate}
+        onLoadTemplate={loadTemplate}
+        onImportConfig={importConfig}
         onExportConfig={exportConfig}
-       onReset={resetConfig}
+        onReset={resetConfig}
         libraryState={libraryState}
         onLibraryStateChange={(state) => setLibraryState(prev => ({ ...prev, ...state }))}
       />
@@ -436,10 +389,13 @@ export default function App() {
         strokeMode={settings.strokeMode}
         font={font}
         fontSize={settings.fontSize}
-       letterStyle={letterStyle}
-       showGuide={settings.showGuide}
-       engFont={engFont}
-     />
+        letterStyle={settings.letterStyle}
+        showGuide={settings.showGuide}
+        engFont={engFont}
+        copybookType={settings.copybookType}
+        copybookStyle={settings.copybookStyle}
+        pinyinColor="#dc3545"
+      />
       {templateModalOpen && (
         <div className="modal show d-block" tabIndex={-1} style={{ background: 'rgba(0,0,0,0.5)' }}>
           <div className="modal-dialog modal-sm">
@@ -465,6 +421,6 @@ export default function App() {
           </div>
         </div>
       )}
-   </ErrorBoundary>
+    </ErrorBoundary>
   );
 }

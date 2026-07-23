@@ -40,6 +40,7 @@ export default function ConfigPanel({ settings,
   alnumCount, alnumNoRepeat, alnumSeqLocal,
   chineseCharCount, chineseCharNoRepeat, chineseCharSeqLocal,
   letterStyle, cellShadowLocal,
+  copybookType, copybookStyle, pinyinText, hanziText,
   updateSetting,
   handleLetterStyle,
   handleCellShadow,
@@ -139,6 +140,10 @@ export default function ConfigPanel({ settings,
             chineseCharNoRepeat={chineseCharNoRepeat}
             chineseCharSeqLocal={chineseCharSeqLocal}
             onGenChineseChars={onGenChineseChars}
+            copybookType={copybookType}
+            copybookStyle={copybookStyle}
+            pinyinText={pinyinText}
+            hanziText={hanziText}
           />
         </Section>
 

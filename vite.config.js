@@ -6,6 +6,19 @@ import { resolve } from 'node:path';
 export default defineConfig({
   plugins: [
     react(),
+    // 消除 html2pdf.js / jsPDF 的 Permissions Policy unload 警告
+    {
+      name: 'permissions-policy',
+      transformIndexHtml(html) {
+        if (!html.includes('Permissions-Policy')) {
+          return html.replace(
+            '<meta name="viewport"',
+            '<meta name="viewport">\n  <meta http-equiv="Permissions-Policy" content="unload=*">'
+          );
+        }
+        return html;
+      },
+    },
     {
       name: 'copy-static-assets',
       closeBundle() {
@@ -32,6 +45,7 @@ export default defineConfig({
     assetsDir: 'assets',
   },
   server: {
+    host: '127.0.0.1',
     port: 5174,
   },
 });

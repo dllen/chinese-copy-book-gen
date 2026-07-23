@@ -9,7 +9,7 @@ const scenarios = [
   { key: 'chinese', label: '汉字练习', icon: '✏️', feature: '汉字练习', layout: '连续排列', gridType: '田字格', text: '' },
 ];
 
-export default function QuickActions({ updateSetting, onOpenLibrary }) {
+export default function QuickActions({ updateSetting, onOpenLibrary, currentFeature }) {
   const apply = (scenario) => {
     updateSetting('feature', scenario.feature);
     if (scenario.layout) updateSetting('layout', scenario.layout);
@@ -27,6 +27,8 @@ export default function QuickActions({ updateSetting, onOpenLibrary }) {
       onOpenLibrary({ open: true, tab: 'poem' });
     } else if (scenario.key === 'text' && onOpenLibrary) {
       onOpenLibrary({ open: true, tab: 'text' });
+    } else if (scenario.key === 'english' && onOpenLibrary) {
+      onOpenLibrary({ open: true, tab: 'english' });
     }
   };
 
@@ -35,7 +37,7 @@ export default function QuickActions({ updateSetting, onOpenLibrary }) {
     React.createElement('div', { className: 'quick-actions-buttons' },
       scenarios.map(s => React.createElement('button', {
         key: s.key,
-        className: 'btn btn-sm btn-outline-primary',
+        className: 'btn btn-sm ' + (currentFeature === s.feature ? 'btn-primary' : 'btn-outline-primary'),
         onClick: () => apply(s)
       }, s.icon + ' ' + s.label))
     )

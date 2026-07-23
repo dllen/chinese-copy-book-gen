@@ -1,10 +1,10 @@
-import { useState, useEffect, useMemo, useCallback } from 'react'
+import { useState, useMemo, useCallback } from 'react'
 import { useToast } from './useToast'
 
 /**
  * 字帖生成核心逻辑 Hook
- * 包含文本解析、分页、导出、随机填充等核心业务逻辑
- * 支持外部传入 toast 实例，避免重复创建
+ * 移除了与 App.jsx 重复的本地状态（letterStyle, cellShadowLocal）
+ * 避免 useEffect 同步导致的无限循环
  */
 export default function useCopybook(settings, updateSetting, deps = {}) {
   const { toast: toastDep, removeToast: removeToastDep } = deps;
@@ -12,33 +12,14 @@ export default function useCopybook(settings, updateSetting, deps = {}) {
   const toast = toastDep || selfToast.toast;
   const removeToast = removeToastDep || selfToast.removeToast;
 
-  // 本地状态（不在 useSettings 中的）
-  const [letterStyle, setLetterStyle] = useState('印刷体');
-  const [cellShadowLocal, setCellShadowLocal] = useState(false);
-  const [alnumSeqLocal, setAlnumSeqLocal] = useState('');
-  const [chineseCharSeqLocal, setChineseCharSeqLocal] = useState('');
-
-  // 同步本地状态到 settings
-  useEffect(() => {
-    if (settings.letterStyle !== undefined) setLetterStyle(settings.letterStyle);
-  }, [settings.letterStyle]);
-
-  useEffect(() => {
-    if (settings.cellShadow !== undefined) setCellShadowLocal(settings.cellShadow);
-  }, [settings.cellShadow]);
-
-  useEffect(() => {
-    if (settings.alnumSeq !== undefined) setAlnumSeqLocal(settings.alnumSeq);
-  }, [settings.alnumSeq]);
-
-  useEffect(() => {
-    if (settings.chineseCharSeq !== undefined) setChineseCharSeqLocal(settings.chineseCharSeq);
-  }, [settings.chineseCharSeq]);
+  // 仅保留必要本地状态
+  const [alnumSeqLocal, setAlnumSeqLocal] = useState(settings.alnumSeq || '');
+  const [chineseCharSeqLocal, setChineseCharSeqLocal] = useState(settings.chineseCharSeq || '');
 
   // 文本解析（带防抖）
   const parsed = useMemo(() => {
     const cp = window.__copybook__ || {};
-    const { feature, mode, text, variant, difficulty, alnumSeq, layout, cols, enBlankRows, enRepeat } = settings;
+    const { feature, mode, text, variant, difficulty, layout, cols, rows, enBlankRows, enRepeat, copybookType, copybookStyle, pinyinText, hanziText } = settings;
 
     if (feature === '控笔字帖') {
       if (cp.features && cp.features.buildControlPages) {
@@ -64,21 +45,85 @@ export default function useCopybook(settings, updateSetting, deps = {}) {
       return { pages: [Array.from(s)] };
     }
 
-    if (feature === '字帖模板' && layout !== '连续排列' && cp.content && cp.content.layoutDocument) {
+    if (feature === '字帖模板' && layout !== '连续排列' && layout !== '竖排连续' && cp.content && cp.content.layoutDocument) {
       return cp.content.layoutDocument(layout, text, cols, {
         blankRows: enBlankRows,
         repeat: enRepeat
       });
     }
 
-    // 默认：使用 toCells
+    // 竖排布局
+    if (layout === '竖排连续' || layout === '竖排古诗' || layout === '竖排文章') {
+      const effectiveRows = settings.cols;
+      if (cp.content && cp.content.layoutDocumentVertical) {
+        return cp.content.layoutDocumentVertical(layout, text, effectiveRows, {
+          blankRows: enBlankRows,
+          repeat: enRepeat
+        });
+      }
+    }
+
+    // 根据字帖类型和样式处理内容
+    const handleCopybookStyle = (cells) => {
+      if (!cells || cells.length === 0) return cells;
+      
+      switch (copybookStyle) {
+        case '不描字':
+          return cells.flatMap(c => c ? [c, ''] : [c]);
+        case '半描字':
+          return cells.map((c, i) => i % 2 === 0 ? c : (c || ''));
+        case '全描字':
+          return cells.flatMap(c => c ? [c, c] : [c, '']);
+        case '隔行':
+          return cells;
+        default:
+          return cells;
+      }
+    };
+
+    // 看拼音写汉字
+    if (copybookType === '看拼音写汉字' && pinyinText) {
+      const pinyins = pinyinText.trim().split(/[\s,]+/).filter(Boolean);
+      const hanzis = (hanziText || '').trim().split(/[\s,]+/).filter(Boolean);
+      const cells = [];
+      pinyins.forEach((py, i) => {
+        cells.push('[' + py + ']');
+        cells.push(hanzis[i] || '');
+      });
+      return { pages: [handleCopybookStyle(cells)], type: 'pinyin-hanzi' };
+    }
+
+    // 拼音字帖
+    if (copybookType === '拼音字帖') {
+      const chars = Array.from(text || '').filter(c => c.trim());
+      return { pages: [handleCopybookStyle(chars)], type: 'pinyin' };
+    }
+
+    // 数字字帖
+    if (copybookType === '数字字帖') {
+      const chars = Array.from(text || '').filter(c => /[\d]/.test(c));
+      return { pages: [handleCopybookStyle(chars)], type: 'number' };
+    }
+
+    // 汉字字帖
+    if (copybookType === '汉字字帖') {
+      const chars = Array.from(text || '').filter(c => /[一-鿿]/.test(c));
+      return { pages: [handleCopybookStyle(chars)], type: 'hanzi' };
+    }
+
+    // 普通
     const cpContent = cp.content;
     if (cpContent && cpContent.toCells) {
       return cpContent.toCells(mode, text, variant);
     }
 
     return { pages: [[]] };
-  }, [settings, alnumSeqLocal]);
+  }, [
+    settings.feature, settings.mode, settings.text, settings.variant, 
+    settings.difficulty, settings.layout, settings.cols, settings.rows,
+    settings.enBlankRows, settings.enRepeat, settings.copybookType,
+    settings.copybookStyle, settings.pinyinText, settings.hanziText
+  ]);
 
   // 分页
   const pages = useMemo(() => {
@@ -214,7 +259,7 @@ export default function useCopybook(settings, updateSetting, deps = {}) {
     updateSetting('chineseCharSeq', seq);
     updateSetting('text', seq);
     updateSetting('layout', '连续排列');
-  }, [settings, updateSetting]);
+  }, [settings, updateSetting, toast]);
 
   // 导出 PDF
   const exportPDF = useCallback((paper = settings.paper) => {
@@ -355,8 +400,6 @@ export default function useCopybook(settings, updateSetting, deps = {}) {
 
   return {
     // 状态
-    letterStyle,
-    cellShadowLocal,
     alnumSeqLocal,
     setAlnumSeqLocal,
     chineseCharSeqLocal,

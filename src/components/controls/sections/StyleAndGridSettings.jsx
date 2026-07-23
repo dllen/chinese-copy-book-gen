@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 /**
  * 样式预设与网格设置组件
@@ -20,6 +20,20 @@ export default function StyleAndGridSettings({
   handleSetCellRadius,
   handleSetGridStrokeWidth
 }) {
+  // 从 window.__copybook__.gridTypes 获取格子类型列表，确保与 grid.js 同步
+  const allGridTypes = window.__copybook__?.gridTypes || [
+    '田字格', '米字格', '回宫格', '回宫格黄金', '四线三格', '拼音格',
+    '九宫格', '十六宫格', '作文格', '椭圆米字格', '圆形格', '口字格',
+    '横线格', '横线', '田字格+斜', '双田字格',
+    '竖线格', '竖排田字格', '竖排米字格',
+    '数字格', '田格', '方格', '无格'
+  ];
+
+  const stylePresetOptions = [
+    '四线三格标准', '四线三格宽间', '回宫格黄金', '拼音格标准', '数字格标准', '竖排书法',
+    '田字格标准', '米字格标准', '米字格宽间', '回宫格标准', '回宫格宽间', '现代简约', '儿童卡通'
+  ];
+
   return React.createElement(React.Fragment, null,
     // 打印样式预设
     React.createElement('div', { className: 'mb-2' },
@@ -30,13 +44,7 @@ export default function StyleAndGridSettings({
         value: stylePreset,
         onChange: e => updateSetting('stylePreset', e.target.value)
       },
-        [
-          '四线三格标准', '四线三格宽间',
-          '田字格标准',
-          '米字格标准', '米字格宽间',
-          '回宫格标准', '回宫格宽间',
-          '现代简约', '儿童卡通'
-        ].map(v => React.createElement('option', { key: v, value: v }, v))
+        stylePresetOptions.map(v => React.createElement('option', { key: v, value: v }, v))
       )
     ),
 
@@ -50,7 +58,7 @@ export default function StyleAndGridSettings({
           value: gridType,
           onChange: e => updateSetting('gridType', e.target.value)
         },
-          ['田字格', '米字格', '回宫格', '四线三格', '无格'].map(v =>
+          allGridTypes.map(v =>
             React.createElement('option', { key: v, value: v }, v)
           )
         )
