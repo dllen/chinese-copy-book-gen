@@ -135,8 +135,8 @@ export default function ConfigPanel({ settings,
             updateSetting={updateSetting}
             handleSetAlnumCount={handleSetAlnumCount}
             onGenAlnum={onGenAlnum}
-            chineseCharCount={settings.chineseCharCount}
-            chineseCharNoRepeat={settings.chineseCharNoRepeat}
+            chineseCharCount={chineseCharCount}
+            chineseCharNoRepeat={chineseCharNoRepeat}
             chineseCharSeqLocal={chineseCharSeqLocal}
             onGenChineseChars={onGenChineseChars}
           />
