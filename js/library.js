@@ -1,10 +1,9 @@
 (function(){
   var w=window; w.__copybook__=w.__copybook__||{};
-  // Guard: use React.createElement to check if React is available and functional.
-  // The hooks detection via React.useState fails in some React 18 production environments.
+  // Guard: verify React and its hooks are available before using them.
   var _hasReact = false;
   try {
-    if (typeof React !== "undefined" && React && typeof React.createElement === "function") {
+    if (typeof React !== "undefined" && React && typeof React.useState === "function") {
       React.createElement("div");
       _hasReact = true;
     }
