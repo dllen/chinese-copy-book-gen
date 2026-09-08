@@ -8,6 +8,9 @@ import StepBar from '../StepBar'
 import GradeSelector from '../GradeSelector'
 import UnitList from '../UnitList'
 import ContentList from '../ContentList'
+import SubjectSelector from '../SubjectSelector'
+import LessonList from '../LessonList'
+import CharacterSelector from '../CharacterSelector'
 import QuickGenerateBar from '../QuickGenerateBar'
 
 const STEPS = ['选内容', '选样式', '生成字帖']
@@ -101,6 +104,14 @@ export default function MainLayout({
   hasContent,
   darkMode,
   onToggleDarkMode,
+  // New content selection props
+  lessons,
+  selectedLesson,
+  selectedCharacters,
+  onSelectLesson,
+  onToggleCharacter,
+  onSelectAllCharacters,
+  onDeselectAllCharacters,
 }) {
   const showPreview = !!text
 
@@ -117,29 +128,58 @@ export default function MainLayout({
           })
         )
       ),
-      React.createElement('div', { className: 'card mb-3' },
-        React.createElement('div', { className: 'card-body' },
-          React.createElement('h5', { className: 'card-title h6 mb-3' }, '选择单元'),
-          units && units.length > 0
-            ? React.createElement(UnitList, {
-                units,
-                selectedUnit,
-                onSelect: onSelectUnit,
+      selectedGrade
+        ? React.createElement('div', { className: 'card mb-3' },
+            React.createElement('div', { className: 'card-body' },
+              React.createElement('h5', { className: 'card-title h6 mb-3' }, '选择学科'),
+              React.createElement(SubjectSelector, {
+                gradeId: selectedGrade,
+                selectedSubject,
+                onSelect: onSelectSubject,
               })
-            : React.createElement('p', { className: 'text-muted small mb-0' }, '请先选择年级')
-        )
-      ),
-      React.createElement('div', { className: 'card' },
-        React.createElement('div', { className: 'card-body' },
-          React.createElement('h5', { className: 'card-title h6 mb-3' }, '选择课文'),
-          React.createElement(ContentList, {
-            contents: searchResults && searchResults.length > 0 ? searchResults : contents,
-            selectedContent,
-            onSelect: onSelectContent,
-            onSearch: onSearchContents,
-          })
-        )
-      )
+            )
+          )
+        : null,
+      selectedGrade
+        ? React.createElement('div', { className: 'card mb-3' },
+            React.createElement('div', { className: 'card-body' },
+              React.createElement('h5', { className: 'card-title h6 mb-3' }, '选择单元'),
+              units && units.length > 0
+                ? React.createElement(UnitList, {
+                    units,
+                    selectedUnit,
+                    onSelect: onSelectUnit,
+                  })
+                : React.createElement('p', { className: 'text-muted small mb-0' }, '请先选择学科')
+            )
+          )
+        : null,
+      selectedUnit
+        ? React.createElement('div', { className: 'card mb-3' },
+            React.createElement('div', { className: 'card-body' },
+              React.createElement('h5', { className: 'card-title h6 mb-3' }, '选择课文'),
+              React.createElement(LessonList, {
+                lessons: lessons || [],
+                selectedLesson,
+                onSelect: onSelectLesson,
+              })
+            )
+          )
+        : null,
+      selectedLesson
+        ? React.createElement('div', { className: 'card' },
+            React.createElement('div', { className: 'card-body' },
+              React.createElement('h5', { className: 'card-title h6 mb-3' }, '选择生字'),
+              React.createElement(CharacterSelector, {
+                characters: selectedLesson.characters || [],
+                selectedCharacters,
+                onToggle: onToggleCharacter,
+                onSelectAll: onSelectAllCharacters,
+                onDeselectAll: onDeselectAllCharacters,
+              })
+            )
+          )
+        : null
     ),
     React.createElement('div', { className: 'col-12 col-lg-5' },
       !showPreview

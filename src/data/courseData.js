@@ -8,6 +8,7 @@ export const GRADES = [
   { id: 'g3', name: '三年级', icon: '📝', semesters: ['上册', '下册'] },
   { id: 'g4', name: '四年级', icon: '📓', semesters: ['上册', '下册'] },
   { id: 'g5', name: '五年级', icon: '📒', semesters: ['上册', '下册'] },
+  { id: 'g6', name: '六年级', icon: '🎓', semesters: ['上册', '下册'] },
 ];
 
 export const CHINESE_UNITS = [
@@ -93,7 +94,27 @@ export function getGrades() {
 }
 
 export function getUnits(gradeId, subject) {
-  return subject === '语文' ? CHINESE_UNITS : ENGLISH_UNITS;
+  if (subject === '语文') {
+    if (gradeId === 'g1' || gradeId === 'g2') return CHINESE_UNITS;
+    return CHINESE_UNITS.filter(u => u.id !== 'pinyin');
+  }
+  return ENGLISH_UNITS;
+}
+
+export function getLessons(gradeId, unitId) {
+  const gradeObj = GRADES.find(g => g.id === gradeId);
+  if (!gradeObj) return [];
+  const gradeName = gradeObj.name;
+  
+  if (unitId === 'words' || unitId === 'sentences' || unitId === 'letters' || unitId === 'dialogue') {
+    return ENGLISH_CONTENTS.filter(c => c.grade.startsWith(gradeName) && c.unit === unitId);
+  }
+  return CHINESE_CONTENTS.filter(c => c.grade.startsWith(gradeName));
+}
+
+export function getLessonCharacters(lessonId) {
+  const lesson = CHINESE_CONTENTS.find(c => c.id === lessonId);
+  return lesson?.characters || [];
 }
 
 export function getContents(unitId) {
