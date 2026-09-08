@@ -100,6 +100,7 @@ export default function App() {
   // CSS 变量：预览缩放
   useEffect(() => {
     document.documentElement.style.setProperty('--preview-scale', String(settings.previewScale));
+  }, [settings.previewScale]);
 
   // 暗色模式
   useEffect(() => {
@@ -112,7 +113,6 @@ export default function App() {
       navigator.serviceWorker.register('./sw.js').catch(() => {});
     }
   }, []);
-  }, [settings.previewScale]);
 
   // 防抖文本
   const debouncedText = useDebounce(settings.text, 300);
