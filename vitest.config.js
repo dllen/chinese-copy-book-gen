@@ -12,14 +12,14 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: ['./tests/setup.js'],
-    include: ['tests/unit/**/*.test.js'],  // Only run unit tests
+    include: ['tests/unit/**/*.test.{js,jsx}'],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'html', 'json'],
       exclude: [
         'node_modules/',
         'dist/',
-        'tests/e2e/',  // E2E tests use Playwright, not Vitest
+        'tests/e2e/',
         'tests/',
         '**/*.config.js',
         'playwright.config.js',
@@ -31,5 +31,10 @@ export default defineConfig({
         statements: 80,
       },
     },
+  },
+  esbuild: {
+    loader: 'jsx',
+    include: /\.*\.jsx?$/,
+    exclude: [],
   },
 })

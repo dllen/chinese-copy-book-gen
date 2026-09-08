@@ -8,6 +8,8 @@ import { ErrorBoundary } from './components/ErrorBoundary';
 import MainLayout from './components/layout/MainLayout';
 import PageGrid from './components/PageGrid';
 import useCopybook from './hooks/useCopybook';
+import { useCourseData } from './hooks/useCourseData';
+import { useStepFlow } from './hooks/useStepFlow';
 
 const { toHex, pageSize } = window.__copybook__.utils || {};
 const CONFIG_FIELDS = [
@@ -37,6 +39,9 @@ export default function App() {
 
   // 使用 useCopybook Hook 管理核心业务逻辑
   const copybook = useCopybook(settings, updateSetting, { toast, removeToast, commonChars });
+  const courseData = useCourseData();
+  const stepFlow = useStepFlow(3);
+  const [selectedContent, setSelectedContent] = React.useState(null);
   const gColor = React.useMemo(() => {
     const custom = settings.customGridColor && /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(settings.customGridColor) ? settings.customGridColor : null;
     return custom || toHex(settings.gridColor) || '#000';
@@ -57,6 +62,16 @@ export default function App() {
     alnumSeqLocal,
     setAlnumSeqLocal,
   } = copybook;
+
+  const handleSelectContent = React.useCallback((item) => {
+    setSelectedContent(item);
+    courseData.selectUnit(item.unit);
+    if (item.characters && item.characters.length > 0) {
+      updateSetting('text', item.characters.join(''));
+    } else if (item.paragraphs && item.paragraphs.length > 0) {
+      updateSetting('text', item.paragraphs.join('\n'));
+    }
+  }, [courseData, updateSetting]);
 
   // 移动端预览缩放（仅在首次加载时执行一次）
   useEffect(() => {
@@ -378,6 +393,23 @@ export default function App() {
         libraryState={libraryState}
         onLibraryStateChange={(state) => setLibraryState(prev => ({ ...prev, ...state }))}
         toast={toast}
+        // Step flow props
+        currentStep={stepFlow.currentStep}
+        onStepChange={stepFlow.goTo}
+        grades={courseData.grades}
+        units={courseData.units}
+        contents={courseData.contents}
+        searchResults={courseData.searchResults}
+        selectedGrade={courseData.selectedGrade}
+        selectedSubject={courseData.selectedSubject}
+        selectedUnit={courseData.selectedUnit}
+        selectedContent={selectedContent}
+        onSelectGrade={courseData.selectGrade}
+        onSelectSubject={courseData.selectSubject}
+        onSelectUnit={courseData.selectUnit}
+        onSelectContent={handleSelectContent}
+        onSearchContents={courseData.search}
+        hasContent={!!selectedContent}
       />
       <PageGrid
         pages={pages}

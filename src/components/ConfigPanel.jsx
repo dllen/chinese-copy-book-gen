@@ -80,14 +80,14 @@ export default function ConfigPanel({ settings,
           onOpenLibrary={onLibraryStateChange}
         />
 
-
         <CourseTemplates
           settings={settings}
           updateSetting={updateSetting}
           toast={toast}
         />
 
-        <Section title="1. 内容与排版" defaultOpen>
+        {/* ① 内容 — feature, layout, text input, library */}
+        <Section title="① 内容" defaultOpen>
           <div className="mb-2">
             <label className="form-label" htmlFor="feature">功能模块</label>
             <select id="feature" className="form-select" value={feature} onChange={e => updateSetting('feature', e.target.value)}>
@@ -156,7 +156,8 @@ export default function ConfigPanel({ settings,
           />
         </Section>
 
-        <Section title="2. 样式与网格">
+        {/* ② 样式 — grid type, style preset, colors, grid size + 高级设置 */}
+        <Section title="② 样式" defaultOpen>
           <StyleAndGridSettings
             gridType={gridType}
             stylePreset={stylePreset}
@@ -182,9 +183,6 @@ export default function ConfigPanel({ settings,
             strokeMode={strokeMode}
             updateSetting={updateSetting}
           />
-        </Section>
-
-        <Section title="3. 排版参数">
           <GridSizeSettings
             rows={rows}
             cols={cols}
@@ -197,6 +195,66 @@ export default function ConfigPanel({ settings,
             handleSetGridGap={handleSetGridGap}
             handleSetFontSize={handleSetFontSize}
           />
+          <Section title="高级设置" defaultOpen={false}>
+            <div className="row g-2 mb-2">
+              <div className="col-6">
+                <label className="form-label" htmlFor="advCellRadius">格子圆角</label>
+                <input
+                  id="advCellRadius"
+                  className="form-range"
+                  type="range"
+                  min={0}
+                  max={10}
+                  value={cellRadius}
+                  onChange={e => handleSetCellRadius(e.target.value)}
+                />
+                <div className="form-text">{cellRadius}px</div>
+              </div>
+              <div className="col-6">
+                <label className="form-label" htmlFor="advGridStrokeWidth">线条粗细</label>
+                <input
+                  id="advGridStrokeWidth"
+                  className="form-range"
+                  type="range"
+                  min={0.5}
+                  max={3}
+                  step={0.5}
+                  value={gridStrokeWidth}
+                  onChange={e => handleSetGridStrokeWidth(e.target.value)}
+                />
+                <div className="form-text">{gridStrokeWidth}px</div>
+              </div>
+            </div>
+            <div className="row g-2 mb-2">
+              <div className="col-6">
+                <label className="form-label" htmlFor="advTextStroke">文字描边</label>
+                <select
+                  id="advTextStroke"
+                  className="form-select"
+                  value={textStroke}
+                  onChange={e => updateSetting('textStroke', e.target.value)}
+                >
+                  {['无', '细', '中', '粗'].map(v => <option key={v} value={v}>{v}</option>)}
+                </select>
+              </div>
+              <div className="col-6 d-flex align-items-center">
+                <div className="form-check">
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    id="advTextShadow"
+                    checked={textShadow}
+                    onChange={e => updateSetting('textShadow', e.target.checked)}
+                  />
+                  <label className="form-check-label" htmlFor="advTextShadow">文字阴影</label>
+                </div>
+              </div>
+            </div>
+          </Section>
+        </Section>
+
+        {/* ③ 导出 — paper settings, margins + 高级设置 */}
+        <Section title="③ 导出" defaultOpen>
           <PaperSettings
             paper={paper}
             marginTop={marginTop}
@@ -209,16 +267,18 @@ export default function ConfigPanel({ settings,
             handleSetMarginLeft={handleSetMarginLeft}
             updateSetting={updateSetting}
           />
-          <TemplateFontSettings
-            template={template}
-            customFont={customFont}
-            updateSetting={updateSetting}
-          />
-          <HeaderSettings
-            header={header}
-            tailFill={tailFill}
-            updateSetting={updateSetting}
-          />
+          <Section title="高级设置" defaultOpen={false}>
+            <TemplateFontSettings
+              template={template}
+              customFont={customFont}
+              updateSetting={updateSetting}
+            />
+            <HeaderSettings
+              header={header}
+              tailFill={tailFill}
+              updateSetting={updateSetting}
+            />
+          </Section>
         </Section>
       </div>
     </div>
