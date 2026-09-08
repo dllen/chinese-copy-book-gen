@@ -62,7 +62,7 @@ export default function StepBar({ steps, currentStep, onStepClick }) {
           .step-bar .connector { width: 20px; }
         }
       `}</style>
-      <div style={styles.wrapper} className="step-bar">
+      <div style={styles.wrapper} className="step-bar" role="navigation" aria-label="步骤导航">
         {steps.map((label, i) => {
           const isActive = i === currentStep;
           const isCompleted = i < currentStep;

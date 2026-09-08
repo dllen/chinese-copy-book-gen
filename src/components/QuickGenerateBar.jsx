@@ -49,7 +49,7 @@ export default function QuickGenerateBar({ onGenerate, onPrint, onExportPDF, onP
           .quick-generate-bar .info { margin-right: 0; text-align: center; }
         }
       `}</style>
-      <div style={styles.bar} className="quick-generate-bar">
+      <div style={styles.bar} className="quick-generate-bar" role="region" aria-label="操作栏">
         <span style={styles.info} className="info">
           {hasContent ? '已选内容，可生成字帖' : '请先选择内容'}
         </span>

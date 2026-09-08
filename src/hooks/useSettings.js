@@ -17,7 +17,7 @@ const DEFAULTS = {
   alnumIncludeDigits: true, alnumIncludeUpper: true, alnumIncludeLower: true,
   alnumCount: 20, alnumNoRepeat: true, alnumSeq: '',
   chineseCharCount: 30, chineseCharNoRepeat: true, chineseCharSeq: '',
-  copybookType: '普通', copybookStyle: '常规', pinyinText: '', hanziText: ''
+  copybookType: '普通', copybookStyle: '常规', pinyinText: '', hanziText: '', darkMode: false
 };
 
 export function useSettings(toast) {

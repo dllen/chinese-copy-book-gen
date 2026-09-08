@@ -3,6 +3,7 @@ import ConfigPanel from '../ConfigPanel'
 import Toolbar from '../Toolbar'
 import PreviewPanel from '../PreviewPanel'
 import { EmptyState } from '../EmptyState'
+import DarkModeToggle from '../DarkModeToggle';
 import StepBar from '../StepBar'
 import GradeSelector from '../GradeSelector'
 import UnitList from '../UnitList'
@@ -98,6 +99,8 @@ export default function MainLayout({
   onSelectContent,
   onSearchContents,
   hasContent,
+  darkMode,
+  onToggleDarkMode,
 }) {
   const showPreview = !!text
 
@@ -304,13 +307,16 @@ export default function MainLayout({
       'div',
       { className: 'container py-3 main-layout-container' },
       React.createElement('div', { className: 'no-print mb-3' },
-        React.createElement('h1', { className: 'h4 mb-3' }, '字帖生成器'),
+        React.createElement('div', { className: 'd-flex justify-content-between align-items-center mb-3' },
+          React.createElement('h1', { className: 'h4 mb-0' }, '字帖生成器'),
+          React.createElement(DarkModeToggle, { darkMode, onToggleDarkMode })
+        ),
         React.createElement(StepBar, {
           steps: STEPS,
           currentStep,
           onStepClick: onStepChange,
         }),
-        stepContents[currentStep] || step0Content,
+        React.createElement("div", { className: 'step-content-wrapper', key: currentStep }, stepContents[currentStep] || step0Content),
         React.createElement(QuickGenerateBar, {
           onGenerate: () => onStepChange && onStepChange(2),
           onPrint,

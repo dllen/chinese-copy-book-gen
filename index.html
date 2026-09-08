@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>字帖生成器</title>
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#667eea">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Permissions-Policy" content="unload=*">
   <link rel="icon" type="image/x-icon" href="./favicon.ico">
@@ -147,6 +149,18 @@
       .btn-group .btn { width: 100%; }
       .col-4, .col-5, .col-6 { flex: 0 0 100%; max-width: 100%; }
     }
+
+  /* 暗色模式 */
+  .dark-mode { --page-bg: #1a1a2e; --text-color: #e0e0e0; --grid-color: #4ecca3; --cell-bg: #16213e; }
+  .dark-mode .card, .dark-mode .modal { background: #16213e !important; color: #e0e0e0; border-color: #444; }
+  .dark-mode .btn-outline-secondary { color: #e0e0e0; border-color: #555; }
+  .dark-mode .form-control, .dark-mode .form-select { background: #0f3460; color: #e0e0e0; border-color: #555; }
+  .dark-mode .bg-light { background: #0f3460 !important; color: #e0e0e0; }
+  .dark-mode .text-muted { color: #aaa !important; }
+  .dark-mode .badge { background: #0f3460 !important; color: #e0e0e0; }
+  .dark-mode .section-card { background: #16213e; border-color: #444; }
+  .dark-mode .section-header { background: #0f3460; border-color: #444; }
+  .dark-mode .section-header:hover { background: #1a1a2e; }
   </style>
   <style>
     .section-card { border: 1px solid #dee2e6; border-radius: 0.5rem; background: #fff; overflow: hidden; }
@@ -161,6 +175,10 @@
     .preview-col { position: sticky; top: 1rem; align-self: flex-start; }
     @media (max-width: 991px) { .preview-col { position: static; } }
     /* Tooltip Animation */
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .step-content-wrapper { animation: fadeIn 0.3s ease-out; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    .sr-only-focusable:focus { position: static; width: auto; height: auto; padding: inherit; margin: inherit; overflow: visible; clip: auto; white-space: normal; }
     @keyframes tooltipFadeIn {
       from { opacity: 0; transform: translateX(-50%) translateY(4px); }
       to { opacity: 1; transform: translateX(-50%) translateY(0); }

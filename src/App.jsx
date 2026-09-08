@@ -12,6 +12,8 @@ import { useCourseData } from './hooks/useCourseData';
 import { useStepFlow } from './hooks/useStepFlow';
 import PrintPreview from './components/PrintPreview';
 import ShareCard from './components/ShareCard';
+import DarkModeToggle from './components/DarkModeToggle';
+import { useKeyboardShortcut } from './hooks/useKeyboardShortcut';
 
 const { toHex, pageSize } = window.__copybook__.utils || {};
 const CONFIG_FIELDS = [
@@ -43,6 +45,11 @@ export default function App() {
   const copybook = useCopybook(settings, updateSetting, { toast, removeToast, commonChars });
   const courseData = useCourseData();
   const stepFlow = useStepFlow(3);
+
+  // 键盘快捷键
+  useKeyboardShortcut('1', () => stepFlow.goTo(0));
+  useKeyboardShortcut('2', () => stepFlow.goTo(1));
+  useKeyboardShortcut('3', () => stepFlow.goTo(2));
   const [showPrintPreview, setShowPrintPreview] = React.useState(false);
   const [showShareCard, setShowShareCard] = React.useState(false);
   const [selectedContent, setSelectedContent] = React.useState(null);
@@ -93,6 +100,18 @@ export default function App() {
   // CSS 变量：预览缩放
   useEffect(() => {
     document.documentElement.style.setProperty('--preview-scale', String(settings.previewScale));
+
+  // 暗色模式
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark-mode', settings.darkMode);
+  }, [settings.darkMode]);
+
+  // 注册 Service Worker（PWA 离线）
+  useEffect(() => {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js').catch(() => {});
+    }
+  }, []);
   }, [settings.previewScale]);
 
   // 防抖文本
@@ -294,8 +313,11 @@ export default function App() {
 
   // 渲染
   return (
+    <>
+    <a href="#main-content" className="sr-only sr-only-focusable" style={{ position: 'absolute', top: '-40px', left: 0, background: '#0d6efd', color: '#fff', padding: '8px 16px', zIndex: 9999 }}>跳转到主要内容</a>
     <ErrorBoundary>
       <ToastContainer toasts={toasts} onRemove={removeToast} />
+      <main id="main-content">
       <MainLayout
         mode={settings.mode}
         usage={usage}
@@ -419,7 +441,10 @@ export default function App() {
         onSelectContent={handleSelectContent}
         onSearchContents={courseData.search}
         hasContent={!!selectedContent}
+        darkMode={settings.darkMode}
+        onToggleDarkMode={() => updateSetting('darkMode', !settings.darkMode)}
       />
+      </main>
       <PageGrid
         pages={pages}
         cols={settings.cols}
@@ -479,5 +504,6 @@ export default function App() {
         />
       )}
     </ErrorBoundary>
+    </>
   );
 }
