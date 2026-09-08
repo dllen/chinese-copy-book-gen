@@ -68,6 +68,9 @@ export default function MainLayout({
   // Export handlers
   onPrint,
   onExportPDF,
+  onPrintPreview,
+  onShare,
+  onBatchExport,
   onExportImage,
   onSaveTemplate,
   onLoadTemplate,
@@ -312,6 +315,9 @@ export default function MainLayout({
           onGenerate: () => onStepChange && onStepChange(2),
           onPrint,
           onExportPDF,
+          onPrintPreview,
+          onShare,
+          onBatchExport,
           hasContent: hasContent || showPreview,
         })
       )

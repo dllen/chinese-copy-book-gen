@@ -55,6 +55,26 @@
       .no-print { display: none !important; }
       .page { box-shadow: none; margin: 0; page-break-after: always; transform: none; }
     }
+
+  /* 打印标记：裁切线 + 页码 */
+  @media print {
+    .page { position: relative; }
+    .page::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      border: 1px dashed #ccc;
+      opacity: 0.3;
+    }
+    .page-number {
+      position: absolute;
+      bottom: 8mm;
+      right: 10mm;
+      font-size: 10pt;
+      color: #999;
+    }
+  }
     .grid {
       display: flex;
       flex-direction: column;

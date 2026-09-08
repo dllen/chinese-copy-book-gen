@@ -10,6 +10,8 @@ import PageGrid from './components/PageGrid';
 import useCopybook from './hooks/useCopybook';
 import { useCourseData } from './hooks/useCourseData';
 import { useStepFlow } from './hooks/useStepFlow';
+import PrintPreview from './components/PrintPreview';
+import ShareCard from './components/ShareCard';
 
 const { toHex, pageSize } = window.__copybook__.utils || {};
 const CONFIG_FIELDS = [
@@ -41,6 +43,8 @@ export default function App() {
   const copybook = useCopybook(settings, updateSetting, { toast, removeToast, commonChars });
   const courseData = useCourseData();
   const stepFlow = useStepFlow(3);
+  const [showPrintPreview, setShowPrintPreview] = React.useState(false);
+  const [showShareCard, setShowShareCard] = React.useState(false);
   const [selectedContent, setSelectedContent] = React.useState(null);
   const gColor = React.useMemo(() => {
     const custom = settings.customGridColor && /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(settings.customGridColor) ? settings.customGridColor : null;
@@ -72,6 +76,10 @@ export default function App() {
       updateSetting('text', item.paragraphs.join('\n'));
     }
   }, [courseData, updateSetting]);
+
+  const shareTitle = selectedContent
+    ? `${courseData.selectedGrade || ''}·${selectedContent.title || ''}`
+    : '字帖';
 
   // 移动端预览缩放（仅在首次加载时执行一次）
   useEffect(() => {
@@ -455,6 +463,20 @@ export default function App() {
             </div>
           </div>
         </div>
+      )}
+      {showPrintPreview && (
+        <PrintPreview
+          open={showPrintPreview}
+          onClose={() => setShowPrintPreview(false)}
+          pages={pages.length || 1}
+        />
+      )}
+      {showShareCard && (
+        <ShareCard
+          open={showShareCard}
+          onClose={() => setShowShareCard(false)}
+          title={shareTitle}
+        />
       )}
     </ErrorBoundary>
   );
