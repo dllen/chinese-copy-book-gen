@@ -1,4 +1,5 @@
 import React from 'react';
+import { toPinyin } from '../utils/pinyin';
 
 const { strokeLevel } = window.__copybook__?.utils || {};
 const { content } = window.__copybook__ || {};
@@ -8,8 +9,38 @@ const { splitRows } = content || {};
  * Cell component for rendering a single grid cell
  * Handles different cell types including pinyin-hanzi cells
  */
-function Cell({ ch, bg, textColor, strokeMode, font, fontSize, showGuide, cls, cellType, pinyinColor, isPinyinCell, isBlankCell }) {
+function Cell({ ch, bg, textColor, strokeMode, font, fontSize, showGuide, cls, cellType, pinyinColor, isPinyinCell, isBlankCell, showPinyin }) {
   const style = strokeLevel(strokeMode, textColor);
+
+  // 显示拼音标注
+  const isChineseChar = /[一-鿿]/.test(ch);
+  const pinyinText = showPinyin && isChineseChar ? toPinyin(ch) : null;
+
+  if (pinyinText) {
+    return React.createElement('div', {
+      className: 'cell ' + (cls || ''),
+      style: {
+        backgroundImage: bg,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'flex-end',
+        fontFamily: font,
+        fontSize: fontSize,
+        position: 'relative',
+        color: style.color,
+        WebkitTextStroke: style.WebkitTextStroke,
+        opacity: style.opacity
+      }
+    },
+      React.createElement('span', {
+        style: { color: pinyinColor || '#999', fontSize: Math.max(8, fontSize * 0.35) + 'px', lineHeight: 1, marginBottom: '2px' }
+      }, pinyinText),
+      React.createElement('span', {
+        style: { color: style.color, WebkitTextStroke: style.WebkitTextStroke, opacity: style.opacity }
+      }, ch)
+    );
+  }
   
   // 看拼音写汉字的单元格：显示拼音在上
   if (isPinyinCell && ch && ch.startsWith('[') && ch.endsWith(']')) {
@@ -78,7 +109,7 @@ export default function PageGrid({
   showGuide,
   engFont,
   copybookType,
-  copybookStyle,
+  copybookStyle, showPinyin,
   pinyinColor
 }) {
   // 判断是否是看拼音写汉字模式
@@ -122,7 +153,7 @@ export default function PageGrid({
                 fontSize,
                 showGuide: feature === '数字字母' && showGuide,
                 isPinyinCell,
-                isBlankCell,
+                isBlankCell, showPinyin,
                 pinyinColor
               });
             })

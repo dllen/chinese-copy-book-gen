@@ -1,5 +1,6 @@
 import textsXiaoxue from '../../data/texts-xiaoxue.json';
 import englishWords from '../../data/english-words.json';
+import englishSentences from '../../data/english-sentences.json';
 
 export const GRADES = [
   { id: 'g1', name: '一年级', icon: '📚', semesters: ['上册', '下册'] },
@@ -26,7 +27,13 @@ export const ENGLISH_UNITS = [
 function extractChineseContents() {
   return textsXiaoxue.map((item) => {
     const allText = item.paragraphs.join('');
-    const chars = [...new Set(allText.match(/[\u4e00-\u9fff]/g) || [])];
+    const uniqueChars = [...new Set(allText.match(/[\u4e00-\u9fff]/g) || [])];
+    const allChars = allText.match(/[\u4e00-\u9fff]/g) || [];
+    const vocabulary = [];
+    for (let i = 0; i < allChars.length - 1; i++) {
+      const pair = allChars[i] + allChars[i + 1];
+      if (!vocabulary.includes(pair)) vocabulary.push(pair);
+    }
     return {
       id: `cn-${item.id}`,
       title: item.title,
@@ -34,7 +41,9 @@ function extractChineseContents() {
       subject: '语文',
       unit: item.grade,
       paragraphs: item.paragraphs,
-      characters: chars.slice(0, 50),
+      characters: uniqueChars.slice(0, 50),
+      vocabulary: vocabulary.slice(0, 30),
+      totalChars: allChars.length,
       keywords: item.title.split(/\s+/),
     };
   });
@@ -57,8 +66,27 @@ function extractEnglishContents() {
   }));
 }
 
+function extractEnglishSentenceContents() {
+  const grouped = {};
+  englishSentences.forEach((s) => {
+    const grade = s.grade || s.g || '未知';
+    if (!grouped[grade]) grouped[grade] = [];
+    grouped[grade].push(s);
+  });
+  return Object.entries(grouped).map(([grade, sentences]) => ({
+    id: `en-sentences-${grade.replace(/\s+/g, '-')}`,
+    title: `${grade} 句子`,
+    grade,
+    subject: '英语',
+    unit: 'sentences',
+    sentences: sentences.slice(0, 20),
+    keywords: sentences.slice(0, 3).map((s) => s.s || s.en || s.english || ''),
+  }));
+}
+
 const CHINESE_CONTENTS = extractChineseContents();
 const ENGLISH_CONTENTS = extractEnglishContents();
+const ENGLISH_SENTENCE_CONTENTS = extractEnglishSentenceContents();
 
 export function getGrades() {
   return GRADES;
@@ -72,14 +100,17 @@ export function getContents(unitId) {
   if (unitId === 'shengzi' || unitId === 'cihui' || unitId === 'gushi' || unitId === 'pinyin') {
     return CHINESE_CONTENTS;
   }
-  if (unitId === 'words' || unitId === 'sentences' || unitId === 'letters' || unitId === 'dialogue') {
+  if (unitId === 'words' || unitId === 'letters' || unitId === 'dialogue') {
     return ENGLISH_CONTENTS;
   }
-  return [...CHINESE_CONTENTS, ...ENGLISH_CONTENTS];
+  if (unitId === 'sentences') {
+    return ENGLISH_SENTENCE_CONTENTS;
+  }
+  return [...CHINESE_CONTENTS, ...ENGLISH_CONTENTS, ...ENGLISH_SENTENCE_CONTENTS];
 }
 
 export function searchContents(keyword) {
-  const all = [...CHINESE_CONTENTS, ...ENGLISH_CONTENTS];
+  const all = [...CHINESE_CONTENTS, ...ENGLISH_CONTENTS, ...ENGLISH_SENTENCE_CONTENTS];
   const lower = keyword.toLowerCase();
   return all.filter(
     (c) =>

@@ -175,6 +175,12 @@ export default function ConfigPanel({ settings,
             handleSetCellRadius={handleSetCellRadius}
             handleSetGridStrokeWidth={handleSetGridStrokeWidth}
           />
+
+          <div className="form-check mb-2">
+            <input className="form-check-input" type="checkbox" id="showPinyin"
+              checked={settings.showPinyin} onChange={e => updateSetting('showPinyin', e.target.checked)} />
+            <label className="form-check-label" htmlFor="showPinyin">显示拼音标注</label>
+          </div>
           <ColorSettings
             gridColor={gridColor}
             customGridColor={customGridColor}

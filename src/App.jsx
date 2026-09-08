@@ -347,6 +347,7 @@ export default function App() {
         cellShadowLocal={settings.cellShadow}
         copybookType={settings.copybookType}
         copybookStyle={settings.copybookStyle}
+        showPinyin={settings.showPinyin}
         pinyinText={settings.pinyinText}
         hanziText={settings.hanziText}
         updateSetting={updateSetting}
@@ -427,6 +428,7 @@ export default function App() {
         engFont={engFont}
         copybookType={settings.copybookType}
         copybookStyle={settings.copybookStyle}
+        showPinyin={settings.showPinyin}
         pinyinColor="#dc3545"
       />
       {templateModalOpen && (
