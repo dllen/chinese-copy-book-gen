@@ -1,0 +1,12 @@
+{
+  "name": "字帖生成器",
+  "short_name": "字帖",
+  "description": "小学1-5年级语文英语字帖一键生成",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f0f2f5",
+  "theme_color": "#667eea",
+  "icons": [
+    { "src": "./favicon.ico", "sizes": "64x64", "type": "image/x-icon" }
+  ]
+}
