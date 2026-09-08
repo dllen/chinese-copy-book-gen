@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { cpSync, writeFileSync, existsSync } from 'node:fs';
+import { cpSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 export default defineConfig({
@@ -23,6 +23,7 @@ export default defineConfig({
       name: 'copy-static-assets',
       closeBundle() {
         const dist = resolve(__dirname, 'dist');
+        if (!existsSync(dist)) mkdirSync(dist, { recursive: true });
         // Prevent GitHub Pages Jekyll processing (critical: without this JS files may break)
         writeFileSync(resolve(dist, '.nojekyll'), '');
         // Copy legacy JS modules the React app depends on via window.__copybook__

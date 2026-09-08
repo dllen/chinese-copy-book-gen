@@ -377,6 +377,7 @@ export default function App() {
         onReset={resetConfig}
         libraryState={libraryState}
         onLibraryStateChange={(state) => setLibraryState(prev => ({ ...prev, ...state }))}
+        toast={toast}
       />
       <PageGrid
         pages={pages}

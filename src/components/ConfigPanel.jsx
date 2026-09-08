@@ -11,6 +11,7 @@ import GridSizeSettings from './controls/sections/GridSizeSettings';
 import PaperSettings from './controls/sections/PaperSettings';
 import TemplateFontSettings from './controls/sections/TemplateFontSettings';
 import HeaderSettings from './controls/sections/HeaderSettings';
+import CourseTemplates from './CourseTemplates';
 
 // Wraps LibraryPanel to catch React 18 hooks incompatibility
 class LibraryPanelErrorBoundary extends React.Component {
@@ -68,7 +69,8 @@ export default function ConfigPanel({ settings,
   validationResult,
   alnumStats,
   libraryState,
-  onLibraryStateChange
+  onLibraryStateChange,
+  toast
 }) {
   return (
     <div className="card">
@@ -76,6 +78,13 @@ export default function ConfigPanel({ settings,
         <QuickActions 
           updateSetting={updateSetting}
           onOpenLibrary={onLibraryStateChange}
+        />
+
+
+        <CourseTemplates
+          settings={settings}
+          updateSetting={updateSetting}
+          toast={toast}
         />
 
         <Section title="1. 内容与排版" defaultOpen>
