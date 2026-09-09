@@ -440,7 +440,7 @@ export default function App() {
         onSelectUnit={courseData.selectUnit}
         onSelectContent={handleSelectContent}
         onSearchContents={courseData.search}
-        hasContent={!!selectedContent}
+        hasContent={!!selectedContent || (courseData.selectedCharacters && courseData.selectedCharacters.size > 0)}
         darkMode={settings.darkMode}
         onToggleDarkMode={() => updateSetting('darkMode', !settings.darkMode)}
         // Enriched content selection props
