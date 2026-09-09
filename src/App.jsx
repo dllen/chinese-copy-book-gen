@@ -436,6 +436,11 @@ export default function App() {
         hasContent={courseData.selectedCharacters && courseData.selectedCharacters.size > 0}
         darkMode={settings.darkMode}
         onToggleDarkMode={() => updateSetting('darkMode', !settings.darkMode)}
+        // PageGrid props for preview modal (only new props not already in MainLayout)
+        bg={bg}
+        tColor={tColor}
+        font={font}
+        engFont={engFont}
         // Enriched content selection props
         lessons={courseData.lessons}
         selectedLesson={courseData.selectedLesson}

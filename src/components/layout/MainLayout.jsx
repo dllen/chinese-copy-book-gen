@@ -12,6 +12,7 @@ import LessonList from '../LessonList'
 import CharacterSelector from '../CharacterSelector'
 import QuickGenerateBar from '../QuickGenerateBar'
 import PreviewModal from '../PreviewModal'
+import PageGrid from '../PageGrid'
 
 const STEPS = ['选内容', '选样式', '生成字帖']
 
@@ -107,6 +108,11 @@ export default function MainLayout({
   onToggleCharacter,
   onSelectAllCharacters,
   onDeselectAllCharacters,
+  // PageGrid props for preview modal (only new props not already in MainLayout)
+  bg,
+  tColor,
+  font,
+  engFont,
 }) {
   const showPreview = !!text
   const [showPreviewModal, setShowPreviewModal] = React.useState(false)
@@ -373,28 +379,25 @@ export default function MainLayout({
           onPrint,
           onExportPDF,
         },
-          React.createElement('div', { style: { minHeight: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center' } },
-            text ? React.createElement(PreviewPanel, {
-              pages,
-              onFillRandom,
-              commonChars,
-              onSetRandCount: handleSetRandCount,
-              onSetPreviewScale: handleSetPreviewScale,
-              updateSetting,
-              text,
-              gridType,
-              gridColor,
-              stylePreset,
-              rows,
-              cols,
-              cellSize,
-              fontSize,
-              usage,
-              randCount,
-              randNoRepeat,
-              previewScale
-            }) : React.createElement('div', { style: { color: '#999', fontSize: '14px' } }, '请先生成字帖')
-          )
+          text ? React.createElement(PageGrid, {
+            pages,
+            cols,
+            layout,
+            feature,
+            header,
+            bg,
+            tColor,
+            strokeMode,
+            font,
+            fontSize,
+            letterStyle,
+            showGuide,
+            engFont,
+            copybookType,
+            copybookStyle,
+            showPinyin,
+            pinyinColor: '#dc3545'
+          }) : React.createElement('div', { style: { color: '#999', fontSize: '14px', padding: '40px', textAlign: 'center' } }, '请先生成字帖')
         )
       )
     )
