@@ -10,8 +10,6 @@ import PageGrid from './components/PageGrid';
 import useCopybook from './hooks/useCopybook';
 import { useCourseData } from './hooks/useCourseData';
 import { useStepFlow } from './hooks/useStepFlow';
-import PrintPreview from './components/PrintPreview';
-import ShareCard from './components/ShareCard';
 import DarkModeToggle from './components/DarkModeToggle';
 import { useKeyboardShortcut } from './hooks/useKeyboardShortcut';
 
@@ -50,9 +48,6 @@ export default function App() {
   useKeyboardShortcut('1', () => stepFlow.goTo(0));
   useKeyboardShortcut('2', () => stepFlow.goTo(1));
   useKeyboardShortcut('3', () => stepFlow.goTo(2));
-  const [showPrintPreview, setShowPrintPreview] = React.useState(false);
-  const [showShareCard, setShowShareCard] = React.useState(false);
-  const [selectedContent, setSelectedContent] = React.useState(null);
   const gColor = React.useMemo(() => {
     const custom = settings.customGridColor && /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(settings.customGridColor) ? settings.customGridColor : null;
     return custom || toHex(settings.gridColor) || '#000';
@@ -84,8 +79,8 @@ export default function App() {
     }
   }, [courseData, updateSetting]);
 
-  const shareTitle = selectedContent
-    ? `${courseData.selectedGrade || ''}·${selectedContent.title || ''}`
+  const shareTitle = courseData.selectedLesson
+    ? `${courseData.selectedGrade || ''}·${courseData.selectedLesson.title || ''}`
     : '字帖';
 
   // 移动端预览缩放（仅在首次加载时执行一次）
@@ -438,9 +433,8 @@ export default function App() {
         onSelectGrade={courseData.selectGrade}
         onSelectSubject={courseData.selectSubject}
         onSelectUnit={courseData.selectUnit}
-        onSelectContent={handleSelectContent}
         onSearchContents={courseData.search}
-        hasContent={!!selectedContent || (courseData.selectedCharacters && courseData.selectedCharacters.size > 0)}
+        hasContent={courseData.selectedCharacters && courseData.selectedCharacters.size > 0}
         darkMode={settings.darkMode}
         onToggleDarkMode={() => updateSetting('darkMode', !settings.darkMode)}
         // Enriched content selection props
@@ -497,20 +491,8 @@ export default function App() {
           </div>
         </div>
       )}
-      {showPrintPreview && (
-        <PrintPreview
-          open={showPrintPreview}
-          onClose={() => setShowPrintPreview(false)}
-          pages={pages.length || 1}
-        />
-      )}
-      {showShareCard && (
-        <ShareCard
-          open={showShareCard}
-          onClose={() => setShowShareCard(false)}
-          title={shareTitle}
-        />
-      )}
+
+
     </ErrorBoundary>
     </>
   );

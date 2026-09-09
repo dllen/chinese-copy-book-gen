@@ -113,8 +113,13 @@ export function getLessons(gradeId, unitId) {
 }
 
 export function getLessonCharacters(lessonId) {
-  const lesson = CHINESE_CONTENTS.find(c => c.id === lessonId);
-  return lesson?.characters || [];
+  // Chinese content
+  const cnLesson = CHINESE_CONTENTS.find(c => c.id === lessonId);
+  if (cnLesson) return cnLesson.characters || [];
+  // English content - return words as characters
+  const enLesson = ENGLISH_CONTENTS.find(c => c.id === lessonId);
+  if (enLesson && enLesson.words) return enLesson.words.map(w => w.w);
+  return [];
 }
 
 export function getContents(unitId) {

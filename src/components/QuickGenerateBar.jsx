@@ -38,7 +38,7 @@ const styles = {
   info: { fontSize: '13px', color: '#6c757d', marginRight: 'auto' },
 };
 
-export default function QuickGenerateBar({ onGenerate, onPrint, onExportPDF, onPreview, onShare, onBatchExport, hasContent }) {
+export default function QuickGenerateBar({ onGenerate, onPrint, onExportPDF, onPreview, hasContent }) {
   return (
     <>
       <style>{`
@@ -70,15 +70,7 @@ export default function QuickGenerateBar({ onGenerate, onPrint, onExportPDF, onP
         {onExportPDF && (
           <button className="secondary-btn" style={styles.secondaryBtn} onClick={onExportPDF}>PDF</button>
         )}
-        {onPrintPreview && (
-          <button className="secondary-btn" style={styles.secondaryBtn} onClick={onPrintPreview}>打印预览</button>
-        )}
-        {onShare && (
-          <button className="secondary-btn" style={styles.secondaryBtn} onClick={onShare}>分享</button>
-        )}
-        {onBatchExport && (
-          <button className="secondary-btn" style={styles.secondaryBtn} onClick={onBatchExport}>批量导出</button>
-        )}
+
       </div>
     </>
   );
