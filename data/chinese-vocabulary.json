@@ -3,31 +3,31 @@
     {
       "word": "是中",
       "pinyin": "shì zhōng",
-      "meaning": "",
+      "meaning": "是和中国",
       "example": ""
     },
     {
       "word": "中国",
       "pinyin": "zhōng guó",
-      "meaning": "",
+      "meaning": "中国和国家",
       "example": ""
     },
     {
       "word": "国人",
       "pinyin": "guó rén",
-      "meaning": "",
+      "meaning": "国家和人",
       "example": ""
     },
     {
       "word": "我是",
       "pinyin": "wǒ shì",
-      "meaning": "",
+      "meaning": "我和是",
       "example": ""
     },
     {
       "word": "们都",
       "pinyin": "men dōu",
-      "meaning": "",
+      "meaning": "们的都",
       "example": ""
     }
   ],
@@ -35,31 +35,31 @@
     {
       "word": "我爱",
       "pinyin": "wǒ ài",
-      "meaning": "",
+      "meaning": "我和爱",
       "example": ""
     },
     {
       "word": "五星",
       "pinyin": "wǔ xīng",
-      "meaning": "",
+      "meaning": "五和星星",
       "example": ""
     },
     {
       "word": "星红",
       "pinyin": "xīng hóng",
-      "meaning": "",
+      "meaning": "星星和红色",
       "example": ""
     },
     {
       "word": "红旗",
       "pinyin": "hóng qí",
-      "meaning": "",
+      "meaning": "红色和旗帜",
       "example": ""
     },
     {
       "word": "北京",
       "pinyin": "běi jīng",
-      "meaning": "",
+      "meaning": "北方的京",
       "example": ""
     }
   ],
@@ -67,19 +67,19 @@
     {
       "word": "上学",
       "pinyin": "shàng xué",
-      "meaning": "",
+      "meaning": "上面和学习",
       "example": ""
     },
     {
       "word": "学歌",
       "pinyin": "xué gē",
-      "meaning": "",
+      "meaning": "学习和歌",
       "example": ""
     },
     {
       "word": "歌太",
       "pinyin": "gē tài",
-      "meaning": "",
+      "meaning": "歌的太",
       "example": ""
     },
     {
@@ -113,7 +113,7 @@
     {
       "word": "字讲",
       "pinyin": "zì jiǎng",
-      "meaning": "",
+      "meaning": "字的讲",
       "example": ""
     },
     {
@@ -132,25 +132,25 @@
     {
       "word": "地人",
       "pinyin": "dì rén",
-      "meaning": "",
+      "meaning": "大地和人",
       "example": ""
     },
     {
       "word": "人你",
       "pinyin": "rén nǐ",
-      "meaning": "",
+      "meaning": "人和你",
       "example": ""
     },
     {
       "word": "你我",
       "pinyin": "nǐ wǒ",
-      "meaning": "",
+      "meaning": "你和我",
       "example": ""
     },
     {
       "word": "我他",
       "pinyin": "wǒ tā",
-      "meaning": "",
+      "meaning": "我和他",
       "example": ""
     }
   ],
@@ -190,19 +190,19 @@
     {
       "word": "口耳",
       "pinyin": "kǒu ěr",
-      "meaning": "",
+      "meaning": "嘴巴和耳朵",
       "example": ""
     },
     {
       "word": "耳目",
       "pinyin": "ěr mù",
-      "meaning": "",
+      "meaning": "耳朵和眼睛",
       "example": ""
     },
     {
       "word": "目手",
       "pinyin": "mù shǒu",
-      "meaning": "",
+      "meaning": "眼睛和手",
       "example": ""
     },
     {
@@ -213,7 +213,7 @@
     {
       "word": "足站",
       "pinyin": "zú zhàn",
-      "meaning": "",
+      "meaning": "脚的站",
       "example": ""
     }
   ],
@@ -221,7 +221,7 @@
     {
       "word": "月山",
       "pinyin": "yuè shān",
-      "meaning": "",
+      "meaning": "月亮和山",
       "example": ""
     },
     {
@@ -233,7 +233,7 @@
     {
       "word": "火田",
       "pinyin": "huǒ tián",
-      "meaning": "",
+      "meaning": "火和田地",
       "example": ""
     }
   ],
@@ -259,7 +259,7 @@
     {
       "word": "绿水",
       "pinyin": "lǜ shuǐ",
-      "meaning": "",
+      "meaning": "绿色和水",
       "example": ""
     },
     {
@@ -296,7 +296,7 @@
     {
       "word": "多的",
       "pinyin": "duō de",
-      "meaning": "",
+      "meaning": "多和的",
       "example": ""
     }
   ],
@@ -304,19 +304,19 @@
     {
       "word": "爸爸",
       "pinyin": "bà bà",
-      "meaning": "",
+      "meaning": "爸爸和爸爸",
       "example": ""
     },
     {
       "word": "爸妈",
       "pinyin": "bà mā",
-      "meaning": "",
+      "meaning": "爸爸和妈妈",
       "example": ""
     },
     {
       "word": "妈妈",
       "pinyin": "mā mā",
-      "meaning": "",
+      "meaning": "妈妈和妈妈",
       "example": ""
     }
   ],
@@ -324,13 +324,13 @@
     {
       "word": "小白",
       "pinyin": "xiǎo bái",
-      "meaning": "",
+      "meaning": "小和白色",
       "example": ""
     },
     {
       "word": "白兔",
       "pinyin": "bái tù",
-      "meaning": "",
+      "meaning": "白色的兔",
       "example": ""
     },
     {
@@ -342,7 +342,7 @@
     {
       "word": "大地",
       "pinyin": "dà dì",
-      "meaning": "",
+      "meaning": "大和大地",
       "example": ""
     },
     {
@@ -356,31 +356,31 @@
     {
       "word": "白菜",
       "pinyin": "bái cài",
-      "meaning": "",
+      "meaning": "白色的菜",
       "example": ""
     },
     {
       "word": "小白",
       "pinyin": "xiǎo bái",
-      "meaning": "",
+      "meaning": "小和白色",
       "example": ""
     },
     {
       "word": "白兔",
       "pinyin": "bái tù",
-      "meaning": "",
+      "meaning": "白色的兔",
       "example": ""
     },
     {
       "word": "老山",
       "pinyin": "lǎo shān",
-      "meaning": "",
+      "meaning": "老师和山",
       "example": ""
     },
     {
       "word": "山羊",
       "pinyin": "shān yáng",
-      "meaning": "",
+      "meaning": "山的羊",
       "example": ""
     }
   ],
@@ -388,7 +388,7 @@
     {
       "word": "说话",
       "pinyin": "shuō huà",
-      "meaning": "",
+      "meaning": "说的话",
       "example": ""
     },
     {
@@ -420,7 +420,7 @@
     {
       "word": "在一",
       "pinyin": "zài yī",
-      "meaning": "",
+      "meaning": "在的一",
       "example": ""
     },
     {
@@ -444,7 +444,7 @@
     {
       "word": "下棋",
       "pinyin": "xià qí",
-      "meaning": "",
+      "meaning": "下面的棋",
       "example": ""
     }
   ],
@@ -474,7 +474,7 @@
     {
       "word": "桥数",
       "pinyin": "qiáo shù",
-      "meaning": "",
+      "meaning": "桥的数",
       "example": ""
     }
   ],
@@ -494,13 +494,13 @@
     {
       "word": "是四",
       "pinyin": "shì sì",
-      "meaning": "",
+      "meaning": "是的四",
       "example": ""
     },
     {
       "word": "是十",
       "pinyin": "shì shí",
-      "meaning": "",
+      "meaning": "是的十",
       "example": ""
     },
     {
@@ -526,7 +526,7 @@
     {
       "word": "房子",
       "pinyin": "fáng zǐ",
-      "meaning": "",
+      "meaning": "房子的子",
       "example": ""
     },
     {
@@ -590,7 +590,7 @@
     {
       "word": "白菜",
       "pinyin": "bái cài",
-      "meaning": "",
+      "meaning": "白色的菜",
       "example": ""
     },
     {
@@ -622,7 +622,7 @@
     {
       "word": "小朋",
       "pinyin": "xiǎo péng",
-      "meaning": "",
+      "meaning": "小和朋友",
       "example": ""
     },
     {
@@ -647,7 +647,7 @@
     {
       "word": "月儿",
       "pinyin": "yuè ér",
-      "meaning": "",
+      "meaning": "月亮的儿",
       "example": ""
     },
     {
@@ -665,7 +665,7 @@
     {
       "word": "花开",
       "pinyin": "huā kāi",
-      "meaning": "",
+      "meaning": "花的开",
       "example": ""
     }
   ],
@@ -673,7 +673,7 @@
     {
       "word": "的家",
       "pinyin": "de jiā",
-      "meaning": "",
+      "meaning": "的和家",
       "example": ""
     },
     {
@@ -708,7 +708,7 @@
     {
       "word": "走来",
       "pinyin": "zǒu lái",
-      "meaning": "",
+      "meaning": "走的来",
       "example": ""
     },
     {
@@ -734,7 +734,7 @@
     {
       "word": "窗外",
       "pinyin": "chuāng wài",
-      "meaning": "",
+      "meaning": "窗的外",
       "example": ""
     },
     {
@@ -803,7 +803,7 @@
     {
       "word": "鱼戏",
       "pinyin": "yú xì",
-      "meaning": "",
+      "meaning": "鱼的戏",
       "example": ""
     },
     {
@@ -815,7 +815,7 @@
     {
       "word": "在莲",
       "pinyin": "zài lián",
-      "meaning": "",
+      "meaning": "在的莲",
       "example": ""
     },
     {
@@ -829,13 +829,13 @@
     {
       "word": "下雪",
       "pinyin": "xià xuě",
-      "meaning": "",
+      "meaning": "下面和雪",
       "example": ""
     },
     {
       "word": "雪啦",
       "pinyin": "xuě lā",
-      "meaning": "",
+      "meaning": "雪的啦",
       "example": ""
     },
     {
@@ -847,13 +847,13 @@
     {
       "word": "雪地",
       "pinyin": "xuě dì",
-      "meaning": "",
+      "meaning": "雪和大地",
       "example": ""
     },
     {
       "word": "地里",
       "pinyin": "dì lǐ",
-      "meaning": "",
+      "meaning": "大地的里",
       "example": ""
     }
   ],
@@ -861,19 +861,19 @@
     {
       "word": "我是",
       "pinyin": "wǒ shì",
-      "meaning": "",
+      "meaning": "我和是",
       "example": ""
     },
     {
       "word": "他对",
       "pinyin": "tā duì",
-      "meaning": "",
+      "meaning": "他的对",
       "example": ""
     },
     {
       "word": "草芽",
       "pinyin": "cǎo yá",
-      "meaning": "",
+      "meaning": "草的芽",
       "example": ""
     },
     {
@@ -893,7 +893,7 @@
     {
       "word": "老公",
       "pinyin": "lǎo gōng",
-      "meaning": "",
+      "meaning": "老师的公",
       "example": ""
     },
     {
@@ -925,7 +925,7 @@
     {
       "word": "云对",
       "pinyin": "yún duì",
-      "meaning": "",
+      "meaning": "云的对",
       "example": ""
     },
     {
@@ -937,7 +937,7 @@
     {
       "word": "雪对",
       "pinyin": "xuě duì",
-      "meaning": "",
+      "meaning": "雪的对",
       "example": ""
     },
     {
@@ -949,7 +949,7 @@
     {
       "word": "花对",
       "pinyin": "huā duì",
-      "meaning": "",
+      "meaning": "花的对",
       "example": ""
     }
   ],
@@ -968,13 +968,13 @@
     {
       "word": "月明",
       "pinyin": "yuè míng",
-      "meaning": "",
+      "meaning": "月亮的明",
       "example": ""
     },
     {
       "word": "田力",
       "pinyin": "tián lì",
-      "meaning": "",
+      "meaning": "田地的力",
       "example": ""
     },
     {
@@ -1012,7 +1012,7 @@
     {
       "word": "笔刀",
       "pinyin": "bǐ dāo",
-      "meaning": "",
+      "meaning": "笔的刀",
       "example": ""
     }
   ],
@@ -1020,25 +1020,25 @@
     {
       "word": "国旗",
       "pinyin": "guó qí",
-      "meaning": "",
+      "meaning": "国家和旗帜",
       "example": ""
     },
     {
       "word": "五星",
       "pinyin": "wǔ xīng",
-      "meaning": "",
+      "meaning": "五和星星",
       "example": ""
     },
     {
       "word": "星红",
       "pinyin": "xīng hóng",
-      "meaning": "",
+      "meaning": "星星和红色",
       "example": ""
     },
     {
       "word": "红旗",
       "pinyin": "hóng qí",
-      "meaning": "",
+      "meaning": "红色和旗帜",
       "example": ""
     },
     {
@@ -1052,7 +1052,7 @@
     {
       "word": "花生",
       "pinyin": "huā shēng",
-      "meaning": "",
+      "meaning": "花的生",
       "example": ""
     },
     {
@@ -1064,7 +1064,7 @@
     {
       "word": "小松",
       "pinyin": "xiǎo sōng",
-      "meaning": "",
+      "meaning": "小的松",
       "example": ""
     },
     {
@@ -1084,19 +1084,19 @@
     {
       "word": "小小",
       "pinyin": "xiǎo xiǎo",
-      "meaning": "",
+      "meaning": "小和小",
       "example": ""
     },
     {
       "word": "小的",
       "pinyin": "xiǎo de",
-      "meaning": "",
+      "meaning": "小和的",
       "example": ""
     },
     {
       "word": "的船",
       "pinyin": "de chuán",
-      "meaning": "",
+      "meaning": "的和船",
       "example": ""
     },
     {
@@ -1166,7 +1166,7 @@
     {
       "word": "大脑",
       "pinyin": "dà nǎo",
-      "meaning": "",
+      "meaning": "大的脑",
       "example": ""
     },
     {
@@ -1211,7 +1211,7 @@
     {
       "word": "的尾",
       "pinyin": "de wěi",
-      "meaning": "",
+      "meaning": "的的尾",
       "example": ""
     },
     {
@@ -1267,7 +1267,7 @@
     {
       "word": "看见",
       "pinyin": "kàn jiàn",
-      "meaning": "",
+      "meaning": "看的见",
       "example": ""
     }
   ],
@@ -1275,7 +1275,7 @@
     {
       "word": "雨点",
       "pinyin": "yǔ diǎn",
-      "meaning": "",
+      "meaning": "雨的点",
       "example": ""
     },
     {
@@ -1287,19 +1287,19 @@
     {
       "word": "有花",
       "pinyin": "yǒu huā",
-      "meaning": "",
+      "meaning": "有和花",
       "example": ""
     },
     {
       "word": "有草",
       "pinyin": "yǒu cǎo",
-      "meaning": "",
+      "meaning": "有和草",
       "example": ""
     },
     {
       "word": "草的",
       "pinyin": "cǎo de",
-      "meaning": "",
+      "meaning": "草和的",
       "example": ""
     }
   ],
@@ -1339,31 +1339,31 @@
     {
       "word": "春风",
       "pinyin": "chūn fēng",
-      "meaning": "",
+      "meaning": "春天和风",
       "example": ""
     },
     {
       "word": "夏雨",
       "pinyin": "xià yǔ",
-      "meaning": "",
+      "meaning": "夏天和雨",
       "example": ""
     },
     {
       "word": "秋霜",
       "pinyin": "qiū shuāng",
-      "meaning": "",
+      "meaning": "秋天的霜",
       "example": ""
     },
     {
       "word": "冬雪",
       "pinyin": "dōng xuě",
-      "meaning": "",
+      "meaning": "冬天和雪",
       "example": ""
     },
     {
       "word": "风夏",
       "pinyin": "fēng xià",
-      "meaning": "",
+      "meaning": "风和夏天",
       "example": ""
     }
   ],
@@ -1377,19 +1377,19 @@
     {
       "word": "他姓",
       "pinyin": "tā xìng",
-      "meaning": "",
+      "meaning": "他的姓",
       "example": ""
     },
     {
       "word": "你姓",
       "pinyin": "nǐ xìng",
-      "meaning": "",
+      "meaning": "你的姓",
       "example": ""
     },
     {
       "word": "我姓",
       "pinyin": "wǒ xìng",
-      "meaning": "",
+      "meaning": "我的姓",
       "example": ""
     },
     {
@@ -1403,7 +1403,7 @@
     {
       "word": "小青",
       "pinyin": "xiǎo qīng",
-      "meaning": "",
+      "meaning": "小的青",
       "example": ""
     },
     {
@@ -1420,13 +1420,13 @@
     {
       "word": "河水",
       "pinyin": "hé shuǐ",
-      "meaning": "",
+      "meaning": "河和水",
       "example": ""
     },
     {
       "word": "水清",
       "pinyin": "shuǐ qīng",
-      "meaning": "",
+      "meaning": "水的清",
       "example": ""
     }
   ],
@@ -1451,7 +1451,7 @@
     {
       "word": "右相",
       "pinyin": "yòu xiāng",
-      "meaning": "",
+      "meaning": "右边的相",
       "example": ""
     },
     {
@@ -1496,7 +1496,7 @@
     {
       "word": "花儿",
       "pinyin": "huā ér",
-      "meaning": "",
+      "meaning": "花的儿",
       "example": ""
     },
     {
@@ -1520,7 +1520,7 @@
     {
       "word": "鸟儿",
       "pinyin": "niǎo ér",
-      "meaning": "",
+      "meaning": "鸟的儿",
       "example": ""
     }
   ],
@@ -1560,19 +1560,19 @@
     {
       "word": "我多",
       "pinyin": "wǒ duō",
-      "meaning": "",
+      "meaning": "我和多",
       "example": ""
     },
     {
       "word": "多想",
       "pinyin": "duō xiǎng",
-      "meaning": "",
+      "meaning": "多和想",
       "example": ""
     },
     {
       "word": "想去",
       "pinyin": "xiǎng qù",
-      "meaning": "",
+      "meaning": "想的去",
       "example": ""
     },
     {
@@ -1584,7 +1584,7 @@
     {
       "word": "看看",
       "pinyin": "kàn kàn",
-      "meaning": "",
+      "meaning": "看和看",
       "example": ""
     }
   ],
@@ -1604,13 +1604,13 @@
     {
       "word": "山中",
       "pinyin": "shān zhōng",
-      "meaning": "",
+      "meaning": "山和中国",
       "example": ""
     },
     {
       "word": "小鸟",
       "pinyin": "xiǎo niǎo",
-      "meaning": "",
+      "meaning": "小和鸟",
       "example": ""
     },
     {
@@ -1629,7 +1629,7 @@
     {
       "word": "小公",
       "pinyin": "xiǎo gōng",
-      "meaning": "",
+      "meaning": "小的公",
       "example": ""
     },
     {
@@ -1641,13 +1641,13 @@
     {
       "word": "小鸭",
       "pinyin": "xiǎo yā",
-      "meaning": "",
+      "meaning": "小的鸭",
       "example": ""
     },
     {
       "word": "虫子",
       "pinyin": "chóng zǐ",
-      "meaning": "",
+      "meaning": "虫子的子",
       "example": ""
     }
   ],
@@ -1661,13 +1661,13 @@
     {
       "word": "鸟窝",
       "pinyin": "niǎo wō",
-      "meaning": "",
+      "meaning": "鸟的窝",
       "example": ""
     },
     {
       "word": "有一",
       "pinyin": "yǒu yī",
-      "meaning": "",
+      "meaning": "有的一",
       "example": ""
     },
     {
@@ -1693,7 +1693,7 @@
     {
       "word": "人玩",
       "pinyin": "rén wán",
-      "meaning": "",
+      "meaning": "人的玩",
       "example": ""
     },
     {
@@ -1731,7 +1731,7 @@
     {
       "word": "和谁",
       "pinyin": "hé shuí",
-      "meaning": "",
+      "meaning": "和的谁",
       "example": ""
     },
     {
@@ -1775,7 +1775,7 @@
     {
       "word": "月光",
       "pinyin": "yuè guāng",
-      "meaning": "",
+      "meaning": "月亮的光",
       "example": ""
     }
   ],
@@ -1789,7 +1789,7 @@
     {
       "word": "天一",
       "pinyin": "tiān yī",
-      "meaning": "",
+      "meaning": "天空的一",
       "example": ""
     },
     {
@@ -1801,7 +1801,7 @@
     {
       "word": "我从",
       "pinyin": "wǒ cóng",
-      "meaning": "",
+      "meaning": "我的从",
       "example": ""
     },
     {
@@ -1847,13 +1847,13 @@
     {
       "word": "小手",
       "pinyin": "xiǎo shǒu",
-      "meaning": "",
+      "meaning": "小和手",
       "example": ""
     },
     {
       "word": "的小",
       "pinyin": "de xiǎo",
-      "meaning": "",
+      "meaning": "的和小",
       "example": ""
     },
     {
@@ -1960,7 +1960,7 @@
     {
       "word": "河拍",
       "pinyin": "hé pāi",
-      "meaning": "",
+      "meaning": "河的拍",
       "example": ""
     },
     {
@@ -1980,7 +1980,7 @@
     {
       "word": "人之",
       "pinyin": "rén zhī",
-      "meaning": "",
+      "meaning": "人的之",
       "example": ""
     },
     {
@@ -1998,7 +1998,7 @@
     {
       "word": "本善",
       "pinyin": "běn shàn",
-      "meaning": "",
+      "meaning": "本子的善",
       "example": ""
     }
   ],
@@ -2006,7 +2006,7 @@
     {
       "word": "后面",
       "pinyin": "hòu miàn",
-      "meaning": "",
+      "meaning": "后面的面",
       "example": ""
     },
     {
@@ -2038,7 +2038,7 @@
     {
       "word": "白居",
       "pinyin": "bái jū",
-      "meaning": "",
+      "meaning": "白色的居",
       "example": ""
     },
     {
@@ -2056,7 +2056,7 @@
     {
       "word": "小娃",
       "pinyin": "xiǎo wá",
-      "meaning": "",
+      "meaning": "小的娃",
       "example": ""
     },
     {
@@ -2102,7 +2102,7 @@
     {
       "word": "的小",
       "pinyin": "de xiǎo",
-      "meaning": "",
+      "meaning": "的和小",
       "example": ""
     },
     {
@@ -2120,7 +2120,7 @@
     {
       "word": "我的",
       "pinyin": "wǒ de",
-      "meaning": "",
+      "meaning": "我和的",
       "example": ""
     },
     {
@@ -2146,19 +2146,19 @@
     {
       "word": "是我",
       "pinyin": "shì wǒ",
-      "meaning": "",
+      "meaning": "是和我",
       "example": ""
     },
     {
       "word": "我的",
       "pinyin": "wǒ de",
-      "meaning": "",
+      "meaning": "我和的",
       "example": ""
     },
     {
       "word": "在荷",
       "pinyin": "zài hé",
-      "meaning": "",
+      "meaning": "在的荷",
       "example": ""
     }
   ],
@@ -2166,13 +2166,13 @@
     {
       "word": "小白",
       "pinyin": "xiǎo bái",
-      "meaning": "",
+      "meaning": "小和白色",
       "example": ""
     },
     {
       "word": "白兔",
       "pinyin": "bái tù",
-      "meaning": "",
+      "meaning": "白色的兔",
       "example": ""
     },
     {
@@ -2184,13 +2184,13 @@
     {
       "word": "下雨",
       "pinyin": "xià yǔ",
-      "meaning": "",
+      "meaning": "下面和雨",
       "example": ""
     },
     {
       "word": "雨了",
       "pinyin": "yǔ le",
-      "meaning": "",
+      "meaning": "雨的了",
       "example": ""
     }
   ],
@@ -2210,19 +2210,19 @@
     {
       "word": "小蚂",
       "pinyin": "xiǎo mǎ",
-      "meaning": "",
+      "meaning": "小的蚂",
       "example": ""
     },
     {
       "word": "小白",
       "pinyin": "xiǎo bái",
-      "meaning": "",
+      "meaning": "小和白色",
       "example": ""
     },
     {
       "word": "白兔",
       "pinyin": "bái tù",
-      "meaning": "",
+      "meaning": "白色的兔",
       "example": ""
     }
   ],
@@ -2248,13 +2248,13 @@
     {
       "word": "妈妈",
       "pinyin": "mā mā",
-      "meaning": "",
+      "meaning": "妈妈和妈妈",
       "example": ""
     },
     {
       "word": "妈说",
       "pinyin": "mā shuō",
-      "meaning": "",
+      "meaning": "妈妈和说",
       "example": ""
     }
   ],
@@ -2300,19 +2300,19 @@
     {
       "word": "大会",
       "pinyin": "dà huì",
-      "meaning": "",
+      "meaning": "大的会",
       "example": ""
     },
     {
       "word": "大家",
       "pinyin": "dà jiā",
-      "meaning": "",
+      "meaning": "大和家",
       "example": ""
     },
     {
       "word": "老虎",
       "pinyin": "lǎo hǔ",
-      "meaning": "",
+      "meaning": "老师的虎",
       "example": ""
     },
     {
@@ -2326,7 +2326,7 @@
     {
       "word": "小猴",
       "pinyin": "xiǎo hóu",
-      "meaning": "",
+      "meaning": "小的猴",
       "example": ""
     },
     {
@@ -2344,13 +2344,13 @@
     {
       "word": "他看",
       "pinyin": "tā kàn",
-      "meaning": "",
+      "meaning": "他和看",
       "example": ""
     },
     {
       "word": "看见",
       "pinyin": "kàn jiàn",
-      "meaning": "",
+      "meaning": "看的见",
       "example": ""
     }
   ],
@@ -2376,13 +2376,13 @@
     {
       "word": "爱的",
       "pinyin": "ài de",
-      "meaning": "",
+      "meaning": "爱和的",
       "example": ""
     },
     {
       "word": "的乌",
       "pinyin": "de wū",
-      "meaning": "",
+      "meaning": "的的乌",
       "example": ""
     }
   ],
@@ -2396,7 +2396,7 @@
     {
       "word": "花姑",
       "pinyin": "huā gū",
-      "meaning": "",
+      "meaning": "花的姑",
       "example": ""
     },
     {
@@ -2440,13 +2440,13 @@
     {
       "word": "看见",
       "pinyin": "kàn jiàn",
-      "meaning": "",
+      "meaning": "看的见",
       "example": ""
     },
     {
       "word": "大伙",
       "pinyin": "dà huǒ",
-      "meaning": "",
+      "meaning": "大的伙",
       "example": ""
     }
   ],
@@ -2460,7 +2460,7 @@
     {
       "word": "小壁",
       "pinyin": "xiǎo bì",
-      "meaning": "",
+      "meaning": "小的壁",
       "example": ""
     },
     {
@@ -2486,13 +2486,13 @@
     {
       "word": "小熊",
       "pinyin": "xiǎo xióng",
-      "meaning": "",
+      "meaning": "小的熊",
       "example": ""
     },
     {
       "word": "爸爸",
       "pinyin": "bà bà",
-      "meaning": "",
+      "meaning": "爸爸和爸爸",
       "example": ""
     },
     {
@@ -2517,19 +2517,19 @@
     {
       "word": "妈妈",
       "pinyin": "mā mā",
-      "meaning": "",
+      "meaning": "妈妈和妈妈",
       "example": ""
     },
     {
       "word": "你们",
       "pinyin": "nǐ men",
-      "meaning": "",
+      "meaning": "你和们",
       "example": ""
     },
     {
       "word": "小蝌",
       "pinyin": "xiǎo kē",
-      "meaning": "",
+      "meaning": "小的蝌",
       "example": ""
     },
     {
@@ -2549,7 +2549,7 @@
     {
       "word": "人们",
       "pinyin": "rén men",
-      "meaning": "",
+      "meaning": "人和们",
       "example": ""
     },
     {
@@ -2561,7 +2561,7 @@
     {
       "word": "有时",
       "pinyin": "yǒu shí",
-      "meaning": "",
+      "meaning": "有的时",
       "example": ""
     },
     {
@@ -2581,7 +2581,7 @@
     {
       "word": "妈妈",
       "pinyin": "mā mā",
-      "meaning": "",
+      "meaning": "妈妈和妈妈",
       "example": ""
     },
     {
@@ -2605,7 +2605,7 @@
     {
       "word": "们就",
       "pinyin": "men jiù",
-      "meaning": "",
+      "meaning": "们的就",
       "example": ""
     }
   ],
@@ -2625,7 +2625,7 @@
     {
       "word": "大王",
       "pinyin": "dà wáng",
-      "meaning": "",
+      "meaning": "大的王",
       "example": ""
     },
     {
@@ -2663,7 +2663,7 @@
     {
       "word": "海鸥",
       "pinyin": "hǎi ōu",
-      "meaning": "",
+      "meaning": "海的鸥",
       "example": ""
     },
     {
@@ -2709,13 +2709,13 @@
     {
       "word": "你拍",
       "pinyin": "nǐ pāi",
-      "meaning": "",
+      "meaning": "你的拍",
       "example": ""
     },
     {
       "word": "我拍",
       "pinyin": "wǒ pāi",
-      "meaning": "",
+      "meaning": "我的拍",
       "example": ""
     },
     {
@@ -2753,19 +2753,19 @@
     {
       "word": "春季",
       "pinyin": "chūn jì",
-      "meaning": "",
+      "meaning": "春天的季",
       "example": ""
     },
     {
       "word": "春风",
       "pinyin": "chūn fēng",
-      "meaning": "",
+      "meaning": "春天和风",
       "example": ""
     },
     {
       "word": "风吹",
       "pinyin": "fēng chuī",
-      "meaning": "",
+      "meaning": "风的吹",
       "example": ""
     }
   ],
@@ -2779,7 +2779,7 @@
     {
       "word": "花满",
       "pinyin": "huā mǎn",
-      "meaning": "",
+      "meaning": "花的满",
       "example": ""
     },
     {
@@ -2805,7 +2805,7 @@
     {
       "word": "大象",
       "pinyin": "dà xiàng",
-      "meaning": "",
+      "meaning": "大的象",
       "example": ""
     },
     {
@@ -2823,13 +2823,13 @@
     {
       "word": "有多",
       "pinyin": "yǒu duō",
-      "meaning": "",
+      "meaning": "有和多",
       "example": ""
     },
     {
       "word": "多重",
       "pinyin": "duō zhòng",
-      "meaning": "",
+      "meaning": "多的重",
       "example": ""
     }
   ],
@@ -2843,7 +2843,7 @@
     {
       "word": "爸爸",
       "pinyin": "bà bà",
-      "meaning": "",
+      "meaning": "爸爸和爸爸",
       "example": ""
     },
     {
@@ -2861,7 +2861,7 @@
     {
       "word": "的一",
       "pinyin": "de yī",
-      "meaning": "",
+      "meaning": "的的一",
       "example": ""
     }
   ],
@@ -2875,13 +2875,13 @@
     {
       "word": "爸爸",
       "pinyin": "bà bà",
-      "meaning": "",
+      "meaning": "爸爸和爸爸",
       "example": ""
     },
     {
       "word": "妈妈",
       "pinyin": "mā mā",
-      "meaning": "",
+      "meaning": "妈妈和妈妈",
       "example": ""
     },
     {
@@ -2893,7 +2893,7 @@
     {
       "word": "写道",
       "pinyin": "xiě dào",
-      "meaning": "",
+      "meaning": "写的道",
       "example": ""
     }
   ],
@@ -2901,7 +2901,7 @@
     {
       "word": "妈妈",
       "pinyin": "mā mā",
-      "meaning": "",
+      "meaning": "妈妈和妈妈",
       "example": ""
     },
     {
@@ -2919,13 +2919,13 @@
     {
       "word": "中的",
       "pinyin": "zhōng de",
-      "meaning": "",
+      "meaning": "中国和的",
       "example": ""
     },
     {
       "word": "的妈",
       "pinyin": "de mā",
-      "meaning": "",
+      "meaning": "的和妈妈",
       "example": ""
     }
   ],
@@ -2965,7 +2965,7 @@
     {
       "word": "黄河",
       "pinyin": "huáng hé",
-      "meaning": "",
+      "meaning": "黄色和河",
       "example": ""
     },
     {
@@ -3029,13 +3029,13 @@
     {
       "word": "有趣",
       "pinyin": "yǒu qù",
-      "meaning": "",
+      "meaning": "有的趣",
       "example": ""
     },
     {
       "word": "山峰",
       "pinyin": "shān fēng",
-      "meaning": "",
+      "meaning": "山的峰",
       "example": ""
     },
     {
@@ -3053,7 +3053,7 @@
     {
       "word": "黄山",
       "pinyin": "huáng shān",
-      "meaning": "",
+      "meaning": "黄色和山",
       "example": ""
     }
   ],
@@ -3061,7 +3061,7 @@
     {
       "word": "月潭",
       "pinyin": "yuè tán",
-      "meaning": "",
+      "meaning": "月亮的潭",
       "example": ""
     },
     {
@@ -3098,7 +3098,7 @@
     {
       "word": "的葡",
       "pinyin": "de pú",
-      "meaning": "",
+      "meaning": "的的葡",
       "example": ""
     },
     {
@@ -3116,7 +3116,7 @@
     {
       "word": "月有",
       "pinyin": "yuè yǒu",
-      "meaning": "",
+      "meaning": "月亮和有",
       "example": ""
     }
   ],
@@ -3124,13 +3124,13 @@
     {
       "word": "家乡",
       "pinyin": "jiā xiāng",
-      "meaning": "",
+      "meaning": "家的乡",
       "example": ""
     },
     {
       "word": "的家",
       "pinyin": "de jiā",
-      "meaning": "",
+      "meaning": "的和家",
       "example": ""
     },
     {
@@ -3142,7 +3142,7 @@
     {
       "word": "画的",
       "pinyin": "huà de",
-      "meaning": "",
+      "meaning": "画和的",
       "example": ""
     },
     {
@@ -3156,7 +3156,7 @@
     {
       "word": "小鸟",
       "pinyin": "xiǎo niǎo",
-      "meaning": "",
+      "meaning": "小和鸟",
       "example": ""
     },
     {
@@ -3168,7 +3168,7 @@
     {
       "word": "在井",
       "pinyin": "zài jǐng",
-      "meaning": "",
+      "meaning": "在的井",
       "example": ""
     },
     {
@@ -3205,7 +3205,7 @@
     {
       "word": "有一",
       "pinyin": "yǒu yī",
-      "meaning": "",
+      "meaning": "有的一",
       "example": ""
     },
     {
@@ -3225,7 +3225,7 @@
     {
       "word": "小葫",
       "pinyin": "xiǎo hú",
-      "meaning": "",
+      "meaning": "小的葫",
       "example": ""
     },
     {
@@ -3251,7 +3251,7 @@
     {
       "word": "河东",
       "pinyin": "hé dōng",
-      "meaning": "",
+      "meaning": "河和东方",
       "example": ""
     },
     {
@@ -3321,7 +3321,7 @@
     {
       "word": "同志",
       "pinyin": "tóng zhì",
-      "meaning": "",
+      "meaning": "同学的志",
       "example": ""
     },
     {
@@ -3429,7 +3429,7 @@
     {
       "word": "大家",
       "pinyin": "dà jiā",
-      "meaning": "",
+      "meaning": "大和家",
       "example": ""
     },
     {
@@ -3461,7 +3461,7 @@
     {
       "word": "星辰",
       "pinyin": "xīng chén",
-      "meaning": "",
+      "meaning": "星星的辰",
       "example": ""
     },
     {
@@ -3493,7 +3493,7 @@
     {
       "word": "草低",
       "pinyin": "cǎo dī",
-      "meaning": "",
+      "meaning": "草和低",
       "example": ""
     },
     {
@@ -3539,13 +3539,13 @@
     {
       "word": "小白",
       "pinyin": "xiǎo bái",
-      "meaning": "",
+      "meaning": "小和白色",
       "example": ""
     },
     {
       "word": "白兔",
       "pinyin": "bái tù",
-      "meaning": "",
+      "meaning": "白色的兔",
       "example": ""
     },
     {
@@ -3557,13 +3557,13 @@
     {
       "word": "妈妈",
       "pinyin": "mā mā",
-      "meaning": "",
+      "meaning": "妈妈和妈妈",
       "example": ""
     },
     {
       "word": "雪孩",
       "pinyin": "xuě hái",
-      "meaning": "",
+      "meaning": "雪的孩",
       "example": ""
     }
   ],
@@ -3571,7 +3571,7 @@
     {
       "word": "五彩",
       "pinyin": "wǔ cǎi",
-      "meaning": "",
+      "meaning": "五的彩",
       "example": ""
     },
     {
@@ -3589,7 +3589,7 @@
     {
       "word": "花鸭",
       "pinyin": "huā yā",
-      "meaning": "",
+      "meaning": "花的鸭",
       "example": ""
     },
     {
@@ -3603,7 +3603,7 @@
     {
       "word": "老虎",
       "pinyin": "lǎo hǔ",
-      "meaning": "",
+      "meaning": "老师的虎",
       "example": ""
     },
     {
@@ -3640,7 +3640,7 @@
     {
       "word": "风筝",
       "pinyin": "fēng zhēng",
-      "meaning": "",
+      "meaning": "风的筝",
       "example": ""
     },
     {
@@ -3658,7 +3658,7 @@
     {
       "word": "小熊",
       "pinyin": "xiǎo xióng",
-      "meaning": "",
+      "meaning": "小的熊",
       "example": ""
     }
   ],
@@ -3666,7 +3666,7 @@
     {
       "word": "风娃",
       "pinyin": "fēng wá",
-      "meaning": "",
+      "meaning": "风的娃",
       "example": ""
     },
     {
@@ -3678,19 +3678,19 @@
     {
       "word": "妈妈",
       "pinyin": "mā mā",
-      "meaning": "",
+      "meaning": "妈妈和妈妈",
       "example": ""
     },
     {
       "word": "人们",
       "pinyin": "rén men",
-      "meaning": "",
+      "meaning": "人和们",
       "example": ""
     },
     {
       "word": "们做",
       "pinyin": "men zuò",
-      "meaning": "",
+      "meaning": "们的做",
       "example": ""
     }
   ],
@@ -3698,7 +3698,7 @@
     {
       "word": "小刺",
       "pinyin": "xiǎo cì",
-      "meaning": "",
+      "meaning": "小的刺",
       "example": ""
     },
     {
@@ -3710,7 +3710,7 @@
     {
       "word": "小獾",
       "pinyin": "xiǎo huān",
-      "meaning": "",
+      "meaning": "小的獾",
       "example": ""
     },
     {
@@ -3736,7 +3736,7 @@
     {
       "word": "高鼎",
       "pinyin": "gāo dǐng",
-      "meaning": "",
+      "meaning": "高的鼎",
       "example": ""
     },
     {
@@ -3774,7 +3774,7 @@
     {
       "word": "的柳",
       "pinyin": "de liǔ",
-      "meaning": "",
+      "meaning": "的的柳",
       "example": ""
     },
     {
@@ -3805,13 +3805,13 @@
     {
       "word": "是春",
       "pinyin": "shì chūn",
-      "meaning": "",
+      "meaning": "是和春天",
       "example": ""
     },
     {
       "word": "天的",
       "pinyin": "tiān de",
-      "meaning": "",
+      "meaning": "天空和的",
       "example": ""
     },
     {
@@ -3875,7 +3875,7 @@
     {
       "word": "天坛",
       "pinyin": "tiān tán",
-      "meaning": "",
+      "meaning": "天空的坛",
       "example": ""
     },
     {
@@ -3901,7 +3901,7 @@
     {
       "word": "白居",
       "pinyin": "bái jū",
-      "meaning": "",
+      "meaning": "白色的居",
       "example": ""
     },
     {
@@ -3921,7 +3921,7 @@
     {
       "word": "有的",
       "pinyin": "yǒu de",
-      "meaning": "",
+      "meaning": "有和的",
       "example": ""
     },
     {
@@ -3937,7 +3937,7 @@
     {
       "word": "的生",
       "pinyin": "de shēng",
-      "meaning": "",
+      "meaning": "的的生",
       "example": ""
     },
     {
@@ -3957,25 +3957,25 @@
     {
       "word": "在哪",
       "pinyin": "zài nǎ",
-      "meaning": "",
+      "meaning": "在的哪",
       "example": ""
     },
     {
       "word": "你在",
       "pinyin": "nǐ zài",
-      "meaning": "",
+      "meaning": "你和在",
       "example": ""
     },
     {
       "word": "的足",
       "pinyin": "de zú",
-      "meaning": "",
+      "meaning": "的和脚",
       "example": ""
     },
     {
       "word": "足迹",
       "pinyin": "zú jì",
-      "meaning": "",
+      "meaning": "脚的迹",
       "example": ""
     }
   ],
@@ -3983,7 +3983,7 @@
     {
       "word": "爸爸",
       "pinyin": "bà bà",
-      "meaning": "",
+      "meaning": "爸爸和爸爸",
       "example": ""
     },
     {
@@ -4001,13 +4001,13 @@
     {
       "word": "多人",
       "pinyin": "duō rén",
-      "meaning": "",
+      "meaning": "多和人",
       "example": ""
     },
     {
       "word": "的糕",
       "pinyin": "de gāo",
-      "meaning": "",
+      "meaning": "的的糕",
       "example": ""
     }
   ],
@@ -4021,13 +4021,13 @@
     {
       "word": "妈妈",
       "pinyin": "mā mā",
-      "meaning": "",
+      "meaning": "妈妈和妈妈",
       "example": ""
     },
     {
       "word": "爸爸",
       "pinyin": "bà bà",
-      "meaning": "",
+      "meaning": "爸爸和爸爸",
       "example": ""
     },
     {
@@ -4058,7 +4058,7 @@
     {
       "word": "字的",
       "pinyin": "zì de",
-      "meaning": "",
+      "meaning": "字和的",
       "example": ""
     },
     {
@@ -4078,7 +4078,7 @@
     {
       "word": "我神",
       "pinyin": "wǒ shén",
-      "meaning": "",
+      "meaning": "我的神",
       "example": ""
     },
     {
@@ -4096,13 +4096,13 @@
     {
       "word": "中华",
       "pinyin": "zhōng huá",
-      "meaning": "",
+      "meaning": "中国的华",
       "example": ""
     },
     {
       "word": "山川",
       "pinyin": "shān chuān",
-      "meaning": "",
+      "meaning": "山的川",
       "example": ""
     }
   ],
@@ -4110,7 +4110,7 @@
     {
       "word": "春节",
       "pinyin": "chūn jié",
-      "meaning": "",
+      "meaning": "春天的节",
       "example": ""
     },
     {
@@ -4122,7 +4122,7 @@
     {
       "word": "人欢",
       "pinyin": "rén huān",
-      "meaning": "",
+      "meaning": "人的欢",
       "example": ""
     },
     {
@@ -4212,7 +4212,7 @@
     {
       "word": "小柳",
       "pinyin": "xiǎo liǔ",
-      "meaning": "",
+      "meaning": "小的柳",
       "example": ""
     },
     {
@@ -4224,7 +4224,7 @@
     {
       "word": "小枣",
       "pinyin": "xiǎo zǎo",
-      "meaning": "",
+      "meaning": "小的枣",
       "example": ""
     },
     {
@@ -4244,7 +4244,7 @@
     {
       "word": "有的",
       "pinyin": "yǒu de",
-      "meaning": "",
+      "meaning": "有和的",
       "example": ""
     },
     {
@@ -4261,7 +4261,7 @@
     {
       "word": "我的",
       "pinyin": "wǒ de",
-      "meaning": "",
+      "meaning": "我和的",
       "example": ""
     }
   ],
@@ -4312,13 +4312,13 @@
     {
       "word": "妈妈",
       "pinyin": "mā mā",
-      "meaning": "",
+      "meaning": "妈妈和妈妈",
       "example": ""
     },
     {
       "word": "是我",
       "pinyin": "shì wǒ",
-      "meaning": "",
+      "meaning": "是和我",
       "example": ""
     },
     {
@@ -4332,13 +4332,13 @@
     {
       "word": "虫子",
       "pinyin": "chóng zǐ",
-      "meaning": "",
+      "meaning": "虫子的子",
       "example": ""
     },
     {
       "word": "小虫",
       "pinyin": "xiǎo chóng",
-      "meaning": "",
+      "meaning": "小和虫子",
       "example": ""
     },
     {
@@ -4370,7 +4370,7 @@
     {
       "word": "妈妈",
       "pinyin": "mā mā",
-      "meaning": "",
+      "meaning": "妈妈和妈妈",
       "example": ""
     },
     {
@@ -4420,7 +4420,7 @@
     {
       "word": "天早",
       "pinyin": "tiān zǎo",
-      "meaning": "",
+      "meaning": "天空的早",
       "example": ""
     }
   ],
@@ -4433,7 +4433,7 @@
     {
       "word": "田里",
       "pinyin": "tián lǐ",
-      "meaning": "",
+      "meaning": "田地的里",
       "example": ""
     },
     {
@@ -4445,7 +4445,7 @@
     {
       "word": "田边",
       "pinyin": "tián biān",
-      "meaning": "",
+      "meaning": "田地的边",
       "example": ""
     },
     {
@@ -4475,7 +4475,7 @@
     {
       "word": "五角",
       "pinyin": "wǔ jiǎo",
-      "meaning": "",
+      "meaning": "五的角",
       "example": ""
     },
     {
@@ -4489,19 +4489,19 @@
     {
       "word": "小马",
       "pinyin": "xiǎo mǎ",
-      "meaning": "",
+      "meaning": "小的马",
       "example": ""
     },
     {
       "word": "妈妈",
       "pinyin": "mā mā",
-      "meaning": "",
+      "meaning": "妈妈和妈妈",
       "example": ""
     },
     {
       "word": "河水",
       "pinyin": "hé shuǐ",
-      "meaning": "",
+      "meaning": "河和水",
       "example": ""
     },
     {
@@ -4527,13 +4527,13 @@
     {
       "word": "天气",
       "pinyin": "tiān qì",
-      "meaning": "",
+      "meaning": "天空的气",
       "example": ""
     },
     {
       "word": "老奶",
       "pinyin": "lǎo nǎi",
-      "meaning": "",
+      "meaning": "老师的奶",
       "example": ""
     },
     {
@@ -4545,7 +4545,7 @@
     {
       "word": "好天",
       "pinyin": "hǎo tiān",
-      "meaning": "",
+      "meaning": "好和天空",
       "example": ""
     }
   ],
@@ -4571,7 +4571,7 @@
     {
       "word": "西湖",
       "pinyin": "xī hú",
-      "meaning": "",
+      "meaning": "西方的湖",
       "example": ""
     },
     {
@@ -4603,7 +4603,7 @@
     {
       "word": "黄鹂",
       "pinyin": "huáng lí",
-      "meaning": "",
+      "meaning": "黄色的鹂",
       "example": ""
     },
     {
@@ -4629,7 +4629,7 @@
     {
       "word": "下来",
       "pinyin": "xià lái",
-      "meaning": "",
+      "meaning": "下面的来",
       "example": ""
     },
     {
@@ -4655,13 +4655,13 @@
     {
       "word": "北方",
       "pinyin": "běi fāng",
-      "meaning": "",
+      "meaning": "北方的方",
       "example": ""
     },
     {
       "word": "是你",
       "pinyin": "shì nǐ",
-      "meaning": "",
+      "meaning": "是和你",
       "example": ""
     },
     {
@@ -4673,7 +4673,7 @@
     {
       "word": "你在",
       "pinyin": "nǐ zài",
-      "meaning": "",
+      "meaning": "你和在",
       "example": ""
     }
   ],
@@ -4687,7 +4687,7 @@
     {
       "word": "天员",
       "pinyin": "tiān yuán",
-      "meaning": "",
+      "meaning": "天空的员",
       "example": ""
     },
     {
@@ -4699,7 +4699,7 @@
     {
       "word": "在太",
       "pinyin": "zài tài",
-      "meaning": "",
+      "meaning": "在的太",
       "example": ""
     },
     {
@@ -4745,19 +4745,19 @@
     {
       "word": "耳朵",
       "pinyin": "ěr duǒ",
-      "meaning": "",
+      "meaning": "耳朵的朵",
       "example": ""
     },
     {
       "word": "大象",
       "pinyin": "dà xiàng",
-      "meaning": "",
+      "meaning": "大的象",
       "example": ""
     },
     {
       "word": "的耳",
       "pinyin": "de ěr",
-      "meaning": "",
+      "meaning": "的和耳朵",
       "example": ""
     },
     {
@@ -4789,7 +4789,7 @@
     {
       "word": "口罩",
       "pinyin": "kǒu zhào",
-      "meaning": "",
+      "meaning": "嘴巴的罩",
       "example": ""
     },
     {
@@ -4847,7 +4847,7 @@
     {
       "word": "小毛",
       "pinyin": "xiǎo máo",
-      "meaning": "",
+      "meaning": "小的毛",
       "example": ""
     },
     {
@@ -4879,7 +4879,7 @@
     {
       "word": "师傅",
       "pinyin": "shī fù",
-      "meaning": "",
+      "meaning": "教师的傅",
       "example": ""
     },
     {
@@ -4910,7 +4910,7 @@
     {
       "word": "的摇",
       "pinyin": "de yáo",
-      "meaning": "",
+      "meaning": "的的摇",
       "example": ""
     },
     {
@@ -4922,7 +4922,7 @@
     {
       "word": "在这",
       "pinyin": "zài zhè",
-      "meaning": "",
+      "meaning": "在的这",
       "example": ""
     },
     {
@@ -4967,13 +4967,13 @@
     {
       "word": "人们",
       "pinyin": "rén men",
-      "meaning": "",
+      "meaning": "人和们",
       "example": ""
     },
     {
       "word": "黄帝",
       "pinyin": "huáng dì",
-      "meaning": "",
+      "meaning": "黄色的帝",
       "example": ""
     },
     {
@@ -4990,7 +4990,7 @@
     {
       "word": "有一",
       "pinyin": "yǒu yī",
-      "meaning": "",
+      "meaning": "有的一",
       "example": ""
     }
   ],
@@ -5022,7 +5022,7 @@
     {
       "word": "的药",
       "pinyin": "de yào",
-      "meaning": "",
+      "meaning": "的的药",
       "example": ""
     }
   ],
@@ -5030,7 +5030,7 @@
     {
       "word": "的小",
       "pinyin": "de xiǎo",
-      "meaning": "",
+      "meaning": "的和小",
       "example": ""
     },
     {
@@ -5042,19 +5042,19 @@
     {
       "word": "小学",
       "pinyin": "xiǎo xué",
-      "meaning": "",
+      "meaning": "小和学习",
       "example": ""
     },
     {
       "word": "大家",
       "pinyin": "dà jiā",
-      "meaning": "",
+      "meaning": "大和家",
       "example": ""
     },
     {
       "word": "大青",
       "pinyin": "dà qīng",
-      "meaning": "",
+      "meaning": "大的青",
       "example": ""
     }
   ],
@@ -5062,13 +5062,13 @@
     {
       "word": "妈妈",
       "pinyin": "mā mā",
-      "meaning": "",
+      "meaning": "妈妈和妈妈",
       "example": ""
     },
     {
       "word": "们的",
       "pinyin": "men de",
-      "meaning": "",
+      "meaning": "们和的",
       "example": ""
     },
     {
@@ -5100,7 +5100,7 @@
     {
       "word": "中山",
       "pinyin": "zhōng shān",
-      "meaning": "",
+      "meaning": "中国和山",
       "example": ""
     },
     {
@@ -5112,7 +5112,7 @@
     {
       "word": "地背",
       "pinyin": "dì bèi",
-      "meaning": "",
+      "meaning": "大地的背",
       "example": ""
     },
     {
@@ -5189,7 +5189,7 @@
     {
       "word": "东坡",
       "pinyin": "dōng pō",
-      "meaning": "",
+      "meaning": "东方的坡",
       "example": ""
     },
     {
@@ -5221,7 +5221,7 @@
     {
       "word": "秋风",
       "pinyin": "qiū fēng",
-      "meaning": "",
+      "meaning": "秋天和风",
       "example": ""
     },
     {
@@ -5245,7 +5245,7 @@
     {
       "word": "上秋",
       "pinyin": "shàng qiū",
-      "meaning": "",
+      "meaning": "上面和秋天",
       "example": ""
     }
   ],
@@ -5253,7 +5253,7 @@
     {
       "word": "水泥",
       "pinyin": "shuǐ ní",
-      "meaning": "",
+      "meaning": "水的泥",
       "example": ""
     },
     {
@@ -5285,7 +5285,7 @@
     {
       "word": "天的",
       "pinyin": "tiān de",
-      "meaning": "",
+      "meaning": "天空和的",
       "example": ""
     },
     {
@@ -5296,13 +5296,13 @@
     {
       "word": "的雨",
       "pinyin": "de yǔ",
-      "meaning": "",
+      "meaning": "的和雨",
       "example": ""
     },
     {
       "word": "是一",
       "pinyin": "shì yī",
-      "meaning": "",
+      "meaning": "是的一",
       "example": ""
     },
     {
@@ -5316,13 +5316,13 @@
     {
       "word": "秋的",
       "pinyin": "qiū de",
-      "meaning": "",
+      "meaning": "秋天和的",
       "example": ""
     },
     {
       "word": "的声",
       "pinyin": "de shēng",
-      "meaning": "",
+      "meaning": "的的声",
       "example": ""
     },
     {
@@ -5333,13 +5333,13 @@
     {
       "word": "听听",
       "pinyin": "tīng tīng",
-      "meaning": "",
+      "meaning": "听和听",
       "example": ""
     },
     {
       "word": "在每",
       "pinyin": "zài měi",
-      "meaning": "",
+      "meaning": "在的每",
       "example": ""
     }
   ],
@@ -5347,19 +5347,19 @@
     {
       "word": "中有",
       "pinyin": "zhōng yǒu",
-      "meaning": "",
+      "meaning": "中国和有",
       "example": ""
     },
     {
       "word": "秋高",
       "pinyin": "qiū gāo",
-      "meaning": "",
+      "meaning": "秋天和高",
       "example": ""
     },
     {
       "word": "高气",
       "pinyin": "gāo qì",
-      "meaning": "",
+      "meaning": "高的气",
       "example": ""
     },
     {
@@ -5371,7 +5371,7 @@
     {
       "word": "天高",
       "pinyin": "tiān gāo",
-      "meaning": "",
+      "meaning": "天空和高",
       "example": ""
     }
   ],
@@ -5379,13 +5379,13 @@
     {
       "word": "火柴",
       "pinyin": "huǒ chái",
-      "meaning": "",
+      "meaning": "火的柴",
       "example": ""
     },
     {
       "word": "小女",
       "pinyin": "xiǎo nǚ",
-      "meaning": "",
+      "meaning": "小的女",
       "example": ""
     },
     {
@@ -5403,7 +5403,7 @@
     {
       "word": "的火",
       "pinyin": "de huǒ",
-      "meaning": "",
+      "meaning": "的和火",
       "example": ""
     }
   ],
@@ -5417,7 +5417,7 @@
     {
       "word": "手推",
       "pinyin": "shǒu tuī",
-      "meaning": "",
+      "meaning": "手的推",
       "example": ""
     },
     {
@@ -5443,7 +5443,7 @@
     {
       "word": "红头",
       "pinyin": "hóng tóu",
-      "meaning": "",
+      "meaning": "红色的头",
       "example": ""
     },
     {
@@ -5499,7 +5499,7 @@
     {
       "word": "大家",
       "pinyin": "dà jiā",
-      "meaning": "",
+      "meaning": "大和家",
       "example": ""
     }
   ],
@@ -5538,13 +5538,13 @@
     {
       "word": "老屋",
       "pinyin": "lǎo wū",
-      "meaning": "",
+      "meaning": "老师的屋",
       "example": ""
     },
     {
       "word": "小蜘",
       "pinyin": "xiǎo zhī",
-      "meaning": "",
+      "meaning": "小的蜘",
       "example": ""
     },
     {
@@ -5602,7 +5602,7 @@
     {
       "word": "小狗",
       "pinyin": "xiǎo gǒu",
-      "meaning": "",
+      "meaning": "小的狗",
       "example": ""
     },
     {
@@ -5626,7 +5626,7 @@
     {
       "word": "小公",
       "pinyin": "xiǎo gōng",
-      "meaning": "",
+      "meaning": "小的公",
       "example": ""
     }
   ],
@@ -5652,7 +5652,7 @@
     {
       "word": "车轴",
       "pinyin": "chē zhóu",
-      "meaning": "",
+      "meaning": "车的轴",
       "example": ""
     },
     {
@@ -5666,7 +5666,7 @@
     {
       "word": "在船",
       "pinyin": "zài chuán",
-      "meaning": "",
+      "meaning": "在和船",
       "example": ""
     },
     {
@@ -5684,7 +5684,7 @@
     {
       "word": "船头",
       "pinyin": "chuán tóu",
-      "meaning": "",
+      "meaning": "船的头",
       "example": ""
     },
     {
@@ -5697,7 +5697,7 @@
     {
       "word": "草地",
       "pinyin": "cǎo dì",
-      "meaning": "",
+      "meaning": "草和大地",
       "example": ""
     },
     {
@@ -5741,13 +5741,13 @@
     {
       "word": "火车",
       "pinyin": "huǒ chē",
-      "meaning": "",
+      "meaning": "火和车",
       "example": ""
     },
     {
       "word": "是在",
       "pinyin": "shì zài",
-      "meaning": "",
+      "meaning": "是和在",
       "example": ""
     },
     {
@@ -5779,13 +5779,13 @@
     {
       "word": "天门",
       "pinyin": "tiān mén",
-      "meaning": "",
+      "meaning": "天空和门",
       "example": ""
     },
     {
       "word": "东流",
       "pinyin": "dōng liú",
-      "meaning": "",
+      "meaning": "东方的流",
       "example": ""
     }
   ],
@@ -5793,7 +5793,7 @@
     {
       "word": "东坡",
       "pinyin": "dōng pō",
-      "meaning": "",
+      "meaning": "东方的坡",
       "example": ""
     },
     {
@@ -5805,7 +5805,7 @@
     {
       "word": "西湖",
       "pinyin": "xī hú",
-      "meaning": "",
+      "meaning": "西方的湖",
       "example": ""
     },
     {
@@ -5843,7 +5843,7 @@
     {
       "word": "学家",
       "pinyin": "xué jiā",
-      "meaning": "",
+      "meaning": "学习和家",
       "example": ""
     },
     {
@@ -5857,7 +5857,7 @@
     {
       "word": "西沙",
       "pinyin": "xī shā",
-      "meaning": "",
+      "meaning": "西方的沙",
       "example": ""
     },
     {
@@ -5875,13 +5875,13 @@
     {
       "word": "有的",
       "pinyin": "yǒu de",
-      "meaning": "",
+      "meaning": "有和的",
       "example": ""
     },
     {
       "word": "的西",
       "pinyin": "de xī",
-      "meaning": "",
+      "meaning": "的和西方",
       "example": ""
     }
   ],
@@ -5895,7 +5895,7 @@
     {
       "word": "小城",
       "pinyin": "xiǎo chéng",
-      "meaning": "",
+      "meaning": "小的城",
       "example": ""
     },
     {
@@ -5926,13 +5926,13 @@
     {
       "word": "地上",
       "pinyin": "dì shàng",
-      "meaning": "",
+      "meaning": "大地和上面",
       "example": ""
     },
     {
       "word": "小兴",
       "pinyin": "xiǎo xīng",
-      "meaning": "",
+      "meaning": "小的兴",
       "example": ""
     },
     {
@@ -5958,7 +5958,7 @@
     {
       "word": "白帝",
       "pinyin": "bái dì",
-      "meaning": "",
+      "meaning": "白色的帝",
       "example": ""
     },
     {
@@ -5984,7 +5984,7 @@
     {
       "word": "大自",
       "pinyin": "dà zì",
-      "meaning": "",
+      "meaning": "大的自",
       "example": ""
     },
     {
@@ -6020,19 +6020,19 @@
     {
       "word": "同的",
       "pinyin": "tóng de",
-      "meaning": "",
+      "meaning": "同学和的",
       "example": ""
     },
     {
       "word": "的大",
       "pinyin": "de dà",
-      "meaning": "",
+      "meaning": "的和大",
       "example": ""
     },
     {
       "word": "大自",
       "pinyin": "dà zì",
-      "meaning": "",
+      "meaning": "大的自",
       "example": ""
     },
     {
@@ -6056,7 +6056,7 @@
     {
       "word": "的鸟",
       "pinyin": "de niǎo",
-      "meaning": "",
+      "meaning": "的和鸟",
       "example": ""
     },
     {
@@ -6108,7 +6108,7 @@
     {
       "word": "小孩",
       "pinyin": "xiǎo hái",
-      "meaning": "",
+      "meaning": "小的孩",
       "example": ""
     },
     {
@@ -6120,7 +6120,7 @@
     {
       "word": "足跌",
       "pinyin": "zú diē",
-      "meaning": "",
+      "meaning": "脚的跌",
       "example": ""
     },
     {
@@ -6158,7 +6158,7 @@
     {
       "word": "白桦",
       "pinyin": "bái huà",
-      "meaning": "",
+      "meaning": "白色的桦",
       "example": ""
     },
     {
@@ -6172,7 +6172,7 @@
     {
       "word": "白求",
       "pinyin": "bái qiú",
-      "meaning": "",
+      "meaning": "白色的求",
       "example": ""
     },
     {
@@ -6190,7 +6190,7 @@
     {
       "word": "手术",
       "pinyin": "shǒu shù",
-      "meaning": "",
+      "meaning": "手的术",
       "example": ""
     },
     {
@@ -6236,7 +6236,7 @@
     {
       "word": "爱人",
       "pinyin": "ài rén",
-      "meaning": "",
+      "meaning": "爱和人",
       "example": ""
     },
     {
@@ -6248,7 +6248,7 @@
     {
       "word": "白求",
       "pinyin": "bái qiú",
-      "meaning": "",
+      "meaning": "白色的求",
       "example": ""
     },
     {
@@ -6260,7 +6260,7 @@
     {
       "word": "手术",
       "pinyin": "shǒu shù",
-      "meaning": "",
+      "meaning": "手的术",
       "example": ""
     }
   ],
@@ -6286,7 +6286,7 @@
     {
       "word": "春风",
       "pinyin": "chūn fēng",
-      "meaning": "",
+      "meaning": "春天和风",
       "example": ""
     },
     {
@@ -6300,7 +6300,7 @@
     {
       "word": "东坡",
       "pinyin": "dōng pō",
-      "meaning": "",
+      "meaning": "东方的坡",
       "example": ""
     },
     {
@@ -6350,13 +6350,13 @@
     {
       "word": "小溪",
       "pinyin": "xiǎo xī",
-      "meaning": "",
+      "meaning": "小的溪",
       "example": ""
     },
     {
       "word": "黄鹂",
       "pinyin": "huáng lí",
-      "meaning": "",
+      "meaning": "黄色的鹂",
       "example": ""
     }
   ],
@@ -6370,7 +6370,7 @@
     {
       "word": "小燕",
       "pinyin": "xiǎo yàn",
-      "meaning": "",
+      "meaning": "小的燕",
       "example": ""
     },
     {
@@ -6382,7 +6382,7 @@
     {
       "word": "的春",
       "pinyin": "de chūn",
-      "meaning": "",
+      "meaning": "的和春天",
       "example": ""
     },
     {
@@ -6408,7 +6408,7 @@
     {
       "word": "有的",
       "pinyin": "yǒu de",
-      "meaning": "",
+      "meaning": "有和的",
       "example": ""
     },
     {
@@ -6460,7 +6460,7 @@
     {
       "word": "白居",
       "pinyin": "bái jū",
-      "meaning": "",
+      "meaning": "白色的居",
       "example": ""
     },
     {
@@ -6484,7 +6484,7 @@
     {
       "word": "南好",
       "pinyin": "nán hǎo",
-      "meaning": "",
+      "meaning": "南方和好",
       "example": ""
     }
   ],
@@ -6504,7 +6504,7 @@
     {
       "word": "中有",
       "pinyin": "zhōng yǒu",
-      "meaning": "",
+      "meaning": "中国和有",
       "example": ""
     },
     {
@@ -6566,7 +6566,7 @@
     {
       "word": "的角",
       "pinyin": "de jiǎo",
-      "meaning": "",
+      "meaning": "的的角",
       "example": ""
     },
     {
@@ -6586,7 +6586,7 @@
     {
       "word": "河流",
       "pinyin": "hé liú",
-      "meaning": "",
+      "meaning": "河的流",
       "example": ""
     },
     {
@@ -6610,7 +6610,7 @@
     {
       "word": "说道",
       "pinyin": "shuō dào",
-      "meaning": "",
+      "meaning": "说的道",
       "example": ""
     }
   ],
@@ -6666,7 +6666,7 @@
     {
       "word": "春风",
       "pinyin": "chūn fēng",
-      "meaning": "",
+      "meaning": "春天和风",
       "example": ""
     },
     {
@@ -6754,7 +6754,7 @@
     {
       "word": "人们",
       "pinyin": "rén men",
-      "meaning": "",
+      "meaning": "人和们",
       "example": ""
     },
     {
@@ -6773,7 +6773,7 @@
     {
       "word": "桥洞",
       "pinyin": "qiáo dòng",
-      "meaning": "",
+      "meaning": "桥的洞",
       "example": ""
     },
     {
@@ -6785,13 +6785,13 @@
     {
       "word": "有的",
       "pinyin": "yǒu de",
-      "meaning": "",
+      "meaning": "有和的",
       "example": ""
     },
     {
       "word": "有一",
       "pinyin": "yǒu yī",
-      "meaning": "",
+      "meaning": "有的一",
       "example": ""
     },
     {
@@ -6805,19 +6805,19 @@
     {
       "word": "有的",
       "pinyin": "yǒu de",
-      "meaning": "",
+      "meaning": "有和的",
       "example": ""
     },
     {
       "word": "上的",
       "pinyin": "shàng de",
-      "meaning": "",
+      "meaning": "上面和的",
       "example": ""
     },
     {
       "word": "的人",
       "pinyin": "de rén",
-      "meaning": "",
+      "meaning": "的和人",
       "example": ""
     },
     {
@@ -6837,7 +6837,7 @@
     {
       "word": "有的",
       "pinyin": "yǒu de",
-      "meaning": "",
+      "meaning": "有和的",
       "example": ""
     },
     {
@@ -6849,7 +6849,7 @@
     {
       "word": "的刻",
       "pinyin": "de kè",
-      "meaning": "",
+      "meaning": "的的刻",
       "example": ""
     },
     {
@@ -6875,7 +6875,7 @@
     {
       "word": "的花",
       "pinyin": "de huā",
-      "meaning": "",
+      "meaning": "的和花",
       "example": ""
     },
     {
@@ -6887,7 +6887,7 @@
     {
       "word": "的时",
       "pinyin": "de shí",
-      "meaning": "",
+      "meaning": "的的时",
       "example": ""
     },
     {
@@ -6933,7 +6933,7 @@
     {
       "word": "小虾",
       "pinyin": "xiǎo xiā",
-      "meaning": "",
+      "meaning": "小的虾",
       "example": ""
     },
     {
@@ -6945,7 +6945,7 @@
     {
       "word": "有的",
       "pinyin": "yǒu de",
-      "meaning": "",
+      "meaning": "有和的",
       "example": ""
     },
     {
@@ -6989,7 +6989,7 @@
     {
       "word": "路口",
       "pinyin": "lù kǒu",
-      "meaning": "",
+      "meaning": "路和嘴巴",
       "example": ""
     }
   ],
@@ -7020,7 +7020,7 @@
     {
       "word": "的另",
       "pinyin": "de lìng",
-      "meaning": "",
+      "meaning": "的的另",
       "example": ""
     }
   ],
@@ -7034,25 +7034,25 @@
     {
       "word": "妈妈",
       "pinyin": "mā mā",
-      "meaning": "",
+      "meaning": "妈妈和妈妈",
       "example": ""
     },
     {
       "word": "鸟窝",
       "pinyin": "niǎo wō",
-      "meaning": "",
+      "meaning": "鸟的窝",
       "example": ""
     },
     {
       "word": "我的",
       "pinyin": "wǒ de",
-      "meaning": "",
+      "meaning": "我和的",
       "example": ""
     },
     {
       "word": "的鸟",
       "pinyin": "de niǎo",
-      "meaning": "",
+      "meaning": "的和鸟",
       "example": ""
     }
   ],
@@ -7066,19 +7066,19 @@
     {
       "word": "有一",
       "pinyin": "yǒu yī",
-      "meaning": "",
+      "meaning": "有的一",
       "example": ""
     },
     {
       "word": "我要",
       "pinyin": "wǒ yào",
-      "meaning": "",
+      "meaning": "我的要",
       "example": ""
     },
     {
       "word": "多么",
       "pinyin": "duō me",
-      "meaning": "",
+      "meaning": "多的么",
       "example": ""
     },
     {
@@ -7104,7 +7104,7 @@
     {
       "word": "人影",
       "pinyin": "rén yǐng",
-      "meaning": "",
+      "meaning": "人的影",
       "example": ""
     },
     {
@@ -7124,7 +7124,7 @@
     {
       "word": "小沙",
       "pinyin": "xiǎo shā",
-      "meaning": "",
+      "meaning": "小的沙",
       "example": ""
     },
     {
@@ -7142,7 +7142,7 @@
     {
       "word": "师傅",
       "pinyin": "shī fù",
-      "meaning": "",
+      "meaning": "教师的傅",
       "example": ""
     },
     {
@@ -7194,7 +7194,7 @@
     {
       "word": "小珍",
       "pinyin": "xiǎo zhēn",
-      "meaning": "",
+      "meaning": "小的珍",
       "example": ""
     },
     {
@@ -7206,7 +7206,7 @@
     {
       "word": "妈妈",
       "pinyin": "mā mā",
-      "meaning": "",
+      "meaning": "妈妈和妈妈",
       "example": ""
     },
     {
@@ -7270,7 +7270,7 @@
     {
       "word": "天空",
       "pinyin": "tiān kōng",
-      "meaning": "",
+      "meaning": "天空的空",
       "example": ""
     },
     {
@@ -7284,13 +7284,13 @@
     {
       "word": "海底",
       "pinyin": "hǎi dǐ",
-      "meaning": "",
+      "meaning": "海的底",
       "example": ""
     },
     {
       "word": "的时",
       "pinyin": "de shí",
-      "meaning": "",
+      "meaning": "的的时",
       "example": ""
     },
     {
@@ -7307,7 +7307,7 @@
     {
       "word": "有的",
       "pinyin": "yǒu de",
-      "meaning": "",
+      "meaning": "有和的",
       "example": ""
     }
   ],
@@ -7327,7 +7327,7 @@
     {
       "word": "天空",
       "pinyin": "tiān kōng",
-      "meaning": "",
+      "meaning": "天空的空",
       "example": ""
     },
     {
@@ -7365,7 +7365,7 @@
     {
       "word": "水来",
       "pinyin": "shuǐ lái",
-      "meaning": "",
+      "meaning": "水的来",
       "example": ""
     },
     {
@@ -7443,7 +7443,7 @@
     {
       "word": "老虎",
       "pinyin": "lǎo hǔ",
-      "meaning": "",
+      "meaning": "老师的虎",
       "example": ""
     },
     {
@@ -7467,7 +7467,7 @@
     {
       "word": "老公",
       "pinyin": "lǎo gōng",
-      "meaning": "",
+      "meaning": "老师的公",
       "example": ""
     }
   ],
@@ -7507,7 +7507,7 @@
     {
       "word": "白居",
       "pinyin": "bái jū",
-      "meaning": "",
+      "meaning": "白色的居",
       "example": ""
     },
     {
@@ -7582,13 +7582,13 @@
     {
       "word": "月光",
       "pinyin": "yuè guāng",
-      "meaning": "",
+      "meaning": "月亮的光",
       "example": ""
     },
     {
       "word": "走着",
       "pinyin": "zǒu zhe",
-      "meaning": "",
+      "meaning": "走的着",
       "example": ""
     },
     {
@@ -7620,13 +7620,13 @@
     {
       "word": "的鸟",
       "pinyin": "de niǎo",
-      "meaning": "",
+      "meaning": "的和鸟",
       "example": ""
     },
     {
       "word": "鸟儿",
       "pinyin": "niǎo ér",
-      "meaning": "",
+      "meaning": "鸟的儿",
       "example": ""
     }
   ],
@@ -7634,7 +7634,7 @@
     {
       "word": "花牛",
       "pinyin": "huā niú",
-      "meaning": "",
+      "meaning": "花的牛",
       "example": ""
     },
     {
@@ -7646,19 +7646,19 @@
     {
       "word": "在草",
       "pinyin": "zài cǎo",
-      "meaning": "",
+      "meaning": "在和草",
       "example": ""
     },
     {
       "word": "草地",
       "pinyin": "cǎo dì",
-      "meaning": "",
+      "meaning": "草和大地",
       "example": ""
     },
     {
       "word": "地里",
       "pinyin": "dì lǐ",
-      "meaning": "",
+      "meaning": "大地的里",
       "example": ""
     }
   ],
@@ -7672,19 +7672,19 @@
     {
       "word": "的夜",
       "pinyin": "de yè",
-      "meaning": "",
+      "meaning": "的的夜",
       "example": ""
     },
     {
       "word": "的星",
       "pinyin": "de xīng",
-      "meaning": "",
+      "meaning": "的和星星",
       "example": ""
     },
     {
       "word": "看见",
       "pinyin": "kàn jiàn",
-      "meaning": "",
+      "meaning": "看的见",
       "example": ""
     },
     {
@@ -7768,7 +7768,7 @@
     {
       "word": "飞行",
       "pinyin": "fēi xíng",
-      "meaning": "",
+      "meaning": "飞的行",
       "example": ""
     },
     {
@@ -7780,7 +7780,7 @@
     {
       "word": "飞机",
       "pinyin": "fēi jī",
-      "meaning": "",
+      "meaning": "空中交通工具",
       "example": ""
     },
     {
@@ -7794,7 +7794,7 @@
     {
       "word": "人类",
       "pinyin": "rén lèi",
-      "meaning": "",
+      "meaning": "人的类",
       "example": ""
     },
     {
@@ -7837,19 +7837,19 @@
     {
       "word": "是那",
       "pinyin": "shì nà",
-      "meaning": "",
+      "meaning": "是的那",
       "example": ""
     },
     {
       "word": "们的",
       "pinyin": "men de",
-      "meaning": "",
+      "meaning": "们和的",
       "example": ""
     },
     {
       "word": "的家",
       "pinyin": "de jiā",
-      "meaning": "",
+      "meaning": "的和家",
       "example": ""
     }
   ],
@@ -7889,7 +7889,7 @@
     {
       "word": "白居",
       "pinyin": "bái jū",
-      "meaning": "",
+      "meaning": "白色的居",
       "example": ""
     },
     {
@@ -7921,7 +7921,7 @@
     {
       "word": "东坡",
       "pinyin": "dōng pō",
-      "meaning": "",
+      "meaning": "东方的坡",
       "example": ""
     },
     {
@@ -7959,7 +7959,7 @@
     {
       "word": "雪花",
       "pinyin": "xuě huā",
-      "meaning": "",
+      "meaning": "雪和花",
       "example": ""
     },
     {
@@ -7991,7 +7991,7 @@
     {
       "word": "山虎",
       "pinyin": "shān hǔ",
-      "meaning": "",
+      "meaning": "山的虎",
       "example": ""
     },
     {
@@ -8009,7 +8009,7 @@
     {
       "word": "的脚",
       "pinyin": "de jiǎo",
-      "meaning": "",
+      "meaning": "的的脚",
       "example": ""
     }
   ],
@@ -8067,7 +8067,7 @@
     {
       "word": "秋雨",
       "pinyin": "qiū yǔ",
-      "meaning": "",
+      "meaning": "秋天和雨",
       "example": ""
     },
     {
@@ -8099,13 +8099,13 @@
     {
       "word": "他的",
       "pinyin": "tā de",
-      "meaning": "",
+      "meaning": "他和的",
       "example": ""
     },
     {
       "word": "天和",
       "pinyin": "tiān hé",
-      "meaning": "",
+      "meaning": "天空和和",
       "example": ""
     }
   ],
@@ -8119,7 +8119,7 @@
     {
       "word": "东海",
       "pinyin": "dōng hǎi",
-      "meaning": "",
+      "meaning": "东方和海",
       "example": ""
     },
     {
@@ -8169,7 +8169,7 @@
     {
       "word": "火种",
       "pinyin": "huǒ zhǒng",
-      "meaning": "",
+      "meaning": "火的种",
       "example": ""
     }
   ],
@@ -8183,7 +8183,7 @@
     {
       "word": "人类",
       "pinyin": "rén lèi",
-      "meaning": "",
+      "meaning": "人的类",
       "example": ""
     },
     {
@@ -8195,13 +8195,13 @@
     {
       "word": "人们",
       "pinyin": "rén men",
-      "meaning": "",
+      "meaning": "人和们",
       "example": ""
     },
     {
       "word": "天上",
       "pinyin": "tiān shàng",
-      "meaning": "",
+      "meaning": "天空和上面",
       "example": ""
     }
   ],
@@ -8233,7 +8233,7 @@
     {
       "word": "云母",
       "pinyin": "yún mǔ",
-      "meaning": "",
+      "meaning": "云的母",
       "example": ""
     }
   ],
@@ -8253,19 +8253,19 @@
     {
       "word": "我的",
       "pinyin": "wǒ de",
-      "meaning": "",
+      "meaning": "我和的",
       "example": ""
     },
     {
       "word": "小麻",
       "pinyin": "xiǎo má",
-      "meaning": "",
+      "meaning": "小的麻",
       "example": ""
     },
     {
       "word": "下来",
       "pinyin": "xià lái",
-      "meaning": "",
+      "meaning": "下面的来",
       "example": ""
     }
   ],
@@ -8279,13 +8279,13 @@
     {
       "word": "老爷",
       "pinyin": "lǎo yé",
-      "meaning": "",
+      "meaning": "老师的爷",
       "example": ""
     },
     {
       "word": "天都",
       "pinyin": "tiān dōu",
-      "meaning": "",
+      "meaning": "天空的都",
       "example": ""
     },
     {
@@ -8297,7 +8297,7 @@
     {
       "word": "爸爸",
       "pinyin": "bà bà",
-      "meaning": "",
+      "meaning": "爸爸和爸爸",
       "example": ""
     }
   ],
@@ -8311,19 +8311,19 @@
     {
       "word": "小木",
       "pinyin": "xiǎo mù",
-      "meaning": "",
+      "meaning": "小和树木",
       "example": ""
     },
     {
       "word": "木船",
       "pinyin": "mù chuán",
-      "meaning": "",
+      "meaning": "树木和船",
       "example": ""
     },
     {
       "word": "的小",
       "pinyin": "de xiǎo",
-      "meaning": "",
+      "meaning": "的和小",
       "example": ""
     },
     {
@@ -8349,7 +8349,7 @@
     {
       "word": "们看",
       "pinyin": "men kàn",
-      "meaning": "",
+      "meaning": "们和看",
       "example": ""
     },
     {
@@ -8369,7 +8369,7 @@
     {
       "word": "老虎",
       "pinyin": "lǎo hǔ",
-      "meaning": "",
+      "meaning": "老师的虎",
       "example": ""
     },
     {
@@ -8406,13 +8406,13 @@
     {
       "word": "我的",
       "pinyin": "wǒ de",
-      "meaning": "",
+      "meaning": "我和的",
       "example": ""
     },
     {
       "word": "冰尜",
       "pinyin": "bīng gá",
-      "meaning": "",
+      "meaning": "冰的尜",
       "example": ""
     },
     {
@@ -8424,7 +8424,7 @@
     {
       "word": "的陀",
       "pinyin": "de tuó",
-      "meaning": "",
+      "meaning": "的的陀",
       "example": ""
     }
   ],
@@ -8432,7 +8432,7 @@
     {
       "word": "有所",
       "pinyin": "yǒu suǒ",
-      "meaning": "",
+      "meaning": "有的所",
       "example": ""
     },
     {
@@ -8571,13 +8571,13 @@
     {
       "word": "国人",
       "pinyin": "guó rén",
-      "meaning": "",
+      "meaning": "国家和人",
       "example": ""
     },
     {
       "word": "中华",
       "pinyin": "zhōng huá",
-      "meaning": "",
+      "meaning": "中国的华",
       "example": ""
     },
     {
@@ -8609,7 +8609,7 @@
     {
       "word": "日本",
       "pinyin": "rì běn",
-      "meaning": "",
+      "meaning": "太阳和本子",
       "example": ""
     },
     {
@@ -8640,13 +8640,13 @@
     {
       "word": "在追",
       "pinyin": "zài zhuī",
-      "meaning": "",
+      "meaning": "在的追",
       "example": ""
     },
     {
       "word": "的春",
       "pinyin": "de chūn",
-      "meaning": "",
+      "meaning": "的和春天",
       "example": ""
     }
   ],
@@ -8654,7 +8654,7 @@
     {
       "word": "高适",
       "pinyin": "gāo shì",
-      "meaning": "",
+      "meaning": "高的适",
       "example": ""
     },
     {
@@ -8678,7 +8678,7 @@
     {
       "word": "黄云",
       "pinyin": "huáng yún",
-      "meaning": "",
+      "meaning": "黄色和云",
       "example": ""
     }
   ],
@@ -8718,13 +8718,13 @@
     {
       "word": "西门",
       "pinyin": "xī mén",
-      "meaning": "",
+      "meaning": "西方和门",
       "example": ""
     },
     {
       "word": "门豹",
       "pinyin": "mén bào",
-      "meaning": "",
+      "meaning": "门的豹",
       "example": ""
     },
     {
@@ -8742,7 +8742,7 @@
     {
       "word": "河神",
       "pinyin": "hé shén",
-      "meaning": "",
+      "meaning": "河的神",
       "example": ""
     }
   ],
@@ -8782,7 +8782,7 @@
     {
       "word": "飞卫",
       "pinyin": "fēi wèi",
-      "meaning": "",
+      "meaning": "飞的卫",
       "example": ""
     },
     {
@@ -8896,7 +8896,7 @@
     {
       "word": "飞入",
       "pinyin": "fēi rù",
-      "meaning": "",
+      "meaning": "飞的入",
       "example": ""
     },
     {
@@ -8942,7 +8942,7 @@
     {
       "word": "人家",
       "pinyin": "rén jiā",
-      "meaning": "",
+      "meaning": "人和家",
       "example": ""
     },
     {
@@ -8954,7 +8954,7 @@
     {
       "word": "下人",
       "pinyin": "xià rén",
-      "meaning": "",
+      "meaning": "下面和人",
       "example": ""
     },
     {
@@ -8966,7 +8966,7 @@
     {
       "word": "的瓜",
       "pinyin": "de guā",
-      "meaning": "",
+      "meaning": "的的瓜",
       "example": ""
     }
   ],
@@ -8980,19 +8980,19 @@
     {
       "word": "想象",
       "pinyin": "xiǎng xiàng",
-      "meaning": "",
+      "meaning": "想的象",
       "example": ""
     },
     {
       "word": "天窗",
       "pinyin": "tiān chuāng",
-      "meaning": "",
+      "meaning": "天空和窗",
       "example": ""
     },
     {
       "word": "木板",
       "pinyin": "mù bǎn",
-      "meaning": "",
+      "meaning": "树木的板",
       "example": ""
     },
     {
@@ -9018,19 +9018,19 @@
     {
       "word": "花水",
       "pinyin": "huā shuǐ",
-      "meaning": "",
+      "meaning": "花和水",
       "example": ""
     },
     {
       "word": "月的",
       "pinyin": "yuè de",
-      "meaning": "",
+      "meaning": "月亮和的",
       "example": ""
     },
     {
       "word": "的桃",
       "pinyin": "de táo",
-      "meaning": "",
+      "meaning": "的的桃",
       "example": ""
     }
   ],
@@ -9049,13 +9049,13 @@
     {
       "word": "飞雪",
       "pinyin": "fēi xuě",
-      "meaning": "",
+      "meaning": "飞和雪",
       "example": ""
     },
     {
       "word": "是悬",
       "pinyin": "shì xuán",
-      "meaning": "",
+      "meaning": "是的悬",
       "example": ""
     },
     {
@@ -9107,25 +9107,25 @@
     {
       "word": "鸟类",
       "pinyin": "niǎo lèi",
-      "meaning": "",
+      "meaning": "鸟的类",
       "example": ""
     },
     {
       "word": "有些",
       "pinyin": "yǒu xiē",
-      "meaning": "",
+      "meaning": "有的些",
       "example": ""
     },
     {
       "word": "学家",
       "pinyin": "xué jiā",
-      "meaning": "",
+      "meaning": "学习和家",
       "example": ""
     },
     {
       "word": "的恐",
       "pinyin": "de kǒng",
-      "meaning": "",
+      "meaning": "的的恐",
       "example": ""
     }
   ],
@@ -9176,13 +9176,13 @@
     {
       "word": "月球",
       "pinyin": "yuè qiú",
-      "meaning": "",
+      "meaning": "月亮的球",
       "example": ""
     },
     {
       "word": "我国",
       "pinyin": "wǒ guó",
-      "meaning": "",
+      "meaning": "我和国家",
       "example": ""
     },
     {
@@ -9234,7 +9234,7 @@
     {
       "word": "是永",
       "pinyin": "shì yǒng",
-      "meaning": "",
+      "meaning": "是的永",
       "example": ""
     },
     {
@@ -9271,7 +9271,7 @@
     {
       "word": "海啊",
       "pinyin": "hǎi a",
-      "meaning": "",
+      "meaning": "海的啊",
       "example": ""
     },
     {
@@ -9291,7 +9291,7 @@
     {
       "word": "的风",
       "pinyin": "de fēng",
-      "meaning": "",
+      "meaning": "的和风",
       "example": ""
     },
     {
@@ -9302,7 +9302,7 @@
     {
       "word": "雨来",
       "pinyin": "yǔ lái",
-      "meaning": "",
+      "meaning": "雨的来",
       "example": ""
     },
     {
@@ -9322,19 +9322,19 @@
     {
       "word": "是绿",
       "pinyin": "shì lǜ",
-      "meaning": "",
+      "meaning": "是和绿色",
       "example": ""
     },
     {
       "word": "绿的",
       "pinyin": "lǜ de",
-      "meaning": "",
+      "meaning": "绿色和的",
       "example": ""
     },
     {
       "word": "在一",
       "pinyin": "zài yī",
-      "meaning": "",
+      "meaning": "在的一",
       "example": ""
     },
     {
@@ -9346,7 +9346,7 @@
     {
       "word": "的绿",
       "pinyin": "de lǜ",
-      "meaning": "",
+      "meaning": "的和绿色",
       "example": ""
     }
   ],
@@ -9354,7 +9354,7 @@
     {
       "word": "白桦",
       "pinyin": "bái huà",
-      "meaning": "",
+      "meaning": "白色的桦",
       "example": ""
     },
     {
@@ -9366,19 +9366,19 @@
     {
       "word": "雪花",
       "pinyin": "xuě huā",
-      "meaning": "",
+      "meaning": "雪和花",
       "example": ""
     },
     {
       "word": "在我",
       "pinyin": "zài wǒ",
-      "meaning": "",
+      "meaning": "在和我",
       "example": ""
     },
     {
       "word": "我的",
       "pinyin": "wǒ de",
-      "meaning": "",
+      "meaning": "我和的",
       "example": ""
     }
   ],
@@ -9386,13 +9386,13 @@
     {
       "word": "在天",
       "pinyin": "zài tiān",
-      "meaning": "",
+      "meaning": "在和天空",
       "example": ""
     },
     {
       "word": "天晴",
       "pinyin": "tiān qíng",
-      "meaning": "",
+      "meaning": "天空的晴",
       "example": ""
     },
     {
@@ -9410,7 +9410,7 @@
     {
       "word": "的时",
       "pinyin": "de shí",
-      "meaning": "",
+      "meaning": "的的时",
       "example": ""
     }
   ],
@@ -9430,7 +9430,7 @@
     {
       "word": "人类",
       "pinyin": "rén lèi",
-      "meaning": "",
+      "meaning": "人的类",
       "example": ""
     },
     {
@@ -9474,7 +9474,7 @@
     {
       "word": "老鼠",
       "pinyin": "lǎo shǔ",
-      "meaning": "",
+      "meaning": "老师的鼠",
       "example": ""
     }
   ],
@@ -9519,7 +9519,7 @@
     {
       "word": "吃饭",
       "pinyin": "chī fàn",
-      "meaning": "",
+      "meaning": "吃的饭",
       "example": ""
     },
     {
@@ -9582,7 +9582,7 @@
     {
       "word": "黑云",
       "pinyin": "hēi yún",
-      "meaning": "",
+      "meaning": "黑色和云",
       "example": ""
     },
     {
@@ -9594,7 +9594,7 @@
     {
       "word": "天边",
       "pinyin": "tiān biān",
-      "meaning": "",
+      "meaning": "天空的边",
       "example": ""
     },
     {
@@ -9608,7 +9608,7 @@
     {
       "word": "小船",
       "pinyin": "xiǎo chuán",
-      "meaning": "",
+      "meaning": "小和船",
       "example": ""
     },
     {
@@ -9640,7 +9640,7 @@
     {
       "word": "天山",
       "pinyin": "tiān shān",
-      "meaning": "",
+      "meaning": "天空和山",
       "example": ""
     },
     {
@@ -9652,13 +9652,13 @@
     {
       "word": "和园",
       "pinyin": "hé yuán",
-      "meaning": "",
+      "meaning": "和和园子",
       "example": ""
     },
     {
       "word": "长廊",
       "pinyin": "cháng láng",
-      "meaning": "",
+      "meaning": "长的廊",
       "example": ""
     },
     {
@@ -9690,7 +9690,7 @@
     {
       "word": "车胤",
       "pinyin": "chē yìn",
-      "meaning": "",
+      "meaning": "车的胤",
       "example": ""
     },
     {
@@ -9716,7 +9716,7 @@
     {
       "word": "在象",
       "pinyin": "zài xiàng",
-      "meaning": "",
+      "meaning": "在的象",
       "example": ""
     },
     {
@@ -9728,7 +9728,7 @@
     {
       "word": "耳山",
       "pinyin": "ěr shān",
-      "meaning": "",
+      "meaning": "耳朵和山",
       "example": ""
     }
   ],
@@ -9736,7 +9736,7 @@
     {
       "word": "雨来",
       "pinyin": "yǔ lái",
-      "meaning": "",
+      "meaning": "雨的来",
       "example": ""
     },
     {
@@ -9748,7 +9748,7 @@
     {
       "word": "妈妈",
       "pinyin": "mā mā",
-      "meaning": "",
+      "meaning": "妈妈和妈妈",
       "example": ""
     },
     {
@@ -9760,7 +9760,7 @@
     {
       "word": "河沿",
       "pinyin": "hé yán",
-      "meaning": "",
+      "meaning": "河的沿",
       "example": ""
     }
   ],
@@ -9768,7 +9768,7 @@
     {
       "word": "他的",
       "pinyin": "tā de",
-      "meaning": "",
+      "meaning": "他和的",
       "example": ""
     },
     {
@@ -9812,7 +9812,7 @@
     {
       "word": "花鞋",
       "pinyin": "huā xié",
-      "meaning": "",
+      "meaning": "花的鞋",
       "example": ""
     },
     {
@@ -9824,7 +9824,7 @@
     {
       "word": "的芦",
       "pinyin": "de lú",
-      "meaning": "",
+      "meaning": "的的芦",
       "example": ""
     }
   ],
@@ -9856,7 +9856,7 @@
     {
       "word": "雨来",
       "pinyin": "yǔ lái",
-      "meaning": "",
+      "meaning": "雨的来",
       "example": ""
     }
   ],
@@ -9920,7 +9920,7 @@
     {
       "word": "大雪",
       "pinyin": "dà xuě",
-      "meaning": "",
+      "meaning": "大和雪",
       "example": ""
     }
   ],
@@ -9940,13 +9940,13 @@
     {
       "word": "我家",
       "pinyin": "wǒ jiā",
-      "meaning": "",
+      "meaning": "我和家",
       "example": ""
     },
     {
       "word": "家洗",
       "pinyin": "jiā xǐ",
-      "meaning": "",
+      "meaning": "家的洗",
       "example": ""
     },
     {
@@ -9960,7 +9960,7 @@
     {
       "word": "黄继",
       "pinyin": "huáng jì",
-      "meaning": "",
+      "meaning": "黄色的继",
       "example": ""
     },
     {
@@ -9984,7 +9984,7 @@
     {
       "word": "火力",
       "pinyin": "huǒ lì",
-      "meaning": "",
+      "meaning": "火的力",
       "example": ""
     }
   ],
@@ -9992,7 +9992,7 @@
     {
       "word": "船长",
       "pinyin": "chuán cháng",
-      "meaning": "",
+      "meaning": "船和长",
       "example": ""
     },
     {
@@ -10024,7 +10024,7 @@
     {
       "word": "你们",
       "pinyin": "nǐ men",
-      "meaning": "",
+      "meaning": "你和们",
       "example": ""
     },
     {
@@ -10036,7 +10036,7 @@
     {
       "word": "山工",
       "pinyin": "shān gōng",
-      "meaning": "",
+      "meaning": "山的工",
       "example": ""
     },
     {
@@ -10056,7 +10056,7 @@
     {
       "word": "和蔼",
       "pinyin": "hé ǎi",
-      "meaning": "",
+      "meaning": "和的蔼",
       "example": ""
     },
     {
@@ -10142,7 +10142,7 @@
     {
       "word": "的花",
       "pinyin": "de huā",
-      "meaning": "",
+      "meaning": "的和花",
       "example": ""
     }
   ],
@@ -10150,7 +10150,7 @@
     {
       "word": "的花",
       "pinyin": "de huā",
-      "meaning": "",
+      "meaning": "的和花",
       "example": ""
     },
     {
@@ -10162,13 +10162,13 @@
     {
       "word": "海底",
       "pinyin": "hǎi dǐ",
-      "meaning": "",
+      "meaning": "海的底",
       "example": ""
     },
     {
       "word": "是一",
       "pinyin": "shì yī",
-      "meaning": "",
+      "meaning": "是的一",
       "example": ""
     },
     {
@@ -10193,7 +10193,7 @@
     {
       "word": "少年",
       "pinyin": "shǎo nián",
-      "meaning": "",
+      "meaning": "少的年",
       "example": ""
     },
     {
@@ -10213,7 +10213,7 @@
     {
       "word": "白鹭",
       "pinyin": "bái lù",
-      "meaning": "",
+      "meaning": "白色的鹭",
       "example": ""
     },
     {
@@ -10237,7 +10237,7 @@
     {
       "word": "是一",
       "pinyin": "shì yī",
-      "meaning": "",
+      "meaning": "是的一",
       "example": ""
     }
   ],
@@ -10245,7 +10245,7 @@
     {
       "word": "花生",
       "pinyin": "huā shēng",
-      "meaning": "",
+      "meaning": "花的生",
       "example": ""
     },
     {
@@ -10256,7 +10256,7 @@
     {
       "word": "你们",
       "pinyin": "nǐ men",
-      "meaning": "",
+      "meaning": "你和们",
       "example": ""
     },
     {
@@ -10286,13 +10286,13 @@
     {
       "word": "的时",
       "pinyin": "de shí",
-      "meaning": "",
+      "meaning": "的的时",
       "example": ""
     },
     {
       "word": "是桂",
       "pinyin": "shì guì",
-      "meaning": "",
+      "meaning": "是的桂",
       "example": ""
     },
     {
@@ -10306,7 +10306,7 @@
     {
       "word": "我的",
       "pinyin": "wǒ de",
-      "meaning": "",
+      "meaning": "我和的",
       "example": ""
     },
     {
@@ -10350,7 +10350,7 @@
     {
       "word": "花生",
       "pinyin": "huā shēng",
-      "meaning": "",
+      "meaning": "花的生",
       "example": ""
     },
     {
@@ -10376,25 +10376,25 @@
     {
       "word": "人们",
       "pinyin": "rén men",
-      "meaning": "",
+      "meaning": "人和们",
       "example": ""
     },
     {
       "word": "的人",
       "pinyin": "de rén",
-      "meaning": "",
+      "meaning": "的和人",
       "example": ""
     },
     {
       "word": "家乡",
       "pinyin": "jiā xiāng",
-      "meaning": "",
+      "meaning": "家的乡",
       "example": ""
     },
     {
       "word": "小溪",
       "pinyin": "xiǎo xī",
-      "meaning": "",
+      "meaning": "小的溪",
       "example": ""
     }
   ],
@@ -10440,7 +10440,7 @@
     {
       "word": "的速",
       "pinyin": "de sù",
-      "meaning": "",
+      "meaning": "的的速",
       "example": ""
     },
     {
@@ -10466,7 +10466,7 @@
     {
       "word": "地道",
       "pinyin": "dì dào",
-      "meaning": "",
+      "meaning": "大地的道",
       "example": ""
     },
     {
@@ -10478,7 +10478,7 @@
     {
       "word": "的地",
       "pinyin": "de dì",
-      "meaning": "",
+      "meaning": "的和大地",
       "example": ""
     },
     {
@@ -10490,7 +10490,7 @@
     {
       "word": "有的",
       "pinyin": "yǒu de",
-      "meaning": "",
+      "meaning": "有和的",
       "example": ""
     }
   ],
@@ -10498,7 +10498,7 @@
     {
       "word": "的速",
       "pinyin": "de sù",
-      "meaning": "",
+      "meaning": "的的速",
       "example": ""
     },
     {
@@ -10522,7 +10522,7 @@
     {
       "word": "读的",
       "pinyin": "dú de",
-      "meaning": "",
+      "meaning": "读和的",
       "example": ""
     }
   ],
@@ -10530,7 +10530,7 @@
     {
       "word": "海力",
       "pinyin": "hǎi lì",
-      "meaning": "",
+      "meaning": "海的力",
       "example": ""
     },
     {
@@ -10542,19 +10542,19 @@
     {
       "word": "大家",
       "pinyin": "dà jiā",
-      "meaning": "",
+      "meaning": "大和家",
       "example": ""
     },
     {
       "word": "小白",
       "pinyin": "xiǎo bái",
-      "meaning": "",
+      "meaning": "小和白色",
       "example": ""
     },
     {
       "word": "白蛇",
       "pinyin": "bái shé",
-      "meaning": "",
+      "meaning": "白色的蛇",
       "example": ""
     }
   ],
@@ -10568,7 +10568,7 @@
     {
       "word": "老牛",
       "pinyin": "lǎo niú",
-      "meaning": "",
+      "meaning": "老师的牛",
       "example": ""
     },
     {
@@ -10612,7 +10612,7 @@
     {
       "word": "天河",
       "pinyin": "tiān hé",
-      "meaning": "",
+      "meaning": "天空和河",
       "example": ""
     },
     {
@@ -10626,7 +10626,7 @@
     {
       "word": "小羊",
       "pinyin": "xiǎo yáng",
-      "meaning": "",
+      "meaning": "小的羊",
       "example": ""
     },
     {
@@ -10675,7 +10675,7 @@
     {
       "word": "田螺",
       "pinyin": "tián luó",
-      "meaning": "",
+      "meaning": "田地的螺",
       "example": ""
     },
     {
@@ -10701,19 +10701,19 @@
     {
       "word": "中原",
       "pinyin": "zhōng yuán",
-      "meaning": "",
+      "meaning": "中国的原",
       "example": ""
     },
     {
       "word": "家祭",
       "pinyin": "jiā jì",
-      "meaning": "",
+      "meaning": "家的祭",
       "example": ""
     },
     {
       "word": "学家",
       "pinyin": "xué jiā",
-      "meaning": "",
+      "meaning": "学习和家",
       "example": ""
     }
   ],
@@ -10721,13 +10721,13 @@
     {
       "word": "林升",
       "pinyin": "lín shēng",
-      "meaning": "",
+      "meaning": "树林的升",
       "example": ""
     },
     {
       "word": "西湖",
       "pinyin": "xī hú",
-      "meaning": "",
+      "meaning": "西方的湖",
       "example": ""
     },
     {
@@ -10739,13 +10739,13 @@
     {
       "word": "歌舞",
       "pinyin": "gē wǔ",
-      "meaning": "",
+      "meaning": "歌和舞蹈",
       "example": ""
     },
     {
       "word": "舞几",
       "pinyin": "wǔ jǐ",
-      "meaning": "",
+      "meaning": "舞蹈的几",
       "example": ""
     }
   ],
@@ -10777,7 +10777,7 @@
     {
       "word": "风雷",
       "pinyin": "fēng léi",
-      "meaning": "",
+      "meaning": "风的雷",
       "example": ""
     }
   ],
@@ -10785,7 +10785,7 @@
     {
       "word": "少年",
       "pinyin": "shǎo nián",
-      "meaning": "",
+      "meaning": "少的年",
       "example": ""
     },
     {
@@ -10797,7 +10797,7 @@
     {
       "word": "我少",
       "pinyin": "wǒ shǎo",
-      "meaning": "",
+      "meaning": "我和少",
       "example": ""
     },
     {
@@ -10829,7 +10829,7 @@
     {
       "word": "北京",
       "pinyin": "běi jīng",
-      "meaning": "",
+      "meaning": "北方的京",
       "example": ""
     },
     {
@@ -10841,7 +10841,7 @@
     {
       "word": "园中",
       "pinyin": "yuán zhōng",
-      "meaning": "",
+      "meaning": "园子和中国",
       "example": ""
     }
   ],
@@ -10893,19 +10893,19 @@
     {
       "word": "春园",
       "pinyin": "chūn yuán",
-      "meaning": "",
+      "meaning": "春天和园子",
       "example": ""
     },
     {
       "word": "在圆",
       "pinyin": "zài yuán",
-      "meaning": "",
+      "meaning": "在的圆",
       "example": ""
     },
     {
       "word": "的果",
       "pinyin": "de guǒ",
-      "meaning": "",
+      "meaning": "的的果",
       "example": ""
     }
   ],
@@ -10929,7 +10929,7 @@
     {
       "word": "地面",
       "pinyin": "dì miàn",
-      "meaning": "",
+      "meaning": "大地的面",
       "example": ""
     },
     {
@@ -10961,13 +10961,13 @@
     {
       "word": "在树",
       "pinyin": "zài shù",
-      "meaning": "",
+      "meaning": "在的树",
       "example": ""
     },
     {
       "word": "的毛",
       "pinyin": "de máo",
-      "meaning": "",
+      "meaning": "的的毛",
       "example": ""
     }
   ],
@@ -11117,7 +11117,7 @@
     {
       "word": "的哭",
       "pinyin": "de kū",
-      "meaning": "",
+      "meaning": "的的哭",
       "example": ""
     },
     {
@@ -11149,7 +11149,7 @@
     {
       "word": "天气",
       "pinyin": "tiān qì",
-      "meaning": "",
+      "meaning": "天空的气",
       "example": ""
     },
     {
@@ -11163,7 +11163,7 @@
     {
       "word": "他的",
       "pinyin": "tā de",
-      "meaning": "",
+      "meaning": "他和的",
       "example": ""
     },
     {
@@ -11207,7 +11207,7 @@
     {
       "word": "的声",
       "pinyin": "de shēng",
-      "meaning": "",
+      "meaning": "的的声",
       "example": ""
     },
     {
@@ -11244,7 +11244,7 @@
     {
       "word": "鸟的",
       "pinyin": "niǎo de",
-      "meaning": "",
+      "meaning": "鸟和的",
       "example": ""
     },
     {
@@ -11269,13 +11269,13 @@
     {
       "word": "有了",
       "pinyin": "yǒu le",
-      "meaning": "",
+      "meaning": "有的了",
       "example": ""
     },
     {
       "word": "们都",
       "pinyin": "men dōu",
-      "meaning": "",
+      "meaning": "们的都",
       "example": ""
     },
     {
@@ -11362,7 +11362,7 @@
     {
       "word": "国演",
       "pinyin": "guó yǎn",
-      "meaning": "",
+      "meaning": "国家的演",
       "example": ""
     },
     {
@@ -11374,7 +11374,7 @@
     {
       "word": "多了",
       "pinyin": "duō le",
-      "meaning": "",
+      "meaning": "多的了",
       "example": ""
     }
   ],
@@ -11388,7 +11388,7 @@
     {
       "word": "我的",
       "pinyin": "wǒ de",
-      "meaning": "",
+      "meaning": "我和的",
       "example": ""
     },
     {
@@ -11405,7 +11405,7 @@
     {
       "word": "的小",
       "pinyin": "de xiǎo",
-      "meaning": "",
+      "meaning": "的和小",
       "example": ""
     }
   ],
@@ -11533,7 +11533,7 @@
     {
       "word": "短笛",
       "pinyin": "duǎn dí",
-      "meaning": "",
+      "meaning": "短的笛",
       "example": ""
     }
   ],
@@ -11590,7 +11590,7 @@
     {
       "word": "看到",
       "pinyin": "kàn dào",
-      "meaning": "",
+      "meaning": "看的到",
       "example": ""
     },
     {
@@ -11628,7 +11628,7 @@
     {
       "word": "的外",
       "pinyin": "de wài",
-      "meaning": "",
+      "meaning": "的的外",
       "example": ""
     }
   ],
@@ -11705,7 +11705,7 @@
     {
       "word": "大虫",
       "pinyin": "dà chóng",
-      "meaning": "",
+      "meaning": "大和虫子",
       "example": ""
     },
     {
@@ -11723,7 +11723,7 @@
     {
       "word": "家道",
       "pinyin": "jiā dào",
-      "meaning": "",
+      "meaning": "家的道",
       "example": ""
     }
   ],
@@ -11749,7 +11749,7 @@
     {
       "word": "有一",
       "pinyin": "yǒu yī",
-      "meaning": "",
+      "meaning": "有的一",
       "example": ""
     },
     {
@@ -11775,7 +11775,7 @@
     {
       "word": "风筝",
       "pinyin": "fēng zhēng",
-      "meaning": "",
+      "meaning": "风的筝",
       "example": ""
     },
     {
@@ -12010,7 +12010,7 @@
     {
       "word": "手术",
       "pinyin": "shǒu shù",
-      "meaning": "",
+      "meaning": "手的术",
       "example": ""
     }
   ],
@@ -12024,7 +12024,7 @@
     {
       "word": "在我",
       "pinyin": "zài wǒ",
-      "meaning": "",
+      "meaning": "在和我",
       "example": ""
     },
     {
@@ -12042,7 +12042,7 @@
     {
       "word": "我的",
       "pinyin": "wǒ de",
-      "meaning": "",
+      "meaning": "我和的",
       "example": ""
     }
   ],
@@ -12056,7 +12056,7 @@
     {
       "word": "门关",
       "pinyin": "mén guān",
-      "meaning": "",
+      "meaning": "门的关",
       "example": ""
     },
     {
@@ -12068,7 +12068,7 @@
     {
       "word": "黄河",
       "pinyin": "huáng hé",
-      "meaning": "",
+      "meaning": "黄色和河",
       "example": ""
     },
     {
@@ -12082,7 +12082,7 @@
     {
       "word": "小嘎",
       "pinyin": "xiǎo gǎ",
-      "meaning": "",
+      "meaning": "小的嘎",
       "example": ""
     },
     {
@@ -12100,13 +12100,13 @@
     {
       "word": "他的",
       "pinyin": "tā de",
-      "meaning": "",
+      "meaning": "他和的",
       "example": ""
     },
     {
       "word": "小胖",
       "pinyin": "xiǎo pàng",
-      "meaning": "",
+      "meaning": "小的胖",
       "example": ""
     }
   ],
@@ -12126,7 +12126,7 @@
     {
       "word": "小三",
       "pinyin": "xiǎo sān",
-      "meaning": "",
+      "meaning": "小的三",
       "example": ""
     },
     {
@@ -12138,7 +12138,7 @@
     {
       "word": "白点",
       "pinyin": "bái diǎn",
-      "meaning": "",
+      "meaning": "白色的点",
       "example": ""
     }
   ],
@@ -12178,13 +12178,13 @@
     {
       "word": "的盾",
       "pinyin": "de dùn",
-      "meaning": "",
+      "meaning": "的的盾",
       "example": ""
     },
     {
       "word": "的矛",
       "pinyin": "de máo",
-      "meaning": "",
+      "meaning": "的的矛",
       "example": ""
     },
     {
@@ -12210,7 +12210,7 @@
     {
       "word": "田忌",
       "pinyin": "tián jì",
-      "meaning": "",
+      "meaning": "田地的忌",
       "example": ""
     },
     {
@@ -12266,7 +12266,7 @@
     {
       "word": "水手",
       "pinyin": "shuǐ shǒu",
-      "meaning": "",
+      "meaning": "水和手",
       "example": ""
     }
   ],
@@ -12292,7 +12292,7 @@
     {
       "word": "水手",
       "pinyin": "shuǐ shǒu",
-      "meaning": "",
+      "meaning": "水和手",
       "example": ""
     },
     {
@@ -12306,7 +12306,7 @@
     {
       "word": "小艇",
       "pinyin": "xiǎo tǐng",
-      "meaning": "",
+      "meaning": "小的艇",
       "example": ""
     },
     {
@@ -12324,13 +12324,13 @@
     {
       "word": "水上",
       "pinyin": "shuǐ shàng",
-      "meaning": "",
+      "meaning": "水和上面",
       "example": ""
     },
     {
       "word": "的小",
       "pinyin": "de xiǎo",
-      "meaning": "",
+      "meaning": "的和小",
       "example": ""
     }
   ],
@@ -12362,7 +12362,7 @@
     {
       "word": "是真",
       "pinyin": "shì zhēn",
-      "meaning": "",
+      "meaning": "是的真",
       "example": ""
     }
   ],
@@ -12376,7 +12376,7 @@
     {
       "word": "字塔",
       "pinyin": "zì tǎ",
-      "meaning": "",
+      "meaning": "字的塔",
       "example": ""
     },
     {
@@ -12408,13 +12408,13 @@
     {
       "word": "白的",
       "pinyin": "bái de",
-      "meaning": "",
+      "meaning": "白色和的",
       "example": ""
     },
     {
       "word": "大理",
       "pinyin": "dà lǐ",
-      "meaning": "",
+      "meaning": "大的理",
       "example": ""
     },
     {
@@ -12426,7 +12426,7 @@
     {
       "word": "是纯",
       "pinyin": "shì chún",
-      "meaning": "",
+      "meaning": "是的纯",
       "example": ""
     }
   ],
@@ -12452,7 +12452,7 @@
     {
       "word": "水果",
       "pinyin": "shuǐ guǒ",
-      "meaning": "",
+      "meaning": "水的果",
       "example": ""
     },
     {
@@ -12466,13 +12466,13 @@
     {
       "word": "手指",
       "pinyin": "shǒu zhǐ",
-      "meaning": "",
+      "meaning": "手的指",
       "example": ""
     },
     {
       "word": "大拇",
       "pinyin": "dà mǔ",
-      "meaning": "",
+      "meaning": "大的拇",
       "example": ""
     },
     {
@@ -12503,7 +12503,7 @@
     {
       "word": "我的",
       "pinyin": "wǒ de",
-      "meaning": "",
+      "meaning": "我和的",
       "example": ""
     },
     {
@@ -12514,7 +12514,7 @@
     {
       "word": "的发",
       "pinyin": "de fā",
-      "meaning": "",
+      "meaning": "的的发",
       "example": ""
     },
     {
@@ -12564,7 +12564,7 @@
     {
       "word": "小丘",
       "pinyin": "xiǎo qiū",
-      "meaning": "",
+      "meaning": "小的丘",
       "example": ""
     },
     {
@@ -12596,7 +12596,7 @@
     {
       "word": "的丁",
       "pinyin": "de dīng",
-      "meaning": "",
+      "meaning": "的的丁",
       "example": ""
     },
     {
@@ -12653,7 +12653,7 @@
     {
       "word": "东坡",
       "pinyin": "dōng pō",
-      "meaning": "",
+      "meaning": "东方的坡",
       "example": ""
     },
     {
@@ -12717,13 +12717,13 @@
     {
       "word": "我是",
       "pinyin": "wǒ shì",
-      "meaning": "",
+      "meaning": "我和是",
       "example": ""
     },
     {
       "word": "大自",
       "pinyin": "dà zì",
-      "meaning": "",
+      "meaning": "大的自",
       "example": ""
     },
     {
@@ -12740,7 +12740,7 @@
     {
       "word": "我在",
       "pinyin": "wǒ zài",
-      "meaning": "",
+      "meaning": "我和在",
       "example": ""
     }
   ],
@@ -12779,7 +12779,7 @@
     {
       "word": "红军",
       "pinyin": "hóng jūn",
-      "meaning": "",
+      "meaning": "红色的军",
       "example": ""
     },
     {
@@ -12843,7 +12843,7 @@
     {
       "word": "人民",
       "pinyin": "rén mín",
-      "meaning": "",
+      "meaning": "人的民",
       "example": ""
     },
     {
@@ -12855,7 +12855,7 @@
     {
       "word": "中央",
       "pinyin": "zhōng yāng",
-      "meaning": "",
+      "meaning": "中国的央",
       "example": ""
     },
     {
@@ -12893,7 +12893,7 @@
     {
       "word": "的围",
       "pinyin": "de wéi",
-      "meaning": "",
+      "meaning": "的的围",
       "example": ""
     },
     {
@@ -12919,13 +12919,13 @@
     {
       "word": "的战",
       "pinyin": "de zhàn",
-      "meaning": "",
+      "meaning": "的的战",
       "example": ""
     },
     {
       "word": "人的",
       "pinyin": "rén de",
-      "meaning": "",
+      "meaning": "人和的",
       "example": ""
     },
     {
@@ -12945,7 +12945,7 @@
     {
       "word": "听见",
       "pinyin": "tīng jiàn",
-      "meaning": "",
+      "meaning": "听的见",
       "example": ""
     },
     {
@@ -12963,7 +12963,7 @@
     {
       "word": "我还",
       "pinyin": "wǒ hái",
-      "meaning": "",
+      "meaning": "我的还",
       "example": ""
     }
   ],
@@ -13003,7 +13003,7 @@
     {
       "word": "火星",
       "pinyin": "huǒ xīng",
-      "meaning": "",
+      "meaning": "火和星星",
       "example": ""
     },
     {
@@ -13046,7 +13046,7 @@
     {
       "word": "和殿",
       "pinyin": "hé diàn",
-      "meaning": "",
+      "meaning": "和的殿",
       "example": ""
     },
     {
@@ -13097,25 +13097,25 @@
     {
       "word": "老汉",
       "pinyin": "lǎo hàn",
-      "meaning": "",
+      "meaning": "老师的汉",
       "example": ""
     },
     {
       "word": "木桥",
       "pinyin": "mù qiáo",
-      "meaning": "",
+      "meaning": "树木和桥",
       "example": ""
     },
     {
       "word": "人们",
       "pinyin": "rén men",
-      "meaning": "",
+      "meaning": "人和们",
       "example": ""
     },
     {
       "word": "小伙",
       "pinyin": "xiǎo huǒ",
-      "meaning": "",
+      "meaning": "小的伙",
       "example": ""
     },
     {
@@ -13167,19 +13167,19 @@
     {
       "word": "老班",
       "pinyin": "lǎo bān",
-      "meaning": "",
+      "meaning": "老师的班",
       "example": ""
     },
     {
       "word": "草地",
       "pinyin": "cǎo dì",
-      "meaning": "",
+      "meaning": "草和大地",
       "example": ""
     },
     {
       "word": "同志",
       "pinyin": "tóng zhì",
-      "meaning": "",
+      "meaning": "同学的志",
       "example": ""
     },
     {
@@ -13193,7 +13193,7 @@
     {
       "word": "我的",
       "pinyin": "wǒ de",
-      "meaning": "",
+      "meaning": "我和的",
       "example": ""
     },
     {
@@ -13260,7 +13260,7 @@
     {
       "word": "的长",
       "pinyin": "de cháng",
-      "meaning": "",
+      "meaning": "的和长",
       "example": ""
     },
     {
@@ -13272,13 +13272,13 @@
     {
       "word": "是一",
       "pinyin": "shì yī",
-      "meaning": "",
+      "meaning": "是的一",
       "example": ""
     },
     {
       "word": "学生",
       "pinyin": "xué shēng",
-      "meaning": "",
+      "meaning": "学习的生",
       "example": ""
     }
   ],
@@ -13286,13 +13286,13 @@
     {
       "word": "妈妈",
       "pinyin": "mā mā",
-      "meaning": "",
+      "meaning": "妈妈和妈妈",
       "example": ""
     },
     {
       "word": "雨衣",
       "pinyin": "yǔ yī",
-      "meaning": "",
+      "meaning": "雨的衣",
       "example": ""
     },
     {
@@ -13304,13 +13304,13 @@
     {
       "word": "雨点",
       "pinyin": "yǔ diǎn",
-      "meaning": "",
+      "meaning": "雨的点",
       "example": ""
     },
     {
       "word": "我的",
       "pinyin": "wǒ de",
-      "meaning": "",
+      "meaning": "我和的",
       "example": ""
     }
   ],
@@ -13324,25 +13324,25 @@
     {
       "word": "的计",
       "pinyin": "de jì",
-      "meaning": "",
+      "meaning": "的的计",
       "example": ""
     },
     {
       "word": "爸爸",
       "pinyin": "bà bà",
-      "meaning": "",
+      "meaning": "爸爸和爸爸",
       "example": ""
     },
     {
       "word": "小站",
       "pinyin": "xiǎo zhàn",
-      "meaning": "",
+      "meaning": "小的站",
       "example": ""
     },
     {
       "word": "的小",
       "pinyin": "de xiǎo",
-      "meaning": "",
+      "meaning": "的和小",
       "example": ""
     }
   ],
@@ -13362,7 +13362,7 @@
     {
       "word": "学家",
       "pinyin": "xué jiā",
-      "meaning": "",
+      "meaning": "学习和家",
       "example": ""
     },
     {
@@ -13374,7 +13374,7 @@
     {
       "word": "黄河",
       "pinyin": "huáng hé",
-      "meaning": "",
+      "meaning": "黄色和河",
       "example": ""
     }
   ],
@@ -13406,7 +13406,7 @@
     {
       "word": "南朝",
       "pinyin": "nán cháo",
-      "meaning": "",
+      "meaning": "南方的朝",
       "example": ""
     }
   ],
@@ -13432,7 +13432,7 @@
     {
       "word": "花木",
       "pinyin": "huā mù",
-      "meaning": "",
+      "meaning": "花和树木",
       "example": ""
     },
     {
@@ -13457,13 +13457,13 @@
     {
       "word": "人类",
       "pinyin": "rén lèi",
-      "meaning": "",
+      "meaning": "人的类",
       "example": ""
     },
     {
       "word": "星球",
       "pinyin": "xīng qiú",
-      "meaning": "",
+      "meaning": "星星的球",
       "example": ""
     },
     {
@@ -13549,7 +13549,7 @@
     {
       "word": "人们",
       "pinyin": "rén men",
-      "meaning": "",
+      "meaning": "人和们",
       "example": ""
     },
     {
@@ -13599,13 +13599,13 @@
     {
       "word": "书画",
       "pinyin": "shū huà",
-      "meaning": "",
+      "meaning": "书和画",
       "example": ""
     },
     {
       "word": "东坡",
       "pinyin": "dōng pō",
-      "meaning": "",
+      "meaning": "东方的坡",
       "example": ""
     },
     {
@@ -13623,7 +13623,7 @@
     {
       "word": "中有",
       "pinyin": "zhōng yǒu",
-      "meaning": "",
+      "meaning": "中国和有",
       "example": ""
     }
   ],
@@ -13637,7 +13637,7 @@
     {
       "word": "多芬",
       "pinyin": "duō fēn",
-      "meaning": "",
+      "meaning": "多的芬",
       "example": ""
     },
     {
@@ -13649,7 +13649,7 @@
     {
       "word": "月光",
       "pinyin": "yuè guāng",
-      "meaning": "",
+      "meaning": "月亮的光",
       "example": ""
     },
     {
@@ -13669,7 +13669,7 @@
     {
       "word": "舞台",
       "pinyin": "wǔ tái",
-      "meaning": "",
+      "meaning": "舞蹈的台",
       "example": ""
     },
     {
@@ -13687,7 +13687,7 @@
     {
       "word": "有一",
       "pinyin": "yǒu yī",
-      "meaning": "",
+      "meaning": "有的一",
       "example": ""
     }
   ],
@@ -13744,13 +13744,13 @@
     {
       "word": "他的",
       "pinyin": "tā de",
-      "meaning": "",
+      "meaning": "他和的",
       "example": ""
     },
     {
       "word": "的父",
       "pinyin": "de fù",
-      "meaning": "",
+      "meaning": "的的父",
       "example": ""
     }
   ],
@@ -13763,7 +13763,7 @@
     {
       "word": "的故",
       "pinyin": "de gù",
-      "meaning": "",
+      "meaning": "的的故",
       "example": ""
     },
     {
@@ -13795,7 +13795,7 @@
     {
       "word": "爸爸",
       "pinyin": "bà bà",
-      "meaning": "",
+      "meaning": "爸爸和爸爸",
       "example": ""
     },
     {
@@ -13821,13 +13821,13 @@
     {
       "word": "的人",
       "pinyin": "de rén",
-      "meaning": "",
+      "meaning": "的和人",
       "example": ""
     },
     {
       "word": "有的",
       "pinyin": "yǒu de",
-      "meaning": "",
+      "meaning": "有和的",
       "example": ""
     },
     {
@@ -13839,13 +13839,13 @@
     {
       "word": "人民",
       "pinyin": "rén mín",
-      "meaning": "",
+      "meaning": "人的民",
       "example": ""
     },
     {
       "word": "他活",
       "pinyin": "tā huó",
-      "meaning": "",
+      "meaning": "他的活",
       "example": ""
     }
   ],
@@ -13853,7 +13853,7 @@
     {
       "word": "的人",
       "pinyin": "de rén",
-      "meaning": "",
+      "meaning": "的和人",
       "example": ""
     },
     {
@@ -13865,7 +13865,7 @@
     {
       "word": "中国",
       "pinyin": "zhōng guó",
-      "meaning": "",
+      "meaning": "中国和国家",
       "example": ""
     },
     {
@@ -13897,7 +13897,7 @@
     {
       "word": "人们",
       "pinyin": "rén men",
-      "meaning": "",
+      "meaning": "人和们",
       "example": ""
     },
     {
@@ -13923,7 +13923,7 @@
     {
       "word": "妈妈",
       "pinyin": "mā mā",
-      "meaning": "",
+      "meaning": "妈妈和妈妈",
       "example": ""
     },
     {
@@ -13967,7 +13967,7 @@
     {
       "word": "东风",
       "pinyin": "dōng fēng",
-      "meaning": "",
+      "meaning": "东方和风",
       "example": ""
     },
     {
@@ -13999,7 +13999,7 @@
     {
       "word": "河汉",
       "pinyin": "hé hàn",
-      "meaning": "",
+      "meaning": "河的汉",
       "example": ""
     },
     {
@@ -14019,7 +14019,7 @@
     {
       "word": "白树",
       "pinyin": "bái shù",
-      "meaning": "",
+      "meaning": "白色的树",
       "example": ""
     },
     {
@@ -14057,7 +14057,7 @@
     {
       "word": "的面",
       "pinyin": "de miàn",
-      "meaning": "",
+      "meaning": "的的面",
       "example": ""
     },
     {
@@ -14069,7 +14069,7 @@
     {
       "word": "东杰",
       "pinyin": "dōng jié",
-      "meaning": "",
+      "meaning": "东方的杰",
       "example": ""
     }
   ],
@@ -14088,19 +14088,19 @@
     {
       "word": "有的",
       "pinyin": "yǒu de",
-      "meaning": "",
+      "meaning": "有和的",
       "example": ""
     },
     {
       "word": "在跳",
       "pinyin": "zài tiào",
-      "meaning": "",
+      "meaning": "在和跳",
       "example": ""
     },
     {
       "word": "园中",
       "pinyin": "yuán zhōng",
-      "meaning": "",
+      "meaning": "园子和中国",
       "example": ""
     }
   ],
@@ -14120,19 +14120,19 @@
     {
       "word": "船上",
       "pinyin": "chuán shàng",
-      "meaning": "",
+      "meaning": "船和上面",
       "example": ""
     },
     {
       "word": "我的",
       "pinyin": "wǒ de",
-      "meaning": "",
+      "meaning": "我和的",
       "example": ""
     },
     {
       "word": "有一",
       "pinyin": "yǒu yī",
-      "meaning": "",
+      "meaning": "有的一",
       "example": ""
     }
   ],
@@ -14146,7 +14146,7 @@
     {
       "word": "小狐",
       "pinyin": "xiǎo hú",
-      "meaning": "",
+      "meaning": "小的狐",
       "example": ""
     },
     {
@@ -14158,7 +14158,7 @@
     {
       "word": "他的",
       "pinyin": "tā de",
-      "meaning": "",
+      "meaning": "他和的",
       "example": ""
     },
     {
@@ -14178,7 +14178,7 @@
     {
       "word": "星期",
       "pinyin": "xīng qī",
-      "meaning": "",
+      "meaning": "星星的期",
       "example": ""
     },
     {
@@ -14190,13 +14190,13 @@
     {
       "word": "的人",
       "pinyin": "de rén",
-      "meaning": "",
+      "meaning": "的和人",
       "example": ""
     },
     {
       "word": "山洞",
       "pinyin": "shān dòng",
-      "meaning": "",
+      "meaning": "山的洞",
       "example": ""
     }
   ],
@@ -14210,19 +14210,19 @@
     {
       "word": "小镇",
       "pinyin": "xiǎo zhèn",
-      "meaning": "",
+      "meaning": "小的镇",
       "example": ""
     },
     {
       "word": "想说",
       "pinyin": "xiǎng shuō",
-      "meaning": "",
+      "meaning": "想和说",
       "example": ""
     },
     {
       "word": "说不",
       "pinyin": "shuō bù",
-      "meaning": "",
+      "meaning": "说的不",
       "example": ""
     },
     {
@@ -14242,7 +14242,7 @@
     {
       "word": "的书",
       "pinyin": "de shū",
-      "meaning": "",
+      "meaning": "的和书",
       "example": ""
     },
     {
@@ -14268,13 +14268,13 @@
     {
       "word": "日子",
       "pinyin": "rì zǐ",
-      "meaning": "",
+      "meaning": "太阳的子",
       "example": ""
     },
     {
       "word": "的时",
       "pinyin": "de shí",
-      "meaning": "",
+      "meaning": "的的时",
       "example": ""
     },
     {
@@ -14286,7 +14286,7 @@
     {
       "word": "的日",
       "pinyin": "de rì",
-      "meaning": "",
+      "meaning": "的和太阳",
       "example": ""
     },
     {
@@ -14311,7 +14311,7 @@
     {
       "word": "看着",
       "pinyin": "kàn zhe",
-      "meaning": "",
+      "meaning": "看的着",
       "example": ""
     },
     {
@@ -14348,7 +14348,7 @@
     {
       "word": "中文",
       "pinyin": "zhōng wén",
-      "meaning": "",
+      "meaning": "中国的文",
       "example": ""
     },
     {
@@ -14380,7 +14380,7 @@
     {
       "word": "长吉",
       "pinyin": "cháng jí",
-      "meaning": "",
+      "meaning": "长的吉",
       "example": ""
     },
     {
@@ -14400,7 +14400,7 @@
     {
       "word": "少保",
       "pinyin": "shǎo bǎo",
-      "meaning": "",
+      "meaning": "少的保",
       "example": ""
     },
     {
@@ -14480,7 +14480,7 @@
     {
       "word": "我的",
       "pinyin": "wǒ de",
-      "meaning": "",
+      "meaning": "我和的",
       "example": ""
     }
   ],
@@ -14488,7 +14488,7 @@
     {
       "word": "人民",
       "pinyin": "rén mín",
-      "meaning": "",
+      "meaning": "人的民",
       "example": ""
     },
     {
@@ -14506,7 +14506,7 @@
     {
       "word": "们的",
       "pinyin": "men de",
-      "meaning": "",
+      "meaning": "们和的",
       "example": ""
     },
     {
@@ -14552,7 +14552,7 @@
     {
       "word": "他那",
       "pinyin": "tā nà",
-      "meaning": "",
+      "meaning": "他的那",
       "example": ""
     },
     {
@@ -14608,7 +14608,7 @@
     {
       "word": "国之",
       "pinyin": "guó zhī",
-      "meaning": "",
+      "meaning": "国家的之",
       "example": ""
     }
   ],
@@ -14616,7 +14616,7 @@
     {
       "word": "的时",
       "pinyin": "de shí",
-      "meaning": "",
+      "meaning": "的的时",
       "example": ""
     },
     {
@@ -14634,7 +14634,7 @@
     {
       "word": "小孩",
       "pinyin": "xiǎo hái",
-      "meaning": "",
+      "meaning": "小的孩",
       "example": ""
     },
     {
@@ -14670,7 +14670,7 @@
     {
       "word": "海岸",
       "pinyin": "hǎi àn",
-      "meaning": "",
+      "meaning": "海的岸",
       "example": ""
     }
   ],
@@ -14688,13 +14688,13 @@
     {
       "word": "有一",
       "pinyin": "yǒu yī",
-      "meaning": "",
+      "meaning": "有的一",
       "example": ""
     },
     {
       "word": "的声",
       "pinyin": "de shēng",
-      "meaning": "",
+      "meaning": "的的声",
       "example": ""
     },
     {
@@ -14738,19 +14738,19 @@
     {
       "word": "日新",
       "pinyin": "rì xīn",
-      "meaning": "",
+      "meaning": "太阳的新",
       "example": ""
     },
     {
       "word": "学家",
       "pinyin": "xué jiā",
-      "meaning": "",
+      "meaning": "学习和家",
       "example": ""
     },
     {
       "word": "说过",
       "pinyin": "shuō guò",
-      "meaning": "",
+      "meaning": "说的过",
       "example": ""
     },
     {
@@ -14781,13 +14781,13 @@
     {
       "word": "我的",
       "pinyin": "wǒ de",
-      "meaning": "",
+      "meaning": "我和的",
       "example": ""
     },
     {
       "word": "田老",
       "pinyin": "tián lǎo",
-      "meaning": "",
+      "meaning": "田地和老师",
       "example": ""
     },
     {
@@ -14813,7 +14813,7 @@
     {
       "word": "我心",
       "pinyin": "wǒ xīn",
-      "meaning": "",
+      "meaning": "我的心",
       "example": ""
     },
     {
@@ -14825,7 +14825,7 @@
     {
       "word": "路途",
       "pinyin": "lù tú",
-      "meaning": "",
+      "meaning": "路的途",
       "example": ""
     }
   ],
@@ -14883,13 +14883,13 @@
     {
       "word": "好雨",
       "pinyin": "hǎo yǔ",
-      "meaning": "",
+      "meaning": "好和雨",
       "example": ""
     },
     {
       "word": "雨知",
       "pinyin": "yǔ zhī",
-      "meaning": "",
+      "meaning": "雨的知",
       "example": ""
     }
   ],
@@ -14915,13 +14915,13 @@
     {
       "word": "天街",
       "pinyin": "tiān jiē",
-      "meaning": "",
+      "meaning": "天空的街",
       "example": ""
     },
     {
       "word": "雨润",
       "pinyin": "yǔ rùn",
-      "meaning": "",
+      "meaning": "雨的润",
       "example": ""
     }
   ],
@@ -14985,7 +14985,7 @@
     {
       "word": "春风",
       "pinyin": "chūn fēng",
-      "meaning": "",
+      "meaning": "春天和风",
       "example": ""
     }
   ],
@@ -15056,7 +15056,7 @@
     {
       "word": "东坡",
       "pinyin": "dōng pō",
-      "meaning": "",
+      "meaning": "东方的坡",
       "example": ""
     },
     {
@@ -15088,7 +15088,7 @@
     {
       "word": "黄庭",
       "pinyin": "huáng tíng",
-      "meaning": "",
+      "meaning": "黄色的庭",
       "example": ""
     },
     {
@@ -15100,7 +15100,7 @@
     {
       "word": "有人",
       "pinyin": "yǒu rén",
-      "meaning": "",
+      "meaning": "有和人",
       "example": ""
     },
     {
