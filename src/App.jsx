@@ -429,7 +429,6 @@ export default function App() {
         selectedGrade={courseData.selectedGrade}
         selectedSubject={courseData.selectedSubject}
         selectedUnit={courseData.selectedUnit}
-        selectedContent={selectedContent}
         onSelectGrade={courseData.selectGrade}
         onSelectSubject={courseData.selectSubject}
         onSelectUnit={courseData.selectUnit}
