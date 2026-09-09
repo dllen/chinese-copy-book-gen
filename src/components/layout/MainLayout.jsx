@@ -35,7 +35,7 @@ export default function MainLayout({
   alnumCount, alnumNoRepeat, alnumSeqLocal,
   chineseCharCount, chineseCharNoRepeat, chineseCharSeqLocal,
   copybookType, copybookStyle, pinyinText, hanziText,
-  letterStyle, cellShadowLocal,
+  letterStyle, cellShadowLocal, showPinyin,
   // Setters & handlers
   updateSetting,
   handleLetterStyle,
@@ -229,7 +229,7 @@ export default function MainLayout({
         alnumCount, alnumNoRepeat, alnumSeqLocal,
         chineseCharCount, chineseCharNoRepeat, chineseCharSeqLocal,
         copybookType, copybookStyle, pinyinText, hanziText,
-        letterStyle, cellShadowLocal,
+        letterStyle, cellShadowLocal, showPinyin,
         updateSetting,
         handleLetterStyle,
         handleCellShadow,
