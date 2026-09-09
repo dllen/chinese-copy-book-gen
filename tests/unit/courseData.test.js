@@ -4,7 +4,7 @@ import { getGrades, getUnits, getContents, searchContents } from '../../src/data
 describe('courseData', () => {
   it('getGrades returns 5 grades', () => {
     const grades = getGrades();
-    expect(grades).toHaveLength(5);
+    expect(grades).toHaveLength(6);
     expect(grades[0]).toMatchObject({ id: 'g1', name: '一年级' });
   });
 
