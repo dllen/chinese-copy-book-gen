@@ -1,0 +1,9054 @@
+{
+  "cn-1": [
+    {
+      "type": "fill-blank",
+      "question": "人____",
+      "answer": "人",
+      "hint": "课文《我是中国人》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《我是中国人》中？",
+      "options": [
+        "人",
+        "们",
+        "华",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-2": [
+    {
+      "type": "fill-blank",
+      "question": "安____",
+      "answer": "安",
+      "hint": "课文《我爱我们的祖国》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《我爱我们的祖国》中？",
+      "options": [
+        "安",
+        "天",
+        "五",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-3": [
+    {
+      "type": "fill-blank",
+      "question": "迟____",
+      "answer": "迟",
+      "hint": "课文《我是小学生》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《我是小学生》中？",
+      "options": [
+        "迟",
+        "到",
+        "儿",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-4": [
+    {
+      "type": "fill-blank",
+      "question": "书____",
+      "answer": "书",
+      "hint": "课文《我爱学语文》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《我爱学语文》中？",
+      "options": [
+        "书",
+        "听",
+        "故",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-5": [
+    {
+      "type": "fill-blank",
+      "question": "人____",
+      "answer": "人",
+      "hint": "课文《1 天地人》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《1 天地人》中？",
+      "options": [
+        "人",
+        "天",
+        "地",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-6": [
+    {
+      "type": "fill-blank",
+      "question": "天____",
+      "answer": "天",
+      "hint": "课文《2 金木水火土》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《2 金木水火土》中？",
+      "options": [
+        "天",
+        "古",
+        "五",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-7": [
+    {
+      "type": "fill-blank",
+      "question": "卧____",
+      "answer": "卧",
+      "hint": "课文《3 口耳目手足》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《3 口耳目手足》中？",
+      "options": [
+        "卧",
+        "站",
+        "风",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-8": [
+    {
+      "type": "fill-blank",
+      "question": "川____",
+      "answer": "川",
+      "hint": "课文《4 日月山川》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《4 日月山川》中？",
+      "options": [
+        "川",
+        "火",
+        "田",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-9": [
+    {
+      "type": "fill-blank",
+      "question": "浙____",
+      "answer": "浙",
+      "hint": "课文《语文园地一》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地一》中？",
+      "options": [
+        "浙",
+        "鸡",
+        "尾",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-10": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《快乐读书吧》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《快乐读书吧》中？",
+      "options": [
+        "们",
+        "常",
+        "到",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-13": [
+    {
+      "type": "fill-blank",
+      "question": "妈____",
+      "answer": "妈",
+      "hint": "课文《3 b p m f》中的字"
+    }
+  ],
+  "cn-14": [
+    {
+      "type": "fill-blank",
+      "question": "尾____",
+      "answer": "尾",
+      "hint": "课文《4 d t n l》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《4 d t n l》中？",
+      "options": [
+        "尾",
+        "袄",
+        "白",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-15": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《语文园地二》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地二》中？",
+      "options": [
+        "时",
+        "怪",
+        "朝",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-16": [
+    {
+      "type": "fill-blank",
+      "question": "鸽____",
+      "answer": "鸽",
+      "hint": "课文《5 g k h》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《5 g k h》中？",
+      "options": [
+        "鸽",
+        "咕",
+        "雨",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-17": [
+    {
+      "type": "fill-blank",
+      "question": "鸡____",
+      "answer": "鸡",
+      "hint": "课文《6 j q x》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《6 j q x》中？",
+      "options": [
+        "鸡",
+        "草",
+        "做",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-18": [
+    {
+      "type": "fill-blank",
+      "question": "走____",
+      "answer": "走",
+      "hint": "课文《7 z c s》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《7 z c s》中？",
+      "options": [
+        "走",
+        "句",
+        "语",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-19": [
+    {
+      "type": "fill-blank",
+      "question": "书____",
+      "answer": "书",
+      "hint": "课文《8 zh ch sh r》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《8 zh ch sh r》中？",
+      "options": [
+        "书",
+        "绕",
+        "折",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-20": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《9 y w》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《9 y w》中？",
+      "options": [
+        "们",
+        "的",
+        "白",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-21": [
+    {
+      "type": "fill-blank",
+      "question": "鸽____",
+      "answer": "鸽",
+      "hint": "课文《语文园地三》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地三》中？",
+      "options": [
+        "鸽",
+        "鸡",
+        "样",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-22": [
+    {
+      "type": "fill-blank",
+      "question": "走____",
+      "answer": "走",
+      "hint": "课文《10 ai ei ui》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《10 ai ei ui》中？",
+      "options": [
+        "走",
+        "菜",
+        "白",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-23": [
+    {
+      "type": "fill-blank",
+      "question": "到____",
+      "answer": "到",
+      "hint": "课文《11 ao ou iu》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《11 ao ou iu》中？",
+      "options": [
+        "到",
+        "儿",
+        "观",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-24": [
+    {
+      "type": "fill-blank",
+      "question": "弯____",
+      "answer": "弯",
+      "hint": "课文《12 ie üe er》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《12 ie üe er》中？",
+      "options": [
+        "弯",
+        "到",
+        "儿",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-25": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《13 an en in un ün》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《13 an en in un ün》中？",
+      "options": [
+        "们",
+        "森",
+        "儿",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-26": [
+    {
+      "type": "fill-blank",
+      "question": "走____",
+      "answer": "走",
+      "hint": "课文《14 ang eng ing ong》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《14 ang eng ing ong》中？",
+      "options": [
+        "走",
+        "到",
+        "也",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-27": [
+    {
+      "type": "fill-blank",
+      "question": "师____",
+      "answer": "师",
+      "hint": "课文《语文园地四》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地四》中？",
+      "options": [
+        "师",
+        "们",
+        "浙",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-28": [
+    {
+      "type": "fill-blank",
+      "question": "气____",
+      "answer": "气",
+      "hint": "课文《1 秋天》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《1 秋天》中？",
+      "options": [
+        "气",
+        "从",
+        "往",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-29": [
+    {
+      "type": "fill-blank",
+      "question": "边____",
+      "answer": "边",
+      "hint": "课文《2 江南》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《2 江南》中？",
+      "options": [
+        "边",
+        "以",
+        "儿",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-30": [
+    {
+      "type": "fill-blank",
+      "question": "里____",
+      "answer": "里",
+      "hint": "课文《3 雪地里的小画家》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《3 雪地里的小画家》中？",
+      "options": [
+        "里",
+        "鸡",
+        "料",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-31": [
+    {
+      "type": "fill-blank",
+      "question": "躬____",
+      "answer": "躬",
+      "hint": "课文《4 四季》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《4 四季》中？",
+      "options": [
+        "躬",
+        "弯",
+        "谷",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-32": [
+    {
+      "type": "fill-blank",
+      "question": "里____",
+      "answer": "里",
+      "hint": "课文《语文园地五》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地五》中？",
+      "options": [
+        "里",
+        "年",
+        "春",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-33": [
+    {
+      "type": "fill-blank",
+      "question": "虫____",
+      "answer": "虫",
+      "hint": "课文《5 对韵歌》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《5 对韵歌》中？",
+      "options": [
+        "虫",
+        "桃",
+        "红",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-34": [
+    {
+      "type": "fill-blank",
+      "question": "从____",
+      "answer": "从",
+      "hint": "课文《6 日月明》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《6 日月明》中？",
+      "options": [
+        "从",
+        "森",
+        "条",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-35": [
+    {
+      "type": "fill-blank",
+      "question": "陪____",
+      "answer": "陪",
+      "hint": "课文《7 小书包》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《7 小书包》中？",
+      "options": [
+        "陪",
+        "作",
+        "早",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-36": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《8 升国旗》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《8 升国旗》中？",
+      "options": [
+        "们",
+        "的",
+        "国",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-37": [
+    {
+      "type": "fill-blank",
+      "question": "师____",
+      "answer": "师",
+      "hint": "课文《语文园地六》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地六》中？",
+      "options": [
+        "师",
+        "们",
+        "时",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-38": [
+    {
+      "type": "fill-blank",
+      "question": "弯____",
+      "answer": "弯",
+      "hint": "课文《5 小小的船》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《5 小小的船》中？",
+      "options": [
+        "弯",
+        "里",
+        "儿",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-39": [
+    {
+      "type": "fill-blank",
+      "question": "常____",
+      "answer": "常",
+      "hint": "课文《6 影子》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《6 影子》中？",
+      "options": [
+        "常",
+        "陪",
+        "的",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-40": [
+    {
+      "type": "fill-blank",
+      "question": "到____",
+      "answer": "到",
+      "hint": "课文《7 两件宝》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《7 两件宝》中？",
+      "options": [
+        "到",
+        "创",
+        "也",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-41": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《语文园地七》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地七》中？",
+      "options": [
+        "住",
+        "们",
+        "往",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-42": [
+    {
+      "type": "fill-blank",
+      "question": "弯____",
+      "answer": "弯",
+      "hint": "课文《8 比尾巴》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《8 比尾巴》中？",
+      "options": [
+        "弯",
+        "鸡",
+        "尾",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-43": [
+    {
+      "type": "fill-blank",
+      "question": "里____",
+      "answer": "里",
+      "hint": "课文《9 乌鸦喝水》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《9 乌鸦喝水》中？",
+      "options": [
+        "里",
+        "到",
+        "边",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-44": [
+    {
+      "type": "fill-blank",
+      "question": "从____",
+      "answer": "从",
+      "hint": "课文《10 雨点儿》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《10 雨点儿》中？",
+      "options": [
+        "从",
+        "里",
+        "到",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-45": [
+    {
+      "type": "fill-blank",
+      "question": "腐____",
+      "answer": "腐",
+      "hint": "课文《语文园地八》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地八》中？",
+      "options": [
+        "腐",
+        "鸡",
+        "峤",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-46": [
+    {
+      "type": "fill-blank",
+      "question": "雨____",
+      "answer": "雨",
+      "hint": "课文《1 春夏秋冬》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《1 春夏秋冬》中？",
+      "options": [
+        "雨",
+        "春",
+        "草",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-47": [
+    {
+      "type": "fill-blank",
+      "question": "氏____",
+      "answer": "氏",
+      "hint": "课文《2 姓氏歌》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《2 姓氏歌》中？",
+      "options": [
+        "氏",
+        "孙",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-48": [
+    {
+      "type": "fill-blank",
+      "question": "气____",
+      "answer": "气",
+      "hint": "课文《3 小青蛙》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《3 小青蛙》中？",
+      "options": [
+        "气",
+        "请",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-49": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《4 猜字谜》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《4 猜字谜》中？",
+      "options": [
+        "时",
+        "里",
+        "到",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-50": [
+    {
+      "type": "fill-blank",
+      "question": "娇____",
+      "answer": "娇",
+      "hint": "课文《语文园地一》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地一》中？",
+      "options": [
+        "娇",
+        "们",
+        "时",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-51": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《1 热爱中国共产党》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《1 热爱中国共产党》中？",
+      "options": [
+        "们",
+        "里",
+        "儿",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-52": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《2 吃水不忘挖井人》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《2 吃水不忘挖井人》中？",
+      "options": [
+        "住",
+        "时",
+        "们",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-53": [
+    {
+      "type": "fill-blank",
+      "question": "走____",
+      "answer": "走",
+      "hint": "课文《3 我多想去看看》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《3 我多想去看看》中？",
+      "options": [
+        "走",
+        "弯",
+        "伟",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-54": [
+    {
+      "type": "fill-blank",
+      "question": "师____",
+      "answer": "师",
+      "hint": "课文《语文园地二》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地二》中？",
+      "options": [
+        "师",
+        "时",
+        "们",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-55": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《4 小公鸡和小鸭子》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《4 小公鸡和小鸭子》中？",
+      "options": [
+        "们",
+        "鸡",
+        "草",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-56": [
+    {
+      "type": "fill-blank",
+      "question": "从____",
+      "answer": "从",
+      "hint": "课文《5 树和喜鹊》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《5 树和喜鹊》中？",
+      "options": [
+        "从",
+        "们",
+        "里",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-57": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《6 怎么都快乐》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《6 怎么都快乐》中？",
+      "options": [
+        "们",
+        "鸡",
+        "更",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-58": [
+    {
+      "type": "fill-blank",
+      "question": "汪____",
+      "answer": "汪",
+      "hint": "课文《语文园地三》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地三》中？",
+      "options": [
+        "汪",
+        "时",
+        "们",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-59": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《7 静夜思》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《7 静夜思》中？",
+      "options": [
+        "时",
+        "仙",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-60": [
+    {
+      "type": "fill-blank",
+      "question": "从____",
+      "answer": "从",
+      "hint": "课文《8 夜色》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《8 夜色》中？",
+      "options": [
+        "从",
+        "往",
+        "样",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-61": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《9 端午粽》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《9 端午粽》中？",
+      "options": [
+        "们",
+        "带",
+        "说",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-62": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《语文园地四》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地四》中？",
+      "options": [
+        "们",
+        "天",
+        "更",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-63": [
+    {
+      "type": "fill-blank",
+      "question": "里____",
+      "answer": "里",
+      "hint": "课文《5 动物儿歌》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《5 动物儿歌》中？",
+      "options": [
+        "里",
+        "展",
+        "藏",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-64": [
+    {
+      "type": "fill-blank",
+      "question": "雪____",
+      "answer": "雪",
+      "hint": "课文《6 古对今》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《6 古对今》中？",
+      "options": [
+        "雪",
+        "朝",
+        "语",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-65": [
+    {
+      "type": "fill-blank",
+      "question": "天____",
+      "answer": "天",
+      "hint": "课文《7 操场上》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《7 操场上》中？",
+      "options": [
+        "天",
+        "拔",
+        "步",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-66": [
+    {
+      "type": "fill-blank",
+      "question": "以____",
+      "answer": "以",
+      "hint": "课文《8 人之初》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《8 人之初》中？",
+      "options": [
+        "以",
+        "善",
+        "专",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-67": [
+    {
+      "type": "fill-blank",
+      "question": "怪____",
+      "answer": "怪",
+      "hint": "课文《语文园地五》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地五》中？",
+      "options": [
+        "怪",
+        "袍",
+        "妖",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-68": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《池上》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《池上》中？",
+      "options": [
+        "时",
+        "天",
+        "娃",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-69": [
+    {
+      "type": "fill-blank",
+      "question": "疾____",
+      "answer": "疾",
+      "hint": "课文《小池》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《小池》中？",
+      "options": [
+        "疾",
+        "秀",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-70": [
+    {
+      "type": "fill-blank",
+      "question": "走____",
+      "answer": "走",
+      "hint": "课文《11 浪花》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《11 浪花》中？",
+      "options": [
+        "走",
+        "气",
+        "玩",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-71": [
+    {
+      "type": "fill-blank",
+      "question": "展____",
+      "answer": "展",
+      "hint": "课文《12 荷叶圆圆》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《12 荷叶圆圆》中？",
+      "options": [
+        "展",
+        "唱",
+        "停",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-72": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《13 要下雨了》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《13 要下雨了》中？",
+      "options": [
+        "们",
+        "往",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-73": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《语文园地六》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地六》中？",
+      "options": [
+        "住",
+        "们",
+        "朝",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-74": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《14 文具的家》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《14 文具的家》中？",
+      "options": [
+        "时",
+        "天",
+        "再",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-75": [
+    {
+      "type": "fill-blank",
+      "question": "师____",
+      "answer": "师",
+      "hint": "课文《15 一分钟》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《15 一分钟》中？",
+      "options": [
+        "师",
+        "天",
+        "再",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-76": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《16 动物王国开大会》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《16 动物王国开大会》中？",
+      "options": [
+        "们",
+        "时",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-77": [
+    {
+      "type": "fill-blank",
+      "question": "走____",
+      "answer": "走",
+      "hint": "课文《17 小猴子下山》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《17 小猴子下山》中？",
+      "options": [
+        "走",
+        "里",
+        "到",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-78": [
+    {
+      "type": "fill-blank",
+      "question": "鸡____",
+      "answer": "鸡",
+      "hint": "课文《语文园地七》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地七》中？",
+      "options": [
+        "鸡",
+        "尾",
+        "乌",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-79": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《18 棉花姑娘》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《18 棉花姑娘》中？",
+      "options": [
+        "们",
+        "点",
+        "娘",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-80": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《19 咕咚》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《19 咕咚》中？",
+      "options": [
+        "住",
+        "说",
+        "问",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-81": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《20 小壁虎借尾巴》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《20 小壁虎借尾巴》中？",
+      "options": [
+        "住",
+        "尾",
+        "草",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-82": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《语文园地八》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地八》中？",
+      "options": [
+        "住",
+        "们",
+        "时",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-83": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《1 小蝌蚪找妈妈》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《1 小蝌蚪找妈妈》中？",
+      "options": [
+        "们",
+        "时",
+        "尾",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-84": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《2 我是什么》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《2 我是什么》中？",
+      "options": [
+        "住",
+        "时",
+        "们",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-85": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《3 植物妈妈有办法》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《3 植物妈妈有办法》中？",
+      "options": [
+        "住",
+        "们",
+        "甲",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-86": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "住",
+        "时",
+        "怪",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-87": [
+    {
+      "type": "fill-blank",
+      "question": "稻____",
+      "answer": "稻",
+      "hint": "课文《1 场景歌》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《1 场景歌》中？",
+      "options": [
+        "稻",
+        "群",
+        "号",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-88": [
+    {
+      "type": "fill-blank",
+      "question": "掌____",
+      "answer": "掌",
+      "hint": "课文《2 树之歌》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《2 树之歌》中？",
+      "options": [
+        "掌",
+        "杏",
+        "梧",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-89": [
+    {
+      "type": "fill-blank",
+      "question": "鹰____",
+      "answer": "鹰",
+      "hint": "课文《3 拍手歌》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《3 拍手歌》中？",
+      "options": [
+        "鹰",
+        "奇",
+        "鸡",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-90": [
+    {
+      "type": "fill-blank",
+      "question": "桑____",
+      "answer": "桑",
+      "hint": "课文《4 田家四季歌》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《4 田家四季歌》中？",
+      "options": [
+        "桑",
+        "里",
+        "谷",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-91": [
+    {
+      "type": "fill-blank",
+      "question": "仙____",
+      "answer": "仙",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "仙",
+        "荷",
+        "成",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-92": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《4 曹冲称象》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《4 曹冲称象》中？",
+      "options": [
+        "时",
+        "们",
+        "往",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-93": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《5 玲玲的画》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《5 玲玲的画》中？",
+      "options": [
+        "时",
+        "们",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-94": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《6 一封信》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《6 一封信》中？",
+      "options": [
+        "们",
+        "时",
+        "朝",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-95": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《7 妈妈睡了》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《7 妈妈睡了》中？",
+      "options": [
+        "时",
+        "乌",
+        "想",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-96": [
+    {
+      "type": "fill-blank",
+      "question": "师____",
+      "answer": "师",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "师",
+        "们",
+        "时",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-97": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《登鹳雀楼》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《登鹳雀楼》中？",
+      "options": [
+        "时",
+        "慢",
+        "朝",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-98": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《望庐山瀑布》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《望庐山瀑布》中？",
+      "options": [
+        "时",
+        "仙",
+        "炉",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-99": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《9 黄山奇石》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《9 黄山奇石》中？",
+      "options": [
+        "住",
+        "怪",
+        "状",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-100": [
+    {
+      "type": "fill-blank",
+      "question": "胜____",
+      "answer": "胜",
+      "hint": "课文《10 日月潭》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《10 日月潭》中？",
+      "options": [
+        "胜",
+        "仙",
+        "秀",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-101": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《11 葡萄沟》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《11 葡萄沟》中？",
+      "options": [
+        "们",
+        "时",
+        "成",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-102": [
+    {
+      "type": "fill-blank",
+      "question": "卧____",
+      "answer": "卧",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "卧",
+        "们",
+        "鸡",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-103": [
+    {
+      "type": "fill-blank",
+      "question": "从____",
+      "answer": "从",
+      "hint": "课文《12 坐井观天》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《12 坐井观天》中？",
+      "options": [
+        "从",
+        "里",
+        "边",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-104": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《13 寒号鸟》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《13 寒号鸟》中？",
+      "options": [
+        "住",
+        "天",
+        "草",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-105": [
+    {
+      "type": "fill-blank",
+      "question": "怪____",
+      "answer": "怪",
+      "hint": "课文《14 我要的是葫芦》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《14 我要的是葫芦》中？",
+      "options": [
+        "怪",
+        "慢",
+        "盯",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-106": [
+    {
+      "type": "fill-blank",
+      "question": "天____",
+      "answer": "天",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "天",
+        "成",
+        "说",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-107": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《15 八角楼上》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《15 八角楼上》中？",
+      "options": [
+        "住",
+        "时",
+        "胜",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-108": [
+    {
+      "type": "fill-blank",
+      "question": "师____",
+      "answer": "师",
+      "hint": "课文《16 朱德的扁担》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《16 朱德的扁担》中？",
+      "options": [
+        "师",
+        "们",
+        "带",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-109": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《17 难忘的泼水节》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《17 难忘的泼水节》中？",
+      "options": [
+        "们",
+        "驶",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-110": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《18 刘胡兰》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《18 刘胡兰》中？",
+      "options": [
+        "们",
+        "天",
+        "点",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-111": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "们",
+        "时",
+        "兽",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-112": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《夜宿山寺》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《夜宿山寺》中？",
+      "options": [
+        "时",
+        "仙",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-113": [
+    {
+      "type": "fill-blank",
+      "question": "隐____",
+      "answer": "隐",
+      "hint": "课文《敕勒歌》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《敕勒歌》中？",
+      "options": [
+        "隐",
+        "边",
+        "儿",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-114": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《20 雾在哪里》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《20 雾在哪里》中？",
+      "options": [
+        "时",
+        "尾",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-115": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《21 雪孩子》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《21 雪孩子》中？",
+      "options": [
+        "时",
+        "们",
+        "往",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-116": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "住",
+        "带",
+        "鸣",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-117": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《22 狐假虎威》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《22 狐假虎威》中？",
+      "options": [
+        "住",
+        "们",
+        "兽",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-118": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《23 纸船和风筝》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《23 纸船和风筝》中？",
+      "options": [
+        "住",
+        "们",
+        "往",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-119": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《24 风娃娃》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《24 风娃娃》中？",
+      "options": [
+        "住",
+        "们",
+        "慢",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-120": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "时",
+        "鸡",
+        "往",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-121": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《村居》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《村居》中？",
+      "options": [
+        "们",
+        "浙",
+        "农",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-122": [
+    {
+      "type": "fill-blank",
+      "question": "浙____",
+      "answer": "浙",
+      "hint": "课文《咏柳》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《咏柳》中？",
+      "options": [
+        "浙",
+        "带",
+        "季",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-123": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《2 找春天》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《2 找春天》中？",
+      "options": [
+        "们",
+        "尾",
+        "琴",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-124": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《3 开满鲜花的小路》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《3 开满鲜花的小路》中？",
+      "options": [
+        "时",
+        "怪",
+        "往",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-125": [
+    {
+      "type": "fill-blank",
+      "question": "天____",
+      "answer": "天",
+      "hint": "课文《4 邓小平爷爷植树》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《4 邓小平爷爷植树》中？",
+      "options": [
+        "天",
+        "北",
+        "说",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-126": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "时",
+        "娘",
+        "说",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-127": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《快乐读书吧》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《快乐读书吧》中？",
+      "options": [
+        "们",
+        "时",
+        "想",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-128": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《5 雷锋叔叔，你在哪里》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《5 雷锋叔叔，你在哪里》中？",
+      "options": [
+        "们",
+        "天",
+        "娘",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-129": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《6 千人糕》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《6 千人糕》中？",
+      "options": [
+        "们",
+        "时",
+        "农",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-130": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《7 一匹出色的马》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《7 一匹出色的马》中？",
+      "options": [
+        "们",
+        "时",
+        "往",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-131": [
+    {
+      "type": "fill-blank",
+      "question": "师____",
+      "answer": "师",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "师",
+        "时",
+        "们",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-132": [
+    {
+      "type": "fill-blank",
+      "question": "州____",
+      "answer": "州",
+      "hint": "课文《1 神州谣》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《1 神州谣》中？",
+      "options": [
+        "州",
+        "谊",
+        "荣",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-133": [
+    {
+      "type": "fill-blank",
+      "question": "端____",
+      "answer": "端",
+      "hint": "课文《2 传统节日》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《2 传统节日》中？",
+      "options": [
+        "端",
+        "吃",
+        "照",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-134": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《3 “贝”的故事》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《3 “贝”的故事》中？",
+      "options": [
+        "时",
+        "们",
+        "甲",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-135": [
+    {
+      "type": "fill-blank",
+      "question": "腐____",
+      "answer": "腐",
+      "hint": "课文《4 中国美食》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《4 中国美食》中？",
+      "options": [
+        "腐",
+        "鸡",
+        "菠",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-136": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "住",
+        "时",
+        "们",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-137": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《8 彩色的梦》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《8 彩色的梦》中？",
+      "options": [
+        "们",
+        "天",
+        "季",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-138": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《9 枫树上的喜鹊》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《9 枫树上的喜鹊》中？",
+      "options": [
+        "们",
+        "天",
+        "说",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-139": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《10 沙滩上的童话》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《10 沙滩上的童话》中？",
+      "options": [
+        "住",
+        "们",
+        "驶",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-140": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《11 我是一只小虫子》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《11 我是一只小虫子》中？",
+      "options": [
+        "们",
+        "时",
+        "点",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-141": [
+    {
+      "type": "fill-blank",
+      "question": "汪____",
+      "answer": "汪",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "汪",
+        "鸡",
+        "尾",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-142": [
+    {
+      "type": "fill-blank",
+      "question": "从____",
+      "answer": "从",
+      "hint": "课文《亡羊补牢》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《亡羊补牢》中？",
+      "options": [
+        "从",
+        "走",
+        "里",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-143": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《揠苗助长》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《揠苗助长》中？",
+      "options": [
+        "时",
+        "们",
+        "往",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-144": [
+    {
+      "type": "fill-blank",
+      "question": "师____",
+      "answer": "师",
+      "hint": "课文《13 画杨桃》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《13 画杨桃》中？",
+      "options": [
+        "师",
+        "们",
+        "时",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-145": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《14 小马过河》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《14 小马过河》中？",
+      "options": [
+        "住",
+        "们",
+        "往",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-146": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "住",
+        "们",
+        "时",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-147": [
+    {
+      "type": "fill-blank",
+      "question": "娇____",
+      "answer": "娇",
+      "hint": "课文《晓出净慈寺送林子方》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《晓出净慈寺送林子方》中？",
+      "options": [
+        "娇",
+        "时",
+        "疾",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-148": [
+    {
+      "type": "fill-blank",
+      "question": "鸣____",
+      "answer": "鸣",
+      "hint": "课文《绝句》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《绝句》中？",
+      "options": [
+        "鸣",
+        "天",
+        "草",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-149": [
+    {
+      "type": "fill-blank",
+      "question": "往____",
+      "answer": "往",
+      "hint": "课文《16 雷雨》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《16 雷雨》中？",
+      "options": [
+        "往",
+        "天",
+        "网",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-150": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《17 要是你在野外迷了路》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《17 要是你在野外迷了路》中？",
+      "options": [
+        "时",
+        "慢",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-151": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《18 太空生活趣事多》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《18 太空生活趣事多》中？",
+      "options": [
+        "们",
+        "时",
+        "往",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-152": [
+    {
+      "type": "fill-blank",
+      "question": "浙____",
+      "answer": "浙",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "浙",
+        "徽",
+        "助",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-153": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《19 大象的耳朵》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《19 大象的耳朵》中？",
+      "options": [
+        "们",
+        "慢",
+        "时",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-154": [
+    {
+      "type": "fill-blank",
+      "question": "天____",
+      "answer": "天",
+      "hint": "课文《20 蜘蛛开店》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《20 蜘蛛开店》中？",
+      "options": [
+        "天",
+        "网",
+        "想",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-155": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《21 青蛙卖泥塘》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《21 青蛙卖泥塘》中？",
+      "options": [
+        "住",
+        "们",
+        "往",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-156": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《22 小毛虫》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《22 小毛虫》中？",
+      "options": [
+        "时",
+        "点",
+        "更",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-157": [
+    {
+      "type": "fill-blank",
+      "question": "师____",
+      "answer": "师",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "师",
+        "谷",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-158": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《23 祖先的摇篮》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《23 祖先的摇篮》中？",
+      "options": [
+        "住",
+        "们",
+        "时",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-159": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《24  羿射九日》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《24  羿射九日》中？",
+      "options": [
+        "时",
+        "们",
+        "往",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-160": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《25 黄帝的传说》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《25 黄帝的传说》中？",
+      "options": [
+        "住",
+        "们",
+        "时",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-161": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "时",
+        "浙",
+        "朝",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-162": [
+    {
+      "type": "fill-blank",
+      "question": "师____",
+      "answer": "师",
+      "hint": "课文《1 大青树下的小学》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《1 大青树下的小学》中？",
+      "options": [
+        "师",
+        "们",
+        "时",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-163": [
+    {
+      "type": "fill-blank",
+      "question": "师____",
+      "answer": "师",
+      "hint": "课文《2 花的学校》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《2 花的学校》中？",
+      "options": [
+        "师",
+        "时",
+        "们",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-164": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《3* 不懂就要问》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《3* 不懂就要问》中？",
+      "options": [
+        "时",
+        "们",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-165": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "时",
+        "浙",
+        "疾",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-166": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《山行》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《山行》中？",
+      "options": [
+        "时",
+        "比",
+        "成",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-167": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《赠刘景文》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《赠刘景文》中？",
+      "options": [
+        "住",
+        "时",
+        "疾",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-168": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《夜书所见》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《夜书所见》中？",
+      "options": [
+        "们",
+        "浙",
+        "朝",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-169": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《5 铺满金色巴掌的水泥道》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《5 铺满金色巴掌的水泥道》中？",
+      "options": [
+        "时",
+        "们",
+        "慢",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-170": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《6 秋天的雨》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《6 秋天的雨》中？",
+      "options": [
+        "住",
+        "们",
+        "带",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-171": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《7* 听听，秋的声音》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《7* 听听，秋的声音》中？",
+      "options": [
+        "们",
+        "谷",
+        "蟋",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-172": [
+    {
+      "type": "fill-blank",
+      "question": "师____",
+      "answer": "师",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "师",
+        "谷",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-173": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《8 卖火柴的小女孩》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《8 卖火柴的小女孩》中？",
+      "options": [
+        "时",
+        "橱",
+        "再",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-174": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《9* 那一定会很好》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《9* 那一定会很好》中？",
+      "options": [
+        "时",
+        "慢",
+        "谷",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-175": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《10 在牛肚子里旅行》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《10 在牛肚子里旅行》中？",
+      "options": [
+        "们",
+        "时",
+        "慢",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-176": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《11* 一块奶酪》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《11* 一块奶酪》中？",
+      "options": [
+        "时",
+        "们",
+        "往",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-177": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "时",
+        "尾",
+        "娘",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-178": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《12 总也倒不了的老屋》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《12 总也倒不了的老屋》中？",
+      "options": [
+        "住",
+        "时",
+        "往",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-179": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《13* 胡萝卜先生的长胡子》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《13* 胡萝卜先生的长胡子》中？",
+      "options": [
+        "时",
+        "往",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-180": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《14* 小狗学叫》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《14* 小狗学叫》中？",
+      "options": [
+        "时",
+        "再",
+        "比",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-181": [
+    {
+      "type": "fill-blank",
+      "question": "朝____",
+      "answer": "朝",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "朝",
+        "胜",
+        "鸡",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-182": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《15 搭船的鸟》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《15 搭船的鸟》中？",
+      "options": [
+        "们",
+        "时",
+        "带",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-183": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《16 金色的草地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《16 金色的草地》中？",
+      "options": [
+        "住",
+        "们",
+        "时",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-184": [
+    {
+      "type": "fill-blank",
+      "question": "汪____",
+      "answer": "汪",
+      "hint": "课文《习作例文》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《习作例文》中？",
+      "options": [
+        "汪",
+        "们",
+        "时",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-185": [
+    {
+      "type": "fill-blank",
+      "question": "驶____",
+      "answer": "驶",
+      "hint": "课文《望天门山》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《望天门山》中？",
+      "options": [
+        "驶",
+        "时",
+        "仙",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-186": [
+    {
+      "type": "fill-blank",
+      "question": "怪____",
+      "answer": "怪",
+      "hint": "课文《饮湖上初晴后雨》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《饮湖上初晴后雨》中？",
+      "options": [
+        "怪",
+        "疾",
+        "仙",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-187": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《望洞庭》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《望洞庭》中？",
+      "options": [
+        "时",
+        "朝",
+        "翠",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-188": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《18 富饶的西沙群岛》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《18 富饶的西沙群岛》中？",
+      "options": [
+        "时",
+        "们",
+        "甲",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-189": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《19 海滨小城》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《19 海滨小城》中？",
+      "options": [
+        "们",
+        "往",
+        "朝",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-190": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《20 美丽的小兴安岭》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《20 美丽的小兴安岭》中？",
+      "options": [
+        "住",
+        "们",
+        "时",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-191": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "住",
+        "时",
+        "驶",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-192": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《21 大自然的声音》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《21 大自然的声音》中？",
+      "options": [
+        "时",
+        "们",
+        "琴",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-193": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《22 读不完的大书》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《22 读不完的大书》中？",
+      "options": [
+        "时",
+        "状",
+        "兽",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-194": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《23 父亲、树林和鸟》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《23 父亲、树林和鸟》中？",
+      "options": [
+        "时",
+        "朝",
+        "带",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-195": [
+    {
+      "type": "fill-blank",
+      "question": "师____",
+      "answer": "师",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "师",
+        "农",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-196": [
+    {
+      "type": "fill-blank",
+      "question": "从____",
+      "answer": "从",
+      "hint": "课文《24 司马光》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《24 司马光》中？",
+      "options": [
+        "从",
+        "里",
+        "玩",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-197": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《25 灰雀》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《25 灰雀》中？",
+      "options": [
+        "们",
+        "时",
+        "带",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-198": [
+    {
+      "type": "fill-blank",
+      "question": "师____",
+      "answer": "师",
+      "hint": "课文《26 手术台就是阵地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《26 手术台就是阵地》中？",
+      "options": [
+        "师",
+        "们",
+        "时",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-199": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《27* 一个粗瓷大碗》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《27* 一个粗瓷大碗》中？",
+      "options": [
+        "住",
+        "时",
+        "们",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-200": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "时",
+        "求",
+        "恩",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-201": [
+    {
+      "type": "fill-blank",
+      "question": "秀____",
+      "answer": "秀",
+      "hint": "课文《绝句》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《绝句》中？",
+      "options": [
+        "秀",
+        "草",
+        "成",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-202": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《惠崇春江晚景》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《惠崇春江晚景》中？",
+      "options": [
+        "时",
+        "疾",
+        "怪",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-203": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《三衢道中》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《三衢道中》中？",
+      "options": [
+        "时",
+        "浙",
+        "鸣",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-204": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《2 燕子》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《2 燕子》中？",
+      "options": [
+        "时",
+        "憩",
+        "尾",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-205": [
+    {
+      "type": "fill-blank",
+      "question": "往____",
+      "answer": "往",
+      "hint": "课文《3 荷花》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《3 荷花》中？",
+      "options": [
+        "往",
+        "荷",
+        "已",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-206": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《4* 昆虫备忘录》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《4* 昆虫备忘录》中？",
+      "options": [
+        "住",
+        "们",
+        "时",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-207": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "时",
+        "们",
+        "甲",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-208": [
+    {
+      "type": "fill-blank",
+      "question": "走____",
+      "answer": "走",
+      "hint": "课文《5 守株待兔》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《5 守株待兔》中？",
+      "options": [
+        "走",
+        "截",
+        "到",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-209": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《6 陶罐和铁罐》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《6 陶罐和铁罐》中？",
+      "options": [
+        "住",
+        "们",
+        "慢",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-210": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《7 鹿角和鹿腿》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《7 鹿角和鹿腿》中？",
+      "options": [
+        "住",
+        "时",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-211": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《8* 池子与河流》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《8* 池子与河流》中？",
+      "options": [
+        "时",
+        "们",
+        "带",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-212": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "时",
+        "尾",
+        "比",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-213": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《元日》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《元日》中？",
+      "options": [
+        "时",
+        "北",
+        "想",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-214": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《清明》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《清明》中？",
+      "options": [
+        "时",
+        "问",
+        "村",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-215": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《九月九日忆山东兄弟》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《九月九日忆山东兄弟》中？",
+      "options": [
+        "们",
+        "时",
+        "朝",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-216": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《10 纸的发明》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《10 纸的发明》中？",
+      "options": [
+        "们",
+        "时",
+        "甲",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-217": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《11 赵州桥》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《11 赵州桥》中？",
+      "options": [
+        "时",
+        "朝",
+        "北",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-218": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《12* 一幅名扬中外的画》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《12* 一幅名扬中外的画》中？",
+      "options": [
+        "住",
+        "时",
+        "们",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-219": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "们",
+        "往",
+        "农",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-220": [
+    {
+      "type": "fill-blank",
+      "question": "娇____",
+      "answer": "娇",
+      "hint": "课文《13 花钟》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《13 花钟》中？",
+      "options": [
+        "娇",
+        "们",
+        "时",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-221": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《14 蜜蜂》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《14 蜜蜂》中？",
+      "options": [
+        "们",
+        "时",
+        "带",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-222": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《15* 小虾》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《15* 小虾》中？",
+      "options": [
+        "住",
+        "们",
+        "时",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-223": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "时",
+        "们",
+        "陵",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-224": [
+    {
+      "type": "fill-blank",
+      "question": "师____",
+      "answer": "师",
+      "hint": "课文《16 宇宙的另一边》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《16 宇宙的另一边》中？",
+      "options": [
+        "师",
+        "时",
+        "们",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-225": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《17 我变成了一棵树》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《17 我变成了一棵树》中？",
+      "options": [
+        "住",
+        "时",
+        "状",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-226": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《习作例文》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《习作例文》中？",
+      "options": [
+        "们",
+        "尾",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-227": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《18 童年的水墨画》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《18 童年的水墨画》中？",
+      "options": [
+        "时",
+        "带",
+        "溅",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-228": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《19 剃头大师》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《19 剃头大师》中？",
+      "options": [
+        "时",
+        "再",
+        "比",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-229": [
+    {
+      "type": "fill-blank",
+      "question": "娇____",
+      "answer": "娇",
+      "hint": "课文《20 肥皂泡》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《20 肥皂泡》中？",
+      "options": [
+        "娇",
+        "时",
+        "们",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-230": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《21* 我不能失信》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《21* 我不能失信》中？",
+      "options": [
+        "住",
+        "怪",
+        "们",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-231": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "时",
+        "们",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-232": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《22 我们奇妙的世界》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《22 我们奇妙的世界》中？",
+      "options": [
+        "时",
+        "慢",
+        "状",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-233": [
+    {
+      "type": "fill-blank",
+      "question": "汪____",
+      "answer": "汪",
+      "hint": "课文《23 海底世界》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《23 海底世界》中？",
+      "options": [
+        "汪",
+        "时",
+        "们",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-234": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《24 火烧云》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《24 火烧云》中？",
+      "options": [
+        "们",
+        "时",
+        "鸡",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-235": [
+    {
+      "type": "fill-blank",
+      "question": "天____",
+      "answer": "天",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "天",
+        "说",
+        "赤",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-236": [
+    {
+      "type": "fill-blank",
+      "question": "师____",
+      "answer": "师",
+      "hint": "课文《25 慢性子裁缝和急性子顾客》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《25 慢性子裁缝和急性子顾客》中？",
+      "options": [
+        "师",
+        "们",
+        "时",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-237": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《26* 方帽子店》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《26* 方帽子店》中？",
+      "options": [
+        "们",
+        "怪",
+        "慢",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-238": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《27 漏》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《27 漏》中？",
+      "options": [
+        "住",
+        "时",
+        "慢",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-239": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《28* 枣核》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《28* 枣核》中？",
+      "options": [
+        "时",
+        "们",
+        "怪",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-240": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "时",
+        "慢",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-241": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《1 观潮》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《1 观潮》中？",
+      "options": [
+        "们",
+        "卧",
+        "往",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-242": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《2 走月亮》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《2 走月亮》中？",
+      "options": [
+        "时",
+        "们",
+        "谷",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-243": [
+    {
+      "type": "fill-blank",
+      "question": "管____",
+      "answer": "管",
+      "hint": "课文《秋晚的江上》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《秋晚的江上》中？",
+      "options": [
+        "管",
+        "儿",
+        "的",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-244": [
+    {
+      "type": "fill-blank",
+      "question": "走____",
+      "answer": "走",
+      "hint": "课文《花牛歌》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《花牛歌》中？",
+      "options": [
+        "走",
+        "剪",
+        "里",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-245": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《4* 繁星》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《4* 繁星》中？",
+      "options": [
+        "住",
+        "时",
+        "们",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-246": [
+    {
+      "type": "fill-blank",
+      "question": "朝____",
+      "answer": "朝",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "朝",
+        "谷",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-247": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《5 一个豆荚里的五粒豆》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《5 一个豆荚里的五粒豆》中？",
+      "options": [
+        "时",
+        "比",
+        "想",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-248": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《6 夜间飞行的秘密》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《6 夜间飞行的秘密》中？",
+      "options": [
+        "住",
+        "们",
+        "时",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-249": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《7 呼风唤雨的世纪》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《7 呼风唤雨的世纪》中？",
+      "options": [
+        "住",
+        "时",
+        "慢",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-250": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《8* 蝴蝶的家》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《8* 蝴蝶的家》中？",
+      "options": [
+        "时",
+        "们",
+        "避",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-251": [
+    {
+      "type": "fill-blank",
+      "question": "赌____",
+      "answer": "赌",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "赌",
+        "智",
+        "钞",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-252": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《暮江吟》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《暮江吟》中？",
+      "options": [
+        "时",
+        "天",
+        "父",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-253": [
+    {
+      "type": "fill-blank",
+      "question": "怪____",
+      "answer": "怪",
+      "hint": "课文《题西林壁》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《题西林壁》中？",
+      "options": [
+        "怪",
+        "疾",
+        "仙",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-254": [
+    {
+      "type": "fill-blank",
+      "question": "朝____",
+      "answer": "朝",
+      "hint": "课文《雪梅》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《雪梅》中？",
+      "options": [
+        "朝",
+        "说",
+        "思",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-255": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《10 爬山虎的脚》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《10 爬山虎的脚》中？",
+      "options": [
+        "住",
+        "时",
+        "状",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-256": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《11 蟋蟀的住宅》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《11 蟋蟀的住宅》中？",
+      "options": [
+        "时",
+        "朝",
+        "颚",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-257": [
+    {
+      "type": "fill-blank",
+      "question": "里____",
+      "answer": "里",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "里",
+        "带",
+        "雁",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-258": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《12 盘古开天地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《12 盘古开天地》中？",
+      "options": [
+        "们",
+        "慢",
+        "鸡",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-259": [
+    {
+      "type": "fill-blank",
+      "question": "常____",
+      "answer": "常",
+      "hint": "课文《13 精卫填海》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《13 精卫填海》中？",
+      "options": [
+        "常",
+        "玩",
+        "以",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-260": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《14 普罗米修斯》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《14 普罗米修斯》中？",
+      "options": [
+        "们",
+        "时",
+        "兽",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-261": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《15* 女娲补天》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《15* 女娲补天》中？",
+      "options": [
+        "住",
+        "们",
+        "兽",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-262": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "时",
+        "天",
+        "圃",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-263": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《16 麻雀》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《16 麻雀》中？",
+      "options": [
+        "住",
+        "怪",
+        "慢",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-264": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《17 爬天都峰》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《17 爬天都峰》中？",
+      "options": [
+        "们",
+        "带",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-265": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《习作例文》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《习作例文》中？",
+      "options": [
+        "时",
+        "再",
+        "想",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-266": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《18 牛和鹅》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《18 牛和鹅》中？",
+      "options": [
+        "时",
+        "朝",
+        "尾",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-267": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《19 一只窝囊的大老虎》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《19 一只窝囊的大老虎》中？",
+      "options": [
+        "时",
+        "尾",
+        "再",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-268": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《20 陀螺》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《20 陀螺》中？",
+      "options": [
+        "时",
+        "朝",
+        "再",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-269": [
+    {
+      "type": "fill-blank",
+      "question": "从____",
+      "answer": "从",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "从",
+        "时",
+        "里",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-270": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《出塞》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《出塞》中？",
+      "options": [
+        "时",
+        "农",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-271": [
+    {
+      "type": "fill-blank",
+      "question": "卧____",
+      "answer": "卧",
+      "hint": "课文《凉州词》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《凉州词》中？",
+      "options": [
+        "卧",
+        "时",
+        "仙",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-272": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《夏日绝句》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《夏日绝句》中？",
+      "options": [
+        "们",
+        "时",
+        "北",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-273": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《22 为中华之崛起而读书》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《22 为中华之崛起而读书》中？",
+      "options": [
+        "们",
+        "时",
+        "往",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-274": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《23 梅兰芳蓄须》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《23 梅兰芳蓄须》中？",
+      "options": [
+        "时",
+        "再",
+        "助",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-275": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《24* 延安，我把你追寻》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《24* 延安，我把你追寻》中？",
+      "options": [
+        "们",
+        "天",
+        "想",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-276": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "时",
+        "带",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-277": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《25 王戎不取道旁李》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《25 王戎不取道旁李》中？",
+      "options": [
+        "时",
+        "们",
+        "说",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-278": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《26 西门豹治邺》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《26 西门豹治邺》中？",
+      "options": [
+        "时",
+        "们",
+        "带",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-279": [
+    {
+      "type": "fill-blank",
+      "question": "怪____",
+      "answer": "怪",
+      "hint": "课文《扁鹊治病》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《扁鹊治病》中？",
+      "options": [
+        "怪",
+        "求",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-280": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《纪昌学射》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《纪昌学射》中？",
+      "options": [
+        "住",
+        "时",
+        "尾",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-281": [
+    {
+      "type": "fill-blank",
+      "question": "秀____",
+      "answer": "秀",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "秀",
+        "锈",
+        "专",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-282": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《四时田园杂兴（其二十五）》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《四时田园杂兴（其二十五）》中？",
+      "options": [
+        "时",
+        "农",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-283": [
+    {
+      "type": "fill-blank",
+      "question": "疾____",
+      "answer": "疾",
+      "hint": "课文《宿新市徐公店》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《宿新市徐公店》中？",
+      "options": [
+        "疾",
+        "秀",
+        "范",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-284": [
+    {
+      "type": "fill-blank",
+      "question": "卧____",
+      "answer": "卧",
+      "hint": "课文《清平乐·村居》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《清平乐·村居》中？",
+      "options": [
+        "卧",
+        "疾",
+        "鸡",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-285": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《2 乡下人家》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《2 乡下人家》中？",
+      "options": [
+        "住",
+        "时",
+        "们",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-286": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《3 天窗》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《3 天窗》中？",
+      "options": [
+        "时",
+        "们",
+        "带",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-287": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《4* 三月桃花水》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《4* 三月桃花水》中？",
+      "options": [
+        "们",
+        "朝",
+        "琴",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-288": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "时",
+        "们",
+        "寓",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-289": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《5 琥珀》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《5 琥珀》中？",
+      "options": [
+        "时",
+        "再",
+        "想",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-290": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《6 飞向蓝天的恐龙》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《6 飞向蓝天的恐龙》中？",
+      "options": [
+        "时",
+        "再",
+        "凌",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-291": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《7 纳米技术就在我们身边》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《7 纳米技术就在我们身边》中？",
+      "options": [
+        "住",
+        "们",
+        "时",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-292": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《8* 千年梦圆在今朝》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《8* 千年梦圆在今朝》中？",
+      "options": [
+        "时",
+        "想",
+        "说",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-293": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "时",
+        "橱",
+        "锈",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-294": [
+    {
+      "type": "fill-blank",
+      "question": "的____",
+      "answer": "的",
+      "hint": "课文《繁星（七一）》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《繁星（七一）》中？",
+      "options": [
+        "的",
+        "母",
+        "些",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-295": [
+    {
+      "type": "fill-blank",
+      "question": "里____",
+      "answer": "里",
+      "hint": "课文《繁星（一三一）》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《繁星（一三一）》中？",
+      "options": [
+        "里",
+        "的",
+        "星",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-296": [
+    {
+      "type": "fill-blank",
+      "question": "里____",
+      "answer": "里",
+      "hint": "课文《繁星（一五九）》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《繁星（一五九）》中？",
+      "options": [
+        "里",
+        "到",
+        "雨",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-297": [
+    {
+      "type": "fill-blank",
+      "question": "淡____",
+      "answer": "淡",
+      "hint": "课文《10 绿》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《10 绿》中？",
+      "options": [
+        "淡",
+        "奇",
+        "按",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-298": [
+    {
+      "type": "fill-blank",
+      "question": "绽____",
+      "answer": "绽",
+      "hint": "课文《11 白桦》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《11 白桦》中？",
+      "options": [
+        "绽",
+        "雪",
+        "迟",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-299": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《12* 在天晴了的时候》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《12* 在天晴了的时候》中？",
+      "options": [
+        "时",
+        "慢",
+        "们",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-300": [
+    {
+      "type": "fill-blank",
+      "question": "娇____",
+      "answer": "娇",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "娇",
+        "朝",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-301": [
+    {
+      "type": "fill-blank",
+      "question": "怪____",
+      "answer": "怪",
+      "hint": "课文《13 猫》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《13 猫》中？",
+      "options": [
+        "怪",
+        "时",
+        "们",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-302": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《14 母鸡》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《14 母鸡》中？",
+      "options": [
+        "时",
+        "们",
+        "鸡",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-303": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《15 白鹅》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《15 白鹅》中？",
+      "options": [
+        "时",
+        "慢",
+        "们",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-304": [
+    {
+      "type": "fill-blank",
+      "question": "师____",
+      "answer": "师",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "师",
+        "时",
+        "浙",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-305": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《16 海上日出》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《16 海上日出》中？",
+      "options": [
+        "时",
+        "慢",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-306": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《17 记金华的双龙洞》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《17 记金华的双龙洞》中？",
+      "options": [
+        "时",
+        "浙",
+        "朝",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-307": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《习作例文》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《习作例文》中？",
+      "options": [
+        "时",
+        "再",
+        "缎",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-308": [
+    {
+      "type": "fill-blank",
+      "question": "朝____",
+      "answer": "朝",
+      "hint": "课文《囊萤夜读》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《囊萤夜读》中？",
+      "options": [
+        "朝",
+        "常",
+        "到",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-309": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《铁杵成针》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《铁杵成针》中？",
+      "options": [
+        "时",
+        "想",
+        "成",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-310": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《19 小英雄雨来（节选）》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《19 小英雄雨来（节选）》中？",
+      "options": [
+        "时",
+        "朝",
+        "鳅",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-311": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《20* 我们家的男子汉》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《20* 我们家的男子汉》中？",
+      "options": [
+        "时",
+        "徽",
+        "再",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-312": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《21* 芦花鞋》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《21* 芦花鞋》中？",
+      "options": [
+        "时",
+        "朝",
+        "再",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-313": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "住",
+        "时",
+        "柜",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-314": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《芙蓉楼送辛渐》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《芙蓉楼送辛渐》中？",
+      "options": [
+        "们",
+        "农",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-315": [
+    {
+      "type": "fill-blank",
+      "question": "朝____",
+      "answer": "朝",
+      "hint": "课文《塞下曲（夜黑雁飞高）》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《塞下曲（夜黑雁飞高）》中？",
+      "options": [
+        "朝",
+        "带",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-316": [
+    {
+      "type": "fill-blank",
+      "question": "浙____",
+      "answer": "浙",
+      "hint": "课文《墨梅》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《墨梅》中？",
+      "options": [
+        "浙",
+        "朝",
+        "农",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-317": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《23 黄继光》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《23 黄继光》中？",
+      "options": [
+        "住",
+        "们",
+        "时",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-318": [
+    {
+      "type": "fill-blank",
+      "question": "驶____",
+      "answer": "驶",
+      "hint": "课文《24 “诺曼底”号遇难记》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《24 “诺曼底”号遇难记》中？",
+      "options": [
+        "驶",
+        "时",
+        "朝",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-319": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《25 挑山工》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《25 挑山工》中？",
+      "options": [
+        "时",
+        "再",
+        "比",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-320": [
+    {
+      "type": "fill-blank",
+      "question": "临____",
+      "answer": "临",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "临",
+        "胜",
+        "语",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-321": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《26 宝葫芦的秘密（节选）》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《26 宝葫芦的秘密（节选）》中？",
+      "options": [
+        "住",
+        "们",
+        "怪",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-322": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《27 巨人的花园》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《27 巨人的花园》中？",
+      "options": [
+        "时",
+        "再",
+        "说",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-323": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《28* 海的女儿》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《28* 海的女儿》中？",
+      "options": [
+        "时",
+        "驶",
+        "朝",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-324": [
+    {
+      "type": "fill-blank",
+      "question": "师____",
+      "answer": "师",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "师",
+        "时",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-325": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《1 白鹭》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《1 白鹭》中？",
+      "options": [
+        "时",
+        "们",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-326": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《2 落花生》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《2 落花生》中？",
+      "options": [
+        "们",
+        "怪",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-327": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《3 桂花雨》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《3 桂花雨》中？",
+      "options": [
+        "时",
+        "们",
+        "点",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-328": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《4* 珍珠鸟》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《4* 珍珠鸟》中？",
+      "options": [
+        "时",
+        "再",
+        "赖",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-329": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "时",
+        "浙",
+        "朝",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-330": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《5 搭石》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《5 搭石》中？",
+      "options": [
+        "住",
+        "们",
+        "慢",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-331": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《6 将相和》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《6 将相和》中？",
+      "options": [
+        "时",
+        "朝",
+        "侮",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-332": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《7 什么比猎豹的速度更快》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《7 什么比猎豹的速度更快》中？",
+      "options": [
+        "时",
+        "驶",
+        "们",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-333": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《8 冀中的地道战》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《8 冀中的地道战》中？",
+      "options": [
+        "时",
+        "想",
+        "说",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-334": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "住",
+        "们",
+        "时",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-335": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《9 猎人海力布》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《9 猎人海力布》中？",
+      "options": [
+        "时",
+        "再",
+        "助",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-336": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《10 牛郎织女（一）》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《10 牛郎织女（一）》中？",
+      "options": [
+        "时",
+        "朝",
+        "娘",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-337": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《11* 牛郎织女（二）》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《11* 牛郎织女（二）》中？",
+      "options": [
+        "时",
+        "娘",
+        "助",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-338": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "时",
+        "们",
+        "往",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-339": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《快乐读书吧》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《快乐读书吧》中？",
+      "options": [
+        "时",
+        "娘",
+        "想",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-340": [
+    {
+      "type": "fill-blank",
+      "question": "师____",
+      "answer": "师",
+      "hint": "课文《示儿》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《示儿》中？",
+      "options": [
+        "师",
+        "时",
+        "们",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-341": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《题临安邸》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《题临安邸》中？",
+      "options": [
+        "时",
+        "朝",
+        "荪",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-342": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《已亥杂诗》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《已亥杂诗》中？",
+      "options": [
+        "住",
+        "腐",
+        "浙",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-343": [
+    {
+      "type": "fill-blank",
+      "question": "汪____",
+      "answer": "汪",
+      "hint": "课文《13 少年中国说（节选）》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《13 少年中国说（节选）》中？",
+      "options": [
+        "汪",
+        "兽",
+        "胜",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-344": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《14 圆明园的毁灭》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《14 圆明园的毁灭》中？",
+      "options": [
+        "时",
+        "们",
+        "胜",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-345": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《15* 小岛》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《15* 小岛》中？",
+      "options": [
+        "时",
+        "比",
+        "想",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-346": [
+    {
+      "type": "fill-blank",
+      "question": "诡____",
+      "answer": "诡",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "诡",
+        "成",
+        "端",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-347": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《16 太阳》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《16 太阳》中？",
+      "options": [
+        "时",
+        "们",
+        "兽",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-348": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《17 松鼠》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《17 松鼠》中？",
+      "options": [
+        "住",
+        "们",
+        "时",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-349": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《习作例文》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《习作例文》中？",
+      "options": [
+        "时",
+        "朝",
+        "尾",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-350": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《18 慈母情深》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《18 慈母情深》中？",
+      "options": [
+        "时",
+        "朝",
+        "噪",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-351": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《19 父爱之舟》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《19 父爱之舟》中？",
+      "options": [
+        "时",
+        "再",
+        "比",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-352": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《20* “精彩极了”和“糟糕透了”》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《20* “精彩极了”和“糟糕透了”》中？",
+      "options": [
+        "时",
+        "驶",
+        "再",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-353": [
+    {
+      "type": "fill-blank",
+      "question": "娇____",
+      "answer": "娇",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "娇",
+        "时",
+        "驶",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-354": [
+    {
+      "type": "fill-blank",
+      "question": "朝____",
+      "answer": "朝",
+      "hint": "课文《山居秋暝》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《山居秋暝》中？",
+      "options": [
+        "朝",
+        "谷",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-355": [
+    {
+      "type": "fill-blank",
+      "question": "天____",
+      "answer": "天",
+      "hint": "课文《枫桥夜泊》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《枫桥夜泊》中？",
+      "options": [
+        "天",
+        "乌",
+        "北",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-356": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《长相思》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《长相思》中？",
+      "options": [
+        "住",
+        "们",
+        "时",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-357": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《22 鸟的天堂》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《22 鸟的天堂》中？",
+      "options": [
+        "们",
+        "时",
+        "卧",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-358": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《23* 月迹》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《23* 月迹》中？",
+      "options": [
+        "住",
+        "们",
+        "时",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-359": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "时",
+        "浙",
+        "朝",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-360": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《24 古人谈读书》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《24 古人谈读书》中？",
+      "options": [
+        "住",
+        "时",
+        "诲",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-361": [
+    {
+      "type": "fill-blank",
+      "question": "某____",
+      "answer": "某",
+      "hint": "课文《25 忆读书》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《25 忆读书》中？",
+      "options": [
+        "某",
+        "时",
+        "朝",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-362": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《26* 我的“长生果”》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《26* 我的“长生果”》中？",
+      "options": [
+        "时",
+        "谷",
+        "助",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-363": [
+    {
+      "type": "fill-blank",
+      "question": "师____",
+      "answer": "师",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "师",
+        "们",
+        "时",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-364": [
+    {
+      "type": "fill-blank",
+      "question": "农____",
+      "answer": "农",
+      "hint": "课文《四时田园杂兴（其三十一）》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《四时田园杂兴（其三十一）》中？",
+      "options": [
+        "农",
+        "天",
+        "范",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-365": [
+    {
+      "type": "fill-blank",
+      "question": "疾____",
+      "answer": "疾",
+      "hint": "课文《稚子弄冰》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《稚子弄冰》中？",
+      "options": [
+        "疾",
+        "秀",
+        "范",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-366": [
+    {
+      "type": "fill-blank",
+      "question": "慢____",
+      "answer": "慢",
+      "hint": "课文《村晚》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《村晚》中？",
+      "options": [
+        "慢",
+        "朝",
+        "草",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-367": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《2 祖父的园子》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《2 祖父的园子》中？",
+      "options": [
+        "时",
+        "尾",
+        "谷",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-368": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《3* 月是故乡明》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《3* 月是故乡明》中？",
+      "options": [
+        "时",
+        "再",
+        "比",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-369": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《4* 梅花魂》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《4* 梅花魂》中？",
+      "options": [
+        "时",
+        "凌",
+        "想",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-370": [
+    {
+      "type": "fill-blank",
+      "question": "浙____",
+      "answer": "浙",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "浙",
+        "鸡",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-371": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《5 草船借箭》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《5 草船借箭》中？",
+      "options": [
+        "时",
+        "驶",
+        "朝",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-372": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《6 景阳冈》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《6 景阳冈》中？",
+      "options": [
+        "时",
+        "尾",
+        "谷",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-373": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《7* 猴王出世》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《7* 猴王出世》中？",
+      "options": [
+        "时",
+        "朝",
+        "再",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-374": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《8* 红楼春趣》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《8* 红楼春趣》中？",
+      "options": [
+        "们",
+        "时",
+        "鸡",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-375": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "时",
+        "怪",
+        "往",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-376": [
+    {
+      "type": "fill-blank",
+      "question": "某____",
+      "answer": "某",
+      "hint": "课文《快乐读书吧》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《快乐读书吧》中？",
+      "options": [
+        "某",
+        "尾",
+        "赖",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-377": [
+    {
+      "type": "fill-blank",
+      "question": "甲____",
+      "answer": "甲",
+      "hint": "课文《从军行》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《从军行》中？",
+      "options": [
+        "甲",
+        "农",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-378": [
+    {
+      "type": "fill-blank",
+      "question": "师____",
+      "answer": "师",
+      "hint": "课文《秋夜将晓出篱门迎凉有感》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《秋夜将晓出篱门迎凉有感》中？",
+      "options": [
+        "师",
+        "们",
+        "浙",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-379": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《闻官军收河南河北》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《闻官军收河南河北》中？",
+      "options": [
+        "时",
+        "点",
+        "草",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-380": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《10 青山处处埋忠骨》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《10 青山处处埋忠骨》中？",
+      "options": [
+        "时",
+        "朝",
+        "想",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-381": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《11 军神》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《11 军神》中？",
+      "options": [
+        "住",
+        "崭",
+        "带",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-382": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《12* 清贫》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《12* 清贫》中？",
+      "options": [
+        "时",
+        "再",
+        "比",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-383": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "时",
+        "凌",
+        "想",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-384": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《13 人物描写一组》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《13 人物描写一组》中？",
+      "options": [
+        "时",
+        "朝",
+        "再",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-385": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《14 刷子李》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《14 刷子李》中？",
+      "options": [
+        "时",
+        "朝",
+        "再",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-386": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《习作例文》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《习作例文》中？",
+      "options": [
+        "时",
+        "娃",
+        "助",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-387": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《15 自相矛盾》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《15 自相矛盾》中？",
+      "options": [
+        "时",
+        "比",
+        "说",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-388": [
+    {
+      "type": "fill-blank",
+      "question": "师____",
+      "answer": "师",
+      "hint": "课文《16 田忌赛马》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《16 田忌赛马》中？",
+      "options": [
+        "师",
+        "们",
+        "时",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-389": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《17 跳水》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《17 跳水》中？",
+      "options": [
+        "住",
+        "们",
+        "时",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-390": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "住",
+        "时",
+        "们",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-391": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《18 威尼斯的小艇》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《18 威尼斯的小艇》中？",
+      "options": [
+        "们",
+        "驶",
+        "往",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-392": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《19 牧场之国》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《19 牧场之国》中？",
+      "options": [
+        "时",
+        "们",
+        "鸡",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-393": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《金字塔夕照》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《金字塔夕照》中？",
+      "options": [
+        "住",
+        "时",
+        "们",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-394": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "住",
+        "们",
+        "时",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-395": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《21 杨氏之子》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《21 杨氏之子》中？",
+      "options": [
+        "时",
+        "朝",
+        "郡",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-396": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《22 手指》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《22 手指》中？",
+      "options": [
+        "时",
+        "再",
+        "助",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-397": [
+    {
+      "type": "fill-blank",
+      "question": "某____",
+      "answer": "某",
+      "hint": "课文《23* 童年的发现》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《23* 童年的发现》中？",
+      "options": [
+        "某",
+        "时",
+        "朝",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-398": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "住",
+        "琴",
+        "端",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-399": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《1 草原》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《1 草原》中？",
+      "options": [
+        "时",
+        "再",
+        "助",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-400": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《2 丁香结》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《2 丁香结》中？",
+      "options": [
+        "住",
+        "时",
+        "们",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-401": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《宿建德江》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《宿建德江》中？",
+      "options": [
+        "时",
+        "天",
+        "更",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-402": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《六月二十七日望湖楼醉书》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《六月二十七日望湖楼醉书》中？",
+      "options": [
+        "住",
+        "怪",
+        "疾",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-403": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《西江月·夜行黄沙道中》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《西江月·夜行黄沙道中》中？",
+      "options": [
+        "时",
+        "疾",
+        "们",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-404": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《4* 花之歌》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《4* 花之歌》中？",
+      "options": [
+        "时",
+        "往",
+        "朝",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-405": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "时",
+        "谷",
+        "比",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-406": [
+    {
+      "type": "fill-blank",
+      "question": "溅____",
+      "answer": "溅",
+      "hint": "课文《5 七律·长征》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《5 七律·长征》中？",
+      "options": [
+        "溅",
+        "天",
+        "更",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-407": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《6 狼牙山五壮士》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《6 狼牙山五壮士》中？",
+      "options": [
+        "时",
+        "谷",
+        "说",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-408": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《7 开国大典》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《7 开国大典》中？",
+      "options": [
+        "时",
+        "再",
+        "现",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-409": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《8* 灯光》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《8* 灯光》中？",
+      "options": [
+        "时",
+        "想",
+        "说",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-410": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《9* 我的战友邱少云》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《9* 我的战友邱少云》中？",
+      "options": [
+        "时",
+        "朝",
+        "网",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-411": [
+    {
+      "type": "fill-blank",
+      "question": "卑____",
+      "answer": "卑",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "卑",
+        "盯",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-412": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《10 竹节人》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《10 竹节人》中？",
+      "options": [
+        "时",
+        "再",
+        "嵌",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-413": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《11 宇宙生命之谜》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《11 宇宙生命之谜》中？",
+      "options": [
+        "时",
+        "朝",
+        "说",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-414": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《12* 故宫博物院》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《12* 故宫博物院》中？",
+      "options": [
+        "时",
+        "朝",
+        "网",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-415": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "时",
+        "谷",
+        "徽",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-416": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《13 桥》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《13 桥》中？",
+      "options": [
+        "住",
+        "时",
+        "们",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-417": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《14 穷人》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《14 穷人》中？",
+      "options": [
+        "时",
+        "网",
+        "想",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-418": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《15 金色的鱼钩》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《15 金色的鱼钩》中？",
+      "options": [
+        "时",
+        "朝",
+        "锈",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-419": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "住",
+        "时",
+        "们",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-420": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《快乐读书吧》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《快乐读书吧》中？",
+      "options": [
+        "时",
+        "助",
+        "说",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-421": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《16 夏天里的成长》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《16 夏天里的成长》中？",
+      "options": [
+        "时",
+        "慢",
+        "鸡",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-422": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《17 盼》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《17 盼》中？",
+      "options": [
+        "时",
+        "朝",
+        "再",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-423": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《习作例文》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《习作例文》中？",
+      "options": [
+        "时",
+        "比",
+        "说",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-424": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《浪淘沙》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《浪淘沙》中？",
+      "options": [
+        "时",
+        "朝",
+        "带",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-425": [
+    {
+      "type": "fill-blank",
+      "question": "朝____",
+      "answer": "朝",
+      "hint": "课文《江南春》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《江南春》中？",
+      "options": [
+        "朝",
+        "郭",
+        "寺",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-426": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《书湖阴先生壁》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《书湖阴先生壁》中？",
+      "options": [
+        "时",
+        "翠",
+        "北",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-427": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《19 只有一个地球》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《19 只有一个地球》中？",
+      "options": [
+        "住",
+        "们",
+        "时",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-428": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《20* 青山不老》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《20* 青山不老》中？",
+      "options": [
+        "时",
+        "网",
+        "再",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-429": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《21* 三黑和土地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《21* 三黑和土地》中？",
+      "options": [
+        "们",
+        "时",
+        "带",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-430": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "们",
+        "谷",
+        "更",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-431": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《伯牙鼓琴》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《伯牙鼓琴》中？",
+      "options": [
+        "时",
+        "琴",
+        "再",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-432": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《书戴嵩画牛》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《书戴嵩画牛》中？",
+      "options": [
+        "时",
+        "疾",
+        "怪",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-433": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《23 月光曲》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《23 月光曲》中？",
+      "options": [
+        "住",
+        "们",
+        "时",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-434": [
+    {
+      "type": "fill-blank",
+      "question": "某____",
+      "answer": "某",
+      "hint": "课文《24* 京剧趣谈》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《24* 京剧趣谈》中？",
+      "options": [
+        "某",
+        "时",
+        "朝",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-435": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "住",
+        "天",
+        "点",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-436": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《25 少年闰土》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《25 少年闰土》中？",
+      "options": [
+        "时",
+        "鹁",
+        "谷",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-437": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《26 好的故事》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《26 好的故事》中？",
+      "options": [
+        "时",
+        "凌",
+        "现",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-438": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《27* 我的伯父鲁迅先生》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《27* 我的伯父鲁迅先生》中？",
+      "options": [
+        "时",
+        "再",
+        "比",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-439": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《28 有的人——纪念鲁迅有感》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《28 有的人——纪念鲁迅有感》中？",
+      "options": [
+        "住",
+        "更",
+        "草",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-440": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "们",
+        "慢",
+        "求",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-441": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《1 北京的春节》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《1 北京的春节》中？",
+      "options": [
+        "时",
+        "再",
+        "比",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-442": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《2 腊八粥》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《2 腊八粥》中？",
+      "options": [
+        "时",
+        "朝",
+        "比",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-443": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《寒食》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《寒食》中？",
+      "options": [
+        "时",
+        "朝",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-444": [
+    {
+      "type": "fill-blank",
+      "question": "天____",
+      "answer": "天",
+      "hint": "课文《迢迢牵牛星》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《迢迢牵牛星》中？",
+      "options": [
+        "天",
+        "素",
+        "成",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-445": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《十五夜望月》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《十五夜望月》中？",
+      "options": [
+        "们",
+        "朝",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-446": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《4* 藏戏》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《4* 藏戏》中？",
+      "options": [
+        "时",
+        "绎",
+        "再",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-447": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "时",
+        "朝",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-448": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《5 鲁滨逊漂流记（节选）》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《5 鲁滨逊漂流记（节选）》中？",
+      "options": [
+        "时",
+        "再",
+        "比",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-449": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《6* 骑鹅旅行记（节选）》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《6* 骑鹅旅行记（节选）》中？",
+      "options": [
+        "时",
+        "朝",
+        "尾",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-450": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《7* 汤姆·索亚历险记（节选）》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《7* 汤姆·索亚历险记（节选）》中？",
+      "options": [
+        "时",
+        "朝",
+        "谷",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-451": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "住",
+        "时",
+        "胜",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-452": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《快乐读书吧》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《快乐读书吧》中？",
+      "options": [
+        "时",
+        "助",
+        "比",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-453": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《8 匆匆》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《8 匆匆》中？",
+      "options": [
+        "时",
+        "们",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-454": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《9 那个星期天》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《9 那个星期天》中？",
+      "options": [
+        "时",
+        "再",
+        "比",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-455": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《习作例文》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《习作例文》中？",
+      "options": [
+        "时",
+        "再",
+        "比",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-456": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《马诗》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《马诗》中？",
+      "options": [
+        "时",
+        "仙",
+        "谷",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-457": [
+    {
+      "type": "fill-blank",
+      "question": "师____",
+      "answer": "师",
+      "hint": "课文《石灰吟》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《石灰吟》中？",
+      "options": [
+        "师",
+        "时",
+        "浙",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-458": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《竹石》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《竹石》中？",
+      "options": [
+        "住",
+        "怪",
+        "疾",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-459": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《11 十六年前的回忆》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《11 十六年前的回忆》中？",
+      "options": [
+        "时",
+        "娱",
+        "再",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-460": [
+    {
+      "type": "fill-blank",
+      "question": "们____",
+      "answer": "们",
+      "hint": "课文《12 为人民服务》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《12 为人民服务》中？",
+      "options": [
+        "们",
+        "时",
+        "点",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-461": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《13 董存瑞舍身炸暗堡》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《13 董存瑞舍身炸暗堡》中？",
+      "options": [
+        "时",
+        "网",
+        "再",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-462": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "时",
+        "荷",
+        "北",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-463": [
+    {
+      "type": "fill-blank",
+      "question": "诲____",
+      "answer": "诲",
+      "hint": "课文《学弈》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《学弈》中？",
+      "options": [
+        "诲",
+        "以",
+        "智",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-464": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《两小儿辩日》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《两小儿辩日》中？",
+      "options": [
+        "时",
+        "们",
+        "带",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-465": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《15 真理诞生于一百个问号之后》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《15 真理诞生于一百个问号之后》中？",
+      "options": [
+        "时",
+        "助",
+        "比",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-466": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《16 表里的生物》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《16 表里的生物》中？",
+      "options": [
+        "住",
+        "时",
+        "尾",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-467": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《17* 他们那时候多有趣啊》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《17* 他们那时候多有趣啊》中？",
+      "options": [
+        "时",
+        "再",
+        "娘",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-468": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《语文园地》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《语文园地》中？",
+      "options": [
+        "时",
+        "说",
+        "民",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-469": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《综合性学习》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《综合性学习》中？",
+      "options": [
+        "时",
+        "尾",
+        "娘",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-470": [
+    {
+      "type": "fill-blank",
+      "question": "迟____",
+      "answer": "迟",
+      "hint": "课文《1 采薇（节选）》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《1 采薇（节选）》中？",
+      "options": [
+        "迟",
+        "时",
+        "走",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-471": [
+    {
+      "type": "fill-blank",
+      "question": "朝____",
+      "answer": "朝",
+      "hint": "课文《2 送元二使安西》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《2 送元二使安西》中？",
+      "options": [
+        "朝",
+        "天",
+        "更",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-472": [
+    {
+      "type": "fill-blank",
+      "question": "娇____",
+      "answer": "娇",
+      "hint": "课文《3 春夜喜雨》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《3 春夜喜雨》中？",
+      "options": [
+        "娇",
+        "时",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-473": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《4 早春呈水部张十八员外》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《4 早春呈水部张十八员外》中？",
+      "options": [
+        "时",
+        "胜",
+        "郡",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-474": [
+    {
+      "type": "fill-blank",
+      "question": "师____",
+      "answer": "师",
+      "hint": "课文《5 江上渔者》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《5 江上渔者》中？",
+      "options": [
+        "师",
+        "时",
+        "疾",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-475": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《6 泊船瓜洲》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《6 泊船瓜洲》中？",
+      "options": [
+        "时",
+        "北",
+        "想",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-476": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《7 游园不值》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《7 游园不值》中？",
+      "options": [
+        "住",
+        "浙",
+        "朝",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-477": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《8 卜算子·送鲍浩然之浙东》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《8 卜算子·送鲍浩然之浙东》中？",
+      "options": [
+        "住",
+        "时",
+        "天",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-478": [
+    {
+      "type": "fill-blank",
+      "question": "时____",
+      "answer": "时",
+      "hint": "课文《9 浣溪沙（游蕲水清泉寺）》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《9 浣溪沙（游蕲水清泉寺）》中？",
+      "options": [
+        "时",
+        "疾",
+        "鸡",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ],
+  "cn-479": [
+    {
+      "type": "fill-blank",
+      "question": "住____",
+      "answer": "住",
+      "hint": "课文《10 清平乐·春归何处》中的字"
+    },
+    {
+      "type": "choice",
+      "question": "下列哪个字出现在课文《10 清平乐·春归何处》中？",
+      "options": [
+        "住",
+        "时",
+        "师",
+        "其他"
+      ],
+      "answer": 0
+    }
+  ]
+}
