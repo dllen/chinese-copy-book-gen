@@ -121,7 +121,7 @@ export default function PageGrid({
 
   return React.createElement('div', { className: 'page-wrapper' },
     pages.map((page, i) => React.createElement('div', { key: i, className: 'page' },
-      header ? React.createElement('div', { className: 'header' }, header) : null,
+      header ? React.createElement('div', { className: 'page-header' }, header) : null,
       React.createElement('div', { className: 'grid' },
         (content && content.splitRows ? content.splitRows(page, cols) : (splitRows ? splitRows(page, cols) : [page])).map((row, ri) => {
           // 隔行样式：奇数行显示，偶数行空白
@@ -159,7 +159,9 @@ export default function PageGrid({
             })
           );
         })
-      )
+      ),
+      React.createElement('div', { className: 'page-number' }, `第 ${i + 1} 页`),
+      React.createElement('div', { className: 'page-print-number' }, `${i + 1}`)
     ))
   );
 }

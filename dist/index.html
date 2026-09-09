@@ -40,27 +40,64 @@
       --cell-shadow: none;
     }
     body { background: #f6f7f9; }
-    .page-wrapper { overflow-x: auto; }
+    .page-wrapper {
+      overflow-x: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      padding: 24px 16px;
+    }
     .page {
       width: var(--page-width);
       min-height: var(--page-height);
       padding: var(--page-margin-top) var(--page-margin-right) var(--page-margin-bottom) var(--page-margin-left);
-      margin: 12px auto;
       background: var(--page-bg);
-      box-shadow: 0 0 6px rgba(0,0,0,.12);
+      box-shadow: 0 1px 3px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.05);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 4px;
       color: var(--text-color);
       transform: scale(var(--preview-scale));
       transform-origin: top center;
+      transition: transform 0.2s ease-out;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .page:hover {
+      box-shadow: 0 2px 6px rgba(0,0,0,.1), 0 8px 24px rgba(0,0,0,.07);
+    }
+    .page-header {
+      font-size: 14px;
+      color: #999;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+    .page-number {
+      text-align: center;
+      font-size: 11px;
+      color: #bbb;
+      padding-top: 12px;
+      margin-top: 12px;
+      border-top: 1px solid #eee;
     }
     @media print {
       body { background: #fff; }
       .no-print { display: none !important; }
-      .page { box-shadow: none; margin: 0; page-break-after: always; transform: none; }
+      .page {
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        margin: 0;
+        page-break-after: always;
+        transform: none;
+      }
+      .page:hover { box-shadow: none; }
+      .page-number { display: none; }
     }
 
   /* 打印标记：裁切线 + 页码 */
   @media print {
-    .page { position: relative; }
     .page::before {
       content: '';
       position: absolute;
@@ -69,7 +106,7 @@
       border: 1px dashed #ccc;
       opacity: 0.3;
     }
-    .page-number {
+    .page-print-number {
       position: absolute;
       bottom: 8mm;
       right: 10mm;
@@ -143,6 +180,7 @@
         font-size: 10px;
       }
       .page { transform: scale(0.45); }
+    .page-wrapper { padding: 20px 12px; }
       .container { padding-left: 0.25rem; padding-right: 0.25rem; }
       .row { --bs-gutter-x: 0.5rem; }
       .btn-group { flex-direction: column; }
@@ -192,7 +230,7 @@
     /* Form Text */
     .form-text { font-size: 12px; color: #6c757d; margin-top: 4px; }
   </style>
-  <script type="module" crossorigin src="./assets/index-Cf0QXoJj.js"></script>
+  <script type="module" crossorigin src="./assets/index-C1ZYTFtr.js"></script>
 </head>
 <body>
   <div id="root"></div>
