@@ -1,0 +1,3274 @@
+{
+  "ruler": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "pencil": {
+    "ipa": "/ˈpensl/",
+    "phonetic": "彭塞尔"
+  },
+  "eraser": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "crayon": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "bag": {
+    "ipa": "/bæɡ/",
+    "phonetic": "巴格"
+  },
+  "pen": {
+    "ipa": "/pen/",
+    "phonetic": "彭"
+  },
+  "pencil box": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "book": {
+    "ipa": "/bʊk/",
+    "phonetic": "布克"
+  },
+  "no": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "your": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "red": {
+    "ipa": "/red/",
+    "phonetic": "雷德"
+  },
+  "green": {
+    "ipa": "/ɡriːn/",
+    "phonetic": "格林"
+  },
+  "yellow": {
+    "ipa": "/ˈjeləʊ/",
+    "phonetic": "耶洛"
+  },
+  "blue": {
+    "ipa": "/bluː/",
+    "phonetic": "布鲁"
+  },
+  "black": {
+    "ipa": "/blæk/",
+    "phonetic": "布莱克"
+  },
+  "brown": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "white": {
+    "ipa": "/waɪt/",
+    "phonetic": "怀特"
+  },
+  "orange": {
+    "ipa": "/ˈɒrɪndʒ/",
+    "phonetic": "奥兰治"
+  },
+  "OK": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "mum": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "face": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "ear": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "eye": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "nose": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "mouth": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "arm": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "hand": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "head": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "body": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "leg": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "foot": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "school": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "duck": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "pig": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "cat": {
+    "ipa": "/kæt/",
+    "phonetic": "凯特"
+  },
+  "bear": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "dog": {
+    "ipa": "/dɒɡ/",
+    "phonetic": "多格"
+  },
+  "elephant": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "monkey": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "bird": {
+    "ipa": "/bɜːd/",
+    "phonetic": "伯德"
+  },
+  "tiger": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "panda": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "zoo": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "funny": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "bread": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "juice": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "egg": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "milk": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "water": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "cake": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "fish": {
+    "ipa": "/fɪʃ/",
+    "phonetic": "菲什"
+  },
+  "rice": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "one": {
+    "ipa": "/wʌn/",
+    "phonetic": "万"
+  },
+  "two": {
+    "ipa": "/tuː/",
+    "phonetic": "图"
+  },
+  "three": {
+    "ipa": "/θriː/",
+    "phonetic": "斯里"
+  },
+  "four": {
+    "ipa": "/fɔː/",
+    "phonetic": "福尔"
+  },
+  "five": {
+    "ipa": "/faɪv/",
+    "phonetic": "法夫"
+  },
+  "six": {
+    "ipa": "/sɪks/",
+    "phonetic": "西克斯"
+  },
+  "seven": {
+    "ipa": "/ˈsevn/",
+    "phonetic": "塞文"
+  },
+  "eight": {
+    "ipa": "/eɪt/",
+    "phonetic": "埃特"
+  },
+  "nine": {
+    "ipa": "/naɪn/",
+    "phonetic": "奈恩"
+  },
+  "ten": {
+    "ipa": "/ten/",
+    "phonetic": "滕"
+  },
+  "brother": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "plate": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "UK": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Canada": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "USA": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "China": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "she": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "student": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "pupil": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "he": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "teacher": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "boy": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "and": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "girl": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "new": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "friend": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "today": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "father": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "dad": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "man": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "woman": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "mother": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "sister": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "grandmother": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "grandma": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "grandfather": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "grandpa": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "family": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "thin": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "fat": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "tall": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "short": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "long": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "small": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "big": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "giraffe": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "so": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "children": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "tail": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "on": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "in": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "under": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "chair": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "desk": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "cap": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "ball": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "car": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "boat": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "map": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "toy": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "box": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "pear": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "apple": {
+    "ipa": "/ˈæpl/",
+    "phonetic": "阿普尔"
+  },
+  "banana": {
+    "ipa": "/bəˈnɑːnə/",
+    "phonetic": "巴纳纳"
+  },
+  "watermelon": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "strawberry": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "grape": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "buy": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "fruit": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "eleven": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "twelve": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "thirteen": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "fourteen": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "fifteen": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "sixteen": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "seventeen": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "eighteen": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "nineteen": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "twenty": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "kite": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "beautiful": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "classroom": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "window": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "blackboard": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "light": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "picture": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "door": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "teacher's desk": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "computer": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "fan": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "wall": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "floor": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "really": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "near": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "TV": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "clean": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "help": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "schoolbag": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "maths book": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "English book": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Chinese book": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "storybook": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "candy": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "notebook": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "key": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "wow": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "lost": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "so much": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "cute": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "strong": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "friendly": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "quiet": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "hair": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "shoe": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "glasses": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "his": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "or": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "right": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "hat": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "her": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "bedroom": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "living room": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "study": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "kitchen": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "bathroom": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "bed": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "phone": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "table": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "sofa": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "fridge": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "find": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "them": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "beef": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "chicken": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "noodles": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "soup": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "vegetable": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "chopsticks": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "bowl": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "fork": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "knife": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "spoon": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "dinner": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "ready": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "help yourself": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "pass": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "try": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "parents": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "cousin": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "uncle": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "aunt": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "baby brother": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "doctor": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "cook": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "driver": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "farmer": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "nurse": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "people": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "but": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "little": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "puppy": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "football player": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "job": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "basketball": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "first floor": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "second floor": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "teacher's office": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "library": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "playground": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "computer room": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "art room": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "music room": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "next to": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "homework": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "class": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "forty": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "way": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "breakfast": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "English class": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "lunch": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "music class": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "PE class": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "get up": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "go to school": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "go home": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "go to bed": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "over": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "now": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "o'clock": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "kid": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "thirty": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "hurry up": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "come on": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "just a minute": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "cold": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "cool": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "warm": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "hot": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "sunny": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "windy": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "cloudy": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "snowy": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "rainy": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "outside": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "be careful": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "weather": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "New York": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "how about": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "degree": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "world": {
+    "ipa": "/wɜːld/",
+    "phonetic": "沃尔德"
+  },
+  "London": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Moscow": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Singapore": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Sydney": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "fly": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "love": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "tomato": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "potato": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "green beans": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "carrot": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "horse": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "cow": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "sheep": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "hen": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "these": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "yum": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "animal": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "those": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "garden": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "farm": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "goat": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "eat": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "clothes": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "pants": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "dress": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "skirt": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "coat": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "sweater": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "sock": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "shorts": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "jacket": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "shirt": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "yours": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "whose": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "mine": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "pack": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "wait": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "glove": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "scarf": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "umbrella": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "sunglasses": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "pretty": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "expensive": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "cheap": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "nice": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "try on": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "size": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "of course": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "too": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "just": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "how much": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "eighty": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "dollar": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "sale": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "more": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "us": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "old": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "young": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "kind": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "strict": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "polite": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "hard-working": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "helpful": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "clever": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "shy": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "know": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "our": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Ms": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "will": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "sometimes": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "robot": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "him": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "speak": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "finish": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Monday": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Tuesday": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Wednesday": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Thursday": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Friday": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Saturday": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Sunday": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "weekend": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "wash": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "wash my clothes": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "watch": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "watch TV": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "do": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "do homework": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "read": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "read books": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "play": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "play football": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "cooking": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "often": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "park": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "tired": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "sport": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "play sports": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "should": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "every": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "day": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "schedule": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "sandwich": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "salad": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "hamburger": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "ice cream": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "tea": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "fresh": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "healthy": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "delicious": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "sweet": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "drink": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "thirsty": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "favourite": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "food": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Dear": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "onion": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "sing": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "song": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "sing English songs": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "play the pipa": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "kung fu": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "do kung fu": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "dance": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "draw": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "cartoon": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "draw cartoons": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "swim": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "play basketball": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "ping-pong": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "play ping-pong": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "speak English": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "we'll": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "we will": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "party": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "next": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "wonderful": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "learn": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "any": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "problem": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "no problem": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "want": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "send": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "email": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "at": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "clock": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "plant": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "bottle": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "water bottle": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "bike": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "photo": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "front": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "in front of": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "between": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "above": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "beside": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "behind": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "there": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "grandparent": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "their": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "house": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "lot": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "lots of": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "flower": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "move": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "dirty": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "everywhere": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "mouse": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "live": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "nature": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "forest": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "river": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "lake": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "mountain": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "hill": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "tree": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "bridge": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "building": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "village": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "boating": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "go boating": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "aren't": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "are not": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "rabbit": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "high": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "eat breakfast": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "have ... class": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "exercise": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "do morning exercises": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "eat dinner": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "clean my room": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "go for a walk": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "go shopping": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "take": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "dancing": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "take a dancing class": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "when": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "after": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "start": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "usually": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Spain": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "late": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "a.m.": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "p.m.": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "why": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "shop": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "work": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "last": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "sound": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "also": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "busy": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "need": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "letter": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "island": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "always": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "cave": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "go swimming": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "win": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "spring": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "summer": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "autumn": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "winter": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "season": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "picnic": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "go on a picnic": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "pick": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "pick apples": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "snowman": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "make a snowman": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "which": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "best": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "snow": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "good job": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "because": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "vacation": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "all": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "pink": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "lovely": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "leaf": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "fall": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "paint": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "January": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "February": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "March": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "April": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "May": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "June": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "July": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "August": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "September": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "October": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "November": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "December": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "few": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "a few": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "thing": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "meet": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "sports meet": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Easter": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "trip": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "year": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "contest": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "the Great Wall": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "national": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "National Day": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "American": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Thanksgiving": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Christmas": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "holiday": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "game": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "roll": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "look for": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "chocolate": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "bunny": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "RSVP": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "by": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "first": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "second": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "third": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "fourth": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "fifth": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "twelfth": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "twentieth": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "twenty-first": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "twenty-third": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "thirtieth": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "special": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "fool": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "kitten": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "diary": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "still": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "noise": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "fur": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "open": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "walk": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "hers": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "theirs": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "ours": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "climbing": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "eating": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "playing": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "jumping": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "drinking": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "sleeping": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "each": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "other": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "each other": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "excited": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "like": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "doing morning exercises": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "having ... class": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "eating lunch": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "reading a book": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "listening to music": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "keep": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "keep to the right": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "keep your desk clean": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "talk quietly": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "turn": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "take turns": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "bamboo": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "its": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "show": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "anything": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "else": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "exhibition": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "say": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "have a look": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "sushi": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "teach": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "sure": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Canadian": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Spanish": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "science": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "museum": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "post office": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "bookstore": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "cinema": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "hospital": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "crossing": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "left": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "straight": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "ask": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "sir": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "interesting": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Italian": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "restaurant": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "pizza": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "street": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "get": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "GPS": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "gave": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "feature": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "follow": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "far": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "tell": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "on foot": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "bus": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "plane": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "taxi": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "ship": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "subway": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "train": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "slow": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "down": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "slow down": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "stop": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Mrs": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "early": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "helmet": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "must": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "wear": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "attention": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "pay attention to": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "traffic": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "traffic lights": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Munich": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Germany": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Alaska": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "sled": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "fast": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "ferry": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Papa Westray": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Scotland": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "visit": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "film": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "see a film": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "take a trip": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "supermarket": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "evening": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "tonight": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "tomorrow": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "next week": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "dictionary": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "comic": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "comic book": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "word": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "word book": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "postcard": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "lesson": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "space": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "travel": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "half": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "price": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Mid-Autumn Festival": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "together": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "get together": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "mooncake": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "poem": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "moon": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "studies": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "puzzle": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "hiking": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "pen pal": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "hobby": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "jasmine": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "idea": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Canberra": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "amazing": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "shall": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "goal": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "join": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "club": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "share": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "factory": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "worker": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "postman": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "businessman": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "police officer": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "fisherman": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "scientist": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "pilot": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "coach": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "country": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "head teacher": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "sea": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "stay": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "university": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "gym": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "if": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "reporter": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "use": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "type": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "quickly": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "secretary": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "angry": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "afraid": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "sad": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "worried": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "happy": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "see a doctor": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "deep": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "breath": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "take a deep breath": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "count": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "count to ten": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "chase": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "mice": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "bad": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "hurt": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "ill": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "wrong": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "feel": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "well": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "sit": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "grass": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "hear": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "ant": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "worry": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "stuck": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "mud": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "pull": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "everyone": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "younger": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "older": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "taller": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "shorter": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "longer": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "thinner": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "heavier": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "bigger": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "smaller": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "stronger": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "dinosaur": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "hall": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "metre": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "meter": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "than": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "both": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "kilogram": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "countryside": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "lower": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "shadow": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "smarter": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "become": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "cleaned": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "stayed": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "washed": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "watched": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "had": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "had a cold": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "slept": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "saw": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "yesterday": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "before": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "drank": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "magazine": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "better": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "faster": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "hotel": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "fixed": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "broken": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "lamp": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "loud": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "enjoy": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "went": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "camp": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "went camping": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "went fishing": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "rode": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "ate": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "took": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "took pictures": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "bought": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "gift": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "fell": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "off": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Labour Day": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "mule": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Turpan": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "could": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "till": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "beach": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "basket": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "part": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "licked": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "laughed": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "dining hall": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "ago": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "cycling": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "go cycling": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "ice-skate": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "badminton": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "star": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "easy": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "look up": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "Internet": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "different": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "active": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "race": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "nothing": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "thought": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "felt": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "cheetah": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "woke": {
+    "ipa": "",
+    "phonetic": ""
+  },
+  "dream": {
+    "ipa": "",
+    "phonetic": ""
+  }
+}
