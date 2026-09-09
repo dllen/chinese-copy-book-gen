@@ -1,22 +1,23 @@
 import React from 'react';
 
-// 分组样式
 const styles = {
   wrapper: {
     marginTop: '1rem',
     padding: '1rem',
-    border: '1px solid #dee2e6',
-    borderRadius: '0.5rem',
+    border: '1px solid #e5e7eb',
+    borderRadius: '10px',
     background: '#fff',
   },
   group: {
     marginBottom: '0.75rem',
   },
   groupLabel: {
-    fontSize: '0.8rem',
-    color: '#6c757d',
+    fontSize: '0.75rem',
+    color: '#9ca3af',
     marginBottom: '0.5rem',
     fontWeight: 500,
+    textTransform: 'uppercase',
+    letterSpacing: '0.02em',
   },
   buttons: {
     display: 'flex',
@@ -26,11 +27,21 @@ const styles = {
   },
   divider: {
     width: '1px',
-    height: '24px',
-    background: '#dee2e6',
+    height: '20px',
+    background: '#e5e7eb',
     margin: '0 0.25rem',
-  }
+  },
 };
+
+const iconBtn = (icon, text, onClick, opts = {}) =>
+  React.createElement('button', {
+    className: opts.className || 'btn btn-outline-secondary',
+    onClick,
+    disabled: opts.disabled,
+    style: opts.style,
+    onMouseEnter: (e) => { if (!opts.disabled) e.currentTarget.style.background = '#f9fafb'; },
+    onMouseLeave: (e) => { e.currentTarget.style.background = 'transparent'; },
+  }, `${icon}\u00a0${text}`);
 
 export default function Toolbar({
   pages,
@@ -50,9 +61,13 @@ export default function Toolbar({
     React.createElement('div', { style: styles.group },
       React.createElement('div', { style: styles.groupLabel }, '打印与导出'),
       React.createElement('div', { style: styles.buttons },
-        React.createElement('button', { className: 'btn btn-success', onClick: onPrint, disabled, style: { minWidth: '100px' } }, '打印'),
-        React.createElement('button', { className: 'btn btn-primary', onClick: onExportPDF, disabled }, '生成 PDF'),
-        React.createElement('button', { className: 'btn btn-outline-primary', onClick: onExportImage, disabled }, '导出 PNG')
+        iconBtn('🖨️', '打印', onPrint, {
+          className: 'btn btn-success',
+          disabled,
+          style: { minWidth: '90px' },
+        }),
+        iconBtn('📄', 'PDF', onExportPDF, { disabled }),
+        iconBtn('🖼️', 'PNG', onExportImage, { disabled })
       )
     ),
 
@@ -60,16 +75,30 @@ export default function Toolbar({
     React.createElement('div', { style: styles.group },
       React.createElement('div', { style: styles.groupLabel }, '模板与配置'),
       React.createElement('div', { style: styles.buttons },
-        React.createElement('button', { className: 'btn btn-outline-secondary', onClick: onExportConfig }, '导出配置'),
-        React.createElement('button', { className: 'btn btn-outline-secondary', style: { position: 'relative' } },
-          React.createElement('input', { type: 'file', accept: '.json', style: { position: 'absolute', opacity: 0, width: '100%', height: '100%', cursor: 'pointer', left: 0, top: 0 }, onChange: onImportConfig }),
-          '导入配置'
+        iconBtn('📤', '导出', onExportConfig),
+        React.createElement('button', {
+          className: 'btn btn-outline-secondary',
+          style: { position: 'relative' },
+        },
+          React.createElement('input', {
+            type: 'file', accept: '.json',
+            style: { position: 'absolute', opacity: 0, width: '100%', height: '100%', cursor: 'pointer', left: 0, top: 0 },
+            onChange: onImportConfig,
+          }),
+          '📥\u00a0导入'
         ),
         React.createElement('div', { style: styles.divider }),
-        React.createElement('button', { className: 'btn btn-outline-info', onClick: onSaveTemplate }, '保存模板'),
-        React.createElement('button', { className: 'btn btn-outline-info', style: { position: 'relative' } },
-          React.createElement('input', { type: 'file', accept: '.json', style: { position: 'absolute', opacity: 0, width: '100%', height: '100%', cursor: 'pointer', left: 0, top: 0 }, onChange: onLoadTemplate }),
-          '加载模板'
+        iconBtn('💾', '保存', onSaveTemplate, { className: 'btn btn-outline-info' }),
+        React.createElement('button', {
+          className: 'btn btn-outline-info',
+          style: { position: 'relative' },
+        },
+          React.createElement('input', {
+            type: 'file', accept: '.json',
+            style: { position: 'absolute', opacity: 0, width: '100%', height: '100%', cursor: 'pointer', left: 0, top: 0 },
+            onChange: onLoadTemplate,
+          }),
+          '📂\u00a0加载'
         )
       )
     ),
@@ -77,10 +106,11 @@ export default function Toolbar({
     // 重置
     React.createElement('div', { style: { ...styles.group, marginBottom: 0 } },
       React.createElement('div', { style: styles.buttons },
-        React.createElement('button', { className: 'btn btn-outline-danger btn-sm', onClick: onReset }, '重置设置')
+        iconBtn('↺', '重置', onReset, { className: 'btn btn-outline-danger btn-sm' })
       )
     ),
 
-    React.createElement('div', { style: { marginTop: '0.75rem', fontSize: '0.8rem', color: '#6c757d' } }, '建议使用现代浏览器')
+    React.createElement('div', { style: { marginTop: '0.75rem', fontSize: '0.75rem', color: '#9ca3af' } },
+      '建议使用现代浏览器')
   );
 }

@@ -8,34 +8,38 @@ const styles = {
     right: 0,
     padding: '12px 16px',
     background: '#fff',
-    borderTop: '2px solid #dee2e6',
+    borderTop: '1px solid #e5e7eb',
     display: 'flex',
     alignItems: 'center',
-    gap: '12px',
+    gap: '10px',
     zIndex: 20,
-    boxShadow: '0 -2px 10px rgba(0,0,0,0.08)',
+    boxShadow: '0 -1px 3px rgba(0,0,0,0.04)',
   },
   generateBtn: {
-    padding: '10px 28px',
-    fontSize: '16px',
-    fontWeight: 700,
+    padding: '9px 24px',
+    fontSize: '14px',
+    fontWeight: 600,
     border: 'none',
     borderRadius: '8px',
-    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    background: '#111827',
     color: '#fff',
     cursor: 'pointer',
-    transition: 'opacity 0.2s',
+    transition: 'background 0.15s',
   },
-  generateBtnDisabled: { opacity: 0.5, cursor: 'not-allowed' },
+  generateBtnDisabled: { opacity: 0.4, cursor: 'not-allowed' },
   secondaryBtn: {
     padding: '8px 16px',
-    fontSize: '14px',
-    border: '1px solid #dee2e6',
-    borderRadius: '6px',
+    fontSize: '13px',
+    border: '1px solid #d1d5db',
+    borderRadius: '8px',
     background: '#fff',
     cursor: 'pointer',
+    color: '#374151',
+    fontWeight: 500,
+    transition: 'background 0.15s, border-color 0.15s',
   },
-  info: { fontSize: '13px', color: '#6c757d', marginRight: 'auto' },
+  secondaryBtnDisabled: { opacity: 0.4, cursor: 'not-allowed' },
+  info: { fontSize: 13, color: '#6b7280', marginRight: 'auto' },
 };
 
 export default function QuickGenerateBar({ onGenerate, onPrint, onExportPDF, onPreview, hasContent }) {
@@ -49,28 +53,48 @@ export default function QuickGenerateBar({ onGenerate, onPrint, onExportPDF, onP
           .quick-generate-bar .info { margin-right: 0; text-align: center; }
         }
       `}</style>
-      <div style={styles.bar} className="quick-generate-bar" role="region" aria-label="操作栏">
+      <div style={styles.bar} className="quick-generate-bar no-print" role="region" aria-label="操作栏">
         <span style={styles.info} className="info">
           {hasContent ? '已选内容，可生成字帖' : '请先选择内容'}
         </span>
+        {onPreview && (
+          <button
+            className="secondary-btn"
+            style={{ ...styles.secondaryBtn, ...(hasContent ? {} : styles.secondaryBtnDisabled) }}
+            disabled={!hasContent}
+            onClick={onPreview}
+            onMouseEnter={e => { if (hasContent) { e.currentTarget.style.background = '#f9fafb'; e.currentTarget.style.borderColor = '#9ca3af'; }}}
+            onMouseLeave={e => { e.currentTarget.style.background = '#fff'; e.currentTarget.style.borderColor = '#d1d5db'; }}
+          >预览</button>
+        )}
         <button
           className="generate-btn"
           style={{ ...styles.generateBtn, ...(!hasContent ? styles.generateBtnDisabled : {}) }}
           disabled={!hasContent}
           onClick={onGenerate}
+          onMouseEnter={e => { if (hasContent) e.currentTarget.style.background = '#374151'; }}
+          onMouseLeave={e => { e.currentTarget.style.background = '#111827'; }}
         >
           一键生成字帖
         </button>
-        {onPreview && (
-          <button className="secondary-btn" style={styles.secondaryBtn} onClick={onPreview}>预览</button>
-        )}
         {onPrint && (
-          <button className="secondary-btn" style={styles.secondaryBtn} onClick={onPrint}>打印</button>
+          <button
+            className="secondary-btn"
+            style={styles.secondaryBtn}
+            onClick={onPrint}
+            onMouseEnter={e => { e.currentTarget.style.background = '#f9fafb'; e.currentTarget.style.borderColor = '#9ca3af'; }}
+            onMouseLeave={e => { e.currentTarget.style.background = '#fff'; e.currentTarget.style.borderColor = '#d1d5db'; }}
+          >打印</button>
         )}
         {onExportPDF && (
-          <button className="secondary-btn" style={styles.secondaryBtn} onClick={onExportPDF}>PDF</button>
+          <button
+            className="secondary-btn"
+            style={styles.secondaryBtn}
+            onClick={onExportPDF}
+            onMouseEnter={e => { e.currentTarget.style.background = '#f9fafb'; e.currentTarget.style.borderColor = '#9ca3af'; }}
+            onMouseLeave={e => { e.currentTarget.style.background = '#fff'; e.currentTarget.style.borderColor = '#d1d5db'; }}
+          >PDF</button>
         )}
-
       </div>
     </>
   );

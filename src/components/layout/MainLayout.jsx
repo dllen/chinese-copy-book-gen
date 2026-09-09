@@ -117,6 +117,26 @@ export default function MainLayout({
   const showPreview = !!text
   const [showPreviewModal, setShowPreviewModal] = React.useState(false)
 
+  // 打印前确保弹窗已打开（page-wrapper 仅在弹窗内渲染）
+  const printAfterOpenRef = React.useRef(false)
+  React.useEffect(() => {
+    if (showPreviewModal && printAfterOpenRef.current) {
+      printAfterOpenRef.current = false
+      // 等待 DOM 更新后再打印
+      requestAnimationFrame(() => {
+        setTimeout(() => onPrint && onPrint(), 100)
+      })
+    }
+  }, [showPreviewModal, onPrint])
+  const handlePrint = React.useCallback(() => {
+    if (!showPreviewModal) {
+      printAfterOpenRef.current = true
+      setShowPreviewModal(true)
+    } else {
+      onPrint && onPrint()
+    }  
+  }, [showPreviewModal, onPrint])
+
   // ---- Step 0: 选内容 ----
   const step0Content = React.createElement('div', { className: 'row g-3' },
     React.createElement('div', { className: 'col-12 col-lg-7' },
@@ -296,7 +316,7 @@ export default function MainLayout({
     React.createElement('div', { className: 'col-12' },
       React.createElement(Toolbar, {
         pages,
-        onPrint,
+        onPrint: handlePrint,
         onExportPDF,
         onExportImage,
         onSaveTemplate,
@@ -368,7 +388,7 @@ export default function MainLayout({
             }
             onStepChange && onStepChange(2);
           },
-          onPrint,
+          onPrint: handlePrint,
           onExportPDF,
           onPreview: text ? () => setShowPreviewModal(true) : undefined,
                           hasContent: hasContent || showPreview,
@@ -376,7 +396,7 @@ export default function MainLayout({
         React.createElement(PreviewModal, {
           open: showPreviewModal,
           onClose: () => setShowPreviewModal(false),
-          onPrint,
+          onPrint: handlePrint,
           onExportPDF,
         },
           text ? React.createElement(PageGrid, {

@@ -99,6 +99,25 @@
       .page-number { display: none; }
     }
 
+
+  /* 弹窗预览打印：展开模态框内容 */
+  @media print {
+    .preview-modal-overlay {
+      position: static;
+      background: transparent;
+      padding: 0;
+    }
+    .preview-modal-dialog {
+      max-width: none;
+      max-height: none;
+      box-shadow: none;
+      border-radius: 0;
+    }
+    .preview-modal-body {
+      overflow: visible;
+      padding: 0;
+    }
+  }
   /* 打印标记：裁切线 + 页码 */
   @media print {
     .page::before {

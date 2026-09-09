@@ -6,7 +6,6 @@ import { useDebounce } from './hooks/useDebounce';
 import { ToastContainer } from './components/Toast';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import MainLayout from './components/layout/MainLayout';
-import PageGrid from './components/PageGrid';
 import useCopybook from './hooks/useCopybook';
 import { useCourseData } from './hooks/useCourseData';
 import { useStepFlow } from './hooks/useStepFlow';
@@ -451,25 +450,6 @@ export default function App() {
         onDeselectAllCharacters={courseData.deselectAllCharacters}
       />
       </main>
-      <PageGrid
-        pages={pages}
-        cols={settings.cols}
-        layout={settings.layout}
-        feature={settings.feature}
-        header={settings.header}
-        bg={bg}
-        tColor={tColor}
-        strokeMode={settings.strokeMode}
-        font={font}
-        fontSize={settings.fontSize}
-        letterStyle={settings.letterStyle}
-        showGuide={settings.showGuide}
-        engFont={engFont}
-        copybookType={settings.copybookType}
-        copybookStyle={settings.copybookStyle}
-        showPinyin={settings.showPinyin}
-        pinyinColor="#dc3545"
-      />
       {templateModalOpen && (
         <div className="modal show d-block" tabIndex={-1} style={{ background: 'rgba(0,0,0,0.5)' }}>
           <div className="modal-dialog modal-sm">
