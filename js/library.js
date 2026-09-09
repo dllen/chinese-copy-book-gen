@@ -14,13 +14,30 @@
       searchPoems: function() { return []; },
       searchTexts: function() { return []; },
       searchEnglish: function() { return []; },
-      GRADES: [],
-      LibraryPanel: function() { return React.createElement("div", {style: {padding: "20px", color: "#666"}}, "词库功能暂不可用"); }
+      GRADES: ['一年级上册','一年级下册','二年级上册','二年级下册','三年级上册','三年级下册','四年级上册','四年级下册','五年级上册','五年级下册','六年级上册','六年级下册'],
+      LibraryPanel: function() { return null; }
     };
     return;
   }
 
-  const { useState, useEffect, useMemo } = React;
+  // Safely destructure React hooks with additional guard
+  var useState, useEffect, useMemo;
+  try {
+    useState = React.useState;
+    useEffect = React.useEffect;
+    useMemo = React.useMemo;
+    if (!useState || !useEffect || !useMemo) throw new Error('React hooks not available');
+  } catch(e) {
+    w.__copybook__.library = {
+      load: function() {},
+      searchPoems: function() { return []; },
+      searchTexts: function() { return []; },
+      searchEnglish: function() { return []; },
+      GRADES: ['一年级上册','一年级下册','二年级上册','二年级下册','三年级上册','三年级下册','四年级上册','四年级下册','五年级上册','五年级上册','六年级上册','六年级下册'],
+      LibraryPanel: function() { return null; }
+    };
+    return;
+  }
 
   const GRADES=['一年级上册','一年级下册','二年级上册','二年级下册','三年级上册','三年级下册','四年级上册','四年级下册','五年级上册','五年级下册','六年级上册','六年级下册'];
 
@@ -47,8 +64,12 @@
     });
   }
   function useStore(){
-    const [,setTick]=useState(0);
-    useEffect(()=>{ const fn=()=>setTick(t=>t+1); listeners.add(fn); load(); return ()=>listeners.delete(fn); },[]);
+    try {
+      const [,setTick]=useState(0);
+      useEffect(()=>{ const fn=()=>setTick(t=>t+1); listeners.add(fn); load(); return ()=>listeners.delete(fn); },[]);
+    } catch(e) {
+      // React hooks not available - silently fail
+    }
     return store;
   }
   function searchPoems(q){
