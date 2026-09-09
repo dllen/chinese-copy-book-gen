@@ -12,6 +12,7 @@ import SubjectSelector from '../SubjectSelector'
 import LessonList from '../LessonList'
 import CharacterSelector from '../CharacterSelector'
 import QuickGenerateBar from '../QuickGenerateBar'
+import PreviewModal from '../PreviewModal'
 
 const STEPS = ['选内容', '选样式', '生成字帖']
 
@@ -114,6 +115,7 @@ export default function MainLayout({
   onDeselectAllCharacters,
 }) {
   const showPreview = !!text
+  const [showPreviewModal, setShowPreviewModal] = React.useState(false)
 
   // ---- Step 0: 选内容 ----
   const step0Content = React.createElement('div', { className: 'row g-3' },
@@ -368,11 +370,40 @@ export default function MainLayout({
           },
           onPrint,
           onExportPDF,
-          onPrintPreview,
+          onPreview: text ? () => setShowPreviewModal(true) : undefined,
           onShare,
           onBatchExport,
           hasContent: hasContent || showPreview,
-        })
+        }),
+        React.createElement(PreviewModal, {
+          open: showPreviewModal,
+          onClose: () => setShowPreviewModal(false),
+          onPrint,
+          onExportPDF,
+        },
+          React.createElement('div', { style: { minHeight: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center' } },
+            text ? React.createElement(PreviewPanel, {
+              pages,
+              onFillRandom,
+              commonChars,
+              onSetRandCount: handleSetRandCount,
+              onSetPreviewScale: handleSetPreviewScale,
+              updateSetting,
+              text,
+              gridType,
+              gridColor,
+              stylePreset,
+              rows,
+              cols,
+              cellSize,
+              fontSize,
+              usage,
+              randCount,
+              randNoRepeat,
+              previewScale
+            }) : React.createElement('div', { style: { color: '#999', fontSize: '14px' } }, '请先生成字帖')
+          )
+        )
       )
     )
   )

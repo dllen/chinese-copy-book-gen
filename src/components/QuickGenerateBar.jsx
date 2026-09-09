@@ -38,7 +38,7 @@ const styles = {
   info: { fontSize: '13px', color: '#6c757d', marginRight: 'auto' },
 };
 
-export default function QuickGenerateBar({ onGenerate, onPrint, onExportPDF, onPrintPreview, onShare, onBatchExport, hasContent }) {
+export default function QuickGenerateBar({ onGenerate, onPrint, onExportPDF, onPreview, onShare, onBatchExport, hasContent }) {
   return (
     <>
       <style>{`
@@ -61,6 +61,9 @@ export default function QuickGenerateBar({ onGenerate, onPrint, onExportPDF, onP
         >
           一键生成字帖
         </button>
+        {onPreview && (
+          <button className="secondary-btn" style={styles.secondaryBtn} onClick={onPreview}>预览</button>
+        )}
         {onPrint && (
           <button className="secondary-btn" style={styles.secondaryBtn} onClick={onPrint}>打印</button>
         )}
