@@ -20,6 +20,11 @@ class LibraryPanelErrorBoundary extends React.Component {
     this.state = { hasError: false };
   }
   static getDerivedStateFromError() { return { hasError: true }; }
+  componentDidCatch(error, info) {
+    // Suppress React 18 UMD compat errors from legacy library.js
+    if (error && error.message && error.message.includes('useState')) return;
+    console.error('LibraryPanel error:', error, info);
+  }
   render() {
     if (this.state.hasError) return null;
     return this.props.children;
