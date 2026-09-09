@@ -358,7 +358,14 @@ export default function MainLayout({
         }),
         React.createElement("div", { className: 'step-content-wrapper', key: currentStep }, stepContents[currentStep] || step0Content),
         React.createElement(QuickGenerateBar, {
-          onGenerate: () => onStepChange && onStepChange(2),
+          onGenerate: () => {
+            // Set text from selected characters before navigating
+            if (selectedCharacters && selectedCharacters.size > 0) {
+              const text = Array.from(selectedCharacters).join('');
+              updateSetting('text', text);
+            }
+            onStepChange && onStepChange(2);
+          },
           onPrint,
           onExportPDF,
           onPrintPreview,

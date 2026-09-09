@@ -443,6 +443,14 @@ export default function App() {
         hasContent={!!selectedContent}
         darkMode={settings.darkMode}
         onToggleDarkMode={() => updateSetting('darkMode', !settings.darkMode)}
+        // Enriched content selection props
+        lessons={courseData.lessons}
+        selectedLesson={courseData.selectedLesson}
+        selectedCharacters={courseData.selectedCharacters}
+        onSelectLesson={courseData.selectLesson}
+        onToggleCharacter={courseData.toggleCharacter}
+        onSelectAllCharacters={courseData.selectAllCharacters}
+        onDeselectAllCharacters={courseData.deselectAllCharacters}
       />
       </main>
       <PageGrid
