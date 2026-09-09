@@ -135,7 +135,7 @@ export default function MainLayout({
               React.createElement(SubjectSelector, {
                 gradeId: selectedGrade,
                 selectedSubject,
-                onSelect: onSelectSubject,
+                onSelectSubject,
               })
             )
           )
@@ -161,7 +161,7 @@ export default function MainLayout({
               React.createElement(LessonList, {
                 lessons: lessons || [],
                 selectedLesson,
-                onSelect: onSelectLesson,
+                onSelectLesson,
               })
             )
           )
@@ -173,9 +173,9 @@ export default function MainLayout({
               React.createElement(CharacterSelector, {
                 characters: selectedLesson.characters || [],
                 selectedCharacters,
-                onToggle: onToggleCharacter,
-                onSelectAll: onSelectAllCharacters,
-                onDeselectAll: onDeselectAllCharacters,
+                onToggleCharacter,
+                onSelectAllCharacters,
+                onDeselectAllCharacters,
               })
             )
           )
