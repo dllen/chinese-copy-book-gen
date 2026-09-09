@@ -1,0 +1,386 @@
+{
+  "cn-1": [
+    {
+      "type": "fill-blank",
+      "question": "人____",
+      "answer": "人",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-2": [
+    {
+      "type": "fill-blank",
+      "question": "星____",
+      "answer": "星",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-3": [
+    {
+      "type": "fill-blank",
+      "question": "太____",
+      "answer": "太",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-4": [
+    {
+      "type": "fill-blank",
+      "question": "读____",
+      "answer": "读",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-5": [
+    {
+      "type": "fill-blank",
+      "question": "人____",
+      "answer": "人",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-6": [
+    {
+      "type": "fill-blank",
+      "question": "天____",
+      "answer": "天",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-7": [
+    {
+      "type": "fill-blank",
+      "question": "松____",
+      "answer": "松",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-8": [
+    {
+      "type": "fill-blank",
+      "question": "禾____",
+      "answer": "禾",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-9": [
+    {
+      "type": "fill-blank",
+      "question": "临____",
+      "answer": "临",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-10": [
+    {
+      "type": "fill-blank",
+      "question": "图____",
+      "answer": "图",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-13": [
+    {
+      "type": "fill-blank",
+      "question": "妈____",
+      "answer": "妈",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-14": [
+    {
+      "type": "fill-blank",
+      "question": "朵____",
+      "answer": "朵",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-15": [
+    {
+      "type": "fill-blank",
+      "question": "老____",
+      "answer": "老",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-16": [
+    {
+      "type": "fill-blank",
+      "question": "读____",
+      "answer": "读",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-17": [
+    {
+      "type": "fill-blank",
+      "question": "在____",
+      "answer": "在",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-18": [
+    {
+      "type": "fill-blank",
+      "question": "等____",
+      "answer": "等",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-19": [
+    {
+      "type": "fill-blank",
+      "question": "擦____",
+      "answer": "擦",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-20": [
+    {
+      "type": "fill-blank",
+      "question": "墙____",
+      "answer": "墙",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-21": [
+    {
+      "type": "fill-blank",
+      "question": "朵____",
+      "answer": "朵",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-22": [
+    {
+      "type": "fill-blank",
+      "question": "菜____",
+      "answer": "菜",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-23": [
+    {
+      "type": "fill-blank",
+      "question": "小____",
+      "answer": "小",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-24": [
+    {
+      "type": "fill-blank",
+      "question": "入____",
+      "answer": "入",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-25": [
+    {
+      "type": "fill-blank",
+      "question": "朵____",
+      "answer": "朵",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-26": [
+    {
+      "type": "fill-blank",
+      "question": "冰____",
+      "answer": "冰",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-27": [
+    {
+      "type": "fill-blank",
+      "question": "老____",
+      "answer": "老",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-28": [
+    {
+      "type": "fill-blank",
+      "question": "飞____",
+      "answer": "飞",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-29": [
+    {
+      "type": "fill-blank",
+      "question": "何____",
+      "answer": "何",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-30": [
+    {
+      "type": "fill-blank",
+      "question": "里____",
+      "answer": "里",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-31": [
+    {
+      "type": "fill-blank",
+      "question": "尖____",
+      "answer": "尖",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-32": [
+    {
+      "type": "fill-blank",
+      "question": "老____",
+      "answer": "老",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-33": [
+    {
+      "type": "fill-blank",
+      "question": "鸟____",
+      "answer": "鸟",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-34": [
+    {
+      "type": "fill-blank",
+      "question": "尖____",
+      "answer": "尖",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-35": [
+    {
+      "type": "fill-blank",
+      "question": "陪____",
+      "answer": "陪",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-36": [
+    {
+      "type": "fill-blank",
+      "question": "星____",
+      "answer": "星",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-37": [
+    {
+      "type": "fill-blank",
+      "question": "老____",
+      "answer": "老",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-38": [
+    {
+      "type": "fill-blank",
+      "question": "里____",
+      "answer": "里",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-39": [
+    {
+      "type": "fill-blank",
+      "question": "陪____",
+      "answer": "陪",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-40": [
+    {
+      "type": "fill-blank",
+      "question": "考____",
+      "answer": "考",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-41": [
+    {
+      "type": "fill-blank",
+      "question": "老____",
+      "answer": "老",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-42": [
+    {
+      "type": "fill-blank",
+      "question": "猴____",
+      "answer": "猴",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-43": [
+    {
+      "type": "fill-blank",
+      "question": "里____",
+      "answer": "里",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-44": [
+    {
+      "type": "fill-blank",
+      "question": "里____",
+      "answer": "里",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-45": [
+    {
+      "type": "fill-blank",
+      "question": "崔____",
+      "answer": "崔",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-46": [
+    {
+      "type": "fill-blank",
+      "question": "入____",
+      "answer": "入",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-47": [
+    {
+      "type": "fill-blank",
+      "question": "孙____",
+      "answer": "孙",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-48": [
+    {
+      "type": "fill-blank",
+      "question": "苗____",
+      "answer": "苗",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-49": [
+    {
+      "type": "fill-blank",
+      "question": "里____",
+      "answer": "里",
+      "hint": "课文中的字"
+    }
+  ],
+  "cn-50": [
+    {
+      "type": "fill-blank",
+      "question": "更____",
+      "answer": "更",
+      "hint": "课文中的字"
+    }
+  ]
+}

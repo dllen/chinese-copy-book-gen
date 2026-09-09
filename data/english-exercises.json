@@ -1,0 +1,352 @@
+{
+  "ruler": [
+    {
+      "type": "spelling",
+      "question": "r____",
+      "answer": "ruler"
+    }
+  ],
+  "pencil": [
+    {
+      "type": "spelling",
+      "question": "p_____",
+      "answer": "pencil"
+    }
+  ],
+  "eraser": [
+    {
+      "type": "spelling",
+      "question": "e_____",
+      "answer": "eraser"
+    }
+  ],
+  "crayon": [
+    {
+      "type": "spelling",
+      "question": "c_____",
+      "answer": "crayon"
+    }
+  ],
+  "bag": [
+    {
+      "type": "spelling",
+      "question": "b__",
+      "answer": "bag"
+    }
+  ],
+  "pen": [
+    {
+      "type": "spelling",
+      "question": "p__",
+      "answer": "pen"
+    }
+  ],
+  "pencil box": [
+    {
+      "type": "spelling",
+      "question": "p_________",
+      "answer": "pencil box"
+    }
+  ],
+  "book": [
+    {
+      "type": "spelling",
+      "question": "b___",
+      "answer": "book"
+    }
+  ],
+  "no": [
+    {
+      "type": "spelling",
+      "question": "n_",
+      "answer": "no"
+    }
+  ],
+  "your": [
+    {
+      "type": "spelling",
+      "question": "y___",
+      "answer": "your"
+    }
+  ],
+  "red": [
+    {
+      "type": "spelling",
+      "question": "r__",
+      "answer": "red"
+    }
+  ],
+  "green": [
+    {
+      "type": "spelling",
+      "question": "g____",
+      "answer": "green"
+    }
+  ],
+  "yellow": [
+    {
+      "type": "spelling",
+      "question": "y_____",
+      "answer": "yellow"
+    }
+  ],
+  "blue": [
+    {
+      "type": "spelling",
+      "question": "b___",
+      "answer": "blue"
+    }
+  ],
+  "black": [
+    {
+      "type": "spelling",
+      "question": "b____",
+      "answer": "black"
+    }
+  ],
+  "brown": [
+    {
+      "type": "spelling",
+      "question": "b____",
+      "answer": "brown"
+    }
+  ],
+  "white": [
+    {
+      "type": "spelling",
+      "question": "w____",
+      "answer": "white"
+    }
+  ],
+  "orange": [
+    {
+      "type": "spelling",
+      "question": "o_____",
+      "answer": "orange"
+    }
+  ],
+  "OK": [
+    {
+      "type": "spelling",
+      "question": "O_",
+      "answer": "OK"
+    }
+  ],
+  "mum": [
+    {
+      "type": "spelling",
+      "question": "m__",
+      "answer": "mum"
+    }
+  ],
+  "face": [
+    {
+      "type": "spelling",
+      "question": "f___",
+      "answer": "face"
+    }
+  ],
+  "ear": [
+    {
+      "type": "spelling",
+      "question": "e__",
+      "answer": "ear"
+    }
+  ],
+  "eye": [
+    {
+      "type": "spelling",
+      "question": "e__",
+      "answer": "eye"
+    }
+  ],
+  "nose": [
+    {
+      "type": "spelling",
+      "question": "n___",
+      "answer": "nose"
+    }
+  ],
+  "mouth": [
+    {
+      "type": "spelling",
+      "question": "m____",
+      "answer": "mouth"
+    }
+  ],
+  "arm": [
+    {
+      "type": "spelling",
+      "question": "a__",
+      "answer": "arm"
+    }
+  ],
+  "hand": [
+    {
+      "type": "spelling",
+      "question": "h___",
+      "answer": "hand"
+    }
+  ],
+  "head": [
+    {
+      "type": "spelling",
+      "question": "h___",
+      "answer": "head"
+    }
+  ],
+  "body": [
+    {
+      "type": "spelling",
+      "question": "b___",
+      "answer": "body"
+    }
+  ],
+  "leg": [
+    {
+      "type": "spelling",
+      "question": "l__",
+      "answer": "leg"
+    }
+  ],
+  "foot": [
+    {
+      "type": "spelling",
+      "question": "f___",
+      "answer": "foot"
+    }
+  ],
+  "school": [
+    {
+      "type": "spelling",
+      "question": "s_____",
+      "answer": "school"
+    }
+  ],
+  "duck": [
+    {
+      "type": "spelling",
+      "question": "d___",
+      "answer": "duck"
+    }
+  ],
+  "pig": [
+    {
+      "type": "spelling",
+      "question": "p__",
+      "answer": "pig"
+    }
+  ],
+  "cat": [
+    {
+      "type": "spelling",
+      "question": "c__",
+      "answer": "cat"
+    }
+  ],
+  "bear": [
+    {
+      "type": "spelling",
+      "question": "b___",
+      "answer": "bear"
+    }
+  ],
+  "dog": [
+    {
+      "type": "spelling",
+      "question": "d__",
+      "answer": "dog"
+    }
+  ],
+  "elephant": [
+    {
+      "type": "spelling",
+      "question": "e_______",
+      "answer": "elephant"
+    }
+  ],
+  "monkey": [
+    {
+      "type": "spelling",
+      "question": "m_____",
+      "answer": "monkey"
+    }
+  ],
+  "bird": [
+    {
+      "type": "spelling",
+      "question": "b___",
+      "answer": "bird"
+    }
+  ],
+  "tiger": [
+    {
+      "type": "spelling",
+      "question": "t____",
+      "answer": "tiger"
+    }
+  ],
+  "panda": [
+    {
+      "type": "spelling",
+      "question": "p____",
+      "answer": "panda"
+    }
+  ],
+  "zoo": [
+    {
+      "type": "spelling",
+      "question": "z__",
+      "answer": "zoo"
+    }
+  ],
+  "funny": [
+    {
+      "type": "spelling",
+      "question": "f____",
+      "answer": "funny"
+    }
+  ],
+  "bread": [
+    {
+      "type": "spelling",
+      "question": "b____",
+      "answer": "bread"
+    }
+  ],
+  "juice": [
+    {
+      "type": "spelling",
+      "question": "j____",
+      "answer": "juice"
+    }
+  ],
+  "egg": [
+    {
+      "type": "spelling",
+      "question": "e__",
+      "answer": "egg"
+    }
+  ],
+  "milk": [
+    {
+      "type": "spelling",
+      "question": "m___",
+      "answer": "milk"
+    }
+  ],
+  "water": [
+    {
+      "type": "spelling",
+      "question": "w____",
+      "answer": "water"
+    }
+  ],
+  "cake": [
+    {
+      "type": "spelling",
+      "question": "c___",
+      "answer": "cake"
+    }
+  ]
+}
