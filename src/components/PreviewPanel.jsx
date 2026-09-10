@@ -13,9 +13,9 @@ function ConfigSummary({ gridType, gridColor, stylePreset, rows, cols, cellSize,
       `${item.label}: ${item.value}`
     )
   );
-  return React.createElement('div', { className: 'config-summary mt-2 p-2 bg-light rounded' },
+  return React.createElement('div', { className: 'config-summary p-2 bg-light rounded' },
     React.createElement('small', { className: 'text-muted' }, '当前配置：'),
-    React.createElement('div', { className: 'mt-1' }, ...summary)
+    React.createElement('div', { className: 'mt-1 d-flex flex-wrap gap-1' }, ...summary)
   );
 }
 
@@ -28,10 +28,13 @@ export default function PreviewPanel({
   const usage = usageProp || { capacity: 0, used: 0, warn: false };
 
   return React.createElement('div', { className: 'card' },
-    React.createElement('div', { className: 'card-body' },
-      // Preview scale
-      React.createElement('div', { className: 'mb-2' },
-        React.createElement('label', { className: 'form-label', htmlFor: 'previewScale' }, '预览缩放'),
+    React.createElement('div', { className: 'card-body p-3' },
+      // Section 1: Preview scale
+      React.createElement('div', { className: 'mb-4' },
+        React.createElement('label', { className: 'form-label d-flex justify-content-between', htmlFor: 'previewScale' },
+          React.createElement('span', null, '预览缩放'),
+          React.createElement('span', { className: 'text-muted small' }, `${Math.round(previewScale * 100)}%`)
+        ),
         React.createElement('input', {
           id: 'previewScale',
           className: 'form-range',
@@ -43,12 +46,17 @@ export default function PreviewPanel({
           onChange: e => handleSetPreviewScale(e.target.value)
         })
       ),
+
+      // Section 2: Config summary
       React.createElement(ConfigSummary, { gridType, gridColor, stylePreset, rows, cols, cellSize, fontSize }),
 
-      // Random char fill
+      // Divider
+      React.createElement('hr', { className: 'my-3' }),
+
+      // Section 3: Random char fill
       React.createElement('div', null,
-        React.createElement('div', { className: 'fw-bold mb-2' }, '常用汉字随机'),
-        React.createElement('div', { className: 'row g-2' },
+        React.createElement('div', { className: 'fw-bold mb-3' }, '常用汉字随机'),
+        React.createElement('div', { className: 'row g-2 mb-3' },
           React.createElement('div', { className: 'col-6' },
             React.createElement('label', { className: 'form-label', htmlFor: 'randCount' }, '筛选数量'),
             React.createElement('input', {
@@ -61,7 +69,7 @@ export default function PreviewPanel({
             })
           ),
           React.createElement('div', { className: 'col-6 d-flex align-items-end' },
-            React.createElement('div', { className: 'form-check' },
+            React.createElement('div', { className: 'form-check mb-2' },
               React.createElement('input', {
                 className: 'form-check-input',
                 type: 'checkbox',
@@ -73,23 +81,29 @@ export default function PreviewPanel({
             )
           )
         ),
-        React.createElement('div', { className: 'mt-2 d-flex gap-2 align-items-center flex-wrap' },
+        React.createElement('div', { className: 'd-flex gap-2 align-items-center flex-wrap mb-2' },
           React.createElement('button', {
-            className: 'btn btn-outline-primary',
+            className: 'btn btn-outline-primary btn-sm',
             onClick: () => onFillRandom(true),
             disabled: commonChars.length === 0
           }, '覆盖输入'),
           React.createElement('button', {
-            className: 'btn btn-outline-secondary',
+            className: 'btn btn-outline-secondary btn-sm',
             onClick: () => onFillRandom(false),
             disabled: commonChars.length === 0
-          }, '追加到输入'),
+          }, '追加到输入')
+        ),
+        React.createElement('div', { className: 'd-flex flex-wrap gap-3 small' },
           React.createElement('span', { className: 'legend' }, commonChars.length > 0 ? `可用汉字：${commonChars.length}` : '未读取到常用汉字'),
           React.createElement('span', { className: 'legend' }, `容量：${usage.capacity}，已用：${usage.used}`),
           usage.warn ? React.createElement('span', { className: 'error' }, '页面过多，建议分批打印') : null
         )
       ),
-      React.createElement('div', { className: 'mt-2 text-muted small' }, '模板需本机安装相应字体。')
+
+      // Footer hint
+      React.createElement('div', { className: 'mt-3 pt-2 border-top' },
+        React.createElement('small', { className: 'text-muted' }, '模板需本机安装相应字体。')
+      )
     )
   );
 }
