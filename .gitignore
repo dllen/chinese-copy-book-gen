@@ -3,6 +3,7 @@ node_modules/*
 relation_book_word.csv
 package-lock.json
 .superpowers/
+.worktrees/
 
 # Coverage
 coverage/
