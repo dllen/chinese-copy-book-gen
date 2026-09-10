@@ -139,12 +139,9 @@ export default function AIGenerationPanel({ onGenerated, toast }) {
     }
   }, [toast]);
 
-  const quickPrompts = [
-    '一年级生字：天地人你我他',
-    '唐诗：静夜思 李白',
-    '数学：20以内加减法10题',
-    '英语：26个字母大小写',
-  ];
+  const quickPrompts = activeTab === 'generate'
+    ? ['一年级生字：天地人你我他', '唐诗：静夜思 李白', '数学：20以内加减法10题', '英语：26个字母大小写']
+    : ['一年级生字练习', '乘法口诀练习题', '唐诗五言绝句练习', '英语字母书写练习'];
 
   const grades = ['一年级', '二年级', '三年级', '四年级', '五年级', '六年级'];
   const subjects = ['语文', '数学', '英语'];
