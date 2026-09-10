@@ -61,6 +61,84 @@ export default function AIGenerationPanel({ onGenerated, toast }) {
     }
   }, [prompt, onGenerated, toast]);
 
+  const generatePrompt = useCallback(async () => {
+    const trimmed = prompt.trim();
+    if (!trimmed && !advGrade && !advSubject && !advType) {
+      toast?.warn?.('请描述需求或填写高级选项') || toast?.('请描述需求或填写高级选项', 'warning');
+      return;
+    }
+    setLoading(true);
+    setPromptOutput('');
+
+    const platformText = platform === 'chat' ? '对话式AI（如ChatGPT、Claude、Kimi）' : '图像生成AI（如Midjourney、Stable Diffusion）';
+    const platformSpecific = platform === 'chat'
+      ? '提示词要适合对话交互，分步骤输出，格式清晰，用户可直接粘贴到对话框使用'
+      : '提示词要注重视觉风格描述、构图细节、色彩和光线，使用英文关键词以便更好的生成效果';
+
+    const parts = [];
+    if (advGrade) parts.push(`年级：${advGrade}`);
+    if (advSubject) parts.push(`学科：${advSubject}`);
+    if (advType) parts.push(`内容类型：${advType}`);
+    if (advCount) parts.push(`数量：${advCount}`);
+    const structuredParams = parts.length > 0 ? parts.join(' | ') : '无特殊要求';
+
+    const systemPrompt = `你是一个提示词工程专家。根据用户需求，生成一段高质量的${platformText}提示词。
+
+要求：
+1. 提示词要完整、可直接使用，用户无需修改
+2. 包含角色设定、具体任务、输出格式要求
+3. 字帖内容控制在合理范围（汉字20-100字，数学题10-20道）
+4. 语言：中文为主，英文内容用英文
+5. ${platformSpecific}
+
+只输出提示词本身，不要解释或额外文字。`;
+
+    try {
+      const res = await fetch('http://localhost:11434/api/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'llama3',
+          prompt: `${systemPrompt}\n\n用户需求：${trimmed || '无'}\n结构化参数：${structuredParams}\n\n提示词：`,
+          stream: false,
+          options: { temperature: 0.8, num_predict: 1000 },
+        }),
+      });
+      if (!res.ok) throw new Error(`API 错误: ${res.status}`);
+      const data = await res.json();
+      const text = data.response?.trim() || '';
+      setPromptOutput(text);
+      toast?.success?.('提示词生成成功') || toast?.('提示词生成成功', 'success');
+    } catch (err) {
+      const msg = err.message || '生成失败';
+      setPromptOutput(`生成失败: ${msg}\n\n提示：请确保本地 Ollama 服务已启动 (http://localhost:11434)`);
+      toast?.error?.('提示词生成失败') || toast?.('提示词生成失败', 'error');
+    } finally {
+      setLoading(false);
+    }
+  }, [prompt, platform, advGrade, advSubject, advType, advCount, toast]);
+
+  const handleCopy = useCallback(async (text) => {
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(text);
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+      }
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch {
+      toast?.error?.('复制失败，请手动选中复制') || toast?.('复制失败，请手动选中复制', 'error');
+    }
+  }, [toast]);
+
   const quickPrompts = [
     '一年级生字：天地人你我他',
     '唐诗：静夜思 李白',
@@ -71,10 +149,6 @@ export default function AIGenerationPanel({ onGenerated, toast }) {
   const grades = ['一年级', '二年级', '三年级', '四年级', '五年级', '六年级'];
   const subjects = ['语文', '数学', '英语'];
   const contentTypes = ['汉字帖', '笔画帖', '口算题', '拼音临摹', '字母书写', '单词练习'];
-
-  const handleGeneratePrompt = () => {
-    console.log('TODO: generatePrompt');
-  };
 
   return React.createElement(
     'div',
@@ -230,10 +304,21 @@ export default function AIGenerationPanel({ onGenerated, toast }) {
       // Generate prompt button
       React.createElement('button', {
         className: 'btn-gradient-primary',
-        onClick: handleGeneratePrompt,
+        onClick: generatePrompt,
         disabled: loading,
         style: { width: '100%' },
-      }, '✨ 生成提示词')
+      }, '✨ 生成提示词'),
+
+      // Prompt output display with copy button
+      activeTab === 'prompt' && promptOutput && React.createElement(
+        'div',
+        { className: 'copy-output-card' },
+        React.createElement('button', {
+          className: `copy-btn ${copied ? 'copied' : ''}`,
+          onClick: () => handleCopy(promptOutput),
+        }, copied ? '✓ 已复制' : '📋 复制'),
+        React.createElement('div', { className: 'ai-output' }, promptOutput)
+      )
     )
   );
 }
