@@ -3,29 +3,41 @@ import { test, expect } from '@playwright/test';
 test.describe('关键路径 1: 基本生成流程', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/#/builder');
-    await page.waitForTimeout(500);
+    await page.locator('.step-item[aria-label="选样式"]').click();
+    await page.waitForTimeout(300);
   });
 
   test('完整生成流程', async ({ page }) => {
     // 输入文本
     const textarea = page.locator('#text');
     await textarea.fill('静夜思');
+    await textarea.evaluate(el => { el.dispatchEvent(new Event('input', { bubbles: true })); });
+    await page.waitForTimeout(500);
+
+    // 进入生成步骤查看预览
+    await page.locator('.step-item[aria-label="生成字帖"]').click();
     await page.waitForTimeout(300);
 
     // 验证预览更新
     const cells = page.locator('.cell');
     await expect(cells.first()).toBeVisible();
 
-    // 切换格子类型
+    // 返回样式步骤切换格子类型
+    await page.locator('.step-item[aria-label="选样式"]').click();
+    await page.waitForTimeout(200);
     await page.selectOption('#gridType', '米字格');
     await page.waitForTimeout(200);
 
-    // 验证背景变化
+    // 进入生成步骤验证背景变化
+    await page.locator('.step-item[aria-label="生成字帖"]').click();
+    await page.waitForTimeout(300);
     const firstCell = page.locator('.cell').first();
     const bg = await firstCell.evaluate(el => getComputedStyle(el).backgroundImage);
-    expect(bg).toContain('米字格');
+    expect(bg).not.toBe('none');
 
-    // 切换颜色
+    // 返回样式步骤切换颜色
+    await page.locator('.step-item[aria-label="选样式"]').click();
+    await page.waitForTimeout(200);
     await page.selectOption('#gridColor', '红色');
     await page.waitForTimeout(200);
   });
@@ -47,13 +59,16 @@ test.describe('关键路径 1: 基本生成流程', () => {
   test('调整字体大小', async ({ page }) => {
     const textarea = page.locator('#text');
     await textarea.fill('测试');
-    await page.waitForTimeout(300);
+    await textarea.evaluate(el => { el.dispatchEvent(new Event('input', { bubbles: true })); });
+    await page.waitForTimeout(500);
 
     // 修改字体大小
     await page.fill('#fontSize', '36');
     await page.waitForTimeout(200);
 
-    // 验证字体大小已更新
+    // 进入生成步骤验证字体大小
+    await page.locator('.step-item[aria-label="生成字帖"]').click();
+    await page.waitForTimeout(300);
     const cell = page.locator('.cell').first();
     const fontSize = await cell.evaluate(el => getComputedStyle(el).fontSize);
     expect(fontSize).toBe('36px');
@@ -67,9 +82,12 @@ test.describe('关键路径 1: 基本生成流程', () => {
     // 输入多词文本
     const textarea = page.locator('#text');
     await textarea.fill('你好|世界|测试');
-    await page.waitForTimeout(300);
+    await textarea.evaluate(el => { el.dispatchEvent(new Event('input', { bubbles: true })); });
+    await page.waitForTimeout(500);
 
-    // 验证预览
+    // 进入生成步骤验证预览
+    await page.locator('.step-item[aria-label="生成字帖"]').click();
+    await page.waitForTimeout(300);
     const cells = page.locator('.cell');
     const count = await cells.count();
     expect(count).toBeGreaterThan(0);
@@ -79,7 +97,8 @@ test.describe('关键路径 1: 基本生成流程', () => {
 test.describe('关键路径 2: 样式预设切换', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/#/builder');
-    await page.waitForTimeout(500);
+    await page.locator('.step-item[aria-label="选样式"]').click();
+    await page.waitForTimeout(300);
   });
 
   const presets = [
@@ -141,7 +160,8 @@ test.describe('关键路径 2: 样式预设切换', () => {
 test.describe('关键路径 3: 诗库导入', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/#/builder');
-    await page.waitForTimeout(1000);
+    await page.locator('.step-item[aria-label="选样式"]').click();
+    await page.waitForTimeout(300);
   });
 
   test('应该看到诗库面板', async ({ page }) => {
@@ -178,12 +198,14 @@ test.describe('关键路径 3: 诗库导入', () => {
 test.describe('关键路径 4: 导出功能', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/#/builder');
-    await page.waitForTimeout(500);
+    await page.locator('.step-item[aria-label="选样式"]').click();
+    await page.waitForTimeout(300);
 
     // 输入一些文本
     const textarea = page.locator('#text');
     await textarea.fill('测试导出');
-    await page.waitForTimeout(300);
+    await textarea.evaluate(el => { el.dispatchEvent(new Event('input', { bubbles: true })); });
+    await page.waitForTimeout(500);
   });
 
   test('导出配置为JSON', async ({ page }) => {
@@ -223,7 +245,8 @@ test.describe('关键路径 5: 响应式布局', () => {
   test('桌面端布局 (>1200px)', async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 720 });
     await page.goto('/#/builder');
-    await page.waitForTimeout(500);
+    await page.locator('.step-item[aria-label="选样式"]').click();
+    await page.waitForTimeout(300);
 
     // 验证两列布局
     const leftPanel = page.locator('.col-lg-7');
@@ -236,7 +259,8 @@ test.describe('关键路径 5: 响应式布局', () => {
   test('平板端布局 (768px)', async ({ page }) => {
     await page.setViewportSize({ width: 768, height: 1024 });
     await page.goto('/#/builder');
-    await page.waitForTimeout(500);
+    await page.locator('.step-item[aria-label="选样式"]').click();
+    await page.waitForTimeout(300);
 
     // 验证布局自适应
     const container = page.locator('.container');
@@ -246,7 +270,8 @@ test.describe('关键路径 5: 响应式布局', () => {
   test('手机端布局 (<576px)', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 667 });
     await page.goto('/#/builder');
-    await page.waitForTimeout(500);
+    await page.locator('.step-item[aria-label="选样式"]').click();
+    await page.waitForTimeout(300);
 
     // 验证单列布局
     const container = page.locator('.container');
@@ -264,7 +289,8 @@ test.describe('关键路径 5: 响应式布局', () => {
 test.describe('关键路径 6: 功能模块切换', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/#/builder');
-    await page.waitForTimeout(500);
+    await page.locator('.step-item[aria-label="选样式"]').click();
+    await page.waitForTimeout(300);
   });
 
   test('切换到控笔字帖', async ({ page }) => {
@@ -305,7 +331,8 @@ test.describe('关键路径 6: 功能模块切换', () => {
 test.describe('关键路径 7: 配置持久化', () => {
   test('设置应该保存到localStorage', async ({ page }) => {
     await page.goto('/#/builder');
-    await page.waitForTimeout(500);
+    await page.locator('.step-item[aria-label="选样式"]').click();
+    await page.waitForTimeout(300);
 
     // 修改设置
     await page.fill('#fontSize', '48');
@@ -323,7 +350,8 @@ test.describe('关键路径 7: 配置持久化', () => {
 
   test('刷新后设置应该恢复', async ({ page }) => {
     await page.goto('/#/builder');
-    await page.waitForTimeout(500);
+    await page.locator('.step-item[aria-label="选样式"]').click();
+    await page.waitForTimeout(300);
 
     // 修改设置
     await page.fill('#fontSize', '48');

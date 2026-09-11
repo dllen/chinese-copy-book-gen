@@ -1,4 +1,5 @@
 import React from 'react';
+import PageGrid from './PageGrid';
 
 function ConfigSummary({ gridType, gridColor, stylePreset, rows, cols, cellSize, fontSize }) {
   const summary = [
@@ -20,15 +21,41 @@ function ConfigSummary({ gridType, gridColor, stylePreset, rows, cols, cellSize,
 }
 
 export default function PreviewPanel({
-  previewScale, randCount, randNoRepeat, gridType, gridColor, stylePreset,
-  rows, cols, cellSize, fontSize,
+  pages, previewScale, randCount, randNoRepeat, gridType, gridColor, stylePreset,
+  rows, cols, cellSize, fontSize, bg, tColor, strokeMode, font, letterStyle, showGuide,
+  engFont, copybookType, copybookStyle, showPinyin, pinyinColor,
   onFillRandom, commonChars, onSetRandCount: handleSetRandCount, onSetPreviewScale: handleSetPreviewScale,
   updateSetting, usage: usageProp
 }) {
   const usage = usageProp || { capacity: 0, used: 0, warn: false };
 
-  return React.createElement('div', { className: 'card' },
+  return React.createElement('div', { className: 'card preview-panel' },
     React.createElement('div', { className: 'card-body p-3' },
+      // Live preview
+      React.createElement('div', { className: 'mb-3 preview-container' },
+        pages && pages.length > 0
+          ? React.createElement(PageGrid, {
+              pages,
+              cols,
+              layout: '连续排列',
+              feature: '',
+              header: '',
+              bg,
+              tColor,
+              strokeMode,
+              font,
+              fontSize,
+              letterStyle,
+              showGuide,
+              engFont,
+              copybookType,
+              copybookStyle,
+              showPinyin,
+              pinyinColor,
+            })
+          : React.createElement('div', { className: 'text-muted text-center py-4 small' }, '输入内容后显示预览')
+      ),
+
       // Section 1: Preview scale
       React.createElement('div', { className: 'mb-4' },
         React.createElement('label', { className: 'form-label d-flex justify-content-between', htmlFor: 'previewScale' },

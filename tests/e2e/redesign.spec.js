@@ -133,3 +133,82 @@ test.describe('工作台视觉和主题', () => {
     expect(background).not.toBe('rgb(255, 255, 255)');
   });
 });
+
+test.describe('最终验收', () => {
+  for (const viewport of [
+    { width: 1440, height: 900, name: 'desktop' },
+    { width: 1024, height: 768, name: 'tablet' },
+    { width: 390, height: 844, name: 'mobile' },
+  ]) {
+    test(`${viewport.name} 首页无横向溢出`, async ({ page }) => {
+      await page.setViewportSize({
+        width: viewport.width,
+        height: viewport.height,
+      });
+      await page.goto('/');
+
+      const overflow = await page.evaluate(
+        () => document.documentElement.scrollWidth - window.innerWidth
+      );
+      expect(overflow).toBeLessThanOrEqual(1);
+
+      await page.screenshot({
+        path: `test-results/redesign-home-${viewport.name}.png`,
+        fullPage: true,
+      });
+    });
+
+    test(`${viewport.name} 工作台无横向溢出`, async ({ page }) => {
+      await page.setViewportSize({
+        width: viewport.width,
+        height: viewport.height,
+      });
+      await page.goto('/#/builder');
+
+      const overflow = await page.evaluate(
+        () => document.documentElement.scrollWidth - window.innerWidth
+      );
+      expect(overflow).toBeLessThanOrEqual(1);
+
+      await page.screenshot({
+        path: `test-results/redesign-builder-${viewport.name}.png`,
+        fullPage: true,
+      });
+    });
+  }
+
+  test('功能卡预选不覆盖用户文本', async ({ page }) => {
+    await page.goto('/#/builder');
+    await page.getByRole('button', { name: '选样式' }).click();
+    await page.locator('#text').fill('用户已有内容');
+
+    await page.goto('/');
+    await page.getByRole('button', { name: /英文字帖，立即制作/ }).click();
+
+    const settings = await page.evaluate(() =>
+      JSON.parse(localStorage.getItem('copybook-settings'))
+    );
+    expect(settings.text).toBe('用户已有内容');
+    expect(settings.feature).toBe('字帖模板');
+    expect(settings.layout).toBe('英文格式');
+    expect(settings.gridType).toBe('四线三格');
+  });
+
+  test('浏览器返回和刷新保留工作台 hash', async ({ page }) => {
+    await page.goto('/');
+    await page.getByRole('button', { name: '制作汉字字帖' }).click();
+    await expect(page).toHaveURL(/#\/builder\/hanzi$/);
+
+    await page.reload();
+    await expect(page).toHaveURL(/#\/builder\/hanzi$/);
+    await expect(
+      page.getByRole('heading', { name: '字帖生成器工作台' })
+    ).toBeAttached();
+
+    await page.goBack();
+    await expect(page).toHaveURL(/#\/$/);
+    await expect(
+      page.getByRole('heading', { name: '免费在线字帖生成器' })
+    ).toBeVisible();
+  });
+});
