@@ -1,25 +1,23 @@
-/**
- * StatsSection — Social proof with key metrics.
- * Inspired by ziyouzt.com stats bar.
- */
+import React from 'react';
+
 const STATS = [
-  { value: '10,000+', label: '用户使用' },
-  { value: '500+', label: '字帖模板' },
-  { value: '100,000+', label: '下载次数' },
-  { value: '4.9', label: '用户评分' },
+  { value: '4 类', label: '字帖内容' },
+  { value: '20+ 种', label: '格线与预设' },
+  { value: '高清 PDF', label: '打印导出' },
+  { value: '免登录', label: '直接使用' },
 ];
 
 export default function StatsSection() {
   return React.createElement(
     'section',
-    { className: 'stats-section' },
+    { className: 'stats-section', 'aria-label': '产品能力' },
     React.createElement(
       'div',
       { className: 'stats-grid' },
-      STATS.map((stat, i) =>
+      STATS.map((stat) =>
         React.createElement(
           'div',
-          { key: i, className: 'stat-item' },
+          { key: stat.label, className: 'stat-item' },
           React.createElement('div', { className: 'stat-item-value' }, stat.value),
           React.createElement('div', { className: 'stat-item-label' }, stat.label)
         )
