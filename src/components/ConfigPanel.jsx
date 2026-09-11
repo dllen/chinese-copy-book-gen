@@ -12,6 +12,7 @@ import PaperSettings from './controls/sections/PaperSettings';
 import TemplateFontSettings from './controls/sections/TemplateFontSettings';
 import HeaderSettings from './controls/sections/HeaderSettings';
 import CourseTemplates from './CourseTemplates';
+import AIGenerationPanel from './AIGenerationPanel';
 
 // Wraps LibraryPanel to catch React 18 hooks incompatibility
 class LibraryPanelErrorBoundary extends React.Component {
@@ -90,6 +91,14 @@ export default function ConfigPanel({ settings,
           updateSetting={updateSetting}
           toast={toast}
         />
+
+        <details className="ai-panel-collapsible">
+          <summary>AI 内容生成</summary>
+          <AIGenerationPanel
+            toast={toast}
+            onGenerated={(generatedText) => updateSetting('text', generatedText)}
+          />
+        </details>
 
         {/* ① 内容 — feature, layout, text input, library */}
         <Section title="① 内容" defaultOpen>

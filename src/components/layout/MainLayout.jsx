@@ -3,7 +3,6 @@ import ConfigPanel from '../ConfigPanel'
 import Toolbar from '../Toolbar'
 import PreviewPanel from '../PreviewPanel'
 import { EmptyState } from '../EmptyState'
-import DarkModeToggle from '../DarkModeToggle';
 import StepBar from '../StepBar'
 import GradeSelector from '../GradeSelector'
 import UnitList from '../UnitList'
@@ -138,7 +137,7 @@ export default function MainLayout({
   }, [showPreviewModal, onPrint])
 
   // ---- Step 0: 选内容 ----
-  const step0Content = React.createElement('div', { className: 'row g-3' },
+  const step0Content = React.createElement('div', { className: 'row g-3 builder-grid' },
     React.createElement('div', { className: 'col-12 col-lg-7' },
       React.createElement('div', { className: 'card mb-3' },
         React.createElement('div', { className: 'card-body' },
@@ -203,7 +202,7 @@ export default function MainLayout({
           )
         : null
     ),
-    React.createElement('div', { className: 'col-12 col-lg-5' },
+    React.createElement('div', { className: 'col-12 col-lg-5 builder-preview-column' },
       !showPreview
         ? React.createElement(EmptyState, {
             onTryExample: () => updateSetting('text', '静夜思'),
@@ -233,7 +232,7 @@ export default function MainLayout({
   )
 
   // ---- Step 1: 选样式 ----
-  const step1Content = React.createElement('div', { className: 'row g-3' },
+  const step1Content = React.createElement('div', { className: 'row g-3 builder-grid' },
     React.createElement('div', { className: 'col-12 col-lg-7' },
       React.createElement(ConfigPanel, {
         mode, variant, layout, gridType, gridColor, customGridColor, customTextColor,
@@ -282,7 +281,7 @@ export default function MainLayout({
         toast,
       })
     ),
-    React.createElement('div', { className: 'col-12 col-lg-5' },
+    React.createElement('div', { className: 'col-12 col-lg-5 builder-preview-column' },
       !showPreview
         ? React.createElement(EmptyState, {
             onTryExample: () => updateSetting('text', '静夜思'),
@@ -312,7 +311,7 @@ export default function MainLayout({
   )
 
   // ---- Step 2: 生成字帖 (full-width preview + toolbar) ----
-  const step2Content = React.createElement('div', { className: 'row g-3' },
+  const step2Content = React.createElement('div', { className: 'row g-3 builder-grid builder-grid--full' },
     React.createElement('div', { className: 'col-12' },
       React.createElement(Toolbar, {
         pages,
@@ -367,13 +366,23 @@ export default function MainLayout({
     `),
     React.createElement(
       'div',
-      { className: 'container py-3 main-layout-container' },
-      React.createElement('div', { className: 'no-print mb-3' },
-        React.createElement('div', { className: 'd-flex justify-content-between align-items-center mb-3' },
-          React.createElement('h1', { id: 'builder-title', className: 'sr-only', tabIndex: -1 }, '字帖生成器工作台'),
-          React.createElement(DarkModeToggle, { darkMode, onToggleDarkMode })
+      { className: 'builder-page' },
+      React.createElement(
+        'div',
+        { className: 'container-fluid builder-layout-container' },
+        React.createElement(
+          'h1',
+          {
+            id: 'builder-title',
+            className: 'sr-only',
+            tabIndex: -1,
+          },
+          '字帖生成器工作台'
         ),
-        React.createElement(StepBar, {
+        React.createElement(
+          'div',
+          { className: 'no-print mb-3 builder-toolbar' },
+          React.createElement(StepBar, {
           steps: STEPS,
           currentStep,
           onStepClick: onStepChange,
@@ -418,6 +427,7 @@ export default function MainLayout({
             showPinyin,
             pinyinColor: '#dc3545'
           }) : React.createElement('div', { style: { color: '#999', fontSize: '14px', padding: '40px', textAlign: 'center' } }, '请先生成字帖')
+          )
         )
       )
     )
