@@ -1,5 +1,8 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
+import './styles/design-system.css';
+import './styles/landing.css';
+import './styles/builder.css';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import App from './App';
 

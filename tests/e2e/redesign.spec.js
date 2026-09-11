@@ -58,3 +58,37 @@ test.describe('工作台结构', () => {
     expect(overflow).toBeLessThanOrEqual(1);
   });
 });
+
+test.describe('首页视觉系统', () => {
+  test('首页使用品牌渐变和满屏首屏', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto('/');
+
+    const hero = page.locator('.home-hero');
+    const heroHeight = await hero.evaluate(
+      (element) => element.getBoundingClientRect().height
+    );
+    const buttonBackground = await page
+      .locator('.home-hero .btn-gradient-primary')
+      .evaluate((element) => getComputedStyle(element).backgroundImage);
+
+    expect(heroHeight).toBeGreaterThan(620);
+    expect(buttonBackground).toContain('linear-gradient');
+  });
+
+  test('首页卡片使用统一圆角和悬浮阴影', async ({ page }) => {
+    await page.goto('/');
+
+    const card = page.locator('.home-feature-card').first();
+    const styles = await card.evaluate((element) => {
+      const computed = getComputedStyle(element);
+      return {
+        radius: computed.borderRadius,
+        shadow: computed.boxShadow,
+      };
+    });
+
+    expect(parseFloat(styles.radius)).toBeGreaterThanOrEqual(12);
+    expect(styles.shadow).not.toBe('none');
+  });
+});
