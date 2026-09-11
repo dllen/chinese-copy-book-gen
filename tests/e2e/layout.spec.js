@@ -2,7 +2,8 @@ import { test, expect } from '@playwright/test';
 
 test.describe('排版格式测试', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/');
+    await page.goto('/#/builder');
+    await page.getByRole('button', { name: '选样式' }).click();
   });
 
   test('四线三格三条辅助线可见', async ({ page }) => {

@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef } from 'react';
 import { useToast } from './hooks/useToast';
 import { useCommonChars } from './hooks/useCommonChars';
 import { useSettings } from './hooks/useSettings';
@@ -6,11 +6,18 @@ import { useDebounce } from './hooks/useDebounce';
 import { ToastContainer } from './components/Toast';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import MainLayout from './components/layout/MainLayout';
+import LandingPage from './components/LandingPage';
+import BrandHeader from './components/BrandHeader';
 import useCopybook from './hooks/useCopybook';
 import { useCourseData } from './hooks/useCourseData';
 import { useStepFlow } from './hooks/useStepFlow';
-import DarkModeToggle from './components/DarkModeToggle';
 import { useKeyboardShortcut } from './hooks/useKeyboardShortcut';
+import {
+  APP_VIEW,
+  hashForRoute,
+  parseAppHash,
+  presetForBuilderType,
+} from './utils/appRoutes';
 
 const { toHex, pageSize } = window.__copybook__.utils || {};
 const CONFIG_FIELDS = [
@@ -29,7 +36,11 @@ export default function App() {
   const { toasts, toast, removeToast } = useToast();
   const commonChars = useCommonChars(toast);
   const { settings, updateSetting, setSettings } = useSettings(toast);
-  
+
+  const [route, setRoute] = React.useState(() =>
+    parseAppHash(window.location.hash)
+  );
+
   // 使用 ref 跟踪是否已初始化，避免重复设置
   const initRef = useRef(false);
 
@@ -42,6 +53,61 @@ export default function App() {
   const copybook = useCopybook(settings, updateSetting, { toast, removeToast, commonChars });
   const courseData = useCourseData();
   const stepFlow = useStepFlow(3);
+
+  useEffect(() => {
+    const syncRoute = () => {
+      const next = parseAppHash(window.location.hash);
+      setRoute(next);
+      const canonicalHash = hashForRoute(next.view, next.builderType);
+      if (window.location.hash !== canonicalHash) {
+        window.history.replaceState(null, '', canonicalHash);
+      }
+    };
+
+    syncRoute();
+    window.addEventListener('hashchange', syncRoute);
+    return () => window.removeEventListener('hashchange', syncRoute);
+  }, []);
+
+  const navigateTo = useCallback((view, builderType = null) => {
+    const next = {
+      view,
+      builderType: view === APP_VIEW.BUILDER ? builderType : null,
+    };
+    setRoute(next);
+    window.location.hash = hashForRoute(next.view, next.builderType);
+  }, []);
+
+  const openBuilder = useCallback((builderType = 'hanzi') => {
+    const preset = presetForBuilderType(builderType);
+    if (preset) {
+      setSettings((previous) => ({ ...previous, ...preset }));
+    }
+    stepFlow.goTo(0);
+    navigateTo(APP_VIEW.BUILDER, builderType);
+  }, [navigateTo, setSettings, stepFlow]);
+
+  const handleNavigate = useCallback((key) => {
+    if (key === 'home') {
+      navigateTo(APP_VIEW.HOME);
+      return;
+    }
+
+    if (['hanzi', 'pinyin', 'english', 'digits'].includes(key)) {
+      openBuilder(key);
+      return;
+    }
+
+    if (key === 'tutorial') {
+      navigateTo(APP_VIEW.HOME);
+      window.requestAnimationFrame(() => {
+        document.getElementById('workflow')?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      });
+    }
+  }, [navigateTo, openBuilder]);
 
   // 键盘快捷键
   useKeyboardShortcut('1', () => stepFlow.goTo(0));
@@ -100,6 +166,14 @@ export default function App() {
   useEffect(() => {
     document.documentElement.classList.toggle('dark-mode', settings.darkMode);
   }, [settings.darkMode]);
+
+  useEffect(() => {
+    const target = document.getElementById(
+      route.view === APP_VIEW.HOME ? 'home-title' : 'builder-title'
+    );
+    target?.focus?.({ preventScroll: true });
+    window.scrollTo?.({ top: 0, behavior: 'auto' });
+  }, [route.view, route.builderType]);
 
   // 注册 Service Worker（PWA 离线）
   useEffect(() => {
@@ -311,7 +385,23 @@ export default function App() {
     <a href="#main-content" className="sr-only sr-only-focusable" style={{ position: 'absolute', top: '-40px', left: 0, background: '#0d6efd', color: '#fff', padding: '8px 16px', zIndex: 9999 }}>跳转到主要内容</a>
     <ErrorBoundary>
       <ToastContainer toasts={toasts} onRemove={removeToast} />
-      <main id="main-content">
+      <BrandHeader
+        darkMode={settings.darkMode}
+        onToggleDarkMode={() => updateSetting('darkMode', !settings.darkMode)}
+        currentView={
+          route.view === APP_VIEW.BUILDER
+            ? route.builderType || 'builder'
+            : 'home'
+        }
+        onNavigate={handleNavigate}
+      />
+      <main id="main-content" tabIndex={-1}>
+      {route.view === APP_VIEW.HOME ? (
+        <LandingPage
+          onStartBuilder={openBuilder}
+          onNavigate={handleNavigate}
+        />
+      ) : (
       <MainLayout
         mode={settings.mode}
         usage={usage}
@@ -449,6 +539,7 @@ export default function App() {
         onSelectAllCharacters={courseData.selectAllCharacters}
         onDeselectAllCharacters={courseData.deselectAllCharacters}
       />
+      )}
       </main>
       {templateModalOpen && (
         <div className="modal show d-block" tabIndex={-1} style={{ background: 'rgba(0,0,0,0.5)' }}>

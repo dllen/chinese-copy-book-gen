@@ -370,7 +370,7 @@ export default function MainLayout({
       { className: 'container py-3 main-layout-container' },
       React.createElement('div', { className: 'no-print mb-3' },
         React.createElement('div', { className: 'd-flex justify-content-between align-items-center mb-3' },
-          React.createElement('h1', { className: 'h4 mb-0' }, '字帖生成器'),
+          React.createElement('h1', { id: 'builder-title', className: 'sr-only', tabIndex: -1 }, '字帖生成器工作台'),
           React.createElement(DarkModeToggle, { darkMode, onToggleDarkMode })
         ),
         React.createElement(StepBar, {

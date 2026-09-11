@@ -10,6 +10,12 @@ export default defineConfig({
     ignoreHTTPSErrors: true,
     baseURL: 'http://127.0.0.1:5174',
   },
+  webServer: {
+    command: 'npm run dev -- --host 127.0.0.1 --port 5174',
+    url: 'http://127.0.0.1:5174',
+    reuseExistingServer: true,
+    timeout: 120000,
+  },
   projects: [
     { name: 'chromium', use: { browserName: 'chromium' } },
   ],

@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('关键路径 1: 基本生成流程', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/');
+    await page.goto('/#/builder');
     await page.waitForTimeout(500);
   });
 
@@ -78,7 +78,7 @@ test.describe('关键路径 1: 基本生成流程', () => {
 
 test.describe('关键路径 2: 样式预设切换', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/');
+    await page.goto('/#/builder');
     await page.waitForTimeout(500);
   });
 
@@ -140,7 +140,7 @@ test.describe('关键路径 2: 样式预设切换', () => {
 
 test.describe('关键路径 3: 诗库导入', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/');
+    await page.goto('/#/builder');
     await page.waitForTimeout(1000);
   });
 
@@ -177,7 +177,7 @@ test.describe('关键路径 3: 诗库导入', () => {
 
 test.describe('关键路径 4: 导出功能', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/');
+    await page.goto('/#/builder');
     await page.waitForTimeout(500);
 
     // 输入一些文本
@@ -222,7 +222,7 @@ test.describe('关键路径 4: 导出功能', () => {
 test.describe('关键路径 5: 响应式布局', () => {
   test('桌面端布局 (>1200px)', async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 720 });
-    await page.goto('/');
+    await page.goto('/#/builder');
     await page.waitForTimeout(500);
 
     // 验证两列布局
@@ -235,7 +235,7 @@ test.describe('关键路径 5: 响应式布局', () => {
 
   test('平板端布局 (768px)', async ({ page }) => {
     await page.setViewportSize({ width: 768, height: 1024 });
-    await page.goto('/');
+    await page.goto('/#/builder');
     await page.waitForTimeout(500);
 
     // 验证布局自适应
@@ -245,7 +245,7 @@ test.describe('关键路径 5: 响应式布局', () => {
 
   test('手机端布局 (<576px)', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 667 });
-    await page.goto('/');
+    await page.goto('/#/builder');
     await page.waitForTimeout(500);
 
     // 验证单列布局
@@ -263,7 +263,7 @@ test.describe('关键路径 5: 响应式布局', () => {
 
 test.describe('关键路径 6: 功能模块切换', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/');
+    await page.goto('/#/builder');
     await page.waitForTimeout(500);
   });
 
@@ -304,7 +304,7 @@ test.describe('关键路径 6: 功能模块切换', () => {
 
 test.describe('关键路径 7: 配置持久化', () => {
   test('设置应该保存到localStorage', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('/#/builder');
     await page.waitForTimeout(500);
 
     // 修改设置
@@ -322,7 +322,7 @@ test.describe('关键路径 7: 配置持久化', () => {
   });
 
   test('刷新后设置应该恢复', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('/#/builder');
     await page.waitForTimeout(500);
 
     // 修改设置

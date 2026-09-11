@@ -2,7 +2,8 @@ import { test, expect } from '@playwright/test';
 
 test.describe('字帖生成器核心流程', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/');
+    await page.goto('/#/builder');
+    await page.getByRole('button', { name: '选样式' }).click();
   });
 
   test('加载首页无崩溃', async ({ page }) => {
