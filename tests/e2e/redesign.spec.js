@@ -92,3 +92,44 @@ test.describe('首页视觉系统', () => {
     expect(styles.shadow).not.toBe('none');
   });
 });
+
+test.describe('工作台视觉和主题', () => {
+  test('桌面预览区域使用粘性定位', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto('/#/builder');
+
+    const position = await page
+      .locator('.builder-preview-column')
+      .evaluate((element) => getComputedStyle(element).position);
+
+    expect(position).toBe('sticky');
+  });
+
+  test('移动端预览取消粘性并保留底部操作栏', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto('/#/builder');
+
+    const previewPosition = await page
+      .locator('.builder-preview-column')
+      .evaluate((element) => getComputedStyle(element).position);
+    const barPosition = await page
+      .locator('.quick-generate-bar')
+      .evaluate((element) => getComputedStyle(element).position);
+
+    expect(previewPosition).toBe('static');
+    expect(barPosition).toBe('sticky');
+  });
+
+  test('深色模式应用到 Header、首页和工作台', async ({ page }) => {
+    await page.goto('/#/builder');
+
+    await page.getByRole('button', { name: '切换到深色模式' }).click();
+
+    await expect(page.locator('html')).toHaveClass(/dark-mode/);
+    const background = await page
+      .locator('.builder-page')
+      .evaluate((element) => getComputedStyle(element).backgroundColor);
+
+    expect(background).not.toBe('rgb(255, 255, 255)');
+  });
+});
