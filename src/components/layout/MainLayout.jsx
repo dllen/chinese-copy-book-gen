@@ -136,6 +136,20 @@ export default function MainLayout({
     }  
   }, [showPreviewModal, onPrint])
 
+  const quickGenerateBar = React.createElement(QuickGenerateBar, {
+    onGenerate: () => {
+      if (selectedCharacters && selectedCharacters.size > 0) {
+        const generatedText = Array.from(selectedCharacters).join('');
+        updateSetting('text', generatedText);
+      }
+      onStepChange && onStepChange(2);
+    },
+    onPrint: handlePrint,
+    onExportPDF,
+    onPreview: text ? () => setShowPreviewModal(true) : undefined,
+    hasContent: hasContent || showPreview,
+  })
+
   // ---- Step 0: 选内容 ----
   const step0Content = React.createElement('div', { className: 'row g-3 builder-grid' },
     React.createElement('div', { className: 'col-12 col-lg-7' },
@@ -203,6 +217,7 @@ export default function MainLayout({
         : null
     ),
     React.createElement('div', { className: 'col-12 col-lg-5 builder-preview-column' },
+      quickGenerateBar,
       !showPreview
         ? React.createElement(EmptyState, {
             onTryExample: () => updateSetting('text', '静夜思'),
@@ -293,6 +308,7 @@ export default function MainLayout({
       })
     ),
     React.createElement('div', { className: 'col-12 col-lg-5 builder-preview-column' },
+      quickGenerateBar,
       !showPreview
         ? React.createElement(EmptyState, {
             onTryExample: () => updateSetting('text', '静夜思'),
@@ -335,6 +351,7 @@ export default function MainLayout({
   // ---- Step 2: 生成字帖 (full-width preview + toolbar) ----
   const step2Content = React.createElement('div', { className: 'row g-3 builder-grid builder-grid--full' },
     React.createElement('div', { className: 'col-12' },
+      quickGenerateBar,
       React.createElement(Toolbar, {
         pages,
         onPrint: handlePrint,
@@ -410,20 +427,6 @@ export default function MainLayout({
           onStepClick: onStepChange,
         }),
         React.createElement("div", { className: 'step-content-wrapper', key: currentStep }, stepContents[currentStep] || step0Content),
-        React.createElement(QuickGenerateBar, {
-          onGenerate: () => {
-            // Set text from selected characters before navigating
-            if (selectedCharacters && selectedCharacters.size > 0) {
-              const text = Array.from(selectedCharacters).join('');
-              updateSetting('text', text);
-            }
-            onStepChange && onStepChange(2);
-          },
-          onPrint: handlePrint,
-          onExportPDF,
-          onPreview: text ? () => setShowPreviewModal(true) : undefined,
-                          hasContent: hasContent || showPreview,
-        }),
         React.createElement(PreviewModal, {
           open: showPreviewModal,
           onClose: () => setShowPreviewModal(false),
