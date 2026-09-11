@@ -39,7 +39,7 @@ self.addEventListener('fetch', (e) => {
   if (e.request.method !== 'GET') return;
   
   // CDN resources: network first, fallback to cache
-  if (url.hostname.includes('cdn.jsdelivr.net') || url.hostname.includes('fonts')) {
+  if (url.hostname.includes('registry.npmmirror.com') || url.hostname.includes('fonts')) {
     e.respondWith(
       fetch(e.request)
         .then((response) => {
