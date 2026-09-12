@@ -127,6 +127,21 @@ export default function MainLayout({
       })
     }
   }, [showPreviewModal, onPrint])
+
+  // Step 0（选内容）：实时把选中的生字同步到 text 设置，让预览面板立即反映用户选择。
+  // 仅在 selectedCharacters 真正变化时同步（用 ref 对比），避免从 Step 2 返回 Step 0
+  // 时覆盖用户在 Step 2 手动输入的自定义文本。
+  const prevSelectedRef = React.useRef(selectedCharacters);
+  React.useEffect(() => {
+    if (currentStep !== 0) return;
+    if (prevSelectedRef.current === selectedCharacters) return;
+    prevSelectedRef.current = selectedCharacters;
+    const nextText = selectedCharacters ? Array.from(selectedCharacters).join('') : '';
+    if (text !== nextText) {
+      updateSetting('text', nextText);
+    }
+  }, [currentStep, selectedCharacters, updateSetting, text]);
+
   const handlePrint = React.useCallback(() => {
     if (!showPreviewModal) {
       printAfterOpenRef.current = true
