@@ -130,7 +130,7 @@ export default function PreviewModal({ open, onClose, onPrint, onExportPDF, chil
   if (!open) return null;
 
   return React.createElement('div', {
-    className: 'preview-modal-overlay no-print',
+    className: 'preview-modal-overlay',
     style: styles.overlay,
     onClick: (e) => { if (e.target === e.currentTarget) onClose(); },
     role: 'dialog',

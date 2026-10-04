@@ -12,8 +12,15 @@ import CharacterSelector from '../CharacterSelector'
 import QuickGenerateBar from '../QuickGenerateBar'
 import PreviewModal from '../PreviewModal'
 import PageGrid from '../PageGrid'
+import StepNav from '../StepNav'
 
 const STEPS = ['选内容', '选样式', '生成字帖']
+
+const STEP_HINTS = [
+  '先选好年级、课文和生字，右侧会实时预览。',
+  '调整格子、配色与尺寸，满意后进入生成。',
+  '确认整页效果后，即可打印或导出 PDF。',
+]
 
 /**
  * 主布局组件 — 三步向导式布局
@@ -437,11 +444,19 @@ export default function MainLayout({
           'div',
           { className: 'no-print mb-3 builder-toolbar' },
           React.createElement(StepBar, {
-          steps: STEPS,
+            steps: STEPS,
+            currentStep,
+            onStepClick: onStepChange,
+          })
+        ),
+        React.createElement("div", { className: 'step-content-wrapper no-print', key: currentStep }, stepContents[currentStep] || step0Content),
+        React.createElement(StepNav, {
           currentStep,
-          onStepClick: onStepChange,
+          steps: STEPS,
+          hint: STEP_HINTS[currentStep] || '',
+          onPrev: () => onStepChange && onStepChange(Math.max(0, currentStep - 1)),
+          onNext: () => onStepChange && onStepChange(Math.min(STEPS.length - 1, currentStep + 1)),
         }),
-        React.createElement("div", { className: 'step-content-wrapper', key: currentStep }, stepContents[currentStep] || step0Content),
         React.createElement(PreviewModal, {
           open: showPreviewModal,
           onClose: () => setShowPreviewModal(false),
@@ -468,7 +483,6 @@ export default function MainLayout({
             pinyinColor: '#dc3545'
           }) : React.createElement('div', { style: { color: '#999', fontSize: '14px', padding: '40px', textAlign: 'center' } }, '请先生成字帖')
           )
-        )
       )
     )
   )

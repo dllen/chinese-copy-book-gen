@@ -14,6 +14,17 @@ import HeaderSettings from './controls/sections/HeaderSettings';
 import CourseTemplates from './CourseTemplates';
 import AIGenerationPanel from './AIGenerationPanel';
 
+// 常见样式项的默认值，「恢复默认样式」按钮使用
+const STYLE_DEFAULTS = {
+  gridType: '田字格', stylePreset: '四线三格标准', autoLayout: true,
+  gridStrokeWidth: 1, lineStyle: '实线', cellRadius: 0,
+  pageBg: '白色', cellBg: '透明', cellBorder: false, cellShadow: false,
+  textShadow: false, textStroke: '无', gridColor: '绿色',
+  customGridColor: '', customTextColor: '', textColorOpt: '黑色',
+  strokeMode: '适中', showPinyin: false,
+  rows: 10, cols: 8, cellSize: 60, gridGap: 8, fontSize: 42,
+};
+
 // Wraps LibraryPanel to catch React 18 hooks incompatibility
 class LibraryPanelErrorBoundary extends React.Component {
   constructor(props) {
@@ -78,6 +89,11 @@ export default function ConfigPanel({ settings,
   onLibraryStateChange,
   toast
 }) {
+  const resetStyle = () => {
+    Object.entries(STYLE_DEFAULTS).forEach(([key, value]) => updateSetting(key, value));
+    toast?.info?.('已恢复默认样式');
+  };
+
   return (
     <div className="card">
       <div className="card-body">
@@ -101,7 +117,7 @@ export default function ConfigPanel({ settings,
         </details>
 
         {/* ① 内容 — feature, layout, text input, library */}
-        <Section title="① 内容" defaultOpen>
+        <Section title="① 内容" description="选择功能模块，并填写或从词库导入要练习的内容。" defaultOpen>
           <div className="mb-2">
             <label className="form-label" htmlFor="feature">功能模块</label>
             <select id="feature" className="form-select" value={feature} onChange={e => updateSetting('feature', e.target.value)}>
@@ -171,7 +187,15 @@ export default function ConfigPanel({ settings,
         </Section>
 
         {/* ② 样式 — grid type, style preset, colors, grid size + 高级设置 */}
-        <Section title="② 样式" defaultOpen>
+        <Section title="② 样式" description="格子、配色与尺寸，改动会立即反映到右侧预览。" defaultOpen>
+          <div className="section-toolbar">
+            <span className="section-toolbar-hint">不确定从哪开始？先套用预设，再微调即可。</span>
+            <button
+              type="button"
+              className="btn btn-sm btn-outline-secondary"
+              onClick={resetStyle}
+            >恢复默认样式</button>
+          </div>
           <StyleAndGridSettings
             gridType={gridType}
             stylePreset={stylePreset}
@@ -274,7 +298,7 @@ export default function ConfigPanel({ settings,
         </Section>
 
         {/* ③ 导出 — paper settings, margins + 高级设置 */}
-        <Section title="③ 导出" defaultOpen>
+        <Section title="③ 导出" description="纸张与页边距会影响打印分页，导出前建议先预览。" defaultOpen>
           <PaperSettings
             paper={paper}
             marginTop={marginTop}

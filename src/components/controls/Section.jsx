@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Section({ title, children, defaultOpen = false }) {
+export default function Section({ title, description, children, defaultOpen = false }) {
   const [open, setOpen] = React.useState(defaultOpen);
 
   return React.createElement('div', { className: 'section-card mb-3' },
@@ -13,6 +13,9 @@ export default function Section({ title, children, defaultOpen = false }) {
       React.createElement('span', { className: 'section-title' }, title),
       React.createElement('span', { className: 'section-chevron' }, open ? '−' : '+')
     ),
-    open ? React.createElement('div', { className: 'section-body' }, children) : null
+    open ? React.createElement('div', { className: 'section-body' },
+      description ? React.createElement('p', { className: 'section-description' }, description) : null,
+      children
+    ) : null
   );
 }

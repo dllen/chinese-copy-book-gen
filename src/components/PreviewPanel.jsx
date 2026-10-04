@@ -1,22 +1,25 @@
 import React from 'react';
 import PageGrid from './PageGrid';
 
-function ConfigSummary({ gridType, gridColor, stylePreset, rows, cols, cellSize, fontSize }) {
+function ConfigSummary({ gridType, gridColor, stylePreset, rows, cols, cellSize, fontSize, pageCount }) {
   const summary = [
-    { label: '格子', value: gridType },
-    { label: '颜色', value: gridColor },
-    { label: '预设', value: stylePreset },
-    { label: '尺寸', value: (rows && cols) ? `${cols}×${rows}格` : undefined },
-    { label: '格子大小', value: cellSize ? `${cellSize}px` : undefined },
-    { label: '字体', value: fontSize ? `${fontSize}px` : undefined }
-  ].filter(item => item.value).map(item =>
-    React.createElement('span', { key: item.label, className: 'badge bg-secondary me-1 mb-1' },
-      `${item.label}: ${item.value}`
-    )
-  );
+    { label: '格子类型', value: gridType },
+    { label: '网格颜色', value: gridColor },
+    { label: '样式预设', value: stylePreset },
+    { label: '每页排版', value: (rows && cols) ? `${cols} 列 × ${rows} 行` : undefined },
+    { label: '格子尺寸', value: cellSize ? `${cellSize}px` : undefined },
+    { label: '字体大小', value: fontSize ? `${fontSize}px` : undefined },
+    { label: '总页数', value: pageCount ? `${pageCount} 页` : undefined }
+  ].filter(item => item.value);
+
   return React.createElement('div', { className: 'config-summary p-2 bg-light rounded' },
-    React.createElement('small', { className: 'text-muted' }, '当前配置：'),
-    React.createElement('div', { className: 'mt-1 d-flex flex-wrap gap-1' }, ...summary)
+    React.createElement('span', { className: 'config-summary-title' }, '当前配置'),
+    React.createElement('dl', { className: 'config-summary-list' },
+      summary.map(item => React.createElement('div', { className: 'config-summary-row', key: item.label },
+        React.createElement('dt', null, item.label),
+        React.createElement('dd', null, item.value)
+      ))
+    )
   );
 }
 
@@ -75,7 +78,7 @@ export default function PreviewPanel({
       ),
 
       // Section 2: Config summary
-      React.createElement(ConfigSummary, { gridType, gridColor, stylePreset, rows, cols, cellSize, fontSize }),
+      React.createElement(ConfigSummary, { gridType, gridColor, stylePreset, rows, cols, cellSize, fontSize, pageCount: pages && pages.length }),
 
       // Divider
       React.createElement('hr', { className: 'my-3' }),

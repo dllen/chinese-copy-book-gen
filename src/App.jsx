@@ -290,6 +290,11 @@ export default function App() {
     const sz = pageSize(settings.paper);
     document.documentElement.style.setProperty('--page-width', sz.w);
     document.documentElement.style.setProperty('--page-height', sz.h);
+    // 让浏览器打印的纸张尺寸与所选纸张一致，避免缩放或多余空白页
+    const printRule = document.getElementById('print-page-rule');
+    if (printRule) {
+      printRule.textContent = `@page { size: ${sz.w} ${sz.h}; margin: 0; }`;
+    }
     document.documentElement.style.setProperty('--cell-size', `${settings.cellSize}px`);
     document.documentElement.style.setProperty('--grid-gap', `${settings.gridGap}px`);
     document.documentElement.style.setProperty('--grid-color', gColor);
