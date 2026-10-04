@@ -7,7 +7,7 @@ import { useToast } from './useToast'
  * 避免 useEffect 同步导致的无限循环
  */
 export default function useCopybook(settings, updateSetting, deps = {}) {
-  const { toast: toastDep, removeToast: removeToastDep } = deps;
+  const { toast: toastDep, removeToast: removeToastDep, gridStyleRev } = deps;
   const selfToast = useToast();
   const toast = toastDep || selfToast.toast;
   const removeToast = removeToastDep || selfToast.removeToast;
@@ -143,13 +143,17 @@ export default function useCopybook(settings, updateSetting, deps = {}) {
   }, [pages, settings.rows, settings.cols]);
 
   // 网格背景
+  // svgDataURL 会读取 document 上的网格 CSS 变量（--grid-stroke-width、
+  // --fourline-y* …），这些变量由 App 的副作用写入。除直接入参（格子类型/尺寸/
+  // 颜色/线型）外，这里还必须依赖 gridStyleRev：变量写入后它会自增，
+  // 触发本次 memo 重新计算，从而读到更新后的变量而不是旧值。
   const bg = useMemo(() => {
     const cp = window.__copybook__ || {};
     const { gridType, cellSize, gridColor, customGridColor, lineStyle } = settings;
     const custom = customGridColor && /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(customGridColor) ? customGridColor : null;
     const gColor = custom || (cp.utils?.toHex ? cp.utils.toHex(gridColor) : '#000');
     return cp.grid?.svgDataURL ? cp.grid.svgDataURL(gridType, cellSize, gColor, lineStyle) : '';
-  }, [settings.gridType, settings.cellSize, settings.gridColor, settings.customGridColor, settings.lineStyle]);
+  }, [settings.gridType, settings.cellSize, settings.gridColor, settings.customGridColor, settings.lineStyle, gridStyleRev]);
 
   // 文字颜色
   const tColor = useMemo(() => {

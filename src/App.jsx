@@ -49,8 +49,14 @@ export default function App() {
   const [templateModalOpen, setTemplateModalOpen] = React.useState(false);
   const [templateName, setTemplateName] = React.useState('');
 
+  // 网格样式 CSS 变量的「修订号」：每当网格相关的 CSS 变量（--grid-stroke-width、
+  // --fourline-y* 等）被写入后自增。useCopybook 依赖它重新生成网格背景图，
+  // 从而保证背景图读取到的是更新后的变量，而不是上一帧的旧值（stale）。
+  const [gridStyleRev, setGridStyleRev] = React.useState(0);
+  const bumpGridStyle = React.useCallback(() => setGridStyleRev((v) => v + 1), []);
+
   // 使用 useCopybook Hook 管理核心业务逻辑
-  const copybook = useCopybook(settings, updateSetting, { toast, removeToast, commonChars });
+  const copybook = useCopybook(settings, updateSetting, { toast, removeToast, commonChars, gridStyleRev });
   const courseData = useCourseData();
   const stepFlow = useStepFlow(3);
 
@@ -368,12 +374,14 @@ export default function App() {
     }
     if (cfg.radius) document.documentElement.style.setProperty('--cell-radius', cfg.radius);
     if (cfg.stroke) document.documentElement.style.setProperty('--grid-stroke-width', cfg.stroke);
+    bumpGridStyle();
   }, [settings.stylePreset]); // 只依赖 stylePreset，避免 updateSetting 在依赖数组中
 
   // 动态网格属性
   useEffect(() => {
     document.documentElement.style.setProperty('--grid-stroke-width', String(settings.gridStrokeWidth));
     document.documentElement.style.setProperty('--cell-radius', `${settings.cellRadius}px`);
+    bumpGridStyle();
   }, [settings.gridStrokeWidth, settings.cellRadius]);
 
   // 英文基线
@@ -397,6 +405,7 @@ export default function App() {
     document.documentElement.style.setProperty('--fourline-y2', '0.50');
     document.documentElement.style.setProperty('--fourline-y3', y3);
     document.documentElement.style.setProperty('--fourline-y4', y4);
+    bumpGridStyle();
   }, [settings.autoLayout, settings.gridType, settings.text]);
 
   // 渲染

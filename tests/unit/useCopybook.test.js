@@ -132,4 +132,42 @@ describe('useCopybook', () => {
     expect(result.current.usage).toHaveProperty('used')
     expect(result.current.usage).toHaveProperty('warn')
   })
+
+  describe('网格背景 memo 依赖（样式更新）', () => {
+    it('gridStyleRev 变化时应重新生成网格背景（修复 CSS 变量陈旧问题）', () => {
+      const grid = window.__copybook__.grid
+      const { rerender } = renderHook(
+        ({ s, rev }) => useCopybook(s, mockUpdateSetting, { gridStyleRev: rev }),
+        { initialProps: { s: defaultSettings, rev: 0 } }
+      )
+      const before = grid.svgDataURL.mock.calls.length
+
+      // gridStrokeWidth 不是 bg 的直接依赖，但配套的 CSS 变量修订号变化必须触发重算
+      rerender({ s: { ...defaultSettings, gridStrokeWidth: 3 }, rev: 1 })
+      expect(grid.svgDataURL.mock.calls.length).toBeGreaterThan(before)
+    })
+
+    it('格子类型变化时应重新生成网格背景', () => {
+      const grid = window.__copybook__.grid
+      const { rerender } = renderHook(
+        ({ s }) => useCopybook(s, mockUpdateSetting),
+        { initialProps: { s: defaultSettings } }
+      )
+      const before = grid.svgDataURL.mock.calls.length
+      rerender({ s: { ...defaultSettings, gridType: '米字格' } })
+      expect(grid.svgDataURL.mock.calls.length).toBeGreaterThan(before)
+    })
+
+    it('无关重渲染不应重复生成网格背景（避免多余计算）', () => {
+      const grid = window.__copybook__.grid
+      const { rerender } = renderHook(
+        ({ s, rev }) => useCopybook(s, mockUpdateSetting, { gridStyleRev: rev }),
+        { initialProps: { s: defaultSettings, rev: 0 } }
+      )
+      const before = grid.svgDataURL.mock.calls.length
+      // 值相同、仅对象标识变化 → memo 依赖不变，不应重算
+      rerender({ s: { ...defaultSettings }, rev: 0 })
+      expect(grid.svgDataURL.mock.calls.length).toBe(before)
+    })
+  })
 })
