@@ -1,7 +1,6 @@
-// Node 单测：js/content.js 英文排版。运行：node tools/test_english_layout.js
-global.window = {};
-require('../js/content.js');
-const C = global.window.__copybook__.content;
+// Node 单测：js/content.js 英文排版（适配层，canonical 见 src/utils/text/splitter.js）。运行：node tools/test_english_layout.js
+import content from '../js/content.js';
+const C = content;
 let fail = 0;
 function eq(name, got, want) {
   const a = JSON.stringify(got), b = JSON.stringify(want);
