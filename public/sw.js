@@ -1,4 +1,4 @@
-const CACHE_NAME = 'copybook-v2';
+const CACHE_NAME = 'copybook-v3';
 const STATIC_ASSETS = [
   './',
   './index.html',
@@ -37,7 +37,22 @@ self.addEventListener('fetch', (e) => {
   
   // Skip non-GET requests
   if (e.request.method !== 'GET') return;
-  
+
+  // HTML navigations: network first so users always get the latest page
+  // (falls back to cache when offline) instead of a stale cached document.
+  if (e.request.mode === 'navigate') {
+    e.respondWith(
+      fetch(e.request)
+        .then((response) => {
+          const clone = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(e.request, clone));
+          return response;
+        })
+        .catch(() => caches.match(e.request).then((cached) => cached || caches.match('./index.html')))
+    );
+    return;
+  }
+
   // CDN resources: network first, fallback to cache
   if (url.hostname.includes('registry.npmmirror.com') || url.hostname.includes('fonts')) {
     e.respondWith(

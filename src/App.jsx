@@ -176,9 +176,24 @@ export default function App() {
   }, [route.view, route.builderType]);
 
   // 注册 Service Worker（PWA 离线）
+  // 仅在生产环境启用：开发/预览环境若启用，Service Worker 会以缓存优先策略
+  // 缓存 index.html 与 Vite 的模块，导致改动后预览仍旧显示旧页面、无法查看最新效果。
   useEffect(() => {
-    if ('serviceWorker' in navigator) {
+    if (!('serviceWorker' in navigator)) return;
+    if (import.meta.env.PROD) {
       navigator.serviceWorker.register('./sw.js').catch(() => {});
+      return;
+    }
+    // 开发 / 预览环境：注销已注册的 Service Worker 并清理缓存，确保加载最新代码
+    navigator.serviceWorker
+      .getRegistrations()
+      .then((regs) => regs.forEach((reg) => reg.unregister()))
+      .catch(() => {});
+    if (typeof caches !== 'undefined') {
+      caches
+        .keys()
+        .then((keys) => keys.forEach((key) => caches.delete(key)))
+        .catch(() => {});
     }
   }, []);
 
