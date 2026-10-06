@@ -17,7 +17,7 @@ const styles = {
     gap: '8px', maxHeight: '300px', overflowY: 'auto',
   },
   card: {
-    padding: '12px 8px', border: '2px solid #dee2e6', borderRadius: '8px',
+    padding: '12px 8px', borderWidth: '2px', borderStyle: 'solid', borderColor: '#dee2e6', borderRadius: '8px',
     textAlign: 'center', cursor: 'pointer', fontSize: '24px', fontWeight: 500,
     background: '#fff', transition: 'all 0.15s', userSelect: 'none',
   },

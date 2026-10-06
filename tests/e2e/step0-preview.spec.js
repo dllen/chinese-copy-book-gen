@@ -41,14 +41,19 @@ test.describe('Step 0 实时预览', () => {
     await page.locator('.unit-item', { hasText: '生字' }).first().click();
     await page.locator('.lesson-item').first().click();
 
-    // 取消选中第一个字，预览中的 cell 数量应减少
+    // 取消选中第一个字，预览中「有字」的格子数量应减少。
+    // 注意：PageGrid 会把每页填充为 rows*cols 个空格子，总 .cell 数量恒定，
+    // 因此这里统计文本非空的格子。
+    const filledCount = () =>
+      page.$$eval('.cell', (els) => els.filter((e) => e.textContent.trim() !== '').length);
+
     const firstChar = page.locator('.character-selector .char-card').first();
-    const initialCellCount = await page.locator('.cell').count();
+    const initialCellCount = await filledCount();
 
     await firstChar.click();
 
-    const afterToggleCount = await page.locator('.cell').count();
-    expect(afterToggleCount).toBeLessThan(initialCellCount);
+    // 预览文本有 300ms 防抖，轮询等待更新
+    await expect.poll(filledCount).toBeLessThan(initialCellCount);
   });
 
   test('切换单元时预览清空', async ({ page }) => {
@@ -64,5 +69,20 @@ test.describe('Step 0 实时预览', () => {
     // 切换到另一个单元（古诗），课文清空 → 预览应回到 EmptyState
     await page.locator('.unit-item', { hasText: '古诗' }).first().click();
     await expect(page.locator('text=还没有内容')).toBeVisible();
+  });
+
+  test('选择年级后自动选中首个单元，课文列表立即出现（少点一步）', async ({ page }) => {
+    await page.goto('/#/builder');
+    await expect(page.locator('.builder-layout-container')).toBeVisible();
+
+    // 只点一次年级，不再点击「单元」
+    await page.locator('.grade-card', { hasText: '一年级' }).first().click();
+
+    // 第一个单元应自动高亮选中
+    await expect(page.locator('.unit-item').first()).toHaveClass(/selected/);
+
+    // 课文列表已直接渲染，用户可立即选课
+    await expect(page.locator('.lesson-item').first()).toBeVisible();
+    expect(await page.locator('.lesson-item').count()).toBeGreaterThan(0);
   });
 });

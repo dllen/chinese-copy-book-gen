@@ -9,7 +9,9 @@ const styles = {
   },
   card: {
     padding: '20px 16px',
-    border: '2px solid #dee2e6',
+    borderWidth: '2px',
+    borderStyle: 'solid',
+    borderColor: '#dee2e6',
     borderRadius: '12px',
     textAlign: 'center',
     cursor: 'pointer',

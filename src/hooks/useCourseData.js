@@ -1,6 +1,12 @@
 import { useState, useCallback, useMemo } from 'react';
 import { getGrades, getUnits, getLessons, getLessonCharacters, searchContents } from '../data/courseData';
 
+// 选中年级/学科后自动选中第一个单元，让课文列表立即出现，
+// 用户无需先点一次「单元」再选课文（少一步点击）。
+function firstUnitId(gradeId, subject) {
+  return getUnits(gradeId, subject)[0]?.id ?? null;
+}
+
 export function useCourseData() {
   const [selectedGrade, setSelectedGrade] = useState(null);
   const [selectedSubject, setSelectedSubject] = useState('语文');
@@ -25,18 +31,20 @@ export function useCourseData() {
 
   const selectGrade = useCallback((gradeId) => {
     setSelectedGrade(gradeId);
-    setSelectedUnit(null);
+    // 自动选中当前学科的第一个单元，课文列表立即可见
+    setSelectedUnit(firstUnitId(gradeId, selectedSubject));
     setSelectedLesson(null);
     setSelectedCharacters(new Set());
     setSearchQuery('');
-  }, []);
+  }, [selectedSubject]);
 
   const selectSubject = useCallback((subject) => {
     setSelectedSubject(subject);
-    setSelectedUnit(null);
+    // 自动选中新学科的第一个单元
+    setSelectedUnit(selectedGrade ? firstUnitId(selectedGrade, subject) : null);
     setSelectedLesson(null);
     setSelectedCharacters(new Set());
-  }, []);
+  }, [selectedGrade]);
 
   const selectUnit = useCallback((unitId) => {
     setSelectedUnit(unitId);

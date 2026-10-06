@@ -4,7 +4,7 @@ const styles = {
   list: { display: 'flex', flexDirection: 'column', gap: '6px', maxHeight: '400px', overflowY: 'auto' },
   item: {
     display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-    padding: '10px 14px', border: '1px solid #dee2e6', borderRadius: '8px',
+    padding: '10px 14px', borderWidth: '1px', borderStyle: 'solid', borderColor: '#dee2e6', borderRadius: '8px',
     cursor: 'pointer', background: '#fff', transition: 'all 0.15s',
   },
   itemSelected: { borderColor: '#0d6efd', background: '#e7f1ff', fontWeight: 600 },
